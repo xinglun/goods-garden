@@ -1,0 +1,166 @@
+{
+  "acceptanceCriteria": [
+    "The repository contains a compiling Rust workspace with the declared Domain, Application, Infrastructure, Runtime, and CLI boundaries.",
+    "All requested placeholder modules, traits, structs, READMEs, and directories exist without implementing real Goods Intelligence behavior.",
+    "Dependency direction is enforced and documented as goods-domain -> goods-application -> goods-infrastructure -> goods-runtime -> goods-garden-cli; Domain has no transport, persistence, provider, runtime, or CLI dependencies.",
+    "Repository-owned human-facing documentation in README.md, AGENTS.md, CONTRIBUTING.md, docs/**, and examples/** is semantically equivalent in English, Japanese, and Chinese using the fixed order English, 日本語, 中文.",
+    "North Star, architecture, trust, living-goods model, Phase 0 through Phase 8 roadmap, six initial ADRs, glossary, evidence rules, human decision boundaries, and Phase 0 non-goals are documented without inventing SEJ facts.",
+    "AI Cockpit attachment, calibrated project profile, agent adapter status, doctor, and verify results are inspected and reported honestly; generated runtime artifacts are not manually replaced.",
+    "The CI workflow executes formatting, check, clippy with warnings denied, and workspace tests.",
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, and git diff --check pass on the final candidate."
+  ],
+  "authority": "authorized",
+  "baseRevision": "d9d363dacbd201a1a475810d1635e7cef362fd7d",
+  "checkpointPolicy": {
+    "profile": "standard",
+    "requiredBeforeFinish": true,
+    "requiredChecks": [],
+    "requiredStages": [
+      "before_edit",
+      "before_finish"
+    ],
+    "schemaVersion": 1
+  },
+  "concurrencyBoundary": {
+    "generatedEvidencePaths": [
+      ".ai/**",
+      "target/**"
+    ],
+    "implementationPaths": [
+      "Cargo.toml",
+      "Cargo.lock",
+      "rust-toolchain.toml",
+      "rustfmt.toml",
+      "clippy.toml",
+      "crates/**",
+      "apps/**",
+      "docs/**",
+      "examples/**",
+      "tests/architecture/**",
+      ".github/workflows/ci.yml",
+      "AGENTS.md",
+      "README.md",
+      "CONTRIBUTING.md",
+      "Makefile.ai"
+    ],
+    "maxWorkers": 1,
+    "reason": "Phase 0 shares repository-owned governance projections and a single integrated architecture baseline; execute serially.",
+    "schemaVersion": 1,
+    "serializedProjectionPaths": [
+      ".ai/cockpit.toml",
+      ".ai/project.json",
+      ".ai/decisions/**",
+      ".ai/work-items/**"
+    ],
+    "verificationOutputPaths": [
+      "target/**"
+    ]
+  },
+  "createdAt": "2026-08-27T22:33:14Z",
+  "goal": "Establish the multilingual, governed Phase 0 foundation for Goods Garden without implementing concrete product behavior.",
+  "intent": "Implement the approved Goods Garden Phase 0 baseline: a Rust DDD/Clean Architecture workspace, tri-lingual design-first documentation, AI Cockpit governance attachment and calibration, placeholder reference object, and CI quality gates.",
+  "mode": "code",
+  "outOfScope": [
+    "Sales analysis, anomaly detection, LLM Agent behavior, product personality, emotion systems, Need/Care Runtime behavior, POS adapters, databases, web UI, API servers, message queues, Kafka, Kubernetes, microservices, vector databases, and real autonomous actions.",
+    "Database schema design, concrete POS or inventory contracts, real SEJ data, store operations, replenishment rules, product KPIs, and any unverified business facts.",
+    "Binding the domain to PostgreSQL, SQLite, AWS SDKs, OpenAI SDKs, Anthropic SDKs, HTTP clients, or a specific LLM/provider.",
+    "Implementing a state machine, runtime orchestration, persistence, external adapters, or a tuna-mayo-specific branch such as if goods == tuna_mayo.",
+    "Overwriting pre-existing Agent provider files or replacing AI Cockpit runtime source code."
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:6c668b08e098d4a55d7c95ec0a0c6454a98d0e35b2ab66f8309c985d66f61dde",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-0-foundation",
+    "provider": "github",
+    "pullRequest": "not_created",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden"
+  },
+  "risk": "high",
+  "scenarioCoverage": [
+    {
+      "evidence": [],
+      "required": true,
+      "scenario": "rust_workspace_baseline",
+      "status": "unverified",
+      "expected": "All workspace members compile and the declared Cargo dependency graph has the intended direction.",
+      "verificationPlan": "Run cargo check --workspace and inspect every workspace package manifest for forbidden reverse dependencies."
+    },
+    {
+      "evidence": [],
+      "required": true,
+      "scenario": "architecture_boundary_baseline",
+      "status": "unverified",
+      "expected": "Domain, Application, Infrastructure, Runtime, and CLI ownership is explicit and no forbidden boundary is introduced.",
+      "verificationPlan": "Inspect the workspace manifests and module declarations, then run the architecture documentation consistency checks."
+    },
+    {
+      "evidence": [],
+      "required": true,
+      "scenario": "multilingual_documentation_baseline",
+      "status": "unverified",
+      "expected": "Repository-owned human-facing documents contain semantically equivalent English, Japanese, and Chinese sections.",
+      "verificationPlan": "Inspect README.md, AGENTS.md, CONTRIBUTING.md, docs/**, and examples/** for the fixed three-language structure and run git diff --check."
+    },
+    {
+      "evidence": [],
+      "required": true,
+      "scenario": "ai_cockpit_calibration",
+      "status": "unverified",
+      "expected": "AI Cockpit remains externally installed, repository attachment is present, and the selected Agent adapter is inspectable without overwriting unrelated provider content.",
+      "verificationPlan": "Run ai-cockpit inspect/status/doctor/agent doctor/verify with --repo bound to this checkout and record the actual states."
+    },
+    {
+      "evidence": [],
+      "required": true,
+      "scenario": "forbidden_scope_exclusion",
+      "status": "unverified",
+      "expected": "No concrete product behavior, provider binding, real SEJ fact, or prohibited infrastructure is introduced.",
+      "verificationPlan": "Review the final diff and dependency manifests for excluded behavior, dependencies, integrations, and fabricated operational facts."
+    }
+  ],
+  "scope": [
+    "Cargo.toml",
+    "Cargo.lock",
+    "rust-toolchain.toml",
+    "rustfmt.toml",
+    "clippy.toml",
+    "crates/**",
+    "apps/**",
+    "docs/**",
+    "examples/**",
+    "tests/architecture/**",
+    ".github/workflows/ci.yml",
+    ".gitignore",
+    ".ai/**",
+    "AGENTS.md",
+    "README.md",
+    "CONTRIBUTING.md",
+    "Makefile.ai"
+  ],
+  "sources": [
+    "user:goods-garden-phase-0-development-instructions",
+    "user:multilingual-documentation-addendum",
+    "user:human-confirmation-of-phase-0-design",
+    "git:d9d363dacbd201a1a475810d1635e7cef362fd7d",
+    "ai-cockpit:attach-output"
+  ],
+  "state": "implementation_active",
+  "verification": [
+    "cargo fmt --check",
+    "cargo check --workspace",
+    "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+    "cargo test --workspace",
+    "git diff --check",
+    "ai-cockpit doctor --repo .",
+    "ai-cockpit verify --repo . --work-item phase-0-foundation",
+    "repository CI workflow contains fmt, check, clippy, and test gates"
+  ],
+  "workItemId": "phase-0-foundation"
+}

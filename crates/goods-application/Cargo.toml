@@ -1,0 +1,12 @@
+[package]
+name = "goods-application"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+goods-domain = { path = "../goods-domain" }
+
+[lints.rust]
+unsafe_code = "forbid"

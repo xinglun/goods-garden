@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:ae2b477fe1b5a0cf8e660b59a1efe0dcdfcc05d16772d8f09531b5fb36668002",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:b01cc0eca037ed3275f4c63736dbf4a71a1640d0be13f41cb867b224e5de2981",
+  "reason": "The user explicitly confirmed the approved Goods Garden Phase 0 design and trilingual documentation requirement.",
+  "recordedAt": "2026-08-28T00:05:00Z",
+  "recordedBy": "human",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:4f64ab734540c956948d890035c09310075c9754f600b0385ba3674adca24b59",
+  "schemaVersion": 1,
+  "workItemId": "phase-0-foundation"
+}

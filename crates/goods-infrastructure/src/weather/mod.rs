@@ -1,0 +1,1 @@
+//! Weather adapter boundary placeholder.

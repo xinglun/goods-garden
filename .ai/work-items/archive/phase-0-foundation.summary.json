@@ -1,0 +1,232 @@
+{
+  "changedPaths": [
+    ".ai/agent-interface.json",
+    ".ai/cockpit.toml",
+    ".ai/decisions/phase-0-foundation.preflight-review.5d62f2210f043dd81d2349edec435c215fe444ec3056e0345e848fe4d3d117cd.json",
+    ".ai/decisions/phase-0-foundation.preflight-review.json",
+    ".ai/decisions/profile-v1.json",
+    ".ai/project.json",
+    ".ai/work-items/archive/phase-0-foundation.approach.json",
+    ".ai/work-items/archive/phase-0-foundation.contract.json",
+    ".ai/work-items/archive/phase-0-foundation.intelligence.json",
+    ".ai/work-items/archive/phase-0-foundation.summary.json"
+  ],
+  "checkpointAt": "2026-08-27T22:42:03Z",
+  "checkpointContractDigest": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "recorded": true,
+      "recordedAt": "2026-08-27T22:42:03Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:6c668b08e098d4a55d7c95ec0a0c6454a98d0e35b2ab66f8309c985d66f61dde",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "phase-0-foundation"
+    },
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:ae2b477fe1b5a0cf8e660b59a1efe0dcdfcc05d16772d8f09531b5fb36668002",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "previousContractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "reason": "Record the approved Goods Garden naming and checkpoint policy amendments before implementation.",
+      "recorded": true,
+      "recordedAt": "2026-08-27T22:51:29Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:8a7fab328ccce0d5e1b2bd409701a2b5f733cbde57f857e250a2c1bb11d0f45d",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-0-foundation"
+    },
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:93a468a9adb770bcd709bc75b89abdaa954a304f1fd4570cdaab4f18c472bfbb",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "previousContractHash": "sha256:ae2b477fe1b5a0cf8e660b59a1efe0dcdfcc05d16772d8f09531b5fb36668002",
+      "reason": "Include the repository .gitignore baseline explicitly within the approved Phase 0 scope.",
+      "recorded": true,
+      "recordedAt": "2026-08-27T23:06:16Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4f64ab734540c956948d890035c09310075c9754f600b0385ba3674adca24b59",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-0-foundation"
+    },
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:8b319930e7ec3600a3f76fd9a98165468beb6403589eabf3e8a3721cb851a5b7",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "previousContractHash": "sha256:93a468a9adb770bcd709bc75b89abdaa954a304f1fd4570cdaab4f18c472bfbb",
+      "reason": "Bind the Phase 0 Contract to the confirmed Cargo quality profile.",
+      "recorded": true,
+      "recordedAt": "2026-08-27T23:07:11Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4f64ab734540c956948d890035c09310075c9754f600b0385ba3674adca24b59",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-0-foundation"
+    },
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:4f616342774fcfba8e182d948e950f7255a795a9cbf531bec67433a4f73129e7",
+      "previousContractHash": "sha256:8b319930e7ec3600a3f76fd9a98165468beb6403589eabf3e8a3721cb851a5b7",
+      "reason": "Use the Runtime-supported verification evidence class while keeping report evidence categories explicit in the handoff.",
+      "recorded": true,
+      "recordedAt": "2026-08-27T23:09:29Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4f64ab734540c956948d890035c09310075c9754f600b0385ba3674adca24b59",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-0-foundation"
+    },
+    {
+      "acceptanceCount": 8,
+      "contractHash": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+      "recorded": true,
+      "recordedAt": "2026-08-27T23:21:25Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_finish",
+      "unknownCount": 0,
+      "workItemId": "phase-0-foundation"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+  "createdAt": "2026-08-27T22:33:14Z",
+  "decisionEvidence": {
+    "contractDigest": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+    "decision": "confirm_review",
+    "decisionId": "contract-preflight-review",
+    "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+    "reason": "The user explicitly confirmed the approved Goods Garden Phase 0 design and trilingual documentation requirement.",
+    "recordedAt": "2026-08-28T00:05:00Z",
+    "recordedBy": "human",
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+    "schemaVersion": 1,
+    "workItemId": "phase-0-foundation"
+  },
+  "failedGate": "finish.lifecycle",
+  "intentAlignment": {
+    "evidence": [
+      "user:human-confirmation-of-phase-0-design",
+      "user:multilingual-documentation-addendum"
+    ],
+    "reason": "The approved Phase 0 request directly defines the implementation intent and boundaries.",
+    "state": "resolved"
+  },
+  "mode": "code",
+  "outcomeState": "blocked",
+  "preflightAt": "2026-08-27T23:21:25Z",
+  "preflightContractDigest": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "recoveryCondition": "Restore the required lifecycle state and retry finish after fresh checks.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "scenarioCoverage": [
+    {
+      "evidence": [
+        "cargo fmt --check",
+        "cargo check --workspace",
+        "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+        "cargo test --workspace"
+      ],
+      "required": true,
+      "scenario": "rust_workspace_baseline",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "bash tests/architecture/check-boundaries.sh",
+        "docs/architecture/clean-architecture.md",
+        "Cargo.toml and crate manifests"
+      ],
+      "required": true,
+      "scenario": "architecture_boundary_baseline",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "README.md",
+        "AGENTS.md",
+        "docs/north-star.md",
+        "docs/architecture/",
+        "docs/phases/",
+        "docs/adr/",
+        "docs/glossary.md",
+        "git diff --check"
+      ],
+      "required": true,
+      "scenario": "multilingual_documentation_baseline",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "ai-cockpit attach --repo .",
+        "ai-cockpit profile confirm --repo . --program cargo --args test,--workspace",
+        "ai-cockpit doctor --repo .",
+        "ai-cockpit agent doctor --repo .",
+        ".ai/project.json",
+        ".ai/adapters/codex.json"
+      ],
+      "required": true,
+      "scenario": "ai_cockpit_calibration",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "Phase 0 dependency manifests contain no provider/database/HTTP dependencies",
+        "rg naming and forbidden-behavior scan",
+        "docs/phases/phase-0-foundation.md",
+        "examples/tuna-mayo/goods-profile.example.yaml"
+      ],
+      "required": true,
+      "scenario": "forbidden_scope_exclusion",
+      "status": "verified"
+    }
+  ],
+  "state": "finish_ready",
+  "updatedAt": "2026-08-27T23:21:25Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "phase-0-foundation"
+}

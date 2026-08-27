@@ -1,0 +1,1 @@
+//! Lifecycle orchestration boundary placeholder.
