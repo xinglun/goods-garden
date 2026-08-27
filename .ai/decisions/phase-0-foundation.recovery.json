@@ -1,0 +1,25 @@
+{
+  "actor": "human",
+  "authoritySource": "repository-review-policy",
+  "decidedAt": "2026-08-27T23:18:51Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/evidence/phase-0-foundation.verification.json"
+  ],
+  "policyRefs": [
+    "phase-0-foundation"
+  ],
+  "predecessorContractDigest": "sha256:54c340c9d28191d5a32a5957324c47d020a3bf9e4b29df13d09220def06b5a8a",
+  "predecessorEventsDigest": "sha256:ed0465463733bf6c82b1005de96ff635dcf1df3ad41d06cfda50540af445b3d4",
+  "predecessorOutcomeDigest": "sha256:f9f95ffce206b0e12376eaec6055e674e55d5723ff4b7cb4848487d92953c193",
+  "predecessorSummaryDigest": "sha256:b583d36b25ab2792c1450164eedfc0f52601d476fd69dfedeafee33fecfcb320",
+  "predecessorWorkItemId": "phase-0-foundation",
+  "reason": "Retry after the repository snapshot changed during final evidence binding.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Rerun current verification and preflight, then retry finish.",
+  "runtimeDigest": "sha256:dbd47238c94fbd6bf0b19f247a7412594df6e12a21c4988b436ffa8f0371386a",
+  "runtimeVersion": "0.2.33",
+  "schemaVersion": 1,
+  "workItemId": "phase-0-foundation"
+}

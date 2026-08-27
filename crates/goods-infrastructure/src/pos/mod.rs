@@ -1,0 +1,1 @@
+//! POS adapter boundary placeholder.

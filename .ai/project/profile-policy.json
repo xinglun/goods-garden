@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+  "approvedBoundaries": {
+    "productionRoots": ["crates/**", "apps/**"],
+    "featureRoots": ["crates/**", "apps/**"],
+    "testRoots": ["tests/**"],
+    "generatedPaths": ["target/**", ".ai/**"],
+    "criticalPaths": [
+      "crates/goods-domain/**",
+      "docs/north-star.md",
+      "docs/architecture/**",
+      "docs/phases/**"
+    ]
+  },
+  "criticalDomains": [
+    "project_type:rust_workspace",
+    "architecture:ddd_clean_architecture",
+    "project_type:ai_native_enterprise_software",
+    "domain_model",
+    "trust_evidence",
+    "state_need_care_semantics",
+    "autonomous_behavior",
+    "human_escalation",
+    "memory_learning",
+    "architecture_boundaries"
+  ],
+  "reviewRequirements": [
+    "human_decision_for_semantic_change",
+    "human_decision_for_authority_change",
+    "human_review_for_new_dependency",
+    "evidence_for_runtime_behavior"
+  ],
+  "unknowns": [
+    "real_sej_data",
+    "pos_schema",
+    "inventory_interface",
+    "replenishment_rules",
+    "product_kpis",
+    "store_operations"
+  ]
+}

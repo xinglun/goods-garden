@@ -1,0 +1,1 @@
+//! Simulator adapter boundary placeholder.

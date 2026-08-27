@@ -1,0 +1,11 @@
+# Declarative reference data only. This is not a production schema.
+profile_status: synthetic-example
+source_status: UNKNOWN
+goods_kind: rice-ball
+display_name:
+  en: Tuna-mayo rice ball
+  ja: ツナマヨおにぎり
+  zh: 金枪鱼蛋黄酱饭团
+operational_facts: UNKNOWN
+runtime_binding: product-independent
+business_logic: prohibited

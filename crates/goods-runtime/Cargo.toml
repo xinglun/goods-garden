@@ -1,0 +1,13 @@
+[package]
+name = "goods-runtime"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+goods-application = { path = "../goods-application" }
+goods-infrastructure = { path = "../goods-infrastructure" }
+
+[lints.rust]
+unsafe_code = "forbid"

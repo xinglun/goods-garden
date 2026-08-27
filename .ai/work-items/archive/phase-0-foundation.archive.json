@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-08-27T23:21:29Z",
+  "files": {
+    "approachDigest": "sha256:515eeaac91ec4a46f7e83013f2b2243e595d36c1f265759b0cba0136045cd09d",
+    "approachPath": ".ai/work-items/archive/phase-0-foundation.approach.json",
+    "contractDigest": "sha256:5163d43cd92f75223d30b715b94f7c7b880d5c0c11895fd6d24d87484ac40b89",
+    "contractPath": ".ai/work-items/archive/phase-0-foundation.contract.json",
+    "eventsDigest": "sha256:95a58e6fa17eddafd2885ff1ec4cb981fd724e9a150903d1cee3a7e3e3112788",
+    "eventsPath": ".ai/work-items/archive/phase-0-foundation.events.jsonl",
+    "intelligenceDigest": "sha256:63fa509b4c3dc878dfdb6b01b1f2ea3bab843b04eaac071ba90971976367778a",
+    "intelligencePath": ".ai/work-items/archive/phase-0-foundation.intelligence.json",
+    "outcomeDigest": "sha256:ebe5e9fe740f5b22aeef87f4235d9c0530d6ae445866e058f8279aac0e3bfeff",
+    "outcomePath": ".ai/work-items/archive/phase-0-foundation.outcome.json",
+    "summaryDigest": "sha256:2babb7a93b2d5f0ed7dad45f80b5fbfa7b5fa29daf5bf1a2eb73d145ccd001e4",
+    "summaryPath": ".ai/work-items/archive/phase-0-foundation.summary.json",
+    "taskReportDigest": "sha256:9d3e455513a0a7ff84a2639217951ae322378d91fb0ecbfba9333b0eba3a3f05",
+    "taskReportMarkdownDigest": "sha256:74f19c45b1a4839da0de5c4f88ba8f5974f2b2391a1d3cb419dd35797eac299b",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-0-foundation.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-0-foundation.task-report.json"
+  },
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-0-foundation"
+}

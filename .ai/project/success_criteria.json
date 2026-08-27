@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:5ebc6cce4e7a300c5a93d617b7cd3a59699cf8cbbc4d107fb127cc0aae8639e3",
+  "workItemId": "phase-0-foundation",
+  "criteria": [
+    {
+      "id": "foundation-compiles",
+      "statement": "The declared Rust workspace compiles without concrete product behavior.",
+      "evidenceHints": ["Cargo.toml", "cargo check --workspace"]
+    },
+    {
+      "id": "boundaries-are-explicit",
+      "statement": "Layer ownership and dependency direction remain inspectable.",
+      "evidenceHints": ["docs/architecture/clean-architecture.md", "tests/architecture/check-boundaries.sh"]
+    },
+    {
+      "id": "documents-are-trilingual",
+      "statement": "Human-facing foundation documents have equivalent English, Japanese and Chinese content.",
+      "evidenceHints": ["README.md", "docs/north-star.md", "docs/phases/"]
+    }
+  ]
+}

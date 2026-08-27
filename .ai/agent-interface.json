@@ -1,0 +1,36 @@
+{
+  "adapter": {
+    "required": false
+  },
+  "adapterState": "unconfigured",
+  "capabilities": [
+    "inspect",
+    "observe",
+    "status",
+    "preflight",
+    "verify",
+    "work-item-scaffold",
+    "profile-propose",
+    "knowledge",
+    "doctor",
+    "mcp"
+  ],
+  "interfaceVersion": 1,
+  "interfaces": {
+    "cli": {
+      "available": true,
+      "transport": null
+    },
+    "mcp": {
+      "available": true,
+      "transport": "stdio"
+    }
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySchemaVersion": 2,
+  "rootBinding": {
+    "type": "manifest-parent"
+  },
+  "schemaVersion": 1
+}

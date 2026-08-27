@@ -1,0 +1,12 @@
+[package]
+name = "goods-garden-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+goods-runtime = { path = "../../crates/goods-runtime" }
+
+[lints.rust]
+unsafe_code = "forbid"

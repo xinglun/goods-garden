@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:ae2b477fe1b5a0cf8e660b59a1efe0dcdfcc05d16772d8f09531b5fb36668002",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:e9e022bbd2c0b69d457c9c3ccefbf06df78d3a68482834dab0d3d03275e3c04d",
+  "reason": "The user explicitly confirmed the approved Phase 0 design and multilingual documentation requirement.",
+  "recordedAt": "2026-08-28T00:00:00Z",
+  "recordedBy": "human",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:8a7fab328ccce0d5e1b2bd409701a2b5f733cbde57f857e250a2c1bb11d0f45d",
+  "schemaVersion": 1,
+  "workItemId": "phase-0-foundation"
+}

@@ -1,0 +1,9 @@
+{
+  "conflictsWith": [],
+  "dependsOn": [],
+  "parallelizable": false,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 1,
+  "unknowns": [],
+  "workItemId": "phase-0-foundation"
+}

@@ -1,0 +1,55 @@
+{
+  "derivations": [],
+  "evidenceRefs": [
+    ".ai/work-items/active/phase-0-foundation",
+    "repository-snapshot"
+  ],
+  "facts": [
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "git:HEAD"
+      ],
+      "key": "baseRevision",
+      "origin": "observed",
+      "value": "d9d363dacbd201a1a475810d1635e7cef362fd7d"
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "repository-snapshot"
+      ],
+      "key": "buildSystems",
+      "origin": "observed",
+      "value": []
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "repository-snapshot"
+      ],
+      "key": "languages",
+      "origin": "observed",
+      "value": []
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        ".ai/cockpit.toml"
+      ],
+      "key": "repositoryId",
+      "origin": "observed",
+      "value": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f"
+    }
+  ],
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:6c668b08e098d4a55d7c95ec0a0c6454a98d0e35b2ab66f8309c985d66f61dde",
+  "schemaVersion": 2,
+  "unknowns": [
+    "acceptanceCriteria",
+    "authority",
+    "intent",
+    "scope"
+  ],
+  "workItemId": "phase-0-foundation"
+}
