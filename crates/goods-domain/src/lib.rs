@@ -1,7 +1,8 @@
-//! Domain language placeholders for Goods Garden.
+//! Domain language for the first living good.
 //!
-//! Phase 0 intentionally defines names and module ownership only. Domain
-//! behavior and fields require a later reviewed Domain Design work item.
+//! Phase 1 contains only the minimal State and Health Assessment model needed
+//! by the synthetic local demo. Need, Care, Memory and Learning remain outside
+//! this crate's implemented behavior.
 
 pub mod care;
 pub mod evidence;

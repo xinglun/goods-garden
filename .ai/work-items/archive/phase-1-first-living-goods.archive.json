@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-08-28T01:40:49Z",
+  "files": {
+    "contractDigest": "sha256:a3c5d17ea8c9f8520812ae039e47e841da2c15e99ba0057664e9421a1cbe95b1",
+    "contractPath": ".ai/work-items/archive/phase-1-first-living-goods.contract.json",
+    "eventsDigest": "sha256:5b3a246875f9ddb418493b6b9ae248420fc3cba2262161ccf9bab1021b5f248d",
+    "eventsPath": ".ai/work-items/archive/phase-1-first-living-goods.events.jsonl",
+    "outcomeDigest": "sha256:b6d276fdc6ddf7bf2207c8f99e583a0b54c97d0ca65148beddfdbda8bf8d208a",
+    "outcomePath": ".ai/work-items/archive/phase-1-first-living-goods.outcome.json",
+    "summaryDigest": "sha256:7c8b827217cf325164773eb4325dc5588e4fc540ee964436f8393fa642d4bf55",
+    "summaryPath": ".ai/work-items/archive/phase-1-first-living-goods.summary.json",
+    "taskReportDigest": "sha256:901f678e62c521134cf01d5cccb62fe5f42113f350485d3a0eb2fe8e247ca993",
+    "taskReportMarkdownDigest": "sha256:625c7d1f38e7902ccf3130cf9f387e233fe06605a77adcaf99dfd52f287401ca",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-1-first-living-goods.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-1-first-living-goods.task-report.json"
+  },
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-1-first-living-goods"
+}

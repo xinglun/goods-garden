@@ -1,0 +1,27 @@
+{
+  "actor": "human:repository-owner",
+  "authoritySource": "human:repository-owner-authorized-phase-1-demo",
+  "decidedAt": "2026-08-28T01:36:00Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/work-items/active/phase-1-first-living-goods.outcome.json",
+    ".ai/work-items/active/phase-1-first-living-goods.events.jsonl"
+  ],
+  "policyRefs": [
+    "AGENTS.md",
+    ".ai/README.md"
+  ],
+  "predecessorContractDigest": "sha256:4cc5624a31166c4a27ec325869874674e167cb1b8a222d6efaa979adf725aa35",
+  "predecessorEventsDigest": "sha256:157b8ba16ab64e7a60d9f8c146db8db21da7d9de927ee4a896dae28d11c0b494",
+  "predecessorOutcomeDigest": "sha256:c50446a85effce0e66b8d649f1a31644f8b193c64b36b4a385a7fbaca71498b7",
+  "predecessorSummaryDigest": "sha256:26522f5e2a13368cb0997b965b617b6db97682cd5ca93b4a29b8cadbe4eb5444",
+  "predecessorWorkItemId": "phase-1-first-living-goods",
+  "reason": "Retry the current Phase 1 Work Item after the required resource finalization plan was added and the prior finish governance stop was recorded.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Rerun current verification and finish only after the resource finalization plan and all governance bindings validate.",
+  "runtimeDigest": "sha256:99077d36a4531be97a14b33f56ad961e105c620b522dd2c08d84a2a286199089",
+  "runtimeVersion": "0.2.33",
+  "schemaVersion": 1,
+  "workItemId": "phase-1-first-living-goods"
+}

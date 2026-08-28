@@ -2,43 +2,109 @@
 
 ## English
 
-The following candidates are provisional. They are vocabulary for discussion,
-not settled schemas or behavior.
+Phase 1 separates the minimal model needed by the local demo from future
+provisional concepts. The Phase 1 model is reviewable, deliberately small and
+does not claim to settle the long-term domain schema.
+
+### Phase 1 minimal model
+
+| Type | Minimal role in the demo | Status |
+| --- | --- | --- |
+| Goods | Aggregate containing an individual identity and profile | PHASE 1 MINIMAL |
+| GoodsIdentity | `species` and `individual_id` for the individual good | PHASE 1 MINIMAL |
+| GoodsProfile | `display_name` and `expected_lifetime_hours` | PHASE 1 MINIMAL |
+| Observation | `source`, `observed_at` and `age_hours` sensory input | PHASE 1 MINIMAL |
+| Expectation | Maximum age used for the bounded assessment | PHASE 1 MINIMAL |
+| GoodsState | Identity, observation, expectation and health result | PHASE 1 MINIMAL |
+| HealthAssessment | Healthy/unhealthy status with a plain-language explanation | PHASE 1 MINIMAL |
+
+The assessment rule is intentionally narrow: an observed age at or below the
+profile expectation is healthy; an age above it is unhealthy. The bundled input
+is a local `synthetic-example`, not a real POS or SEJ record. This rule and
+these fields may be refined by a later Domain Design Work Item.
+
+### Future provisional concepts
+
+The following remain vocabulary for discussion, not implemented Phase 1
+behavior or settled schemas.
 
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
-| Goods | Aggregate candidate for an individual product | PROVISIONAL |
-| GoodsIdentity | Identity value candidate | PROVISIONAL |
-| GoodsProfile | Stable descriptive profile candidate | PROVISIONAL |
-| GoodsState | Current-state representation candidate | PROVISIONAL |
 | GoodsNeed | Need representation candidate | PROVISIONAL |
-| Observation | Sensory input candidate | PROVISIONAL |
 | Evidence | Traceability support candidate | PROVISIONAL |
 | CareRequest | Request-for-care candidate | PROVISIONAL |
 | CareAction | Care record candidate | PROVISIONAL |
-| Outcome | Result candidate; no Phase 0 type yet | PROVISIONAL |
+| Outcome | Result candidate | PROVISIONAL |
 | Memory | Relationship/history candidate | PROVISIONAL |
 | Learning | Learning-result candidate | PROVISIONAL |
 | LifecycleState | Lifecycle candidate | PROVISIONAL |
 
-No candidate receives fields in Phase 0. A later Domain Design Work Item must
-confirm aggregate boundaries, invariants, identity, evidence lineage and
-authority semantics.
-
 ## 日本語
 
-以下は議論用の候補であり、確定した schema や挙動ではない。全ての Status は
-`PROVISIONAL`。Phase 0 では field を与えない。
+Phase 1 では local demo に必要な最小 model と、将来の provisional concept を分ける。Phase 1 model は review
+可能な小さい model であり、長期的な domain schema を確定したとは主張しない。
 
-候補は `Goods`（individual product の aggregate 候補）、`GoodsIdentity`、`GoodsProfile`、
-`GoodsState`、`GoodsNeed`、`Observation`、`Evidence`、`CareRequest`、`CareAction`、`Outcome`、
-`Memory`、`Learning`、`LifecycleState`。後続の Domain Design Work Item で aggregate boundary、
-invariant、identity、evidence lineage、authority semantics を確認する。
+### Phase 1 minimal model
+
+| Type | demo における最小の役割 | Status |
+| --- | --- | --- |
+| Goods | individual identity と profile を持つ Aggregate | PHASE 1 MINIMAL |
+| GoodsIdentity | individual good の `species` と `individual_id` | PHASE 1 MINIMAL |
+| GoodsProfile | `display_name` と `expected_lifetime_hours` | PHASE 1 MINIMAL |
+| Observation | `source`、`observed_at`、`age_hours` の sensory input | PHASE 1 MINIMAL |
+| Expectation | bounded assessment に使う最大 age | PHASE 1 MINIMAL |
+| GoodsState | identity、observation、expectation、health result | PHASE 1 MINIMAL |
+| HealthAssessment | plain-language explanation 付き healthy/unhealthy status | PHASE 1 MINIMAL |
+
+assessment rule は意図的に狭い。observed age が profile expectation 以下なら healthy、超えれば unhealthy とする。
+同梱 input は local `synthetic-example` であり、real POS や SEJ record ではない。この rule と field は後続の Domain Design
+Work Item で改訂できる。
+
+### Future provisional concepts
+
+以下は議論用 vocabulary であり、Phase 1 の実装挙動でも確定 schema でもない。
+
+| Candidate | Provisional role | Status |
+| --- | --- | --- |
+| GoodsNeed | Need representation の候補 | PROVISIONAL |
+| Evidence | traceability support の候補 | PROVISIONAL |
+| CareRequest | request-for-care の候補 | PROVISIONAL |
+| CareAction | care record の候補 | PROVISIONAL |
+| Outcome | result の候補 | PROVISIONAL |
+| Memory | relationship/history の候補 | PROVISIONAL |
+| Learning | learning-result の候補 | PROVISIONAL |
+| LifecycleState | lifecycle の候補 | PROVISIONAL |
 
 ## 中文
 
-以下是讨论用候选，不是已确定的 schema 或行为，全部标记为 `PROVISIONAL`。Phase 0 不为候选增加字段。
+Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 1 模型是可 review 的小模型，并不意味着已经确定长期领域 schema。
 
-候选包括 `Goods`（单个商品的 Aggregate 候选）、`GoodsIdentity`、`GoodsProfile`、`GoodsState`、
-`GoodsNeed`、`Observation`、`Evidence`、`CareRequest`、`CareAction`、`Outcome`、`Memory`、
-`Learning`、`LifecycleState`。后续 Domain Design Work Item 必须确认 Aggregate 边界、不变量、身份、证据链和权限语义。
+### Phase 1 minimal model
+
+| 类型 | demo 中的最小作用 | Status |
+| --- | --- | --- |
+| Goods | 包含单个商品身份和 profile 的 Aggregate | PHASE 1 MINIMAL |
+| GoodsIdentity | 单个商品的 `species` 和 `individual_id` | PHASE 1 MINIMAL |
+| GoodsProfile | `display_name` 和 `expected_lifetime_hours` | PHASE 1 MINIMAL |
+| Observation | `source`、`observed_at`、`age_hours` 感官输入 | PHASE 1 MINIMAL |
+| Expectation | 有边界评估所使用的最大 age | PHASE 1 MINIMAL |
+| GoodsState | identity、observation、expectation 和 health result | PHASE 1 MINIMAL |
+| HealthAssessment | 带有自然语言解释的 healthy/unhealthy 状态 | PHASE 1 MINIMAL |
+
+评估规则刻意保持狭窄：observed age 小于等于 profile expectation 时为 healthy，超过时为 unhealthy。仓库内置输入是本地
+`synthetic-example`，不是 POS 或 SEJ 实际记录。这些字段和规则可以由后续 Domain Design Work Item 调整。
+
+### Future provisional concepts
+
+以下仍只是讨论用 vocabulary，不是 Phase 1 的实现行为，也不是已经确定的 schema。
+
+| 候选 | Provisional 作用 | Status |
+| --- | --- | --- |
+| GoodsNeed | Need 表示的候选 | PROVISIONAL |
+| Evidence | 可追溯性支持的候选 | PROVISIONAL |
+| CareRequest | 求助请求的候选 | PROVISIONAL |
+| CareAction | 照料记录的候选 | PROVISIONAL |
+| Outcome | 结果的候选 | PROVISIONAL |
+| Memory | 关系/历史的候选 | PROVISIONAL |
+| Learning | 学习结果的候选 | PROVISIONAL |
+| LifecycleState | 生命周期的候选 | PROVISIONAL |

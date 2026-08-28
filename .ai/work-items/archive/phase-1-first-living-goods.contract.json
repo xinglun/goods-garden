@@ -1,0 +1,158 @@
+{
+  "acceptanceCriteria": [
+    "EN: Domain types represent Goods Identity, Goods Profile, Observation, Expectation, Goods State and Health Assessment with only the minimal fields needed for this demo. JA: Domain type は Goods Identity、Goods Profile、Observation、Expectation、Goods State、Health Assessment を demo に必要な最小 field だけで表現する。ZH: Domain 类型只用 demo 所需的最小字段表示 Goods Identity、Goods Profile、Observation、Expectation、Goods State 和 Health Assessment。",
+    "EN: The application port owns observation acquisition and the infrastructure adapter is a synthetic DemoObservationSource; no real POS contract or transport dependency is introduced. JA: observation acquisition は application port が所有し、infrastructure adapter は synthetic な DemoObservationSource とする。real POS contract や transport dependency は追加しない。ZH: observation acquisition 由 application port 所有，infrastructure adapter 是 synthetic 的 DemoObservationSource；不增加真实 POS contract 或传输依赖。",
+    "EN: A product-independent runtime observes a Goods value, applies its profile expectation, and produces a traceable health assessment without a tuna-mayo-specific branch. JA: 商品非依存の runtime が Goods を observe し、profile expectation を適用して、ツナマヨ専用分岐なしに traceable な health assessment を生成する。ZH: 与具体商品无关的 runtime 能观察 Goods、应用 profile expectation 并生成可追溯的 health assessment，不出现饭团专用分支。",
+    "EN: The CLI demo runs locally from the repository and visibly labels its input as synthetic/example, showing identity, observation, expectation and current health. JA: CLI demo は repository から local 実行でき、input を synthetic/example と明示し、identity、observation、expectation、current health を表示する。ZH: CLI demo 可以在仓库本地运行，并明确标记输入为 synthetic/example，显示 identity、observation、expectation 和当前健康状态。",
+    "EN: No Need, Care, Memory, Learning, emotion, autonomous action, real POS, database, HTTP, API or LLM behavior is implemented. JA: Need、Care、Memory、Learning、emotion、自律 action、real POS、database、HTTP、API、LLM の挙動を実装しない。ZH: 不实现 Need、Care、Memory、Learning、情绪、自主行动、真实 POS、数据库、HTTP、API 或 LLM 行为。",
+    "EN: English, Japanese and Chinese project documentation records the Phase 1 boundary, synthetic-data limitation and runnable demo path. JA: English、日本語、中文の project documentation が Phase 1 boundary、synthetic-data limitation、demo 実行方法を記録する。ZH: 英文、日语、中文项目文档记录 Phase 1 边界、synthetic 数据限制和 demo 运行方式。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and git diff --check pass. JA: 指定された Cargo quality command、local demo、git diff --check が通る。ZH: 指定的 Cargo quality command、本地 demo 和 git diff --check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "7b1880dff6b676c2e38aa3ab575de6edbc5904c4",
+  "createdAt": "2026-08-28T01:05:39Z",
+  "goal": "EN: A person can run the local CLI demo and see whether the reference good is healthy, based on a clearly synthetic observation and an explicit expectation. JA: 人が local CLI demo を実行し、明示的な expectation と synthetic observation に基づいて reference good の健康状態を確認できる。ZH: 用户可以运行本地 CLI demo，并根据明确的 expectation 和 synthetic observation 看见该 reference good 是否健康。",
+  "intent": "EN: Establish the first reviewable State for one synthetic tuna-mayo reference object while keeping the Intelligence Runtime product-independent. JA: synthetic なツナマヨおにぎり reference object に最初の reviewable な State を与え、Intelligence Runtime を商品非依存に保つ。ZH: 为一个 synthetic 金枪鱼蛋黄酱饭团 reference object 建立第一个可 review 的 State，同时保持 Intelligence Runtime 与具体商品无关。",
+  "mode": "code",
+  "outOfScope": [
+    "real POS schemas",
+    "real SEJ data",
+    "inventory APIs",
+    "HTTP",
+    "API server",
+    "database",
+    "LLM provider",
+    "LLM Agent",
+    "sales analysis",
+    "anomaly detection",
+    "Need runtime",
+    "Care runtime",
+    "Memory",
+    "Learning",
+    "autonomous business action",
+    "Web UI",
+    "message queue",
+    "Kafka",
+    "Kubernetes",
+    "vector database",
+    "microservices",
+    "new external dependencies"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:ea8d951ef7b1eafa7c38e9c73a4b68ca9fe0988686d28a91c85fe858e0cc3e1b",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-1-first-living-goods",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/4",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/.worktrees/goods-garden-phase-1"
+  },
+  "risk": "high",
+  "scenarioCoverage": [
+    {
+      "evidence": [],
+      "expected": "The resulting Goods State reports a healthy Health Assessment.",
+      "required": true,
+      "scenario": "synthetic observation within profile expectation",
+      "status": "unverified",
+      "verificationPlan": "Run the Phase 1 domain and CLI tests with the bundled synthetic fixture."
+    },
+    {
+      "evidence": [],
+      "expected": "The resulting Goods State reports an unhealthy Health Assessment with an explanation.",
+      "required": true,
+      "scenario": "synthetic observation beyond profile expectation",
+      "status": "unverified",
+      "verificationPlan": "Run the boundary test using a generic Goods Profile with an observation beyond its expectation."
+    },
+    {
+      "evidence": [],
+      "expected": "The same runtime path works with a non-tuna-mayo profile and contains no tuna-mayo-specific branch.",
+      "required": true,
+      "scenario": "profile replacement remains product-independent",
+      "status": "unverified",
+      "verificationPlan": "Run a generic profile test and inspect the source for product-name branching."
+    },
+    {
+      "evidence": [],
+      "reason": "Phase 1 intentionally uses only a local synthetic fixture; real POS and SEJ data are UNKNOWN and out of scope.",
+      "required": true,
+      "scenario": "real external data boundary",
+      "status": "not_applicable"
+    }
+  ],
+  "scope": [
+    "AGENTS.md",
+    ".ai/**",
+    "Cargo.lock",
+    "README.md",
+    "apps/goods-garden-cli/README.md",
+    "crates/goods-application/README.md",
+    "crates/goods-domain/README.md",
+    "crates/goods-infrastructure/README.md",
+    "crates/goods-runtime/README.md",
+    "docs/README.md",
+    "docs/architecture/domain-model.md",
+    "docs/architecture/overview.md",
+    "docs/glossary.md",
+    "docs/phases/README.md",
+    "docs/phases/phase-1-first-living-goods.md",
+    "examples/tuna-mayo/README.md",
+    "examples/tuna-mayo/observation.example.txt",
+    "crates/goods-domain/src/goods/**",
+    "crates/goods-domain/src/lib.rs",
+    "crates/goods-domain/src/observation/**",
+    "crates/goods-domain/src/state/**",
+    "crates/goods-application/src/ports/observation_source.rs",
+    "crates/goods-application/src/use_cases/observe_goods.rs",
+    "crates/goods-application/src/use_cases/assess_state.rs",
+    "crates/goods-infrastructure/Cargo.toml",
+    "crates/goods-infrastructure/src/lib.rs",
+    "crates/goods-infrastructure/src/simulator/**",
+    "crates/goods-runtime/Cargo.toml",
+    "crates/goods-runtime/src/intelligence_loop/**",
+    "crates/goods-runtime/src/lib.rs",
+    "crates/goods-runtime/src/runtime.rs",
+    "apps/goods-garden-cli/Cargo.toml",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_1_demo.rs"
+  ],
+  "sources": [
+    {
+      "path": "docs/north-star.md",
+      "reason": "Preserve Goods Garden and Goods Intelligence as distinct product-world and technical-kernel concepts."
+    },
+    {
+      "path": "docs/architecture/clean-architecture.md",
+      "reason": "Keep domain language independent from infrastructure and transport concerns."
+    },
+    {
+      "path": "docs/architecture/domain-model.md",
+      "reason": "Confirm the Phase 1 candidates and their provisional status before giving them minimal fields."
+    },
+    {
+      "path": "docs/phases/phase-1-first-living-goods.md",
+      "reason": "Bound the first living good to State and Health Assessment without Need or Care."
+    },
+    {
+      "path": "examples/tuna-mayo/README.md",
+      "reason": "Use tuna-mayo only as a synthetic reference object and prohibit product-specific branching."
+    }
+  ],
+  "state": "implementation_active",
+  "verification": [
+    "cargo fmt --check",
+    "cargo check --workspace",
+    "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+    "cargo test --workspace",
+    "cargo run -p goods-garden-cli -- demo",
+    "git diff --check"
+  ],
+  "workItemId": "phase-1-first-living-goods"
+}

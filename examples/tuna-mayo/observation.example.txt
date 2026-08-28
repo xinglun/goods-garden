@@ -1,0 +1,4 @@
+# Synthetic fixture only; this is not a POS or SEJ data export.
+source_status=synthetic-example
+observed_at=2026-08-28T00:00:00Z
+age_hours=4

@@ -6,6 +6,8 @@ license.workspace = true
 rust-version.workspace = true
 
 [dependencies]
+goods-domain = { path = "../../crates/goods-domain" }
+goods-infrastructure = { path = "../../crates/goods-infrastructure" }
 goods-runtime = { path = "../../crates/goods-runtime" }
 
 [lints.rust]
