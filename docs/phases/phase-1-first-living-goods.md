@@ -51,6 +51,13 @@ The fixture is labelled `synthetic-example`. It is not real POS data, SEJ
 data, an external contract or an integration adapter. The runtime accepts a
 Goods value and its profile; it must remain valid when the profile is replaced.
 
+### Browser presentation companion
+
+The approved `apps/goods-garden-web/` package presents the same bounded State
+as a read-only browser view. It consumes a frontend-only `GoodsStateView`
+projection and displays `SYNTHETIC EXAMPLE` provenance. It does not calculate
+domain health, call external systems, or add Need, Care or autonomous actions.
+
 ### Exit criteria
 
 - A local user can run the demo and see identity, observation, expectation and
@@ -108,6 +115,12 @@ CLI output
 fixture は `synthetic-example` と明記する。real POS data、SEJ data、external contract、integration adapter ではない。runtime は Goods
 value と profile を受け取り、profile を置き換えても同じ path が成立しなければならない。
 
+### Browser presentation companion
+
+承認済みの `apps/goods-garden-web/` package は、同じ bounded State を read-only browser view として表示する。frontend-only の
+`GoodsStateView` projection を受け取り、`SYNTHETIC EXAMPLE` provenance を表示する。domain health を計算せず、external system を呼ばず、
+Need、Care、自律 action を追加しない。
+
 ### Exit criteria
 
 - local user が demo を実行し、identity、observation、expectation、current health を確認できる。
@@ -161,6 +174,11 @@ CLI output
 
 fixture 明确标记为 `synthetic-example`。它不是真实 POS 数据、SEJ 数据、外部 contract 或集成 adapter。runtime 接收 Goods value 和其
 profile；替换 profile 后必须仍能使用相同的 runtime 路径。
+
+### 浏览器展示 companion
+
+获批的 `apps/goods-garden-web/` package 以只读浏览器 view 展示同一有边界的 State。它消费前端专用的 `GoodsStateView` projection，
+并展示 `SYNTHETIC EXAMPLE` provenance。它不计算领域 health、不调用外部系统，也不增加 Need、Care 或自主行动。
 
 ### Exit criteria
 

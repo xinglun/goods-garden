@@ -16,9 +16,11 @@ understand state, ask for help and learn from outcomes.
 
 Phase 1 — First Living Goods. The agent may implement only the bounded State
 demo: minimal Goods Identity, Goods Profile, Observation, Expectation, Goods
-State and Health Assessment, plus a local synthetic observation source and CLI
-composition. Need, Care, Memory, Learning and autonomous behavior remain
-prohibited.
+State and Health Assessment, plus a local synthetic observation source, CLI
+composition and the approved read-only browser presentation at
+`apps/goods-garden-web/`. The browser package consumes a synthetic
+`GoodsStateView` projection and owns no domain behavior. Need, Care, Memory,
+Learning and autonomous behavior remain prohibited.
 
 ### Architecture rules
 
@@ -29,7 +31,9 @@ domain language and has no HTTP, SQL, cloud SDK, LLM provider, Tokio-specific
 runtime, JSON transport or CLI dependency. Application owns use cases and
 ports. Infrastructure owns future adapters and currently contains only the
 local synthetic `DemoObservationSource`. Runtime owns the bounded Observe →
-Assess composition and future orchestration.
+Assess composition and future orchestration. The frontend is a sibling
+application outside the Cargo member list; it renders a read-only projection
+and must not import Rust crates or external-system code.
 
 ### Human decision boundaries
 
@@ -65,9 +69,11 @@ distinct. Do not introduce a new synonym for an existing glossary term.
 ### Out of scope
 
 No sales analysis, anomaly detection, LLM Agent, product personality, emotion
-system, Need/Care Runtime, POS Adapter, database, Web UI, API Server, message
-queue, Kafka, Kubernetes, microservice, vector database, fabricated SEJ fact or
-autonomous business action.
+system, Need/Care Runtime, POS Adapter, database, production Web UI, frontend
+business behavior, API Server, message queue, Kafka, Kubernetes, microservice,
+vector database, fabricated SEJ fact or autonomous business action. Only the
+approved read-only synthetic State presentation is in scope for the browser
+package.
 
 ## 日本語
 
@@ -80,11 +86,13 @@ data から、状態を理解し、助けを求め、結果から学ぶ entity �
 ### Current phase と Architecture
 
 現在は Phase 1 — First Living Goods。最小の Goods Identity、Goods Profile、Observation、Expectation、
-Goods State、Health Assessment と local synthetic observation source、CLI composition だけを実装できる。
-Need、Care、Memory、Learning、自律挙動は引き続き禁止する。
+Goods State、Health Assessment、local synthetic observation source、CLI composition と、承認済みの
+`apps/goods-garden-web/` read-only browser presentation だけを実装できる。browser package は synthetic
+`GoodsStateView` projection を表示し、domain behavior を所有しない。Need、Care、Memory、Learning、自律挙動は引き続き禁止する。
 依存は `goods-domain` → `goods-application` → `goods-infrastructure` → `goods-runtime` →
 `goods-garden-cli`。Domain は HTTP、SQL、cloud SDK、LLM provider、Tokio 固有 runtime、JSON transport、
-CLI を知らない。Infrastructure は現在 local synthetic `DemoObservationSource` だけを持つ。
+CLI を知らない。Infrastructure は現在 local synthetic `DemoObservationSource` だけを持つ。frontend は
+Cargo member list の外にある sibling application で、Rust crate や external-system code を import しない。
 
 ### Human decision / AI Cockpit
 
@@ -98,7 +106,9 @@ provider file を上書きしない。
 主張は `KNOWN`、`INFERRED`、`UNKNOWN`、`UNAVAILABLE`、`CONFLICTING` を区別する。不明なら
 `UNKNOWN` と書き、SEJ、POS、inventory、KPI、store operation を創作しない。Human-facing document は
 English、日本語、中文の同等 section を持つ。sales、LLM Agent、emotion、Need/Care Runtime、POS、
-database、UI、API、queue、Kafka、Kubernetes、microservice、vector database、自律 business action は対象外。
+database、production Web UI、frontend business behavior、API、queue、Kafka、Kubernetes、microservice、
+vector database、自律 business action は対象外。承認済みの read-only synthetic State presentation だけが
+browser package の対象である。
 
 ## 中文
 
@@ -110,10 +120,12 @@ Goods Garden 是产品世界。North Star 是把商品从被管理的数据变�
 ### Current phase 与 Architecture
 
 当前是 Phase 1 — First Living Goods。只允许实现有边界的 State demo：最小的 Goods Identity、Goods Profile、
-Observation、Expectation、Goods State、Health Assessment、本地 synthetic observation source 和 CLI 编排。
+Observation、Expectation、Goods State、Health Assessment、本地 synthetic observation source、CLI 编排和获批的
+`apps/goods-garden-web/` 只读浏览器展示。浏览器 package 只消费 synthetic `GoodsStateView` projection，不拥有领域行为。
 Need、Care、Memory、Learning 与自主行为继续禁止。依赖方向为 `goods-domain` → `goods-application` →
 `goods-infrastructure` → `goods-runtime` → `goods-garden-cli`。Domain 不得依赖 HTTP、SQL、云 SDK、LLM provider、
-Tokio-specific runtime、JSON transport 或 CLI；Infrastructure 当前只有本地 synthetic `DemoObservationSource`。
+Tokio-specific runtime、JSON transport 或 CLI；Infrastructure 当前只有本地 synthetic `DemoObservationSource`。frontend 是
+Cargo member list 之外的 sibling application，不得 import Rust crate 或 external-system code。
 
 ### Human decision / AI Cockpit
 
@@ -126,7 +138,8 @@ AI Cockpit 生成的 Summary、evidence、Outcome、archive、decision 记录禁
 所有主张区分 `KNOWN`、`INFERRED`、`UNKNOWN`、`UNAVAILABLE`、`CONFLICTING`；不知道就写 `UNKNOWN`。仓库没有真实
 SEJ 数据；POS schema、库存 API、补货规则、商品 KPI、门店流程只能在明确标记为 `example`、`synthetic` 或
 `hypothesis` 时出现。面向人的文档必须按英文、日语、中文提供等价内容。销售分析、LLM Agent、情绪、Need/Care Runtime、
-POS、数据库、UI、API、消息队列、Kafka、Kubernetes、微服务、Vector DB、虚构 SEJ 事实和自主经营行动均不在范围内。
+POS、数据库、生产 Web UI、前端业务行为、API、消息队列、Kafka、Kubernetes、微服务、Vector DB、虚构 SEJ 事实和自主经营行动
+均不在范围内。只有获批的只读 synthetic State 浏览器展示属于当前 frontend package 范围。
 
 <!-- AI_COCKPIT_ADAPTER_BEGIN provider=codex adapterVersion=1 repositoryId=sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f -->
 

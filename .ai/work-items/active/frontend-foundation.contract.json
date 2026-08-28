@@ -1,0 +1,124 @@
+{
+  "acceptanceCriteria": [
+    "EN: The design specification records the same-repository boundary, independent Node frontend toolchain, cross-platform strategy, data flow, UI boundary, testing and CI plan in English, Japanese and Chinese. JA: design specification が同一 repository boundary、独立 Node frontend toolchain、cross-platform strategy、data flow、UI boundary、testing、CI plan を English、日本語、中文で記録する。ZH: 设计规格以英文、日语、中文记录同仓库边界、独立 Node 前端工具链、跨平台策略、数据流、UI 边界、测试和 CI 计划。",
+    "EN: The approved foundation will keep the frontend outside the Cargo member list and prevent direct imports from goods-domain, database, POS and provider code. JA: 承認後の foundation は frontend を Cargo member list の外に置き、goods-domain、database、POS、provider code の direct import を防ぐ。ZH: 获批后的基础工程将前端置于 Cargo member list 之外，禁止直接导入 goods-domain、数据库、POS 和 provider 代码。",
+    "EN: The specification makes browser-first support explicit, identifies the later Tauri desktop shell option and treats native mobile as a separate decision rather than an implied promise. JA: specification は browser-first support、将来の Tauri desktop shell option、native mobile を別 decision として明示し、暗黙の promise にしない。ZH: 规格明确 browser-first 支持、未来 Tauri desktop shell 选项，并把原生移动端作为单独决策，不作隐含承诺。",
+    "EN: No frontend implementation or external dependency is added before the written specification is reviewed by the human owner. JA: human owner が written specification を review する前に frontend implementation や external dependency を追加しない。ZH: 在项目负责人 review 书面规格前，不增加前端实现或外部依赖。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "a516a3396f48869d6c814a54987ad8004ad27942",
+  "createdAt": "2026-08-28T04:23:17Z",
+  "goal": "EN: A person can run the local frontend demo in a browser and inspect a clearly synthetic Goods State without changing the Rust domain boundary. JA: 人が browser で local frontend demo を実行し、Rust domain boundary を変更せずに明示的な synthetic Goods State を確認できる。ZH: 用户可以在浏览器运行本地前端 demo，并在不改变 Rust domain boundary 的情况下查看明确标记的 synthetic Goods State。",
+  "intent": "EN: Define and implement a same-repository, independently tooled frontend foundation for the Goods Garden read-only State demo. JA: Goods Garden の read-only State demo のために、同一 repository 内で独立した toolchain を持つ frontend foundation を定義し実装する。ZH: 为 Goods Garden 的只读 State demo 定义并实现同一仓库内、工具链独立的前端基础。",
+  "mode": "implementation",
+  "outOfScope": [
+    "real POS or SEJ data",
+    " database",
+    " API server",
+    " HTTP integration",
+    " LLM",
+    " Need",
+    " Care",
+    " Memory",
+    " Learning",
+    " autonomous business action",
+    " frontend business rules",
+    " native mobile implementation",
+    " Tauri shell implementation",
+    " production authentication",
+    " deployment",
+    " design-system migration",
+    " unrelated Rust changes"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:1d050abac05af53d8333395f5cd7bad99387901b675479058c2016c4ade28cf6",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "unknown",
+    "baseRemote": "unknown",
+    "branch": "codex/frontend-foundation",
+    "provider": "unknown",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/.worktrees/goods-garden-frontend-foundation"
+  },
+  "risk": "high",
+  "scenarioCoverage": [
+    {
+      "evidence": [],
+      "expected": "The design specification states the same-repository boundary, independent Node toolchain, browser-first strategy, future platform options, data flow, read-only UI boundary, testing and CI plan in English, Japanese and Chinese.",
+      "required": true,
+      "scenario": "trilingual frontend foundation design is explicit",
+      "status": "unverified",
+      "verificationPlan": "Inspect the design specification for equivalent English, Japanese and Chinese sections covering each required decision."
+    },
+    {
+      "evidence": [],
+      "expected": "The design specification keeps the frontend outside the Cargo member list and forbids direct frontend imports from Rust domain, database, POS and provider implementations.",
+      "required": true,
+      "scenario": "frontend and Rust dependency boundaries are explicit",
+      "status": "unverified",
+      "verificationPlan": "Inspect the design specification and current Cargo workspace declaration for the stated boundary and absence of frontend membership."
+    },
+    {
+      "evidence": [],
+      "expected": "The design specification identifies browser as the first supported surface, records Tauri desktop as a later option, and leaves native mobile as a separate future decision.",
+      "required": true,
+      "scenario": "cross-platform support is bounded",
+      "status": "unverified",
+      "verificationPlan": "Inspect the platform strategy sections and confirm that no native mobile or Tauri implementation is included in this Work Item."
+    },
+    {
+      "evidence": [],
+      "expected": "A developer can run the independent frontend package and see a read-only Goods State view with synthetic provenance labeling, without importing Rust or external-system code.",
+      "required": true,
+      "scenario": "browser demo presents bounded Goods State",
+      "status": "unverified",
+      "verificationPlan": "Run the frontend typecheck, test and build commands; inspect component tests and the package boundary for the read-only synthetic State path."
+    },
+    {
+      "evidence": [],
+      "reason": "This Work Item intentionally defines the frontend boundary before implementation; real POS, SEJ, API and production deployment facts are UNKNOWN and out of scope.",
+      "required": true,
+      "scenario": "real external data boundary",
+      "status": "not_applicable"
+    }
+  ],
+  "scope": [
+    "AGENTS.md",
+    ".ai/**",
+    ".github/workflows/ci.yml",
+    "README.md",
+    "apps/goods-garden-web/**",
+    "docs/README.md",
+    "docs/architecture/frontend.md",
+    "docs/phases/phase-1-first-living-goods.md",
+    "docs/superpowers/plans/2026-08-28-goods-garden-frontend-foundation.md",
+    "docs/superpowers/specs/2026-08-28-goods-garden-frontend-foundation-design.md"
+  ],
+  "sources": [
+    "AGENTS.md",
+    "docs/architecture/clean-architecture.md",
+    "docs/superpowers/specs/2026-08-28-goods-garden-frontend-foundation-design.md",
+    "docs/architecture/overview.md",
+    "docs/phases/phase-1-first-living-goods.md"
+  ],
+  "state": "implementation_active",
+  "verification": [
+    "git diff --check",
+    "cargo fmt --check",
+    "cargo check --workspace",
+    "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+    "cargo test --workspace",
+    "bash tests/architecture/check-boundaries.sh",
+    "npm ci --prefix apps/goods-garden-web",
+    "npm run typecheck --prefix apps/goods-garden-web",
+    "npm test --prefix apps/goods-garden-web",
+    "npm run build --prefix apps/goods-garden-web",
+    "rg -n '^## (English|日本語|中文)' docs/architecture/frontend.md README.md docs/README.md docs/phases/phase-1-first-living-goods.md"
+  ],
+  "workItemId": "frontend-foundation"
+}

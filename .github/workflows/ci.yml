@@ -25,3 +25,26 @@ jobs:
         run: cargo test --workspace
       - name: Architecture boundaries
         run: bash tests/architecture/check-boundaries.sh
+
+  frontend-quality:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/goods-garden-web
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/goods-garden-web/package-lock.json
+      - name: Install frontend dependencies
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Test
+        run: npm test
+      - name: Build
+        run: npm run build
