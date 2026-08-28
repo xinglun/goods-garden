@@ -1,0 +1,58 @@
+{
+  "actor": "human:owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-owner",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "99fa27daa91925db54bcdef7aabda32360664233",
+    "name": "codex/phase-1-first-living-goods",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:a3c5d17ea8c9f8520812ae039e47e841da2c15e99ba0057664e9421a1cbe95b1",
+  "operationId": "github-pr-4-branch-worktree-cleanup",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "7b1880dff6b676c2e38aa3ab575de6edbc5904c4",
+    "headRevision": "99fa27daa91925db54bcdef7aabda32360664233",
+    "mergeCommit": "749e3c9fc01f97c76109cefb299002dd8a555008",
+    "number": 4,
+    "url": "https://github.com/xinglun/goods-garden/pull/4"
+  },
+  "reason": "PR #4 is merged; remove the exact local Phase 1 branch and its historical worktree identity after verified synchronization.",
+  "receiptId": "goods-garden-phase-1-finalization-2026-08-28",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-1-first-living-goods",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/4",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/.worktrees/goods-garden-phase-1"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:99077d36a4531be97a14b33f56ad961e105c620b522dd2c08d84a2a286199089",
+  "runtimeVersion": "0.2.33",
+  "schemaVersion": 1,
+  "timestamp": "2026-08-28T01:43:30Z",
+  "workItemId": "phase-1-first-living-goods",
+  "worktree": {
+    "branch": "codex/phase-1-first-living-goods",
+    "headRevision": "99fa27daa91925db54bcdef7aabda32360664233",
+    "path": "/Users/sei-rinn/dev/workspace_rust/.worktrees/goods-garden-phase-1",
+    "worktreeId": "goods-garden-phase-1-first-living-goods"
+  }
+}
