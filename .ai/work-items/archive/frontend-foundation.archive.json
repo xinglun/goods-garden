@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-08-28T05:08:16Z",
+  "files": {
+    "contractDigest": "sha256:4a600b3dc3f086ad3f3ab89aff24d28a4c6250ac6acf3bf8118dcea8de6d65e4",
+    "contractPath": ".ai/work-items/archive/frontend-foundation.contract.json",
+    "eventsDigest": "sha256:27c89362ff657f8fc40551a8b4d0139615054acde9471aa1fe07febd9137640b",
+    "eventsPath": ".ai/work-items/archive/frontend-foundation.events.jsonl",
+    "outcomeDigest": "sha256:61283cf0912c1b8b593e2e262f25d90fd4b0a215e98dbff6c7fe68c67e4f3650",
+    "outcomePath": ".ai/work-items/archive/frontend-foundation.outcome.json",
+    "summaryDigest": "sha256:517794d29f2532239ba99669a7ca68190e6d8b703bbedb854d2ee9f119a405f5",
+    "summaryPath": ".ai/work-items/archive/frontend-foundation.summary.json",
+    "taskReportDigest": "sha256:ccb0b0df4aa09d617f2192a5a8f018f3ebb6b7fbb4a494ed7c6c5a2ad00f876f",
+    "taskReportMarkdownDigest": "sha256:e37e590c71e76e152f496cdd1fd71d9db1ca0c3b864e6e40792a08efad726d08",
+    "taskReportMarkdownPath": ".ai/work-items/archive/frontend-foundation.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/frontend-foundation.task-report.json"
+  },
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "frontend-foundation"
+}

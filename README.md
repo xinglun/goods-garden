@@ -32,8 +32,9 @@ grounded in state, concern, need, request, explanation and learning result.
 Phase 1 — First Living Goods. The repository now contains a minimal,
 product-independent State demo: a local synthetic observation is converted into
 an Observation, compared with a Goods Profile expectation and rendered as a
-traceable Health Assessment. Real external data and later lifecycle behavior
-remain out of scope.
+traceable Health Assessment. The approved browser companion renders this State
+through an independent frontend package as a read-only synthetic view. Real
+external data and later lifecycle behavior remain out of scope.
 
 ### Run the demo
 
@@ -43,6 +44,16 @@ cargo run -p goods-garden-cli -- demo
 
 The output explicitly labels its input as `synthetic-example` and shows
 identity, observation, expectation and current health.
+
+Run the browser State view:
+
+```bash
+npm ci --prefix apps/goods-garden-web
+npm run dev --prefix apps/goods-garden-web
+```
+
+The browser package is outside the Cargo workspace and shows the same bounded
+State idea using explicitly synthetic frontend data.
 
 ### Architecture
 
@@ -62,6 +73,7 @@ goods-garden-cli
 
 - `crates/` contains the layered Rust workspace.
 - `apps/goods-garden-cli/` is the future application entry point.
+- `apps/goods-garden-web/` is the independently tooled, read-only browser view.
 - `docs/` contains the North Star, architecture, roadmap, ADRs and glossary.
 - `examples/tuna-mayo/` is a product-independent reference profile.
 - `.ai/` contains repository-bound AI Cockpit governance artifacts.
@@ -87,14 +99,20 @@ cargo clippy --workspace --all-targets --all-features -- -D warnings
 cargo test --workspace
 bash tests/architecture/check-boundaries.sh
 cargo run -p goods-garden-cli -- demo
+npm ci --prefix apps/goods-garden-web
+npm run typecheck --prefix apps/goods-garden-web
+npm test --prefix apps/goods-garden-web
+npm run build --prefix apps/goods-garden-web
 ```
 
 ### Non-goals
 
 Phase 1 does not implement sales analysis, anomaly detection, LLM Agents,
-personality, emotion, Need/Care Runtime behavior, real POS, databases, UI, API
-servers, queues, Kafka, Kubernetes, microservices, vector databases or
-autonomous actions. The demo fixture is not SEJ or POS data.
+personality, emotion, Need/Care Runtime behavior, real POS, databases,
+production UI, frontend business behavior, API servers, queues, Kafka,
+Kubernetes, microservices, vector databases or autonomous actions. Only the
+approved read-only browser State presentation is included. The demo fixture is
+not SEJ or POS data.
 
 ## 日本語
 
@@ -124,8 +142,8 @@ request、explanation、learning result に基づく。
 ### 現在の状態
 
 Phase 1 — First Living Goods。商品非依存の最小 State demo を用意する。local synthetic observation を
-Observation に変換し、Goods Profile の expectation と比較して traceable な Health Assessment を表示する。
-real external data と後続 lifecycle の挙動は対象外。
+Observation に変換し、Goods Profile の expectation と比較して traceable な Health Assessment を表示する。承認済みの
+独立 frontend package がこの State を read-only な synthetic view として表示する。real external data と後続 lifecycle の挙動は対象外。
 
 ### Demo の実行
 
@@ -135,6 +153,15 @@ cargo run -p goods-garden-cli -- demo
 
 input は `synthetic-example` と表示され、identity、observation、expectation、current health を確認できる。
 
+Browser view は次で起動する。
+
+```bash
+npm ci --prefix apps/goods-garden-web
+npm run dev --prefix apps/goods-garden-web
+```
+
+frontend は Cargo workspace の外にあり、明示的な synthetic data で bounded State を表示する。
+
 ### Architecture
 
 依存方向は `goods-domain`、`goods-application`、`goods-infrastructure`、`goods-runtime`、
@@ -142,7 +169,7 @@ input は `synthetic-example` と表示され、identity、observation、expecta
 
 ### Project structure
 
-`crates/` は layer、`apps/goods-garden-cli/` は将来の entry point、`docs/` は設計文書、
+`crates/` は layer、`apps/goods-garden-cli/` は将来の entry point、`apps/goods-garden-web/` は独立した read-only browser view、`docs/` は設計文書、
 `examples/tuna-mayo/` は商品非依存の reference profile、`.ai/` は repository-bound AI Cockpit
 governance artifact を含む。
 
@@ -159,9 +186,10 @@ Human-facing documentation は English、日本語、中文の順で三言語化
 
 ### Development と Non-goals
 
-README の English section にある Cargo command を実行する。Phase 1 では sales analysis、anomaly
-detection、LLM Agent、personality、emotion、Need/Care Runtime、real POS、database、UI、API、queue、
-Kafka、Kubernetes、microservice、vector database、自律 action を実装しない。fixture は SEJ や POS の実データではない。
+README の English section にある Cargo と npm command を実行する。Phase 1 では sales analysis、anomaly
+detection、LLM Agent、personality、emotion、Need/Care Runtime、real POS、database、production UI、frontend
+business behavior、API、queue、Kafka、Kubernetes、microservice、vector database、自律 action を実装しない。
+承認済みの read-only browser State presentation だけを含め、fixture は SEJ や POS の実データではない。
 
 ## 中文
 
@@ -188,8 +216,9 @@ State → Need → Care → Action → New State → Memory / Learning
 
 ### 当前状态
 
-Phase 1 — First Living Goods。仓库现在包含一个与具体商品无关的最小 State demo：本地 synthetic observation
-先变成 Observation，再与 Goods Profile expectation 比较，最后生成可追溯的 Health Assessment。真实外部数据和后续生命周期行为仍不在范围内。
+Phase 1 — First Living Goods。仓库现在包含一个与具体商品无关的最小 State demo，并有一个获批的独立前端 package
+以只读方式展示 synthetic State：本地 synthetic observation 先变成 Observation，再与 Goods Profile expectation 比较，最后生成可追溯的
+Health Assessment。真实外部数据和后续生命周期行为仍不在范围内。
 
 ### 运行 demo
 
@@ -199,6 +228,15 @@ cargo run -p goods-garden-cli -- demo
 
 输出会明确标记输入为 `synthetic-example`，并显示 identity、observation、expectation 和当前健康状态。
 
+运行浏览器 State view：
+
+```bash
+npm ci --prefix apps/goods-garden-web
+npm run dev --prefix apps/goods-garden-web
+```
+
+浏览器 package 位于 Cargo workspace 之外，使用明确的 synthetic data 展示有边界的 State。
+
 ### Architecture
 
 依赖方向固定为 `goods-domain`、`goods-application`、`goods-infrastructure`、`goods-runtime`、
@@ -206,7 +244,7 @@ cargo run -p goods-garden-cli -- demo
 
 ### Project structure
 
-`crates/` 保存分层 Rust workspace，`apps/goods-garden-cli/` 是未来应用入口，`docs/` 保存设计文档，
+`crates/` 保存分层 Rust workspace，`apps/goods-garden-cli/` 是未来应用入口，`apps/goods-garden-web/` 是独立的只读浏览器 view，`docs/` 保存设计文档，
 `examples/tuna-mayo/` 是与商品实现无关的参考 profile，`.ai/` 保存仓库绑定的 AI Cockpit governance artifact。
 
 ### AI Cockpit
@@ -221,5 +259,6 @@ hypothesis 不得伪装成运营事实。
 
 ### Development 与 Non-goals
 
-执行 English section 中的 Cargo 命令。Phase 1 不实现销售分析、异常检测、LLM Agent、人格、情绪、Need/Care Runtime、
-真实 POS、数据库、UI、API Server、消息队列、Kafka、Kubernetes、微服务、Vector DB 或自主行动。demo fixture 不是 SEJ 或 POS 实数据。
+执行 English section 中的 Cargo 和 npm 命令。Phase 1 不实现销售分析、异常检测、LLM Agent、人格、情绪、Need/Care Runtime、
+真实 POS、数据库、生产 UI、前端业务行为、API Server、消息队列、Kafka、Kubernetes、微服务、Vector DB 或自主行动。只有获批的只读浏览器
+State presentation 属于当前范围；demo fixture 不是 SEJ 或 POS 实数据。

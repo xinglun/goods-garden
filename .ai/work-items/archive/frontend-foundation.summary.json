@@ -1,0 +1,146 @@
+{
+  "changedPaths": [],
+  "checkpointAt": "2026-08-28T04:26:48Z",
+  "checkpointContractDigest": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:8ab7dd85352879b2ca7b517d7bc78f54c561c4f9d1ac59ee8d800f3c9bff414a",
+      "recorded": true,
+      "recordedAt": "2026-08-28T04:26:48Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:ed917b0a4af2a35e73d49941ba156b7922a97c6934e83b12b389b3eb95886feb",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "frontend-foundation"
+    },
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:68a9da6d843f256b9311690304fdecced69997ad9da8b4e451855098543f49f7",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:8ab7dd85352879b2ca7b517d7bc78f54c561c4f9d1ac59ee8d800f3c9bff414a",
+      "previousContractHash": "sha256:8ab7dd85352879b2ca7b517d7bc78f54c561c4f9d1ac59ee8d800f3c9bff414a",
+      "reason": "Use the Runtime-supported verification evidence class for the final frontend, documentation, CI, and Rust quality validation.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T05:00:03Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:ed917b0a4af2a35e73d49941ba156b7922a97c6934e83b12b389b3eb95886feb",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "frontend-foundation"
+    },
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:8ab7dd85352879b2ca7b517d7bc78f54c561c4f9d1ac59ee8d800f3c9bff414a",
+      "previousContractHash": "sha256:68a9da6d843f256b9311690304fdecced69997ad9da8b4e451855098543f49f7",
+      "reason": "Bind the reviewed GitHub pull request and exact branch/worktree context before final lifecycle delivery.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T05:06:55Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "frontend-foundation"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+  "createdAt": "2026-08-28T04:23:17Z",
+  "intentAlignment": {
+    "evidence": [
+      "AGENTS.md",
+      "docs/architecture/clean-architecture.md",
+      "docs/phases/phase-1-first-living-goods.md"
+    ],
+    "state": "resolved"
+  },
+  "mode": "implementation",
+  "preflightAt": "2026-08-28T05:08:09Z",
+  "preflightContractDigest": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "scenarioCoverage": [
+    {
+      "evidence": [
+        "docs/superpowers/specs/2026-08-28-goods-garden-frontend-foundation-design.md",
+        "docs/architecture/frontend.md",
+        "README.md"
+      ],
+      "expected": "The design specification states the same-repository boundary, independent Node toolchain, browser-first strategy, future platform options, data flow, read-only UI boundary, testing and CI plan in English, Japanese and Chinese.",
+      "required": true,
+      "scenario": "trilingual frontend foundation design is explicit",
+      "status": "verified",
+      "verificationPlan": "Inspect the design specification for equivalent English, Japanese and Chinese sections covering each required decision."
+    },
+    {
+      "evidence": [
+        "Cargo.toml",
+        "docs/architecture/frontend.md",
+        "tests/architecture/check-boundaries.sh"
+      ],
+      "expected": "The design specification keeps the frontend outside the Cargo member list and forbids direct frontend imports from Rust domain, database, POS and provider implementations.",
+      "required": true,
+      "scenario": "frontend and Rust dependency boundaries are explicit",
+      "status": "verified",
+      "verificationPlan": "Inspect the design specification and current Cargo workspace declaration for the stated boundary and absence of frontend membership."
+    },
+    {
+      "evidence": [
+        "docs/superpowers/specs/2026-08-28-goods-garden-frontend-foundation-design.md",
+        "docs/architecture/frontend.md",
+        ".github/workflows/ci.yml"
+      ],
+      "expected": "The design specification identifies browser as the first supported surface, records Tauri desktop as a later option, and leaves native mobile as a separate future decision.",
+      "required": true,
+      "scenario": "cross-platform support is bounded",
+      "status": "verified",
+      "verificationPlan": "Inspect the platform strategy sections and confirm that no native mobile or Tauri implementation is included in this Work Item."
+    },
+    {
+      "evidence": [
+        "apps/goods-garden-web/tests/App.test.tsx",
+        "apps/goods-garden-web/src/view-models/goods-state-view.ts",
+        ".ai/evidence/frontend-foundation.verification.json"
+      ],
+      "expected": "A developer can run the independent frontend package and see a read-only Goods State view with synthetic provenance labeling, without importing Rust or external-system code.",
+      "required": true,
+      "scenario": "browser demo presents bounded Goods State",
+      "status": "verified",
+      "verificationPlan": "Run the frontend typecheck, test and build commands; inspect component tests and the package boundary for the read-only synthetic State path."
+    },
+    {
+      "evidence": [],
+      "reason": "This Work Item intentionally defines the frontend boundary before implementation; real POS, SEJ, API and production deployment facts are UNKNOWN and out of scope.",
+      "required": true,
+      "scenario": "real external data boundary",
+      "status": "not_applicable"
+    }
+  ],
+  "state": "finish_ready",
+  "updatedAt": "2026-08-28T05:08:10Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "frontend-foundation"
+}
