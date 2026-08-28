@@ -38,11 +38,11 @@
     "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
     "branch": "codex/frontend-foundation",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/6",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/.worktrees/goods-garden-frontend-foundation"
   },
   "risk": "high",

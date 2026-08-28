@@ -1,0 +1,136 @@
+{
+  "acceptanceResults": [
+    "EN: The design specification records the same-repository boundary, independent Node frontend toolchain, cross-platform strategy, data flow, UI boundary, testing and CI plan in English, Japanese and Chinese. JA: design specification が同一 repository boundary、独立 Node frontend toolchain、cross-platform strategy、data flow、UI boundary、testing、CI plan を English、日本語、中文で記録する。ZH: 设计规格以英文、日语、中文记录同仓库边界、独立 Node 前端工具链、跨平台策略、数据流、UI 边界、测试和 CI 计划。",
+    "EN: The approved foundation will keep the frontend outside the Cargo member list and prevent direct imports from goods-domain, database, POS and provider code. JA: 承認後の foundation は frontend を Cargo member list の外に置き、goods-domain、database、POS、provider code の direct import を防ぐ。ZH: 获批后的基础工程将前端置于 Cargo member list 之外，禁止直接导入 goods-domain、数据库、POS 和 provider 代码。",
+    "EN: The specification makes browser-first support explicit, identifies the later Tauri desktop shell option and treats native mobile as a separate decision rather than an implied promise. JA: specification は browser-first support、将来の Tauri desktop shell option、native mobile を別 decision として明示し、暗黙の promise にしない。ZH: 规格明确 browser-first 支持、未来 Tauri desktop shell 选项，并把原生移动端作为单独决策，不作隐含承诺。",
+    "EN: No frontend implementation or external dependency is added before the written specification is reviewed by the human owner. JA: human owner が written specification を review する前に frontend implementation や external dependency を追加しない。ZH: 在项目负责人 review 书面规格前，不增加前端实现或外部依赖。"
+  ],
+  "createdAt": "2026-08-28T05:08:10Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:c6c10728b23ddf1c3f2d228e18f12dc596d5e30f08037ea462fb344f03bf3c2a",
+  "evidenceRefs": [
+    ".ai/evidence/frontend-foundation.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/frontend-foundation.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/frontend-foundation.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+      "workItemId": "frontend-foundation"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/frontend-foundation.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run the local frontend demo in a browser and inspect a clearly synthetic Goods State without changing the Rust domain boundary. JA: 人が browser で local frontend demo を実行し、Rust domain boundary を変更せずに明示的な synthetic Goods State を確認できる。ZH: 用户可以在浏览器运行本地前端 demo，并在不改变 Rust domain boundary 的情况下查看明确标记的 synthetic Goods State。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "frontend-foundation"
+  },
+  "taskReportDigest": "sha256:ccb0b0df4aa09d617f2192a5a8f018f3ebb6b7fbb4a494ed7c6c5a2ad00f876f",
+  "taskReportMarkdownDigest": "sha256:e37e590c71e76e152f496cdd1fd71d9db1ca0c3b864e6e40792a08efad726d08",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/frontend-foundation.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "frontend-foundation"
+}

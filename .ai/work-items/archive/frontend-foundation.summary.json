@@ -1,7 +1,7 @@
 {
   "changedPaths": [],
   "checkpointAt": "2026-08-28T04:26:48Z",
-  "checkpointContractDigest": "sha256:68a9da6d843f256b9311690304fdecced69997ad9da8b4e451855098543f49f7",
+  "checkpointContractDigest": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
   "checkpointCount": 1,
   "checkpointEvidence": [
     {
@@ -37,9 +37,29 @@
       "unknownCount": 0,
       "verificationStarted": false,
       "workItemId": "frontend-foundation"
+    },
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:8ab7dd85352879b2ca7b517d7bc78f54c561c4f9d1ac59ee8d800f3c9bff414a",
+      "previousContractHash": "sha256:68a9da6d843f256b9311690304fdecced69997ad9da8b4e451855098543f49f7",
+      "reason": "Bind the reviewed GitHub pull request and exact branch/worktree context before final lifecycle delivery.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T05:06:55Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "frontend-foundation"
     }
   ],
-  "checkpointRepositorySnapshotDigest": "sha256:0c7f09342e08c4018e20abc6c0246ab96d6819a095228d5c50a7eace940b333b",
+  "checkpointRepositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
   "createdAt": "2026-08-28T04:23:17Z",
   "intentAlignment": {
     "evidence": [
@@ -50,13 +70,12 @@
     "state": "resolved"
   },
   "mode": "implementation",
-  "preflightAt": "2026-08-28T05:04:30Z",
-  "preflightContractDigest": "sha256:68a9da6d843f256b9311690304fdecced69997ad9da8b4e451855098543f49f7",
+  "preflightAt": "2026-08-28T05:08:09Z",
+  "preflightContractDigest": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
   "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
-  "preflightRepositorySnapshotDigest": "sha256:0c7f09342e08c4018e20abc6c0246ab96d6819a095228d5c50a7eace940b333b",
+  "preflightRepositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
   "preflightState": "green",
   "protocolVersion": 1,
-  "recoveryRetryPending": true,
   "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
   "scenarioCoverage": [
     {
@@ -115,8 +134,8 @@
       "status": "not_applicable"
     }
   ],
-  "state": "checkpointed",
-  "updatedAt": "2026-08-28T04:56:20.192187+00:00",
+  "state": "finish_ready",
+  "updatedAt": "2026-08-28T05:08:10Z",
   "verification": [
     {
       "check": "project-command-0",

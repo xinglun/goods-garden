@@ -1,0 +1,21 @@
+{
+  "actor": "human-owner",
+  "authoritySource": "user-approved-frontend-foundation",
+  "decidedAt": "2026-08-28T05:07:02Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/evidence/frontend-foundation.verification.json"
+  ],
+  "policyRefs": [],
+  "predecessorContractDigest": "sha256:39f2a13571c6f68e06a972314d0bf722aeb18e39798b609c3e05e4d6f1df58c8",
+  "predecessorSummaryDigest": "sha256:9a6abd0553d2270340ffad5598490eb606966314b01cf73b52cfa1ebec205c67",
+  "predecessorWorkItemId": "frontend-foundation",
+  "reason": "Retry verification after reconciling the stale receipt produced before the Runtime-supported Contract amendment was recorded.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Rerun current Runtime verification and complete finish, archive and close only after green validation.",
+  "runtimeDigest": "sha256:47bbb2114c6337b39055c8f9d521442ea488781b6bf486e57349b313f52d3a1e",
+  "runtimeVersion": "0.2.33",
+  "schemaVersion": 1,
+  "workItemId": "frontend-foundation"
+}

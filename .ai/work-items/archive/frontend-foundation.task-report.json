@@ -1,0 +1,95 @@
+{
+  "bindings": {
+    "evidenceRefs": [
+      ".ai/evidence/frontend-foundation.verification.json"
+    ],
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+    "workItemId": "frontend-foundation"
+  },
+  "format": "ai-cockpit.task-outcome",
+  "humanStatusColor": "green",
+  "schemaVersion": 1,
+  "sections": {
+    "avoidedImpact": [],
+    "deliveredChanges": [],
+    "evidence": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/frontend-foundation.verification.json"
+        ],
+        "inference": false,
+        "text": ".ai/evidence/frontend-foundation.verification.json"
+      }
+    ],
+    "findings": [],
+    "forbiddenClaims": [
+      "merge_authorized_without_human_decision",
+      "release_published_without_release_evidence",
+      "provider_or_enterprise_approval_inferred_from_local_records",
+      "user_visible_benefit_invented_from_implementation_facts"
+    ],
+    "forcedStops": [],
+    "humanDecisions": [],
+    "interventions": [],
+    "limitations": [],
+    "nonRiskExplanations": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/frontend-foundation.summary.json"
+        ],
+        "inference": false,
+        "text": "No repository paths were observed as changed by the current Summary."
+      }
+    ],
+    "outcomeSummary": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/frontend-foundation.verification.json"
+        ],
+        "inference": false,
+        "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+      }
+    ],
+    "recurrencePrevention": [],
+    "residualRisks": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/frontend-foundation.verification.json"
+        ],
+        "inference": false,
+        "text": "Remaining unknown: user_visible_benefit_not_declared"
+      }
+    ],
+    "resolutions": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/frontend-foundation.verification.json"
+        ],
+        "inference": false,
+        "text": "The current verification evidence is valid for this repository and Work Item."
+      }
+    ],
+    "risks": [],
+    "taskOverview": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/frontend-foundation.contract.json"
+        ],
+        "inference": false,
+        "text": "EN: A person can run the local frontend demo in a browser and inspect a clearly synthetic Goods State without changing the Rust domain boundary. JA: 人が browser で local frontend demo を実行し、Rust domain boundary を変更せずに明示的な synthetic Goods State を確認できる。ZH: 用户可以在浏览器运行本地前端 demo，并在不改变 Rust domain boundary 的情况下查看明确标记的 synthetic Goods State。"
+      }
+    ],
+    "warnings": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/frontend-foundation.contract.json"
+        ],
+        "inference": false,
+        "text": "User-visible benefit is not declared by the Work Item owner."
+      }
+    ]
+  },
+  "status": "verified",
+  "workItemId": "frontend-foundation"
+}
