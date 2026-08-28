@@ -1,0 +1,58 @@
+{
+  "actor": "human:owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-owner",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "dd1892553b068676c71a05bed03240b137111b47",
+    "name": "codex/phase-0-foundation",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:5163d43cd92f75223d30b715b94f7c7b880d5c0c11895fd6d24d87484ac40b89",
+  "operationId": "github-pr-1-branch-worktree-cleanup",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "d9d363dacbd201a1a475810d1635e7cef362fd7d",
+    "headRevision": "dd1892553b068676c71a05bed03240b137111b47",
+    "mergeCommit": "14a51a1af19a9e167cb995f3d6555d96c7dae767",
+    "number": 1,
+    "url": "https://github.com/xinglun/goods-garden/pull/1"
+  },
+  "reason": "PR #1 is merged; remove the exact local Phase 0 branch and its historical worktree identity after verified synchronization.",
+  "receiptId": "goods-garden-phase-0-finalization-2026-08-28",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-0-foundation",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/1",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:99077d36a4531be97a14b33f56ad961e105c620b522dd2c08d84a2a286199089",
+  "runtimeVersion": "0.2.33",
+  "schemaVersion": 1,
+  "timestamp": "2026-08-28T00:20:00Z",
+  "workItemId": "phase-0-foundation",
+  "worktree": {
+    "branch": "codex/phase-0-foundation",
+    "headRevision": "dd1892553b068676c71a05bed03240b137111b47",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden",
+    "worktreeId": "goods-garden-phase-0-foundation"
+  }
+}
