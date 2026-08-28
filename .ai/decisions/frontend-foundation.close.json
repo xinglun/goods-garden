@@ -1,0 +1,134 @@
+{
+  "decisionState": "confirmed",
+  "finalReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/frontend-foundation.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:222743cdc506a82660a9a3d67c0e6a5ad07eb6fbd9d1d74bb573eaf774aa78fa",
+      "workItemId": "frontend-foundation"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/frontend-foundation.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json",
+            ".ai/decisions/frontend-foundation.finalize.json",
+            "https://github.com/xinglun/goods-garden/pull/6"
+          ],
+          "inference": false,
+          "text": "Human decision 'approved' by human:repository-owner via reviewed-PR-6-merge-and-exact-cleanup at 2026-08-28T09:50:40Z."
+        }
+      ],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/frontend-foundation.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run the local frontend demo in a browser and inspect a clearly synthetic Goods State without changing the Rust domain boundary. JA: 人が browser で local frontend demo を実行し、Rust domain boundary を変更せずに明示的な synthetic Goods State を確認できる。ZH: 用户可以在浏览器运行本地前端 demo，并在不改变 Rust domain boundary 的情况下查看明确标记的 synthetic Goods State。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/frontend-foundation.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "frontend-foundation"
+  },
+  "finalReportDigest": "sha256:c1f9eee3d1782db57612bbdc5afdc1ce199c32bda03b1b7488a9f5bc6d25b867",
+  "humanDecision": "approved",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceFinalizationHeadDigest": "sha256:54dff64eae9493faaadec524382747e836d2294cc008a713c34a5359e2617c87",
+  "resourceFinalizationHeadPath": ".ai/decisions/frontend-foundation.finalize.json",
+  "resourceFinalizationSequence": 0,
+  "state": "closed",
+  "structuredDecision": {
+    "actor": "human:repository-owner",
+    "authoritySource": "reviewed-PR-6-merge-and-exact-cleanup",
+    "decidedAt": "2026-08-28T09:50:40Z",
+    "decision": "approved",
+    "evidenceRefs": [
+      ".ai/evidence/frontend-foundation.verification.json",
+      ".ai/decisions/frontend-foundation.finalize.json",
+      "https://github.com/xinglun/goods-garden/pull/6"
+    ],
+    "policyRefs": [
+      "AGENTS.md:AI Cockpit usage",
+      "AGENTS.md:canonical delivery order"
+    ],
+    "reason": "Reviewed PR #6 passed all required hosted checks, merged at 2906bd93de608a7a8e0c644a0cd27c203094e86a, and exact branch and worktree cleanup was verified.",
+    "resumeCondition": "Closed; any future change requires a new human-owned Work Item."
+  },
+  "timestamp": "2026-08-28T09:50:48Z",
+  "workItemId": "frontend-foundation"
+}
