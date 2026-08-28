@@ -2,3 +2,5 @@
 
 #[allow(clippy::module_inception)]
 pub mod observation;
+
+pub use observation::Observation;

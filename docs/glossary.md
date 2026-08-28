@@ -9,6 +9,8 @@
 | Goods Garden | The product world experienced by people. |
 | Living Entity | A product/domain model with state, needs, care, outcomes and learning; not a consciousness claim. |
 | State | A representation of a good's current business condition. |
+| Expectation | A profile-derived boundary used to assess the current state. |
+| Health Assessment | An explainable healthy/unhealthy result derived from an observation and expectation. |
 | Need | An explainable condition that calls for care or investigation. |
 | Care | Human or system-supported response to a good's need, subject to authority. |
 | Caregiver | A human participant who can understand, decide and provide care. |
@@ -29,6 +31,8 @@
 | Goods Garden | 人が体験する product world。 |
 | Living Entity | state、need、care、outcome、learning を持つ product/domain model。consciousness の主張ではない。 |
 | State | 商品の現在の business condition の表現。 |
+| Expectation | current state を assess するための profile 由来の boundary。 |
+| Health Assessment | observation と expectation から導く explainable な healthy/unhealthy result。 |
 | Need | care または investigation を必要とする explainable な condition。 |
 | Care | authority に従って need に応答する human または system-supported response。 |
 | Caregiver | 理解し、判断し、care を提供できる human participant。 |
@@ -49,6 +53,8 @@
 | Goods Garden | 人所体验的产品世界。 |
 | Living Entity | 具有状态、需求、照料、结果和学习的产品/领域模型；不代表意识主张。 |
 | State | 商品当前经营状态的表示。 |
+| Expectation | 从 profile 得到、用于评估当前状态的边界。 |
+| Health Assessment | 根据 observation 和 expectation 得出的可解释 healthy/unhealthy 结果。 |
 | Need | 需要照料或调查的可解释条件。 |
 | Care | 受权限约束、对商品需求作出的人工或系统支持响应。 |
 | Caregiver | 能够理解、决定并提供照料的人类参与者。 |

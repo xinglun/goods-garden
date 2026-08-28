@@ -1,4 +1,8 @@
-//! Goods identity placeholder.
+//! Goods identity.
 
 /// Identity of an individual good.
-pub struct GoodsIdentity;
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct GoodsIdentity {
+    pub species: String,
+    pub individual_id: String,
+}

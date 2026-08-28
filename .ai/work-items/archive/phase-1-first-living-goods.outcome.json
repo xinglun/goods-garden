@@ -1,0 +1,146 @@
+{
+  "acceptanceResults": [
+    "EN: Domain types represent Goods Identity, Goods Profile, Observation, Expectation, Goods State and Health Assessment with only the minimal fields needed for this demo. JA: Domain type は Goods Identity、Goods Profile、Observation、Expectation、Goods State、Health Assessment を demo に必要な最小 field だけで表現する。ZH: Domain 类型只用 demo 所需的最小字段表示 Goods Identity、Goods Profile、Observation、Expectation、Goods State 和 Health Assessment。",
+    "EN: The application port owns observation acquisition and the infrastructure adapter is a synthetic DemoObservationSource; no real POS contract or transport dependency is introduced. JA: observation acquisition は application port が所有し、infrastructure adapter は synthetic な DemoObservationSource とする。real POS contract や transport dependency は追加しない。ZH: observation acquisition 由 application port 所有，infrastructure adapter 是 synthetic 的 DemoObservationSource；不增加真实 POS contract 或传输依赖。",
+    "EN: A product-independent runtime observes a Goods value, applies its profile expectation, and produces a traceable health assessment without a tuna-mayo-specific branch. JA: 商品非依存の runtime が Goods を observe し、profile expectation を適用して、ツナマヨ専用分岐なしに traceable な health assessment を生成する。ZH: 与具体商品无关的 runtime 能观察 Goods、应用 profile expectation 并生成可追溯的 health assessment，不出现饭团专用分支。",
+    "EN: The CLI demo runs locally from the repository and visibly labels its input as synthetic/example, showing identity, observation, expectation and current health. JA: CLI demo は repository から local 実行でき、input を synthetic/example と明示し、identity、observation、expectation、current health を表示する。ZH: CLI demo 可以在仓库本地运行，并明确标记输入为 synthetic/example，显示 identity、observation、expectation 和当前健康状态。",
+    "EN: No Need, Care, Memory, Learning, emotion, autonomous action, real POS, database, HTTP, API or LLM behavior is implemented. JA: Need、Care、Memory、Learning、emotion、自律 action、real POS、database、HTTP、API、LLM の挙動を実装しない。ZH: 不实现 Need、Care、Memory、Learning、情绪、自主行动、真实 POS、数据库、HTTP、API 或 LLM 行为。",
+    "EN: English, Japanese and Chinese project documentation records the Phase 1 boundary, synthetic-data limitation and runnable demo path. JA: English、日本語、中文の project documentation が Phase 1 boundary、synthetic-data limitation、demo 実行方法を記録する。ZH: 英文、日语、中文项目文档记录 Phase 1 边界、synthetic 数据限制和 demo 运行方式。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and git diff --check pass. JA: 指定された Cargo quality command、local demo、git diff --check が通る。ZH: 指定的 Cargo quality command、本地 demo 和 git diff --check 全部通过。"
+  ],
+  "createdAt": "2026-08-28T01:40:43Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:6bc78866c4f7bf89c34b652708ea1676dab807d285006e415b83cba4d4e78fa8",
+  "evidenceRefs": [
+    ".ai/evidence/phase-1-first-living-goods.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-1-first-living-goods.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-1-first-living-goods.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4a7c6098266433120b84e89b61696596b300e65b8cc2cbefdd2b256a3485e0b8",
+      "workItemId": "phase-1-first-living-goods"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-1-first-living-goods.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/phase-1-first-living-goods.contract.json"
+        },
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-1-first-living-goods.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/phase-1-first-living-goods.summary.json"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-1-first-living-goods.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-1-first-living-goods.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-1-first-living-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-1-first-living-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-1-first-living-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-1-first-living-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run the local CLI demo and see whether the reference good is healthy, based on a clearly synthetic observation and an explicit expectation. JA: 人が local CLI demo を実行し、明示的な expectation と synthetic observation に基づいて reference good の健康状態を確認できる。ZH: 用户可以运行本地 CLI demo，并根据明确的 expectation 和 synthetic observation 看见该 reference good 是否健康。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-1-first-living-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-1-first-living-goods"
+  },
+  "taskReportDigest": "sha256:901f678e62c521134cf01d5cccb62fe5f42113f350485d3a0eb2fe8e247ca993",
+  "taskReportMarkdownDigest": "sha256:625c7d1f38e7902ccf3130cf9f387e233fe06605a77adcaf99dfd52f287401ca",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-1-first-living-goods.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-1-first-living-goods"
+}

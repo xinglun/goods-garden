@@ -2,17 +2,18 @@
 
 ## English
 
-This crate owns future external-system adapters. Phase 0 creates only adapter
-boundaries; it does not select PostgreSQL, SQLite, AWS, an LLM provider, an HTTP
-client, POS, inventory, weather, or simulator behavior.
+This crate owns external-system adapters. Phase 1 contains only the local
+synthetic `DemoObservationSource` for the demo; it does not select PostgreSQL,
+SQLite, AWS, an LLM provider, an HTTP client, a real POS contract, inventory or
+weather integration.
 
 ## 日本語
 
-この crate は将来の外部 system adapter を所有する。Phase 0 では adapter boundary だけを
-作り、PostgreSQL、SQLite、AWS、LLM provider、HTTP client、POS、inventory、weather、
-simulator の挙動は選択も実装もしない。
+この crate は外部 system adapter を所有する。Phase 1 では demo 用の local synthetic
+`DemoObservationSource` だけを置く。PostgreSQL、SQLite、AWS、LLM provider、HTTP client、real POS contract、
+inventory、weather integration は選択も実装もしない。
 
 ## 中文
 
-此 crate 负责未来的外部系统 adapter。Phase 0 只创建 adapter 边界，不选择或实现
-PostgreSQL、SQLite、AWS、LLM provider、HTTP client、POS、库存、天气或 simulator 行为。
+此 crate 负责外部系统 adapter。Phase 1 只包含 demo 使用的本地 synthetic `DemoObservationSource`；不选择或实现
+PostgreSQL、SQLite、AWS、LLM provider、HTTP client、真实 POS contract、库存或天气接入。

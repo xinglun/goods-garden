@@ -1,7 +1,7 @@
-//! External adapter ownership placeholders for Goods Garden.
+//! External adapter ownership for Goods Garden.
 //!
-//! No database, provider SDK, HTTP client, POS contract or simulator behavior
-//! is introduced in Phase 0.
+//! Phase 1 contains only a local synthetic observation adapter. No database,
+//! provider SDK, HTTP client or real POS contract is introduced.
 
 pub mod inventory;
 pub mod llm;

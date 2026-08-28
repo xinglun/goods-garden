@@ -29,10 +29,20 @@ grounded in state, concern, need, request, explanation and learning result.
 
 ### Current status
 
-Phase 0 — Foundation. The repository contains the Rust workspace boundary,
-placeholder modules, governed development setup, documentation baseline,
-reference object and CI quality gates. Concrete product behavior is out of
-scope.
+Phase 1 — First Living Goods. The repository now contains a minimal,
+product-independent State demo: a local synthetic observation is converted into
+an Observation, compared with a Goods Profile expectation and rendered as a
+traceable Health Assessment. Real external data and later lifecycle behavior
+remain out of scope.
+
+### Run the demo
+
+```bash
+cargo run -p goods-garden-cli -- demo
+```
+
+The output explicitly labels its input as `synthetic-example` and shows
+identity, observation, expectation and current health.
 
 ### Architecture
 
@@ -76,14 +86,15 @@ cargo check --workspace
 cargo clippy --workspace --all-targets --all-features -- -D warnings
 cargo test --workspace
 bash tests/architecture/check-boundaries.sh
+cargo run -p goods-garden-cli -- demo
 ```
 
 ### Non-goals
 
-Phase 0 does not implement sales analysis, anomaly detection, LLM Agents,
-personality, emotion, Need/Care Runtime behavior, POS, databases, UI, API
+Phase 1 does not implement sales analysis, anomaly detection, LLM Agents,
+personality, emotion, Need/Care Runtime behavior, real POS, databases, UI, API
 servers, queues, Kafka, Kubernetes, microservices, vector databases or
-autonomous actions.
+autonomous actions. The demo fixture is not SEJ or POS data.
 
 ## 日本語
 
@@ -112,8 +123,17 @@ request、explanation、learning result に基づく。
 
 ### 現在の状態
 
-Phase 0 — Foundation。Rust workspace boundary、placeholder module、governed development
-setup、documentation、reference object、CI quality gate を用意する。具体的な商品挙動は対象外。
+Phase 1 — First Living Goods。商品非依存の最小 State demo を用意する。local synthetic observation を
+Observation に変換し、Goods Profile の expectation と比較して traceable な Health Assessment を表示する。
+real external data と後続 lifecycle の挙動は対象外。
+
+### Demo の実行
+
+```bash
+cargo run -p goods-garden-cli -- demo
+```
+
+input は `synthetic-example` と表示され、identity、observation、expectation、current health を確認できる。
 
 ### Architecture
 
@@ -139,9 +159,9 @@ Human-facing documentation は English、日本語、中文の順で三言語化
 
 ### Development と Non-goals
 
-README の English section にある Cargo command を実行する。Phase 0 では sales analysis、anomaly
-detection、LLM Agent、personality、emotion、Need/Care Runtime、POS、database、UI、API、queue、
-Kafka、Kubernetes、microservice、vector database、自律 action を実装しない。
+README の English section にある Cargo command を実行する。Phase 1 では sales analysis、anomaly
+detection、LLM Agent、personality、emotion、Need/Care Runtime、real POS、database、UI、API、queue、
+Kafka、Kubernetes、microservice、vector database、自律 action を実装しない。fixture は SEJ や POS の実データではない。
 
 ## 中文
 
@@ -168,8 +188,16 @@ State → Need → Care → Action → New State → Memory / Learning
 
 ### 当前状态
 
-Phase 0 — Foundation。已规划 Rust workspace 边界、占位模块、受治理开发环境、文档基线、
-reference object 和 CI 质量门。具体商品行为不在本阶段范围内。
+Phase 1 — First Living Goods。仓库现在包含一个与具体商品无关的最小 State demo：本地 synthetic observation
+先变成 Observation，再与 Goods Profile expectation 比较，最后生成可追溯的 Health Assessment。真实外部数据和后续生命周期行为仍不在范围内。
+
+### 运行 demo
+
+```bash
+cargo run -p goods-garden-cli -- demo
+```
+
+输出会明确标记输入为 `synthetic-example`，并显示 identity、observation、expectation 和当前健康状态。
 
 ### Architecture
 
@@ -193,5 +221,5 @@ hypothesis 不得伪装成运营事实。
 
 ### Development 与 Non-goals
 
-执行 English section 中的 Cargo 命令。Phase 0 不实现销售分析、异常检测、LLM Agent、人格、情绪、
-Need/Care Runtime、POS、数据库、UI、API Server、消息队列、Kafka、Kubernetes、微服务、Vector DB 或自主行动。
+执行 English section 中的 Cargo 命令。Phase 1 不实现销售分析、异常检测、LLM Agent、人格、情绪、Need/Care Runtime、
+真实 POS、数据库、UI、API Server、消息队列、Kafka、Kubernetes、微服务、Vector DB 或自主行动。demo fixture 不是 SEJ 或 POS 实数据。

@@ -7,6 +7,7 @@ rust-version.workspace = true
 
 [dependencies]
 goods-application = { path = "../goods-application" }
+goods-domain = { path = "../goods-domain" }
 
 [lints.rust]
 unsafe_code = "forbid"

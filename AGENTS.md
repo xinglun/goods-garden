@@ -14,10 +14,11 @@ understand state, ask for help and learn from outcomes.
 
 ### Current phase
 
-Phase 0 — Foundation. The agent must not implement real Goods Intelligence
-behavior in this phase. Placeholder creation, formatting, module wiring,
-simple test setup, CI configuration, non-semantic refactoring and documentation
-formatting are permitted within scope.
+Phase 1 — First Living Goods. The agent may implement only the bounded State
+demo: minimal Goods Identity, Goods Profile, Observation, Expectation, Goods
+State and Health Assessment, plus a local synthetic observation source and CLI
+composition. Need, Care, Memory, Learning and autonomous behavior remain
+prohibited.
 
 ### Architecture rules
 
@@ -26,7 +27,9 @@ The dependency direction is `goods-domain` → `goods-application` →
 means the downstream layer may depend on the upstream layer. Domain owns
 domain language and has no HTTP, SQL, cloud SDK, LLM provider, Tokio-specific
 runtime, JSON transport or CLI dependency. Application owns use cases and
-ports. Infrastructure owns future adapters. Runtime owns future orchestration.
+ports. Infrastructure owns future adapters and currently contains only the
+local synthetic `DemoObservationSource`. Runtime owns the bounded Observe →
+Assess composition and future orchestration.
 
 ### Human decision boundaries
 
@@ -76,11 +79,12 @@ data から、状態を理解し、助けを求め、結果から学ぶ entity �
 
 ### Current phase と Architecture
 
-現在は Phase 0 — Foundation。real Goods Intelligence の挙動を実装しない。placeholder、formatting、
-module wiring、simple test、CI、non-semantic refactoring、documentation formatting は scope 内。
+現在は Phase 1 — First Living Goods。最小の Goods Identity、Goods Profile、Observation、Expectation、
+Goods State、Health Assessment と local synthetic observation source、CLI composition だけを実装できる。
+Need、Care、Memory、Learning、自律挙動は引き続き禁止する。
 依存は `goods-domain` → `goods-application` → `goods-infrastructure` → `goods-runtime` →
 `goods-garden-cli`。Domain は HTTP、SQL、cloud SDK、LLM provider、Tokio 固有 runtime、JSON transport、
-CLI を知らない。
+CLI を知らない。Infrastructure は現在 local synthetic `DemoObservationSource` だけを持つ。
 
 ### Human decision / AI Cockpit
 
@@ -105,10 +109,11 @@ Goods Garden 是产品世界。North Star 是把商品从被管理的数据变�
 
 ### Current phase 与 Architecture
 
-当前是 Phase 0 — Foundation。本阶段禁止实现真实 Goods Intelligence 行为。可以处理 placeholder、格式化、
-模块接线、简单测试、CI 配置、非语义重构和文档格式。依赖方向为 `goods-domain` → `goods-application` →
+当前是 Phase 1 — First Living Goods。只允许实现有边界的 State demo：最小的 Goods Identity、Goods Profile、
+Observation、Expectation、Goods State、Health Assessment、本地 synthetic observation source 和 CLI 编排。
+Need、Care、Memory、Learning 与自主行为继续禁止。依赖方向为 `goods-domain` → `goods-application` →
 `goods-infrastructure` → `goods-runtime` → `goods-garden-cli`。Domain 不得依赖 HTTP、SQL、云 SDK、LLM provider、
-Tokio-specific runtime、JSON transport 或 CLI。
+Tokio-specific runtime、JSON transport 或 CLI；Infrastructure 当前只有本地 synthetic `DemoObservationSource`。
 
 ### Human decision / AI Cockpit
 

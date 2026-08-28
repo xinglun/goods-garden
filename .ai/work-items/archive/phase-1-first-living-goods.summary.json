@@ -1,0 +1,231 @@
+{
+  "changedPaths": [
+    ".ai/work-items/archive/phase-1-first-living-goods.contract.json",
+    ".ai/work-items/archive/phase-1-first-living-goods.summary.json"
+  ],
+  "checkpointAt": "2026-08-28T01:17:30Z",
+  "checkpointContractDigest": "sha256:4cc5624a31166c4a27ec325869874674e167cb1b8a222d6efaa979adf725aa35",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:17:30Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:ea8d951ef7b1eafa7c38e9c73a4b68ca9fe0988686d28a91c85fe858e0cc3e1b",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:4895bb0db3898df648f3e35f1c4fe82155290d8be53b6ab467d87f85fa5b0bcd",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "reason": "Use the CLI package integration-test location so Phase 1 behavior tests are compiled by cargo test in the virtual workspace.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:17:51Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:ea8d951ef7b1eafa7c38e9c73a4b68ca9fe0988686d28a91c85fe858e0cc3e1b",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:50095081cdd1033b3c3f50b6e018f228bcc36dcd5084e799dc87f1dc0c928f5f",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:4895bb0db3898df648f3e35f1c4fe82155290d8be53b6ab467d87f85fa5b0bcd",
+      "reason": "Add the two internal dependency manifests needed to wire Domain types through Infrastructure and CLI without adding external dependencies.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:18:19Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:ea8d951ef7b1eafa7c38e9c73a4b68ca9fe0988686d28a91c85fe858e0cc3e1b",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:92507f9d74f4b1bed4ca400c981babbb0f490cf0c706bb0025d6544b93a914f1",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:50095081cdd1033b3c3f50b6e018f228bcc36dcd5084e799dc87f1dc0c928f5f",
+      "reason": "Add the runtime internal Domain dependency required by the declared Observe → Assess composition.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:22:15Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:07374beb709f2d763c8b93d95a0f78035b335a43241f5b043d6e4f74525050ec",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:7fddc9f7cac04420111afdc8757f3c9a60c0f3de13069d56e1644b6c4e8a474c",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:92507f9d74f4b1bed4ca400c981babbb0f490cf0c706bb0025d6544b93a914f1",
+      "reason": "Update the trilingual crate and CLI READMEs so their current-phase statements agree with the bounded Phase 1 State demo.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:23:10Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:654a2198872c00dd6fc9e3138814aff98d9f3e876397413a1dd1afeb706cb819",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:f43c476a7dcedd4b59bc75452ddfffcb2ed86234449aba8df15ad8f4768b0e90",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:7fddc9f7cac04420111afdc8757f3c9a60c0f3de13069d56e1644b6c4e8a474c",
+      "reason": "Include Cargo.lock because Cargo updated it while recording the newly declared internal workspace dependencies.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:28:07Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:3976d76a9efe854909b318f1e4fe27a9a819e8abc159408b1d5ea96d9ce5f96b",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:1d253cf5964a77c6fce5aa6a909b6ccd368f9deeea0b389bd812cac75b28546a",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:f43c476a7dcedd4b59bc75452ddfffcb2ed86234449aba8df15ad8f4768b0e90",
+      "reason": "Allow repository-bound AI Cockpit lifecycle projections under .ai/** to remain in the governed Work Item scope.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:31:40Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4a7c6098266433120b84e89b61696596b300e65b8cc2cbefdd2b256a3485e0b8",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    },
+    {
+      "acceptanceCount": 7,
+      "contractHash": "sha256:5f0d7ebc72f18ae5e0f402959c20725f16ff69aa6d2997fa58f602ef7b83bbf3",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:ef81a0692f37df900a54fe7661dd2f56740c7d39a9ac6960adc181874602e265",
+      "previousContractHash": "sha256:1d253cf5964a77c6fce5aa6a909b6ccd368f9deeea0b389bd812cac75b28546a",
+      "reason": "Include the three changed crate lib.rs module-export files required to expose the Phase 1 Domain, Infrastructure and Runtime surfaces.",
+      "recorded": true,
+      "recordedAt": "2026-08-28T01:32:35Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:4a7c6098266433120b84e89b61696596b300e65b8cc2cbefdd2b256a3485e0b8",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-1-first-living-goods"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:4a7c6098266433120b84e89b61696596b300e65b8cc2cbefdd2b256a3485e0b8",
+  "createdAt": "2026-08-28T01:05:39Z",
+  "failedGate": "finish.governance",
+  "intentAlignment": {
+    "evidence": [
+      "docs/phases/phase-1-first-living-goods.md",
+      "docs/architecture/domain-model.md",
+      "apps/goods-garden-cli/src/main.rs"
+    ],
+    "state": "resolved"
+  },
+  "mode": "code",
+  "outcomeState": "blocked",
+  "preflightAt": "2026-08-28T01:40:34Z",
+  "preflightContractDigest": "sha256:4cc5624a31166c4a27ec325869874674e167cb1b8a222d6efaa979adf725aa35",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:4a7c6098266433120b84e89b61696596b300e65b8cc2cbefdd2b256a3485e0b8",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "recoveryCondition": "Repair the Contract or governance projection, rerun preflight, and retry finish.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "scenarioCoverage": [
+    {
+      "evidence": [
+        "apps/goods-garden-cli/tests/phase_1_demo.rs",
+        "examples/tuna-mayo/observation.example.txt"
+      ],
+      "required": true,
+      "scenario": "synthetic observation within profile expectation",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "apps/goods-garden-cli/tests/phase_1_demo.rs",
+        "crates/goods-domain/src/state/goods_state.rs"
+      ],
+      "required": true,
+      "scenario": "synthetic observation beyond profile expectation",
+      "status": "verified"
+    },
+    {
+      "evidence": [
+        "apps/goods-garden-cli/tests/phase_1_demo.rs",
+        "crates/goods-runtime/src/runtime.rs"
+      ],
+      "required": true,
+      "scenario": "profile replacement remains product-independent",
+      "status": "verified"
+    },
+    {
+      "evidence": [],
+      "reason": "Phase 1 intentionally uses only a local synthetic fixture; real POS and SEJ data are UNKNOWN and out of scope.",
+      "required": true,
+      "scenario": "real external data boundary",
+      "status": "not_applicable"
+    }
+  ],
+  "state": "finish_ready",
+  "updatedAt": "2026-08-28T01:40:43Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "phase-1-first-living-goods"
+}

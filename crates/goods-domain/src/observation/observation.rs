@@ -1,4 +1,9 @@
-//! Observation placeholder.
+//! Observation value object.
 
 /// A sensory input to the living-goods model.
-pub struct Observation;
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct Observation {
+    pub source: String,
+    pub observed_at: String,
+    pub age_hours: u32,
+}
