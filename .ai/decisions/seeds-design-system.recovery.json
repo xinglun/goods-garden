@@ -1,0 +1,27 @@
+{
+  "actor": "human:repository-owner",
+  "authoritySource": "repository-local-authorized-retry",
+  "decidedAt": "2026-08-31T06:51:31Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/evidence/seeds-design-system.verification.json",
+    ".ai/work-items/active/seeds-design-system.outcome.json",
+    ".ai/work-items/active/seeds-design-system.events.jsonl"
+  ],
+  "policyRefs": [
+    "AGENTS.md:recovery-retry-boundary"
+  ],
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorEventsDigest": "sha256:00afc83253c97eda98ea289d5dad0223620d45192a6f509cac225bba596064f5",
+  "predecessorOutcomeDigest": "sha256:060805493fe9cf3ce6153dd0545f4dbfe7c70040df9ce9129aa0b09270e54e01",
+  "predecessorSummaryDigest": "sha256:3e5ef480a3a98feb1c8e0c7a7ae98424e3871c62c15e68d9a8b6181d27cf7194",
+  "predecessorWorkItemId": "seeds-design-system",
+  "reason": "Refresh the current Runtime-bound verification after the finalization-plan Contract amendment exposed stale prior verification evidence.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Run fresh preflight and verification against the bound Contract, then retry finish.",
+  "runtimeDigest": "sha256:6b3bd6617c6372a17b1edf6f9dc9dbc016779146f67262265fd12d2a488bbc53",
+  "runtimeVersion": "0.2.47",
+  "schemaVersion": 1,
+  "workItemId": "seeds-design-system"
+}

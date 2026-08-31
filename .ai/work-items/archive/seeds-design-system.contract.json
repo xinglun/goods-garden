@@ -27,11 +27,11 @@
     "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin",
     "branch": "codex/seeds-design-system",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "local",
+    "pullRequest": "not_applicable",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/seeds-design-system"
   },
   "risk": "normal",

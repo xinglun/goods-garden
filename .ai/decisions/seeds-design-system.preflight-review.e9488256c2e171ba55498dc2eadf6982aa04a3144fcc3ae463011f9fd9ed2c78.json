@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:7daa249112af7a8a43f4a680bb8e8844d3a1d6a08363384940a65d3ace1058a2",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:e9e022bbd2c0b69d457c9c3ccefbf06df78d3a68482834dab0d3d03275e3c04d",
+  "reason": "The human explicitly requested continuation of the approved seeds-design-system Contract work after the scoped final-review fixes.",
+  "recordedAt": "2026-08-31T06:18:00Z",
+  "recordedBy": "human",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:c9537320e0c57f2405a9fe6370b2502a20572a96562e52c221b9b99c2835b3a8",
+  "schemaVersion": 1,
+  "workItemId": "seeds-design-system"
+}
