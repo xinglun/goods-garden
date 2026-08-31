@@ -1,0 +1,84 @@
+{
+  "changedPaths": [
+    ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+    ".ai/work-items/archive/seeds-design-system-finalization-recovery.contract.json",
+    ".ai/work-items/archive/seeds-design-system-finalization-recovery.summary.json"
+  ],
+  "checkpointAt": "2026-08-31T07:23:18Z",
+  "checkpointContractDigest": "sha256:4ed3a0f4007894ee9625d2ca654facb20633218ea4909907fcdbc3ca2b6df4e6",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 3,
+      "contractHash": "sha256:165c4efd4872856e47bb7abf83f4f1bfd137fcfcc9e06bac22dce4f47b73f342",
+      "recorded": true,
+      "recordedAt": "2026-08-31T07:23:18Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "seeds-design-system-finalization-recovery"
+    },
+    {
+      "acceptanceCount": 3,
+      "contractHash": "sha256:4ed3a0f4007894ee9625d2ca654facb20633218ea4909907fcdbc3ca2b6df4e6",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:165c4efd4872856e47bb7abf83f4f1bfd137fcfcc9e06bac22dce4f47b73f342",
+      "previousContractHash": "sha256:165c4efd4872856e47bb7abf83f4f1bfd137fcfcc9e06bac22dce4f47b73f342",
+      "reason": "Align required evidence classes with the Runtime contract: preflight requires verification; finalization and human outcome remain post-merge lifecycle acceptance evidence.",
+      "recorded": true,
+      "recordedAt": "2026-08-31T07:25:26Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "seeds-design-system-finalization-recovery"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "createdAt": "2026-08-31T07:20:31Z",
+  "decisionEvidence": {
+    "contractDigest": "sha256:4ed3a0f4007894ee9625d2ca654facb20633218ea4909907fcdbc3ca2b6df4e6",
+    "decision": "confirm_review",
+    "decisionId": "contract-preflight-review",
+    "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+    "reason": "The repository owner explicitly authorized completing the bounded WI workflow after fresh verification evidence was recorded for the amended Contract.",
+    "recordedAt": "2026-08-31T07:45:00Z",
+    "recordedBy": "human:repository-owner",
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+    "schemaVersion": 1,
+    "workItemId": "seeds-design-system-finalization-recovery"
+  },
+  "failedGate": "finish.verification",
+  "mode": "code",
+  "outcomeState": "blocked",
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorWorkItemId": "seeds-design-system",
+  "preflightAt": "2026-08-31T07:26:17Z",
+  "preflightContractDigest": "sha256:4ed3a0f4007894ee9625d2ca654facb20633218ea4909907fcdbc3ca2b6df4e6",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "recoveryCondition": "Record valid current verification evidence, rerun preflight, and retry finish.",
+  "recoveryDecisionPath": ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "finish_ready",
+  "updatedAt": "2026-08-31T07:26:21Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "seeds-design-system-finalization-recovery"
+}

@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-08-31T07:26:27Z",
+  "files": {
+    "contractDigest": "sha256:924b8858c94ac610f35a6a70055e9c34454d4c40eff347553f00e6bbba526555",
+    "contractPath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.contract.json",
+    "eventsDigest": "sha256:ef2bd725d48ab6c498d9048c4192bd2cb9cdc65a00e531bab5c61dde6e7bea57",
+    "eventsPath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.events.jsonl",
+    "outcomeDigest": "sha256:b512bd4aefd503c9b32e1c595975bb358cde082595a8e584a30c8e60076a6ba5",
+    "outcomePath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.outcome.json",
+    "summaryDigest": "sha256:caaff28f87c1d945b5115056cca2f8e194c60ee8adf1ed4d8224057b65c62251",
+    "summaryPath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.summary.json",
+    "taskReportDigest": "sha256:37ee2767b21fcc954583ced2afe94d3b1662792edcdaf55c3b86319e7ca5ddf5",
+    "taskReportMarkdownDigest": "sha256:82c84e96a8913aeab1b6acd7682b419dce2b8fd64ec2aae57ff478b49f213f58",
+    "taskReportMarkdownPath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/seeds-design-system-finalization-recovery.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "seeds-design-system-finalization-recovery"
+}

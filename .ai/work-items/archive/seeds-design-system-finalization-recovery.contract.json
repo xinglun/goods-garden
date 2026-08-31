@@ -23,16 +23,14 @@
   "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
   "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
   "requiredEvidenceClasses": [
-    "native_runtime_evidence",
-    "resource_finalization_receipt",
-    "human_outcome"
+    "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin",
     "branch": "codex/seeds-design-system-finalization-recovery-v2",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/9",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/seeds-design-system-finalization-recovery-v2"
   },
   "risk": "normal",
