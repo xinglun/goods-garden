@@ -1,8 +1,12 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { App } from "../src/App";
 import { SEEDS_MODES } from "../src/design-system/modes";
 import type { GoodsStateView } from "../src/view-models/goods-state-view";
+
+const stylesSource = readFileSync(resolve(process.cwd(), "src/styles.css"), "utf8");
 
 afterEach(() => {
   document.documentElement.removeAttribute("data-seeds-mode");
@@ -74,5 +78,19 @@ describe("Goods Garden State view", () => {
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(screen.queryByRole("form")).not.toBeInTheDocument();
     expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  });
+
+  it("uses SEEDS semantic and material properties for the presentation surface", () => {
+    expect(stylesSource).toContain("--seeds-semantic-surface-canvas");
+    expect(stylesSource).toContain("--seeds-semantic-text-primary");
+    expect(stylesSource).toContain("--seeds-semantic-border-default");
+    expect(stylesSource).toContain("--seeds-semantic-state-success-bg");
+    expect(stylesSource).toContain("--seeds-semantic-state-error-bg");
+    expect(stylesSource).toContain("--seeds-semantic-state-warning-bg");
+    expect(stylesSource).toContain("--seeds-material-spacing-16");
+    expect(stylesSource).toContain("--seeds-material-radius-lg");
+    expect(stylesSource).toContain("--seeds-material-typography-body-l-font-size");
+    expect(stylesSource).not.toMatch(/#[0-9a-fA-F]{3,8}|rgba?\(/);
+    expect(stylesSource).not.toMatch(/--seeds-primitive-/);
   });
 });
