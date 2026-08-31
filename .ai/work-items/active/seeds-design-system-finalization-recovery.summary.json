@@ -1,0 +1,17 @@
+{
+  "changedPaths": [
+    ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json"
+  ],
+  "checkpointCount": 0,
+  "createdAt": "2026-08-31T07:15:46Z",
+  "mode": "code",
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorWorkItemId": "seeds-design-system",
+  "preflightState": "not_run",
+  "protocolVersion": 1,
+  "recoveryDecisionPath": ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "not_ready",
+  "updatedAt": "2026-08-31T07:15:46Z",
+  "workItemId": "seeds-design-system-finalization-recovery"
+}

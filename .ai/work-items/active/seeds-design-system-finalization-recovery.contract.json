@@ -1,0 +1,59 @@
+{
+  "acceptanceCriteria": [
+    "EN: Preserve the predecessor archive and recovery history without rewriting its bytes, and bind this successor to the exact repository and predecessor Contract digest. JA: predecessor の archive と recovery history の bytes を書き換えず保持し、この successor を正確な repository と predecessor Contract digest に bind する。ZH: 保留 predecessor archive 与 recovery history，不改写其 bytes，并将本 successor 绑定到准确的 repository 与 predecessor Contract digest。",
+    "EN: Bind the reviewed GitHub pull request, merge commit, base revision, branch, and worktree in the successor resource finalization context before verification. JA: verification 前に、已审阅 GitHub pull request、merge commit、base revision、branch、worktree を successor の resource finalization context に bind する。ZH: 在 verification 之前，将已审阅的 GitHub pull request、merge commit、base revision、branch、worktree 绑定到 successor resource finalization context。",
+    "EN: Complete the reviewed delivery, remove only the exact merged successor branch and worktree, record Deleted finalization, verify it with the installed Runtime, and close with an explicit human decision. JA: reviewed delivery を完了し、正確な merged successor branch と worktree だけを削除し、Deleted finalization を記録し、installed Runtime で検証し、明示的な human decision で close する。ZH: 完成审阅交付，仅删除准确的已合并 successor branch 与 worktree，记录 Deleted finalization，使用已安装 Runtime 验证，并以明确的人类决定 close。"
+  ],
+  "authority": "authorized:repository-owner",
+  "baseRevision": "e5041fdc497b8275c3a382a9bc6675a6115abbea",
+  "createdAt": "2026-08-31T07:15:46Z",
+  "goal": "EN: Complete the post-merge resource finalization boundary for the already delivered SEEDS design-system integration while keeping the predecessor's immutable governance history. JA: 既に delivery 済みの SEEDS design-system integration について、predecessor の immutable governance history を保持したまま post-merge resource finalization boundary を完了する。ZH: 在保留 predecessor 不可变治理历史的同时，完成已交付 SEEDS design-system integration 的 post-merge resource finalization boundary。",
+  "intent": "EN: Recover the stale local-only finalization context through a narrow, identity-bound successor so the actual reviewed PR resources are finalized and the lineage can be closed honestly. JA: stale な local-only finalization context を、正確な reviewed PR resource を finalization し lineage を正直に close できる、狭く identity-bound な successor で回復する。ZH: 通过范围窄且身份绑定的 successor 修复过时的 local-only finalization context，从而准确完成已审阅 PR 资源收尾并诚实关闭 lineage。",
+  "mode": "code",
+  "outOfScope": [
+    "EN: Changing Goods Garden product behavior, domain semantics, or the approved SEEDS design-system implementation. JA: Goods Garden の product behavior、domain semantics、または承認済み SEEDS design-system implementation の変更。ZH: 更改 Goods Garden 产品行为、领域语义或已批准的 SEEDS design-system 实现。",
+    "EN: Rewriting or deleting predecessor archive, evidence, outcome, recovery, or decision bytes. JA: predecessor の archive、evidence、outcome、recovery、decision bytes の書き換えまたは削除。ZH: 改写或删除 predecessor archive、evidence、outcome、recovery、decision bytes。",
+    "EN: Editing global Agent/MCP configuration, credentials, or provider settings. JA: global Agent/MCP configuration、credentials、provider settings の編集。ZH: 编辑全局 Agent/MCP 配置、凭据或 provider 设置。"
+  ],
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorWorkItemId": "seeds-design-system",
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "recoveryDecisionPath": ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "requiredEvidenceClasses": [
+    "native_runtime_evidence",
+    "resource_finalization_receipt",
+    "human_outcome"
+  ],
+  "resourceContext": {
+    "baseBranch": "unknown",
+    "baseRemote": "unknown",
+    "branch": "codex/seeds-design-system-finalization-recovery",
+    "provider": "unknown",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/seeds-design-system-finalization-recovery"
+  },
+  "risk": "normal",
+  "scope": [
+    ".ai/**"
+  ],
+  "sources": [
+    "AGENTS.md",
+    ".ai/README.md",
+    ".ai/glossary.md",
+    "https://github.com/xinglun/goods-garden/pull/7"
+  ],
+  "state": "not_ready",
+  "unknowns": [
+    "UNKNOWN: The installed Runtime 0.2.47 cannot amend the predecessor's immutable local-only resource context; the successor recovery path is required."
+  ],
+  "verification": [
+    "make -f Makefile.ai quality",
+    "npm --prefix apps/goods-garden-web run typecheck",
+    "npm --prefix apps/goods-garden-web test",
+    "npm --prefix apps/goods-garden-web run build"
+  ],
+  "workItemId": "seeds-design-system-finalization-recovery"
+}
