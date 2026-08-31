@@ -175,6 +175,39 @@ describe("SEEDS theme generator", () => {
     expect(() => validateAndResolveImport(component)).toThrow(/component|layer/i);
   });
 
+  it("rejects malformed SEEDS paths and aliases before CSS serialization", () => {
+    const malformedPath = validImport();
+    malformedPath.variables[2].path = "semantic/text/x\n} body { color";
+    expect(() => validateAndResolveImport(malformedPath)).toThrow(/path|segment|unsafe/i);
+
+    const malformedAlias = validImport();
+    malformedAlias.variables[2].values.Light = {
+      kind: "alias",
+      path: "primitive/neutral/900; body { color: red",
+    };
+    expect(() => validateAndResolveImport(malformedAlias)).toThrow(/path|alias|unsafe/i);
+  });
+
+  it("rejects distinct SEEDS paths that normalize to the same CSS custom property", () => {
+    const document = validImport();
+    document.variables.push(
+      {
+        path: "material/spacing/urlValue",
+        resolvedType: "FLOAT",
+        modeStrategy: "invariant",
+        values: { default: { kind: "number", value: 12 } },
+      },
+      {
+        path: "material/spacing/urlVALUE",
+        resolvedType: "FLOAT",
+        modeStrategy: "invariant",
+        values: { default: { kind: "number", value: 24 } },
+      },
+    );
+
+    expect(() => validateAndResolveImport(document)).toThrow(/css.*duplicate|duplicate.*css|collision/i);
+  });
+
   it("reports duplicate paths before later layer validation defects", () => {
     const document = validImport();
     document.variables = [
@@ -213,6 +246,44 @@ describe("SEEDS theme generator", () => {
       values: { default: { kind: "string", value: "ease*/" } },
     });
     expect(() => generateCss(unsafeCss)).toThrow(/unsafe|comment|newline/i);
+  });
+
+  it("rejects CSS delimiters in terminal values and generated header metadata", () => {
+    const unsafeValue = validImport();
+    unsafeValue.variables[0].values.default = {
+      kind: "color",
+      value: "#111111; body { color: red",
+    };
+    expect(() => validateAndResolveImport(unsafeValue)).toThrow(/unsafe|delimiter|value/i);
+
+    expect(() =>
+      generateCss(validImport(), {
+        sourceLabel: "fixture.json */ body { color: red",
+        sourceHash: "abc123; body { color: red",
+      }),
+    ).toThrow(/unsafe|delimiter|metadata/i);
+  });
+
+  it("rejects mode strategies the serializer cannot represent", () => {
+    const perModePrimitive = validImport();
+    perModePrimitive.variables[0] = {
+      path: "primitive/neutral/900",
+      resolvedType: "COLOR",
+      modeStrategy: "per-mode",
+      values: Object.fromEntries(
+        SEEDS_MODES.map((mode) => [mode, { kind: "color", value: "#111111" }]),
+      ),
+    };
+    expect(() => validateAndResolveImport(perModePrimitive)).toThrow(/primitive.*invariant|invariant.*primitive/i);
+
+    const invariantSemantic = validImport();
+    invariantSemantic.variables[2] = {
+      path: "semantic/text/primary",
+      resolvedType: "COLOR",
+      modeStrategy: "invariant",
+      values: { default: { kind: "color", value: "#111111" } },
+    };
+    expect(() => validateAndResolveImport(invariantSemantic)).toThrow(/semantic.*per-mode|per-mode.*semantic/i);
   });
 
   it("rejects a missing alias target", () => {

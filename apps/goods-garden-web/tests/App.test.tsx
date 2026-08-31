@@ -1,12 +1,15 @@
 import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it } from "vitest";
 import { App } from "../src/App";
 import { SEEDS_MODES } from "../src/design-system/modes";
 import type { GoodsStateView } from "../src/view-models/goods-state-view";
 
-const stylesSource = readFileSync(resolve(process.cwd(), "src/styles.css"), "utf8");
+const stylesSource = readFileSync(
+  fileURLToPath(new URL(["..", "src", "styles.css"].join("/"), import.meta.url)),
+  "utf8",
+);
 
 afterEach(() => {
   document.documentElement.removeAttribute("data-seeds-mode");

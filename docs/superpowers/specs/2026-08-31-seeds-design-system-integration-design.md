@@ -1,6 +1,6 @@
 # SEEDS Web Design System Integration Design
 
-> Status: PROPOSED — chat design approved; written review required before implementation.
+> Status: Approved and implemented — Contract-authorized web integration is complete; final lifecycle verification remains.
 
 ## English
 

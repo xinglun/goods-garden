@@ -15,6 +15,8 @@ export const SEEDS_MODES = Object.freeze([
 const CAMEL_BOUNDARY_LOWER_UPPER = /([a-z0-9])([A-Z])/g;
 const CAMEL_BOUNDARY_ACRONYM = /([A-Z])([A-Z][a-z])/g;
 const LAYERS = new Set(["primitive", "semantic", "material"]);
+const SEEDS_PATH = /^(?:primitive|semantic|material)\/[a-z0-9][A-Za-z0-9]*(?:\/[a-z0-9][A-Za-z0-9]*)+$/;
+const UNSAFE_CSS_TEXT = /[\u0000-\u001F\u007F;{}]|\/\*|\*\//;
 const TYPE_KIND_MAP = {
   COLOR: new Set(["color", "string"]),
   FLOAT: new Set(["number"]),
@@ -38,14 +40,21 @@ function splitPathSegments(tokenPath) {
   );
 }
 
-function sanitizeCssValue(value) {
-  if (value.includes("\n") || value.includes("\r")) {
-    fail(`Unsafe CSS value contains a newline: ${value}`);
-  }
-  if (value.includes("/*") || value.includes("*/")) {
-    fail(`Unsafe CSS value contains a comment terminator: ${value}`);
+function assertSafeCssText(value, label) {
+  if (UNSAFE_CSS_TEXT.test(value)) {
+    fail(`Unsafe CSS ${label} contains a control or delimiter character`);
   }
   return value;
+}
+
+function assertValidTokenPath(tokenPath, label) {
+  if (typeof tokenPath !== "string" || tokenPath.length === 0) {
+    fail(`${label} must be a non-empty string`);
+  }
+  if (!SEEDS_PATH.test(tokenPath)) {
+    fail(`${label} must use the SEEDS slash-separated lowerCamel path grammar: ${tokenPath}`);
+  }
+  return tokenPath;
 }
 
 function serializeNumber(pathName, value) {
@@ -72,7 +81,7 @@ function serializeTerminal(pathName, terminal) {
   if (terminal.kind === "number") {
     return serializeNumber(pathName, terminal.value);
   }
-  return sanitizeCssValue(terminal.value);
+  return assertSafeCssText(terminal.value, `value for ${pathName}`);
 }
 
 function expectRecord(value, message) {
@@ -86,13 +95,11 @@ function normalizeValueSpec(valueSpec, variablePath, resolvedType) {
 
   const { kind } = valueSpec;
   if (kind === "alias") {
-    if (typeof valueSpec.path !== "string" || valueSpec.path.length === 0) {
-      fail(`Alias target path must be a non-empty string for ${variablePath}`);
-    }
-    if (valueSpec.path === variablePath) {
+    const aliasPath = assertValidTokenPath(valueSpec.path, `Alias target path for ${variablePath}`);
+    if (aliasPath === variablePath) {
       fail(`Self alias detected at ${variablePath}`);
     }
-    return { kind: "alias", path: valueSpec.path };
+    return { kind: "alias", path: aliasPath };
   }
 
   const expectedKinds = TYPE_KIND_MAP[resolvedType];
@@ -113,16 +120,14 @@ function normalizeValueSpec(valueSpec, variablePath, resolvedType) {
     fail(`${kind} value must be a string for ${variablePath}`);
   }
 
-  return { kind, value: valueSpec.value };
+  return { kind, value: assertSafeCssText(valueSpec.value, `value for ${variablePath}`) };
 }
 
 function normalizeVariable(variable) {
   expectRecord(variable, "Each variable must be an object");
 
   const { path: variablePath, resolvedType, modeStrategy, values } = variable;
-  if (typeof variablePath !== "string" || variablePath.length === 0) {
-    fail("Variable path must be a non-empty string");
-  }
+  assertValidTokenPath(variablePath, "Variable path");
 
   const [layer] = variablePath.split("/");
   if (layer === "component") {
@@ -134,6 +139,11 @@ function normalizeVariable(variable) {
 
   if (!Object.hasOwn(TYPE_KIND_MAP, resolvedType)) {
     fail(`Unsupported resolvedType ${resolvedType} for ${variablePath}`);
+  }
+
+  const expectedModeStrategy = layer === "semantic" ? "per-mode" : "invariant";
+  if (modeStrategy !== expectedModeStrategy) {
+    fail(`${layer} variable ${variablePath} must use ${expectedModeStrategy} modeStrategy`);
   }
 
   expectRecord(values, `Variable values must be an object for ${variablePath}`);
@@ -175,10 +185,7 @@ function normalizeVariable(variable) {
 
 function getVariablePath(variable, index) {
   expectRecord(variable, `Each variable must be an object at index ${index}`);
-  if (typeof variable.path !== "string" || variable.path.length === 0) {
-    fail(`Variable path must be a non-empty string at index ${index}`);
-  }
-  return variable.path;
+  return assertValidTokenPath(variable.path, `Variable path at index ${index}`);
 }
 
 function assertResolvedTerminalKind(variablePath, resolvedType, terminal) {
@@ -249,7 +256,7 @@ function resolveAliases(variables) {
 }
 
 export function tokenToCssName(tokenPath) {
-  return `--seeds-${splitPathSegments(tokenPath).join("-")}`;
+  return `--seeds-${splitPathSegments(assertValidTokenPath(tokenPath, "Token path")).join("-")}`;
 }
 
 export function validateAndResolveImport(document) {
@@ -281,12 +288,20 @@ export function validateAndResolveImport(document) {
   }
 
   const seenPaths = new Set();
+  const pathsByCssName = new Map();
   for (const [index, variable] of document.variables.entries()) {
     const variablePath = getVariablePath(variable, index);
     if (seenPaths.has(variablePath)) {
       fail(`Duplicate variable path ${variablePath}`);
     }
     seenPaths.add(variablePath);
+
+    const cssName = tokenToCssName(variablePath);
+    const existingPath = pathsByCssName.get(cssName);
+    if (existingPath) {
+      fail(`CSS token name collision for ${cssName}: ${existingPath} and ${variablePath}`);
+    }
+    pathsByCssName.set(cssName, variablePath);
   }
 
   const normalizedVariables = document.variables.map((variable) => normalizeVariable(variable));
@@ -315,8 +330,26 @@ function buildBlock(selector, declarations) {
   return `${selector} {\n${lines.join("\n")}\n}`;
 }
 
+function normalizeHeaderMetadata(metadata) {
+  if (!isRecord(metadata)) {
+    fail("Generated CSS metadata must be an object");
+  }
+
+  const sourceLabel = metadata.sourceLabel ?? "UNKNOWN";
+  const sourceHash = metadata.sourceHash ?? "UNKNOWN";
+  if (typeof sourceLabel !== "string" || typeof sourceHash !== "string") {
+    fail("Generated CSS metadata sourceLabel and sourceHash must be strings");
+  }
+
+  return {
+    sourceLabel: assertSafeCssText(sourceLabel, "header metadata sourceLabel"),
+    sourceHash: assertSafeCssText(sourceHash, "header metadata sourceHash"),
+  };
+}
+
 export function generateCss(document, metadata = {}) {
   const { modes, variables, counts } = validateAndResolveImport(document);
+  const { sourceLabel, sourceHash } = normalizeHeaderMetadata(metadata);
   const primitiveAndMaterial = variables
     .filter((variable) => variable.layer === "primitive" || variable.layer === "material")
     .map((variable) => ({ path: variable.path, value: variable.values.default }));
@@ -326,8 +359,8 @@ export function generateCss(document, metadata = {}) {
   const header = [
     "/*",
     " * Generated by scripts/generate-seeds-theme.mjs",
-    ` * Source: ${metadata.sourceLabel ?? "UNKNOWN"}`,
-    ` * SHA-256: ${metadata.sourceHash ?? "UNKNOWN"}`,
+    ` * Source: ${sourceLabel}`,
+    ` * SHA-256: ${sourceHash}`,
     ` * Modes: ${modes.join(", ")}`,
     ` * Counts: primitive=${counts.primitive} semantic=${counts.semantic} material=${counts.material}`,
     " */",
