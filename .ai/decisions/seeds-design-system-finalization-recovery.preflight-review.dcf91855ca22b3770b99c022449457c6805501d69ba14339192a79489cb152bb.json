@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:4ed3a0f4007894ee9625d2ca654facb20633218ea4909907fcdbc3ca2b6df4e6",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "reason": "The repository owner explicitly authorized completing the bounded WI workflow after fresh verification evidence was recorded for the amended Contract.",
+  "recordedAt": "2026-08-31T07:45:00Z",
+  "recordedBy": "human:repository-owner",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "schemaVersion": 1,
+  "workItemId": "seeds-design-system-finalization-recovery"
+}
