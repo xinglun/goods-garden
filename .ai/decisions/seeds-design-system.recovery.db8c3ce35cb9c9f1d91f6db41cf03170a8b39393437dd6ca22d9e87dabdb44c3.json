@@ -1,0 +1,29 @@
+{
+  "actor": "human:repository-owner",
+  "authoritySource": "explicit-user-instruction",
+  "decidedAt": "2026-08-31T07:40:00Z",
+  "decision": "supersede",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+    ".ai/work-items/archive/seeds-design-system-finalization-recovery.archive.json",
+    ".ai/work-items/archive/seeds-design-system-finalization-recovery.outcome.json",
+    "https://github.com/xinglun/goods-garden/pull/9"
+  ],
+  "policyRefs": [
+    "AGENTS.md:AI-Cockpit-immutable-archive-recovery"
+  ],
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorEventsDigest": "sha256:b8ed2d423c61c58ea0602d05565db05bd2d0f7a004cbf82eca53f9eb02a39dfd",
+  "predecessorOutcomeDigest": "sha256:d602fe7b8bde63ee5d047cb5267216632a091c0f6c23b8e135b53279507d3b50",
+  "predecessorSummaryDigest": "sha256:56f0112cd1bd124dfcf7f26da791fd0e932b3f7773c5bd22930086d105dd0cc7",
+  "predecessorWorkItemId": "seeds-design-system",
+  "reason": "The archived predecessor's local-only resource context is preserved; the reviewed successor is closed after PR #9 merge and exact cleanup, so supersede the predecessor as historical evidence without rewriting its bytes.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Keep the predecessor as preserved historical evidence. Reopen only through a new, separately authorized scope; do not treat the superseded predecessor as a current verification result.",
+  "runtimeDigest": "sha256:6b3bd6617c6372a17b1edf6f9dc9dbc016779146f67262265fd12d2a488bbc53",
+  "runtimeVersion": "0.2.47",
+  "schemaVersion": 1,
+  "successorWorkItemId": "seeds-design-system-finalization-recovery",
+  "workItemId": "seeds-design-system"
+}

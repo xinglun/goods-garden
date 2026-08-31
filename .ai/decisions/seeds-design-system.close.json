@@ -1,0 +1,133 @@
+{
+  "decisionState": "confirmed",
+  "finalReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/seeds-design-system.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:c9537320e0c57f2405a9fe6370b2502a20572a96562e52c221b9b99c2835b3a8",
+      "workItemId": "seeds-design-system"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/seeds-design-system.contract.json"
+        },
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/seeds-design-system.summary.json"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/seeds-design-system.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [
+        {
+          "evidenceRefs": [
+            ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+            ".ai/decisions/seeds-design-system-finalization-recovery.close.json"
+          ],
+          "inference": false,
+          "text": "Human decision 'approved' by human:repository-owner via explicit-user-instruction at 2026-08-31T07:45:00Z."
+        }
+      ],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A developer can rebuild the web theme from the external SEEDS import JSON, switch all six declared modes, and view the existing read-only synthetic Goods State without direct primitive values in component styles. JA: 開発者が外部 SEEDS import JSON から web theme を再生成し、宣言された 6 mode を切り替え、component style に primitive の直接値を置かずに既存の read-only synthetic Goods State を表示できる。ZH: 开发者可以从外部 SEEDS import JSON 重新生成 web theme，切换声明的 6 个模式，并在组件样式中不直接使用 primitive 值的前提下查看现有只读 synthetic Goods State。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "seeds-design-system"
+  },
+  "finalReportDigest": "sha256:f7090c6efa89f7a839b73dda273dfc4c53e45df192251bdd103e6a59b6df812a",
+  "humanDecision": "approved",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "closed",
+  "structuredDecision": {
+    "actor": "human:repository-owner",
+    "authoritySource": "explicit-user-instruction",
+    "decidedAt": "2026-08-31T07:45:00Z",
+    "decision": "approved",
+    "evidenceRefs": [
+      ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+      ".ai/decisions/seeds-design-system-finalization-recovery.close.json"
+    ],
+    "policyRefs": [],
+    "reason": "The reviewed delivery is complete through successor WI seeds-design-system-finalization-recovery; preserve the original archived bytes and close this predecessor as superseded historical evidence.",
+    "resumeCondition": "Reopen only through a new, separately authorized scope; this superseded predecessor is not a current verification result."
+  },
+  "timestamp": "2026-08-31T07:35:32Z",
+  "workItemId": "seeds-design-system"
+}
