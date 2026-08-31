@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:eb8bc82c35fbe8374bd03a62296834ada929e1d89a09d0a0c52ecf2642a95ca8",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:334fb41293d838d4b7b102eb7c3f695066ad2572a0dfe9c9464b2e342626f6f2",
+  "reason": "The repository owner explicitly authorized completing the bounded WI workflow and the successor Contract scope is limited to post-merge governance finalization.",
+  "recordedAt": "2026-08-31T07:25:00Z",
+  "recordedBy": "human:repository-owner",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "schemaVersion": 1,
+  "workItemId": "seeds-design-system-finalization-recovery"
+}

@@ -1,0 +1,53 @@
+{
+  "acceptanceCriteria": [
+    "Preserve the predecessor archive and recovery history without rewriting bytes.",
+    "Bind the reviewed GitHub PR, merge commit, base revision, branch, and worktree before verification.",
+    "Record Deleted finalization after exact cleanup, verify with the installed Runtime, and close with an explicit human decision."
+  ],
+  "authority": "authorized",
+  "baseRevision": "e5041fdc497b8275c3a382a9bc6675a6115abbea",
+  "createdAt": "2026-08-31T07:20:31Z",
+  "goal": "Complete the post-merge resource finalization boundary for the already delivered SEEDS design-system integration; 完成已交付集成的 post-merge 收尾；delivery 済み integration の post-merge finalization を完了する。",
+  "intent": "Recover the stale local-only finalization context through a narrow identity-bound successor; 修复过时的 local-only finalization context；stale な context を successor で回復する。",
+  "mode": "code",
+  "outOfScope": [
+    "Change product code, domain semantics, or the approved SEEDS implementation.",
+    "Rewrite or delete predecessor archive, evidence, outcome, recovery, or decision bytes.",
+    "Edit global Agent/MCP configuration, credentials, or provider settings."
+  ],
+  "predecessorContractDigest": "sha256:2fca1819ba0123049fe35463f968e58728d7bd393fd5c721932a76d0228c9db1",
+  "predecessorWorkItemId": "seeds-design-system",
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "recoveryDecisionPath": ".ai/decisions/seeds-design-system.recovery.15386177857ad85ba36d2a15f263f93224132a2e0319fae41bca95c123b2eaa5.json",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:236cf35dd1ebbf2bc25843572cbce567ab38a26f40796968c9aeb5fadb0235f8",
+  "requiredEvidenceClasses": [
+    "native_runtime_evidence",
+    "resource_finalization_receipt",
+    "human_outcome"
+  ],
+  "resourceContext": {
+    "baseBranch": "unknown",
+    "baseRemote": "unknown",
+    "branch": "codex/seeds-design-system-finalization-recovery-v2",
+    "provider": "unknown",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/seeds-design-system-finalization-recovery-v2"
+  },
+  "risk": "normal",
+  "scope": [
+    ".ai/**"
+  ],
+  "sources": [
+    "AGENTS.md",
+    ".ai/README.md",
+    ".ai/glossary.md",
+    "https://github.com/xinglun/goods-garden/pull/7"
+  ],
+  "state": "implementation_active",
+  "verification": [
+    "cargo test --locked --workspace"
+  ],
+  "workItemId": "seeds-design-system-finalization-recovery"
+}
