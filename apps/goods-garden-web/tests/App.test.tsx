@@ -1,7 +1,12 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, describe, expect, it } from "vitest";
 import { App } from "../src/App";
+import { SEEDS_MODES } from "../src/design-system/modes";
 import type { GoodsStateView } from "../src/view-models/goods-state-view";
+
+afterEach(() => {
+  document.documentElement.removeAttribute("data-seeds-mode");
+});
 
 const genericUnhealthyView: GoodsStateView = {
   identity: {
@@ -47,6 +52,25 @@ describe("Goods Garden State view", () => {
     expect(screen.getByText("Needs attention")).toBeInTheDocument();
     expect(screen.getByText("The supplied observation is beyond the profile expectation.")).toBeInTheDocument();
     expect(screen.getByText("SYNTHETIC EXAMPLE")).toBeInTheDocument();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(screen.queryByRole("form")).not.toBeInTheDocument();
+    expect(screen.queryByRole("link")).not.toBeInTheDocument();
+  });
+
+  it("offers every SEEDS presentation mode and changes only the root mode attribute", () => {
+    render(<App />);
+    const selector = screen.getByRole("combobox", { name: "Display mode" });
+
+    expect(Array.from(selector.querySelectorAll("option")).map((option) => option.value)).toEqual([
+      ...SEEDS_MODES,
+    ]);
+    expect(selector).toHaveValue("Light");
+    expect(document.documentElement).toHaveAttribute("data-seeds-mode", "Light");
+
+    fireEvent.change(selector, { target: { value: "Dark" } });
+    expect(document.documentElement).toHaveAttribute("data-seeds-mode", "Dark");
+    expect(screen.getByText("SYNTHETIC EXAMPLE")).toBeInTheDocument();
+    expect(screen.getByText("Healthy")).toBeInTheDocument();
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(screen.queryByRole("form")).not.toBeInTheDocument();
     expect(screen.queryByRole("link")).not.toBeInTheDocument();
