@@ -175,6 +175,27 @@ describe("SEEDS theme generator", () => {
     expect(() => validateAndResolveImport(component)).toThrow(/component|layer/i);
   });
 
+  it("reports duplicate paths before later layer validation defects", () => {
+    const document = validImport();
+    document.variables = [
+      document.variables[0],
+      {
+        path: "brokenLayer/value",
+        resolvedType: "COLOR",
+        modeStrategy: "invariant",
+        values: { default: { kind: "color", value: "#222222" } },
+      },
+      {
+        path: "primitive/neutral/900",
+        resolvedType: "COLOR",
+        modeStrategy: "invariant",
+        values: { default: { kind: "color", value: "#333333" } },
+      },
+    ];
+
+    expect(() => validateAndResolveImport(document)).toThrow(/duplicate|path/i);
+  });
+
   it("rejects invalid terminal values and unsafe strings", () => {
     const nonFinite = validImport();
     nonFinite.variables[3].values.default = { kind: "number", value: Number.NaN };
@@ -198,6 +219,16 @@ describe("SEEDS theme generator", () => {
     const document = validImport();
     document.variables[2].values.Light = { kind: "alias", path: "primitive/missing/1" };
     expect(() => validateAndResolveImport(document)).toThrow(/alias|missing/i);
+  });
+
+  it("rejects aliases that resolve to a terminal kind incompatible with the declared resolvedType", () => {
+    const colorAliasToNumber = validImport();
+    colorAliasToNumber.variables[2].values.Light = { kind: "alias", path: "material/spacing/16" };
+    expect(() => validateAndResolveImport(colorAliasToNumber)).toThrow(/resolvedType|color|number/i);
+
+    const floatAliasToColor = validImport();
+    floatAliasToColor.variables[3].values.default = { kind: "alias", path: "primitive/neutral/900" };
+    expect(() => validateAndResolveImport(floatAliasToColor)).toThrow(/resolvedType|float|number|color/i);
   });
 
   it("rejects self aliases and alias cycles", () => {

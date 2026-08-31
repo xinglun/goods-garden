@@ -173,6 +173,23 @@ function normalizeVariable(variable) {
   fail(`Unsupported modeStrategy ${modeStrategy} for ${variablePath}`);
 }
 
+function getVariablePath(variable, index) {
+  expectRecord(variable, `Each variable must be an object at index ${index}`);
+  if (typeof variable.path !== "string" || variable.path.length === 0) {
+    fail(`Variable path must be a non-empty string at index ${index}`);
+  }
+  return variable.path;
+}
+
+function assertResolvedTerminalKind(variablePath, resolvedType, terminal) {
+  const expectedKinds = TYPE_KIND_MAP[resolvedType];
+  if (!expectedKinds.has(terminal.kind)) {
+    fail(
+      `resolvedType ${resolvedType} resolved to incompatible ${terminal.kind} terminal for ${variablePath}`,
+    );
+  }
+}
+
 function resolveAliases(variables) {
   const byPath = new Map(variables.map((variable) => [variable.path, variable]));
 
@@ -208,17 +225,21 @@ function resolveAliases(variables) {
 
   return variables.map((variable) => {
     if (variable.modeStrategy === "invariant") {
+      const resolvedDefault = resolve(variable.path, SEEDS_MODES[0], new Set());
+      assertResolvedTerminalKind(variable.path, variable.resolvedType, resolvedDefault);
       return {
         ...variable,
         values: {
-          default: resolve(variable.path, SEEDS_MODES[0], new Set()),
+          default: resolvedDefault,
         },
       };
     }
 
     const resolvedValues = {};
     for (const mode of SEEDS_MODES) {
-      resolvedValues[mode] = resolve(variable.path, mode, new Set());
+      const resolvedValue = resolve(variable.path, mode, new Set());
+      assertResolvedTerminalKind(variable.path, variable.resolvedType, resolvedValue);
+      resolvedValues[mode] = resolvedValue;
     }
     return {
       ...variable,
@@ -260,14 +281,15 @@ export function validateAndResolveImport(document) {
   }
 
   const seenPaths = new Set();
-  const normalizedVariables = document.variables.map((variable) => {
-    const normalized = normalizeVariable(variable);
-    if (seenPaths.has(normalized.path)) {
-      fail(`Duplicate variable path ${normalized.path}`);
+  for (const [index, variable] of document.variables.entries()) {
+    const variablePath = getVariablePath(variable, index);
+    if (seenPaths.has(variablePath)) {
+      fail(`Duplicate variable path ${variablePath}`);
     }
-    seenPaths.add(normalized.path);
-    return normalized;
-  });
+    seenPaths.add(variablePath);
+  }
+
+  const normalizedVariables = document.variables.map((variable) => normalizeVariable(variable));
 
   const resolvedVariables = resolveAliases(normalizedVariables).sort((left, right) =>
     left.path.localeCompare(right.path),
