@@ -80,10 +80,118 @@ describe("SEEDS theme generator", () => {
     expect(css).toContain("--seeds-material-spacing-16: 16px;");
   });
 
+  it("sorts variables deterministically and prints header metadata", () => {
+    const document = validImport();
+    document.variables = [
+      document.variables[4],
+      document.variables[2],
+      document.variables[0],
+      document.variables[3],
+      document.variables[1],
+    ];
+
+    const css = generateCss(document, {
+      sourceLabel: "fixture.json",
+      sourceHash: "abc123",
+    });
+
+    expect(css).toContain("Source: fixture.json");
+    expect(css).toContain("SHA-256: abc123");
+    expect(css).toContain("Modes: Light, Dark, Sakura, Momiji, NatureLaw, Disaster");
+    expect(css).toContain("Counts: primitive=2 semantic=1 material=2");
+    expect(css.indexOf("--seeds-primitive-neutral-0")).toBeLessThan(
+      css.indexOf("--seeds-primitive-neutral-900"),
+    );
+    expect(css.indexOf("--seeds-material-spacing-16")).toBeLessThan(
+      css.indexOf("--seeds-material-typography-body-m-font-size"),
+    );
+  });
+
+  it("applies px and ms only to the required numeric token paths", () => {
+    const document = validImport();
+    document.variables.push(
+      {
+        path: "material/motion/duration/quick",
+        resolvedType: "FLOAT",
+        modeStrategy: "invariant",
+        values: { default: { kind: "number", value: 120 } },
+      },
+      {
+        path: "material/glass/strong/saturate",
+        resolvedType: "FLOAT",
+        modeStrategy: "invariant",
+        values: { default: { kind: "number", value: 1.12 } },
+      },
+      {
+        path: "material/motion/transform/riseOffsetY",
+        resolvedType: "FLOAT",
+        modeStrategy: "invariant",
+        values: { default: { kind: "number", value: 6 } },
+      },
+    );
+
+    const css = generateCss(document);
+    expect(css).toContain("--seeds-material-motion-duration-quick: 120ms;");
+    expect(css).toContain("--seeds-material-glass-strong-saturate: 1.12;");
+    expect(css).toContain("--seeds-material-motion-transform-rise-offset-y: 6px;");
+  });
+
+  it("accepts string CSS colors for COLOR variables", () => {
+    const document = validImport();
+    document.variables[0].values.default = { kind: "string", value: "rgba(0,0,0,0.04)" };
+
+    const result = validateAndResolveImport(document);
+    expect(result.variables.find(({ path }) => path === "primitive/neutral/900").values.default).toEqual(
+      {
+        kind: "string",
+        value: "rgba(0,0,0,0.04)",
+      },
+    );
+  });
+
   it("rejects a missing mode", () => {
     const document = validImport();
     document.figma.modes = document.figma.modes.slice(0, -1);
     expect(() => validateAndResolveImport(document)).toThrow(/modes/i);
+  });
+
+  it("rejects duplicate paths and component variables", () => {
+    const duplicate = validImport();
+    duplicate.variables.push({
+      path: "primitive/neutral/900",
+      resolvedType: "COLOR",
+      modeStrategy: "invariant",
+      values: { default: { kind: "color", value: "#222222" } },
+    });
+    expect(() => validateAndResolveImport(duplicate)).toThrow(/duplicate|path/i);
+
+    const component = validImport();
+    component.variables.push({
+      path: "component/button/background",
+      resolvedType: "COLOR",
+      modeStrategy: "invariant",
+      values: { default: { kind: "color", value: "#222222" } },
+    });
+    expect(() => validateAndResolveImport(component)).toThrow(/component|layer/i);
+  });
+
+  it("rejects invalid terminal values and unsafe strings", () => {
+    const nonFinite = validImport();
+    nonFinite.variables[3].values.default = { kind: "number", value: Number.NaN };
+    expect(() => validateAndResolveImport(nonFinite)).toThrow(/number|finite/i);
+
+    const wrongColor = validImport();
+    wrongColor.variables[0].values.default = { kind: "color", value: 42 };
+    expect(() => validateAndResolveImport(wrongColor)).toThrow(/color|string/i);
+
+    const unsafeCss = validImport();
+    unsafeCss.variables.push({
+      path: "material/motion/easing/unsafe",
+      resolvedType: "STRING",
+      modeStrategy: "invariant",
+      values: { default: { kind: "string", value: "ease*/" } },
+    });
+    expect(() => generateCss(unsafeCss)).toThrow(/unsafe|comment|newline/i);
   });
 
   it("rejects a missing alias target", () => {
