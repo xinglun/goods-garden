@@ -1,0 +1,143 @@
+{
+  "acceptanceResults": [
+    "EN: The generated web token projection is derived from SEEDS_figma_plugin_import.json and validates the six fixed modes and alias integrity before writing output. JA: 生成 web token projection は SEEDS_figma_plugin_import.json から派生し、出力前に 6 つの固定 mode と alias 整合性を検証する。ZH: 生成的 web token projection 源自 SEEDS_figma_plugin_import.json，并在写入输出前验证 6 个固定模式和 alias 完整性。",
+    "EN: Goods Garden web styles use semantic and material CSS variables for surfaces, text, borders, spacing, radius, typography and shadow treatment; component styles do not reintroduce raw design-system values. JA: Goods Garden web style は surface、text、border、spacing、radius、typography、shadow treatment に semantic/material CSS variable を使い、component style に raw design-system value を再導入しない。ZH: Goods Garden web 样式使用 semantic/material CSS variables 表达 surface、text、border、spacing、radius、typography 和 shadow treatment；组件样式不重新引入原始设计系统值。",
+    "EN: The six modes are selectable as presentation-only theme state, while the existing GoodsStateView remains read-only and synthetic provenance remains visible. JA: 6 mode は presentation-only theme state として選択でき、既存 GoodsStateView は read-only のままで synthetic provenance も表示される。ZH: 6 个模式可作为仅用于展示的主题状态选择，现有 GoodsStateView 保持只读并继续显示 synthetic provenance。",
+    "EN: The generator output and frontend tests prove the six mode selectors and required token projection, and frontend typecheck, test and build pass. JA: generator output と frontend test が 6 mode selector と必要な token projection を証明し、frontend typecheck、test、build が通る。ZH: 生成器输出和前端测试证明 6 个模式选择器及所需 token projection，且前端 typecheck、test、build 通过。"
+  ],
+  "createdAt": "2026-08-31T06:53:07Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:d0941b3b12494e31bed258e694ceb4e9756e6f42ae160885796db37515634bcd",
+  "evidenceRefs": [
+    ".ai/evidence/seeds-design-system.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/seeds-design-system.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/seeds-design-system.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:c9537320e0c57f2405a9fe6370b2502a20572a96562e52c221b9b99c2835b3a8",
+      "workItemId": "seeds-design-system"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/seeds-design-system.contract.json"
+        },
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.summary.json"
+          ],
+          "inference": false,
+          "text": "Changed path: .ai/work-items/archive/seeds-design-system.summary.json"
+        }
+      ],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/seeds-design-system.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/seeds-design-system.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A developer can rebuild the web theme from the external SEEDS import JSON, switch all six declared modes, and view the existing read-only synthetic Goods State without direct primitive values in component styles. JA: 開発者が外部 SEEDS import JSON から web theme を再生成し、宣言された 6 mode を切り替え、component style に primitive の直接値を置かずに既存の read-only synthetic Goods State を表示できる。ZH: 开发者可以从外部 SEEDS import JSON 重新生成 web theme，切换声明的 6 个模式，并在组件样式中不直接使用 primitive 值的前提下查看现有只读 synthetic Goods State。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/seeds-design-system.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "seeds-design-system"
+  },
+  "taskReportDigest": "sha256:0cc934eaf306a6af97b57998acaa3a18bfbdcbaf88ce215808cd8f69dddf990d",
+  "taskReportMarkdownDigest": "sha256:16cd6d245c3e7ce0b10b833057914b724753c29de8b55f4bc1ec9c23201b27b8",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/seeds-design-system.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "seeds-design-system"
+}

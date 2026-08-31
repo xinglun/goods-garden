@@ -1,0 +1,70 @@
+{
+  "acceptanceCriteria": [
+    "EN: The generated web token projection is derived from SEEDS_figma_plugin_import.json and validates the six fixed modes and alias integrity before writing output. JA: 生成 web token projection は SEEDS_figma_plugin_import.json から派生し、出力前に 6 つの固定 mode と alias 整合性を検証する。ZH: 生成的 web token projection 源自 SEEDS_figma_plugin_import.json，并在写入输出前验证 6 个固定模式和 alias 完整性。",
+    "EN: Goods Garden web styles use semantic and material CSS variables for surfaces, text, borders, spacing, radius, typography and shadow treatment; component styles do not reintroduce raw design-system values. JA: Goods Garden web style は surface、text、border、spacing、radius、typography、shadow treatment に semantic/material CSS variable を使い、component style に raw design-system value を再導入しない。ZH: Goods Garden web 样式使用 semantic/material CSS variables 表达 surface、text、border、spacing、radius、typography 和 shadow treatment；组件样式不重新引入原始设计系统值。",
+    "EN: The six modes are selectable as presentation-only theme state, while the existing GoodsStateView remains read-only and synthetic provenance remains visible. JA: 6 mode は presentation-only theme state として選択でき、既存 GoodsStateView は read-only のままで synthetic provenance も表示される。ZH: 6 个模式可作为仅用于展示的主题状态选择，现有 GoodsStateView 保持只读并继续显示 synthetic provenance。",
+    "EN: The generator output and frontend tests prove the six mode selectors and required token projection, and frontend typecheck, test and build pass. JA: generator output と frontend test が 6 mode selector と必要な token projection を証明し、frontend typecheck、test、build が通る。ZH: 生成器输出和前端测试证明 6 个模式选择器及所需 token projection，且前端 typecheck、test、build 通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "a2d44a302097834d3318b129d9621c472abce7ed",
+  "createdAt": "2026-08-31T04:25:06Z",
+  "goal": "EN: A developer can rebuild the web theme from the external SEEDS import JSON, switch all six declared modes, and view the existing read-only synthetic Goods State without direct primitive values in component styles. JA: 開発者が外部 SEEDS import JSON から web theme を再生成し、宣言された 6 mode を切り替え、component style に primitive の直接値を置かずに既存の read-only synthetic Goods State を表示できる。ZH: 开发者可以从外部 SEEDS import JSON 重新生成 web theme，切换声明的 6 个模式，并在组件样式中不直接使用 primitive 值的前提下查看现有只读 synthetic Goods State。",
+  "intent": "EN: Integrate the approved SEEDS design system into the React Goods Garden State presentation through a generated CSS token projection. JA: 承認済みの SEEDS design system を生成 CSS token projection として React Goods Garden State presentation に統合する。ZH: 将已批准的 SEEDS design system 通过生成的 CSS token projection 集成到 React Goods Garden State presentation。",
+  "mode": "code",
+  "outOfScope": [
+    "Rust domain or runtime changes",
+    " POS/SEJ/API/database/provider integration",
+    " business actions or Need/Care/Memory/Learning behavior",
+    " Figma file mutation",
+    " native mobile or Tauri implementation",
+    " unrelated documentation or dependencies"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:e24afea1196b7b22c69a8cd9729d5e468f2e55467dc9669aa41d1ac351b785b7",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/seeds-design-system",
+    "provider": "local",
+    "pullRequest": "not_applicable",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/seeds-design-system"
+  },
+  "risk": "normal",
+  "scope": [
+    "apps/goods-garden-web/**",
+    "docs/superpowers/specs/2026-08-31-seeds-design-system-integration-design.md",
+    "docs/superpowers/plans/2026-08-31-seeds-design-system-integration.md",
+    ".ai/**"
+  ],
+  "sources": [
+    "AGENTS.md",
+    ".ai/README.md",
+    ".ai/glossary.md",
+    "apps/goods-garden-web/src/App.tsx",
+    "apps/goods-garden-web/src/styles.css",
+    "apps/goods-garden-web/tests/App.test.tsx",
+    "docs/superpowers/specs/2026-08-31-seeds-design-system-integration-design.md",
+    "/Users/sei-rinn/dev/workspace_typescript/seeds_design_system/docs/design-system/SEEDS_design_system_spec.md",
+    "/Users/sei-rinn/dev/workspace_typescript/seeds_design_system/docs/design-system/SEEDS_figma_naming_convention.md",
+    "/Users/sei-rinn/dev/workspace_typescript/seeds_design_system/docs/design-system/SEEDS_figma_plugin_import.json"
+  ],
+  "state": "implementation_active",
+  "verification": [
+    "git diff --check",
+    "cargo fmt --check",
+    "cargo check --workspace",
+    "cargo clippy --workspace --all-targets --all-features -- -D warnings",
+    "cargo test --locked --workspace",
+    "npm ci --prefix apps/goods-garden-web",
+    "npm run generate:seeds -- --input /Users/sei-rinn/dev/workspace_typescript/seeds_design_system/docs/design-system/SEEDS_figma_plugin_import.json",
+    "npm run typecheck --prefix apps/goods-garden-web",
+    "npm test --prefix apps/goods-garden-web",
+    "npm run build --prefix apps/goods-garden-web"
+  ],
+  "workItemId": "seeds-design-system"
+}

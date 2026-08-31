@@ -1,0 +1,26 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-08-31T06:53:11Z",
+  "files": {
+    "approachDigest": "sha256:1bdb7fa8058b45170a0af107df8fdef8c41be851e8e7eff252fbd357ad8011e5",
+    "approachPath": ".ai/work-items/archive/seeds-design-system.approach.json",
+    "contractDigest": "sha256:5ed1737115e5e03e0cc973ee6b07b5b0d3c6b3b4441fbd9bfe9fd05c512a6815",
+    "contractPath": ".ai/work-items/archive/seeds-design-system.contract.json",
+    "eventsDigest": "sha256:b8ed2d423c61c58ea0602d05565db05bd2d0f7a004cbf82eca53f9eb02a39dfd",
+    "eventsPath": ".ai/work-items/archive/seeds-design-system.events.jsonl",
+    "intelligenceDigest": "sha256:27006a20177cbf4edad1c49d0ee8bf99e1e9dfeba366cbed230fc448aff944d5",
+    "intelligencePath": ".ai/work-items/archive/seeds-design-system.intelligence.json",
+    "outcomeDigest": "sha256:e37d07063679f2f0438a46f26f7dee897dc26d7942ff2f8baddd2a9cc5dca48c",
+    "outcomePath": ".ai/work-items/archive/seeds-design-system.outcome.json",
+    "summaryDigest": "sha256:3d57b470a46d49e833655988fa80204d85e6f59686f10d3ad356a81e12ef0133",
+    "summaryPath": ".ai/work-items/archive/seeds-design-system.summary.json",
+    "taskReportDigest": "sha256:0cc934eaf306a6af97b57998acaa3a18bfbdcbaf88ce215808cd8f69dddf990d",
+    "taskReportMarkdownDigest": "sha256:16cd6d245c3e7ce0b10b833057914b724753c29de8b55f4bc1ec9c23201b27b8",
+    "taskReportMarkdownPath": ".ai/work-items/archive/seeds-design-system.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/seeds-design-system.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "seeds-design-system"
+}
