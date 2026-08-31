@@ -1,0 +1,78 @@
+{
+  "derivations": [
+    {
+      "confidence": "medium",
+      "evidenceRefs": [
+        "repository-snapshot"
+      ],
+      "inputFactKeys": [
+        "buildSystems"
+      ],
+      "key": "verificationCapability",
+      "rule": "observer.quality_commands_from_detected_build_system",
+      "value": [
+        {
+          "args": [
+            "test",
+            "--workspace"
+          ],
+          "program": "cargo",
+          "state": "detected"
+        }
+      ]
+    }
+  ],
+  "evidenceRefs": [
+    ".ai/work-items/active/seeds-design-system",
+    "repository-snapshot"
+  ],
+  "facts": [
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "git:HEAD"
+      ],
+      "key": "baseRevision",
+      "origin": "observed",
+      "value": "a2d44a302097834d3318b129d9621c472abce7ed"
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "repository-snapshot"
+      ],
+      "key": "buildSystems",
+      "origin": "observed",
+      "value": [
+        "Cargo"
+      ]
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        "repository-snapshot"
+      ],
+      "key": "languages",
+      "origin": "observed",
+      "value": [
+        "JavaScript",
+        "Rust",
+        "TypeScript"
+      ]
+    },
+    {
+      "confidence": "high",
+      "evidenceRefs": [
+        ".ai/cockpit.toml"
+      ],
+      "key": "repositoryId",
+      "origin": "observed",
+      "value": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f"
+    }
+  ],
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:e24afea1196b7b22c69a8cd9729d5e468f2e55467dc9669aa41d1ac351b785b7",
+  "schemaVersion": 2,
+  "unknowns": [],
+  "workItemId": "seeds-design-system"
+}

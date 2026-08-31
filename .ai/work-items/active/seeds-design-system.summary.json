@@ -1,0 +1,84 @@
+{
+  "changedPaths": [
+    ".ai/work-items/active/seeds-design-system.contract.json",
+    ".ai/work-items/active/seeds-design-system.summary.json"
+  ],
+  "checkpointAt": "2026-08-31T04:30:56Z",
+  "checkpointContractDigest": "sha256:99eca3864e9fe70c3f21c0d8be8ec2d062286eddd112728c04a183833b16d5b4",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:99eca3864e9fe70c3f21c0d8be8ec2d062286eddd112728c04a183833b16d5b4",
+      "recorded": true,
+      "recordedAt": "2026-08-31T04:30:56Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:e24afea1196b7b22c69a8cd9729d5e468f2e55467dc9669aa41d1ac351b785b7",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "seeds-design-system"
+    },
+    {
+      "acceptanceCount": 4,
+      "contractHash": "sha256:7daa249112af7a8a43f4a680bb8e8844d3a1d6a08363384940a65d3ace1058a2",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:99eca3864e9fe70c3f21c0d8be8ec2d062286eddd112728c04a183833b16d5b4",
+      "previousContractHash": "sha256:99eca3864e9fe70c3f21c0d8be8ec2d062286eddd112728c04a183833b16d5b4",
+      "reason": "Bind the written design specification, external SEEDS sources, implementation plan path, and complete repository/frontend verification commands to the active Contract before planning implementation.",
+      "recorded": true,
+      "recordedAt": "2026-08-31T04:39:00Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:c22702f8d48a643e5887920fe1b40c90237daaf775ca6d85506d2a1e06228486",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "seeds-design-system"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:e24afea1196b7b22c69a8cd9729d5e468f2e55467dc9669aa41d1ac351b785b7",
+  "createdAt": "2026-08-31T04:25:06Z",
+  "decisionEvidence": {
+    "contractDigest": "sha256:7daa249112af7a8a43f4a680bb8e8844d3a1d6a08363384940a65d3ace1058a2",
+    "decision": "confirm_review",
+    "decisionId": "contract-preflight-review",
+    "preflightDecisionDigest": "sha256:e9e022bbd2c0b69d457c9c3ccefbf06df78d3a68482834dab0d3d03275e3c04d",
+    "reason": "The human explicitly confirmed the revised SEEDS web integration Contract.",
+    "recordedAt": "2026-08-31T04:42:49.688Z",
+    "recordedBy": "human",
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:c22702f8d48a643e5887920fe1b40c90237daaf775ca6d85506d2a1e06228486",
+    "schemaVersion": 1,
+    "workItemId": "seeds-design-system"
+  },
+  "intentAlignment": {
+    "evidence": [
+      "AGENTS.md",
+      "apps/goods-garden-web/src/App.tsx",
+      "apps/goods-garden-web/src/styles.css"
+    ],
+    "state": "resolved"
+  },
+  "mode": "code",
+  "preflightAt": "2026-08-31T04:39:07Z",
+  "preflightContractDigest": "sha256:7daa249112af7a8a43f4a680bb8e8844d3a1d6a08363384940a65d3ace1058a2",
+  "preflightDecisionDigest": "sha256:e9e022bbd2c0b69d457c9c3ccefbf06df78d3a68482834dab0d3d03275e3c04d",
+  "preflightRepositorySnapshotDigest": "sha256:c22702f8d48a643e5887920fe1b40c90237daaf775ca6d85506d2a1e06228486",
+  "preflightState": "yellow",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "checkpointed",
+  "updatedAt": "2026-08-31T04:42:49.692215+00:00",
+  "verificationInvalidatedByContractAmendment": {
+    "contractHash": "sha256:7daa249112af7a8a43f4a680bb8e8844d3a1d6a08363384940a65d3ace1058a2",
+    "invalidatedRequiredChecks": [],
+    "recordedAt": "2026-08-31T04:39:00Z"
+  },
+  "workItemId": "seeds-design-system"
+}

@@ -1,0 +1,13 @@
+{
+  "contractDigest": "sha256:99eca3864e9fe70c3f21c0d8be8ec2d062286eddd112728c04a183833b16d5b4",
+  "decision": "confirm_review",
+  "decisionId": "contract-preflight-review",
+  "preflightDecisionDigest": "sha256:e9e022bbd2c0b69d457c9c3ccefbf06df78d3a68482834dab0d3d03275e3c04d",
+  "reason": "The human explicitly confirmed continuing the approved SEEDS web integration design for the current Contract.",
+  "recordedAt": "2026-08-31T04:29:00Z",
+  "recordedBy": "human",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:e24afea1196b7b22c69a8cd9729d5e468f2e55467dc9669aa41d1ac351b785b7",
+  "schemaVersion": 1,
+  "workItemId": "seeds-design-system"
+}
