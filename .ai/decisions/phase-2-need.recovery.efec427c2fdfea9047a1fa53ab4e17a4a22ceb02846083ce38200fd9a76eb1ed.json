@@ -1,0 +1,27 @@
+{
+  "actor": "human:repository-owner",
+  "authoritySource": "repository-local-authorized-retry",
+  "decidedAt": "2026-09-04T22:40:00Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/evidence/phase-2-need.verification.json",
+    ".ai/work-items/active/phase-2-need.outcome.json",
+    ".ai/work-items/active/phase-2-need.events.jsonl"
+  ],
+  "policyRefs": [
+    "AGENTS.md:recovery-retry-boundary"
+  ],
+  "predecessorContractDigest": "sha256:b8a0a08a2432ac2c1d498b901a835385b49fc6085fc9fa4efecc36f228761a58",
+  "predecessorEventsDigest": "sha256:fd1908c42e288b4354c3b0676216bab9f419033dc0a865826c95696dca7ad3b0",
+  "predecessorOutcomeDigest": "sha256:d1484e1c01829b4efd3a42039ccc2c931ab298c7aba7121be25c808bc0c004be",
+  "predecessorSummaryDigest": "sha256:69e0abf1c59cfb0e997d18a119760fa8d282fd4ee89642f80430be472eaa4770",
+  "predecessorWorkItemId": "phase-2-need",
+  "reason": "Refresh the current Runtime-bound verification after finalize-plan bound the real PR URL, which amended the Contract again.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Run fresh preflight and verification against the bound Contract, then retry finish.",
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "workItemId": "phase-2-need"
+}

@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-04T22:40:43Z",
+  "files": {
+    "contractDigest": "sha256:c4aa8d1deb93e75b9770a9d5604072aa6ed2bba1511b97d0faaa3a30e378ca2f",
+    "contractPath": ".ai/work-items/archive/phase-2-need.contract.json",
+    "eventsDigest": "sha256:32659ca281d4b178be141bd6f16d65b4b0f55c3a2ca9d6555625f1ca8096d6dc",
+    "eventsPath": ".ai/work-items/archive/phase-2-need.events.jsonl",
+    "outcomeDigest": "sha256:e15e6a95c55b2efd989d8530ec55cc1c5a26ac4b1449566e1f9973b45b80e3a8",
+    "outcomePath": ".ai/work-items/archive/phase-2-need.outcome.json",
+    "summaryDigest": "sha256:782266ee0f049942ace5930fa5556cdefe5280979f5bcc5a95ab23c4b6d0be11",
+    "summaryPath": ".ai/work-items/archive/phase-2-need.summary.json",
+    "taskReportDigest": "sha256:ac5d03f1a6be04507a3dd57e5fa99d4042a40821eb59b6030b4cb587554dc6ef",
+    "taskReportMarkdownDigest": "sha256:d1996b4858f2fc8b4d0318b94ab5150e5faa55c7f322517fd1ffc554c500fa87",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-2-need.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-2-need.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-2-need"
+}
