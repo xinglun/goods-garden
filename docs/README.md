@@ -17,7 +17,8 @@ All human-facing documents are maintained in English, Japanese and Chinese.
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
 - [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
 - [Phase 2 — Need](phases/phase-2-need.md)
-- [Phase 3 — Care](phases/phase-3-care.md) (current)
+- [Phase 3 — Care](phases/phase-3-care.md)
+- [Phase 4 — Memory](phases/phase-4-memory.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -37,7 +38,8 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
 - [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
 - [Phase 2 — Need](phases/phase-2-need.md)
-- [Phase 3 — Care](phases/phase-3-care.md) (current)
+- [Phase 3 — Care](phases/phase-3-care.md)
+- [Phase 4 — Memory](phases/phase-4-memory.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -56,6 +58,7 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
 - [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
 - [Phase 2 — Need](phases/phase-2-need.md)
-- [Phase 3 — Care](phases/phase-3-care.md) (current)
+- [Phase 3 — Care](phases/phase-3-care.md)
+- [Phase 4 — Memory](phases/phase-4-memory.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)

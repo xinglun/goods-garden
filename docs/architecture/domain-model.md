@@ -5,7 +5,8 @@
 Phase 1 separates the minimal model needed by the local demo from future
 provisional concepts. Phase 2 adds a minimal Need model on top without
 changing Phase 1; Phase 3 adds a minimal Care model on top without changing
-Phase 1 or Phase 2. All are reviewable, deliberately small and do not claim to
+Phase 1 or Phase 2; Phase 4 adds a minimal Memory model on top without
+changing Phase 1-3. All are reviewable, deliberately small and do not claim to
 settle the long-term domain schema.
 
 ### Phase 1 minimal model
@@ -68,6 +69,23 @@ only implementation is a local synthetic fixture, matching Phase 1/2's
 `ObservationSource` pattern; a real interactive or provider-backed adapter is
 not implemented. See `docs/phases/phase-3-care.md`.
 
+### Phase 4 minimal model
+
+Phase 4 adds an append-only Relationship Memory on top of the unchanged
+Phase 1-3 State/Need/Care model, without inventing a retention or eviction
+policy.
+
+| Type | Minimal role in Phase 4 | Status |
+| --- | --- | --- |
+| MemoryRecord | The State that prompted a Need and the Care Action that responded to it | PHASE 4 MINIMAL |
+| GoodsMemory | An append-only, in-process collection of Memory Records for one good | PHASE 4 MINIMAL |
+
+`GoodsMemory` has no persistence of its own: it is a value owned by its
+caller (the CLI in this phase) and threaded across repeated observations.
+Nothing is ever evicted or expired; the `MemoryStore` port remains an empty
+placeholder, and no database or file-backed adapter is implemented. See
+`docs/phases/phase-4-memory.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -77,15 +95,15 @@ settled schemas.
 | --- | --- | --- |
 | Evidence | Traceability support candidate | PROVISIONAL |
 | Outcome | Result candidate | PROVISIONAL |
-| Memory | Relationship/history candidate | PROVISIONAL |
 | Learning | Learning-result candidate | PROVISIONAL |
 | LifecycleState | Lifecycle candidate | PROVISIONAL |
 
 ## 日本語
 
 Phase 1 では local demo に必要な最小 model と、将来の provisional concept を分ける。Phase 2 は Phase 1 を変更せず
-その上に最小の Need model を追加し、Phase 3 は Phase 1/2 を変更せずその上に最小の Care model を追加する。いずれも review
-可能な小さい model であり、長期的な domain schema を確定したとは主張しない。
+その上に最小の Need model を追加し、Phase 3 は Phase 1/2 を変更せずその上に最小の Care model を追加し、Phase 4 は
+Phase 1-3 を変更せずその上に最小の Memory model を追加する。いずれも review 可能な小さい model であり、長期的な
+domain schema を確定したとは主張しない。
 
 ### Phase 1 minimal model
 
@@ -140,6 +158,20 @@ role-routing や permission model は実装しない。HumanFeedback は `HumanF
 Phase 1/2 の `ObservationSource` と同じ local synthetic fixture である。real な対話式または provider-backed adapter は実装しない。
 詳細は `docs/phases/phase-3-care.md` を参照。
 
+### Phase 4 minimal model
+
+Phase 4 は不変の Phase 1-3 State/Need/Care model の上に、retention や eviction policy を発明せず、
+append-only な Relationship Memory を追加する。
+
+| Type | Phase 4 における最小の役割 | Status |
+| --- | --- | --- |
+| MemoryRecord | Need を促した State と、それに応答した Care Action | PHASE 4 MINIMAL |
+| GoodsMemory | 1つの good に対する Memory Record の append-only な in-process collection | PHASE 4 MINIMAL |
+
+`GoodsMemory` はそれ自体の永続化を持たない。呼び出し元（本 phase では CLI）が所有する値であり、繰り返しの
+observation をまたいで受け渡される。何も eviction・expire されず、`MemoryStore` port は空プレースホルダーの
+ままで、database や file-backed adapter は実装しない。詳細は `docs/phases/phase-4-memory.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -148,14 +180,14 @@ Phase 1/2 の `ObservationSource` と同じ local synthetic fixture である。
 | --- | --- | --- |
 | Evidence | traceability support の候補 | PROVISIONAL |
 | Outcome | result の候補 | PROVISIONAL |
-| Memory | relationship/history の候補 | PROVISIONAL |
 | Learning | learning-result の候補 | PROVISIONAL |
 | LifecycleState | lifecycle の候補 | PROVISIONAL |
 
 ## 中文
 
 Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 2 在不改动 Phase 1 的前提下，于其上新增最小 Need 模型；
-Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型。三者都是可 review 的小模型，并不意味着已经确定长期领域 schema。
+Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型；Phase 4 在不改动 Phase 1-3 的前提下，于其上新增最小 Memory 模型。
+四者都是可 review 的小模型，并不意味着已经确定长期领域 schema。
 
 ### Phase 1 minimal model
 
@@ -207,6 +239,20 @@ Human Feedback 始终是外部输入，领域从不计算它；CareAction 只记
 HumanFeedback 从 `HumanFeedbackSource` port 读取，唯一实现是与 Phase 1/2 的 `ObservationSource` 相同风格的本地
 synthetic fixture；不实现真实的交互式或 provider-backed adapter。详见 `docs/phases/phase-3-care.md`。
 
+### Phase 4 minimal model
+
+Phase 4 在不变的 Phase 1-3 State/Need/Care 模型之上，在不发明保留或淘汰策略的前提下，增加仅追加的
+Relationship Memory。
+
+| 类型 | 在 Phase 4 中的最小作用 | Status |
+| --- | --- | --- |
+| MemoryRecord | 促成 Need 的 State 与响应它的 Care Action | PHASE 4 MINIMAL |
+| GoodsMemory | 针对一个商品的 Memory Record 仅追加进程内集合 | PHASE 4 MINIMAL |
+
+`GoodsMemory` 自身没有持久化：它是由调用方（本阶段为 CLI）拥有、跨多次 observation 传递的值。不会淘汰或
+过期任何内容；`MemoryStore` port 仍为空占位符，不实现数据库或文件支持的 adapter。详见
+`docs/phases/phase-4-memory.md`。
+
 ### Future provisional concepts
 
 以下仍只是讨论用 vocabulary，不是已实现行为，也不是已经确定的 schema。
@@ -215,6 +261,5 @@ synthetic fixture；不实现真实的交互式或 provider-backed adapter。详
 | --- | --- | --- |
 | Evidence | 可追溯性支持的候选 | PROVISIONAL |
 | Outcome | 结果的候选 | PROVISIONAL |
-| Memory | 关系/历史的候选 | PROVISIONAL |
 | Learning | 学习结果的候选 | PROVISIONAL |
 | LifecycleState | 生命周期的候选 | PROVISIONAL |

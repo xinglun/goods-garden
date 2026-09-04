@@ -1,0 +1,67 @@
+{
+  "acceptanceCriteria": [
+    "EN: GoodsMemory and MemoryRecord are implemented in goods-domain as an append-only, in-process collection with no eviction, persistence or retention policy, without changing state::goods_state, the need module or the care module. JA: goods-domain に GoodsMemory と MemoryRecord を、永続化・retention policy・eviction のない append-only な in-process collection として実装し、state::goods_state、need module、care module は変更しない。ZH: 在 goods-domain 中将 GoodsMemory 与 MemoryRecord 实现为无淘汰、无持久化、无保留策略的仅追加进程内集合，且不修改 state::goods_state、need 模块或 care 模块。",
+    "EN: RememberCare is implemented in goods-application; GoodsRuntime exposes a new method that calls the unchanged request_care and then remembers any resulting Care Action, without altering observe_and_assess, observe_and_identify_needs or request_care. JA: goods-application に RememberCare を実装し、GoodsRuntime は既存の request_care を呼び出した上で結果の Care Action を記憶する新メソッドを追加公開する。既存の3メソッドは変更しない。ZH: 在 goods-application 中实现 RememberCare；GoodsRuntime 新增一个方法，调用不变的 request_care 并记住其产生的 Care Action，且不改动 observe_and_assess、observe_and_identify_needs 或 request_care。",
+    "EN: The CLI demo prints how many Care episodes have been remembered in this run, using the existing bundled fixtures that show no Need/Care Request by default. JA: CLI demo はこの実行内で記憶された Care episode の件数を表示する。既存の同梱 fixture はデフォルトで Need/Care Request が発生しない。ZH: CLI demo 显示本次运行中记住了多少个 Care 事件；沿用默认不产生 Need/Care Request 的既有内置 fixture。",
+    "EN: A new phase_4_memory.rs test file covers no-episode, single-episode, and repeated-episode (append-only, nothing evicted) scenarios, without changing phase_1_demo.rs, phase_2_need.rs or phase_3_care.rs. JA: 新設の phase_4_memory.rs が episode無し・単一episode・繰り返しepisode（append-onlyでeviction無し）の3シナリオを検証し、既存3ファイルは変更しない。ZH: 新增的 phase_4_memory.rs 覆盖无事件、单一事件与重复事件（仅追加、不淘汰）三种场景，且不修改既有三个测试文件。",
+    "EN: docs/phases/phase-4-memory.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-4-memory.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-4-memory.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "fecc09e6f5666b732ade815c9b7a819d43ab2eb4",
+  "createdAt": "2026-09-04T23:38:38Z",
+  "goal": "EN: A person can run the local CLI demo and see how many Care episodes have been remembered in this run, with each remembered record traceable to the State and Care Action it came from, without any persistence, retention policy or autonomous action. JA: 人が local CLI demo を実行し、この実行内で記憶された Care episode の件数と、各記録がどの State・Care Action に由来するかを確認できる。永続化、retention policy、自律行動は含まない。ZH: 用户可以运行本地 CLI demo，查看本次运行中记住了多少个 Care 事件，并可追溯每条记录来自哪个 State 与 Care Action；不包含持久化、保留策略或自主行动。",
+  "intent": "EN: Implement Phase 4 Relationship Memory (GoodsMemory, MemoryRecord) on top of the unchanged Phase 1-3 State/Need/Care model, without inventing a retention policy: memory is an in-process, append-only record of Care episodes with no persistence or eviction. JA: 不変の Phase 1-3 State/Need/Care model の上に Phase 4 の Relationship Memory（GoodsMemory、MemoryRecord）を実装する。retention policy は創作せず、memory は永続化や eviction のない in-process の append-only な Care episode 記録とする。ZH: 在不改动 Phase 1-3 State/Need/Care 模型的前提下实现 Phase 4 的 Relationship Memory（GoodsMemory、MemoryRecord），不编造保留策略：memory 是进程内、仅追加、无持久化或淘汰的 Care 事件记录。",
+  "mode": "implementation",
+  "outOfScope": [
+    "any persistence",
+    " database",
+    " MemoryStore port implementation",
+    " retention/eviction policy",
+    "Learning",
+    " Outcome",
+    " Verification behavior (Phase 5)",
+    " autonomous action",
+    "apps/goods-garden-web/** (frontend)",
+    "crates/goods-domain/src/state/goods_state.rs",
+    " crates/goods-domain/src/need/**",
+    " crates/goods-domain/src/care/** (Phase 1-3 frozen contracts)"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:fd652f6aef3d1b2f9de474ef6c8c6dce5446d3ba8e557e764941f7c11477f84b",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-4-memory",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/17",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-4-memory"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/memory/mod.rs",
+    "crates/goods-domain/src/memory/memory.rs",
+    "crates/goods-domain/src/memory/memory_record.rs",
+    "crates/goods-domain/src/lib.rs",
+    "crates/goods-application/src/use_cases/mod.rs",
+    "crates/goods-application/src/use_cases/remember_care.rs",
+    "crates/goods-runtime/src/runtime.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_4_memory.rs",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-4-memory-design.md",
+    "docs/phases/phase-4-memory.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-4-memory"
+}

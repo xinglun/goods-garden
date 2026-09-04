@@ -4,6 +4,7 @@ use std::error::Error;
 use std::process;
 
 use goods_domain::goods::{Goods, GoodsIdentity, GoodsProfile};
+use goods_domain::memory::GoodsMemory;
 use goods_infrastructure::simulator::{DemoHumanFeedbackSource, DemoObservationSource};
 use goods_runtime::GoodsRuntime;
 
@@ -42,8 +43,12 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     );
     let source = DemoObservationSource::from_fixture(TUNA_MAYO_FIXTURE)?;
     let feedback_source = DemoHumanFeedbackSource::from_fixture(HUMAN_FEEDBACK_FIXTURE)?;
-    let (state, needs, request, action) =
-        GoodsRuntime::new(source).request_care(&item, &feedback_source)?;
+    let mut memory = GoodsMemory::new();
+    let (state, needs, request, action) = GoodsRuntime::new(source).request_care_and_remember(
+        &item,
+        &feedback_source,
+        &mut memory,
+    )?;
 
     println!("Goods Garden Phase 1 demo");
     println!("source: {}", state.observation.source);
@@ -83,6 +88,7 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
         Some(action) => println!("care action: {}", action.explanation),
         None => println!("care action: <none identified>"),
     }
+    println!("memory: {} care episode(s) remembered", memory.records().len());
 
     Ok(())
 }
