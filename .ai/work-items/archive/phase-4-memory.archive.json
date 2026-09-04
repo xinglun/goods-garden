@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-04T23:43:56Z",
+  "files": {
+    "contractDigest": "sha256:b8f115dc319a490d21318198fc5b9adf6a3caa11a8100c1bcbeb1347d478f92f",
+    "contractPath": ".ai/work-items/archive/phase-4-memory.contract.json",
+    "eventsDigest": "sha256:a3837fdbd310c55f01619d5555035bcee1feb1fd316daf2ca88291eb7ece0658",
+    "eventsPath": ".ai/work-items/archive/phase-4-memory.events.jsonl",
+    "outcomeDigest": "sha256:a8eed6709ffef13373641487bc40b6a431172c2c83f1850837220df8f11649cd",
+    "outcomePath": ".ai/work-items/archive/phase-4-memory.outcome.json",
+    "summaryDigest": "sha256:2db5e217fa7fd123b3f86243982d7a12bc244f9bc08fc2a21e121f5b77e9506c",
+    "summaryPath": ".ai/work-items/archive/phase-4-memory.summary.json",
+    "taskReportDigest": "sha256:e09d03a2f510bbca88d5f52998508f2686c9287b808eb601f6e6ec26b6ebfefe",
+    "taskReportMarkdownDigest": "sha256:10a2712845a9d1eea4466475d1950b06d16747171ad782d0058c4feb8f54f679",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-4-memory.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-4-memory.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-4-memory"
+}
