@@ -7,14 +7,17 @@
     "EN: docs/phases/phase-2-need.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-2-need.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-2-need.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
     "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
   ],
-  "decisionState": "red",
+  "createdAt": "2026-09-04T22:40:36Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:f36936aa416f0c9258aa60b4b323766e3064686ec264f76ce419154b0f169727",
   "evidenceRefs": [
     ".ai/evidence/phase-2-need.verification.json"
   ],
-  "failedGate": "finish.governance",
   "humanBenefitReport": {
     "affectedUsers": [],
-    "evidenceRefs": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-2-need.verification.json"
+    ],
     "state": "unknown",
     "unknowns": [
       "user_visible_benefit_not_declared"
@@ -22,11 +25,10 @@
     "userVisibleChanges": []
   },
   "protocolVersion": 1,
-  "recoveryCondition": "Repair the Contract or governance projection, rerun preflight, and retry finish.",
   "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
   "schemaVersion": 2,
-  "state": "blocked",
-  "summary": "A lifecycle gate failed; completion is not claimed and the Work Item remains recoverable.",
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
   "taskOutcomeReport": {
     "bindings": {
       "evidenceRefs": [
@@ -36,10 +38,8 @@
       "repositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
       "workItemId": "phase-2-need"
     },
-    "failedGate": "finish.governance",
     "format": "ai-cockpit.task-outcome",
-    "humanStatusColor": "red",
-    "recoveryCondition": "Repair the Contract or governance projection, rerun preflight, and retry finish.",
+    "humanStatusColor": "green",
     "schemaVersion": 1,
     "sections": {
       "avoidedImpact": [],
@@ -60,22 +60,14 @@
         "provider_or_enterprise_approval_inferred_from_local_records",
         "user_visible_benefit_invented_from_implementation_facts"
       ],
-      "forcedStops": [
-        {
-          "evidenceRefs": [
-            ".ai/evidence/phase-2-need.verification.json"
-          ],
-          "inference": false,
-          "text": "A required evidence or identity control failed; remain stopped."
-        }
-      ],
+      "forcedStops": [],
       "humanDecisions": [],
       "interventions": [],
       "limitations": [],
       "nonRiskExplanations": [
         {
           "evidenceRefs": [
-            ".ai/work-items/active/phase-2-need.summary.json"
+            ".ai/work-items/archive/phase-2-need.summary.json"
           ],
           "inference": false,
           "text": "No repository paths were observed as changed by the current Summary."
@@ -87,7 +79,7 @@
             ".ai/evidence/phase-2-need.verification.json"
           ],
           "inference": false,
-          "text": "A lifecycle gate failed; completion is not claimed and the Work Item remains recoverable."
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
         }
       ],
       "recurrencePrevention": [],
@@ -97,15 +89,23 @@
             ".ai/evidence/phase-2-need.verification.json"
           ],
           "inference": false,
-          "text": "Remaining unknown: lifecycle_gate_failed"
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
         }
       ],
-      "resolutions": [],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-2-need.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
       "risks": [],
       "taskOverview": [
         {
           "evidenceRefs": [
-            ".ai/work-items/active/phase-2-need.contract.json"
+            ".ai/work-items/archive/phase-2-need.contract.json"
           ],
           "inference": false,
           "text": "EN: A person can run the local CLI demo and see explainable Need(s), their Urgency, and any Need Conflict derived from a synthetic observation, without any Care, autonomous action or real external data. JA: 人が local CLI demo を実行し、synthetic observation から導かれる explainable な Need、その Urgency、Need Conflict の有無を確認できる。Care、自律行動、real external data は含まない。ZH: 用户可以运行本地 CLI demo，查看由 synthetic observation 得出的可解释 Need、其 Urgency，以及是否存在 Need Conflict；不包含 Care、自主行动或真实外部数据。"
@@ -114,23 +114,25 @@
       "warnings": [
         {
           "evidenceRefs": [
-            ".ai/work-items/active/phase-2-need.contract.json"
+            ".ai/work-items/archive/phase-2-need.contract.json"
           ],
           "inference": false,
           "text": "User-visible benefit is not declared by the Work Item owner."
         }
       ]
     },
-    "status": "unknown",
+    "status": "verified",
     "workItemId": "phase-2-need"
   },
+  "taskReportDigest": "sha256:ac5d03f1a6be04507a3dd57e5fa99d4042a40821eb59b6030b4cb587554dc6ef",
+  "taskReportMarkdownDigest": "sha256:d1996b4858f2fc8b4d0318b94ab5150e5faa55c7f322517fd1ffc554c500fa87",
   "unknowns": [
-    "lifecycle_gate_failed"
+    "user_visible_benefit_not_declared"
   ],
   "verification": {
     "evidencePath": ".ai/evidence/phase-2-need.verification.json",
     "required": true,
-    "status": "blocked"
+    "status": "verified"
   },
   "workItemId": "phase-2-need"
 }

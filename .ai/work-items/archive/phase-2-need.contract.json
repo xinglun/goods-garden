@@ -36,7 +36,7 @@
     "baseRemote": "origin/main",
     "branch": "codex/phase-2-need",
     "provider": "github",
-    "pullRequest": "unknown",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/12",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-2-need"
   },
   "risk": "normal",
