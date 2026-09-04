@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "d0d081dc8d0a7889bf7e1822b9846df6a4341730",
+    "name": "codex/phase-3-care",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:4ab05a8fffff3ab26f5918a0d973a7128dd510f9722c43a26627b4c5bbe8a7e1",
+  "operationId": "phase-3-care-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "cea6af133021e773e2dd75c72d3060301646f5d7",
+    "headRevision": "d0d081dc8d0a7889bf7e1822b9846df6a4341730",
+    "mergeCommit": "557025e462653aa38ce7156621290665ffebe9c0",
+    "number": 15,
+    "url": "https://github.com/xinglun/goods-garden/pull/15"
+  },
+  "reason": "PR #15 (feat: implement Phase 3 Care) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-3-care branch and its worktree were then deleted.",
+  "receiptId": "phase-3-care-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-3-care",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/15",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-3-care"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-04T23:40:00Z",
+  "workItemId": "phase-3-care",
+  "worktree": {
+    "branch": "codex/phase-3-care",
+    "headRevision": "d0d081dc8d0a7889bf7e1822b9846df6a4341730",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-3-care",
+    "worktreeId": "goods-garden-phase-3-care"
+  }
+}
