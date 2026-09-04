@@ -1,0 +1,95 @@
+{
+  "bindings": {
+    "evidenceRefs": [
+      ".ai/evidence/phase-3-care.verification.json"
+    ],
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:fd652f6aef3d1b2f9de474ef6c8c6dce5446d3ba8e557e764941f7c11477f84b",
+    "workItemId": "phase-3-care"
+  },
+  "format": "ai-cockpit.task-outcome",
+  "humanStatusColor": "green",
+  "schemaVersion": 1,
+  "sections": {
+    "avoidedImpact": [],
+    "deliveredChanges": [],
+    "evidence": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-3-care.verification.json"
+        ],
+        "inference": false,
+        "text": ".ai/evidence/phase-3-care.verification.json"
+      }
+    ],
+    "findings": [],
+    "forbiddenClaims": [
+      "merge_authorized_without_human_decision",
+      "release_published_without_release_evidence",
+      "provider_or_enterprise_approval_inferred_from_local_records",
+      "user_visible_benefit_invented_from_implementation_facts"
+    ],
+    "forcedStops": [],
+    "humanDecisions": [],
+    "interventions": [],
+    "limitations": [],
+    "nonRiskExplanations": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-3-care.summary.json"
+        ],
+        "inference": false,
+        "text": "No repository paths were observed as changed by the current Summary."
+      }
+    ],
+    "outcomeSummary": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-3-care.verification.json"
+        ],
+        "inference": false,
+        "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+      }
+    ],
+    "recurrencePrevention": [],
+    "residualRisks": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-3-care.verification.json"
+        ],
+        "inference": false,
+        "text": "Remaining unknown: user_visible_benefit_not_declared"
+      }
+    ],
+    "resolutions": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-3-care.verification.json"
+        ],
+        "inference": false,
+        "text": "The current verification evidence is valid for this repository and Work Item."
+      }
+    ],
+    "risks": [],
+    "taskOverview": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-3-care.contract.json"
+        ],
+        "inference": false,
+        "text": "EN: A person can run the local CLI demo and see whether a Care Request was raised from an identified Need, and the resulting explainable Care Action recorded from synthetic Human Feedback, without any autonomous action or real external Caregiver system. JA: 人が local CLI demo を実行し、識別された Need から Care Request が発生したか、synthetic Human Feedback から記録された explainable な Care Action を確認できる。自律行動や real external Caregiver system は含まない。ZH: 用户可以运行本地 CLI demo，查看是否由已识别的 Need 引发 Care Request，以及由 synthetic Human Feedback 记录得出的可解释 Care Action；不包含自主行动或真实外部 Caregiver 系统。"
+      }
+    ],
+    "warnings": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-3-care.contract.json"
+        ],
+        "inference": false,
+        "text": "User-visible benefit is not declared by the Work Item owner."
+      }
+    ]
+  },
+  "status": "verified",
+  "workItemId": "phase-3-care"
+}

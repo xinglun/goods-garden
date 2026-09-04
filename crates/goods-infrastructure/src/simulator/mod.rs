@@ -1,9 +1,12 @@
-//! Local synthetic observation adapter for the Phase 1 demo.
+//! Local synthetic adapters for the Phase 1-3 demo: observation and, since
+//! Phase 3, Human Feedback in response to a Care Request.
 
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 
+use goods_application::ports::human_feedback_source::HumanFeedbackSource;
 use goods_application::ports::observation_source::ObservationSource;
+use goods_domain::care::{CareRequest, Caregiver, HumanFeedback};
 use goods_domain::goods::Goods;
 use goods_domain::observation::Observation;
 
@@ -121,3 +124,91 @@ impl Display for DemoObservationError {
 }
 
 impl Error for DemoObservationError {}
+
+/// A local Human Feedback source used only by the runnable demo. The
+/// feedback is a synthetic stand-in for a real Caregiver's response; it is
+/// never computed by this adapter, only read from a fixture.
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct DemoHumanFeedbackSource {
+    feedback: HumanFeedback,
+}
+
+impl DemoHumanFeedbackSource {
+    pub fn new(feedback: HumanFeedback) -> Self {
+        Self { feedback }
+    }
+
+    pub fn from_fixture(contents: &str) -> Result<Self, DemoHumanFeedbackError> {
+        let mut role = None;
+        let mut display_name = None;
+        let mut decision = None;
+        let mut provided_at = None;
+
+        for line in contents.lines() {
+            let line = line.trim();
+            if line.is_empty() || line.starts_with('#') {
+                continue;
+            }
+
+            let (key, value) =
+                line.split_once('=').ok_or_else(|| DemoHumanFeedbackError::invalid_line(line))?;
+            match key.trim() {
+                "caregiver_role" => role = Some(value.trim().to_owned()),
+                "caregiver_name" => display_name = Some(value.trim().to_owned()),
+                "decision" => decision = Some(value.trim().to_owned()),
+                "provided_at" => provided_at = Some(value.trim().to_owned()),
+                _ => {}
+            }
+        }
+
+        let role = role.ok_or_else(|| DemoHumanFeedbackError::missing("caregiver_role"))?;
+        let display_name =
+            display_name.ok_or_else(|| DemoHumanFeedbackError::missing("caregiver_name"))?;
+        let decision = decision.ok_or_else(|| DemoHumanFeedbackError::missing("decision"))?;
+        if decision.is_empty() {
+            return Err(DemoHumanFeedbackError::empty("decision"));
+        }
+        let provided_at =
+            provided_at.ok_or_else(|| DemoHumanFeedbackError::missing("provided_at"))?;
+
+        Ok(Self::new(HumanFeedback {
+            caregiver: Caregiver { role, display_name },
+            decision,
+            provided_at,
+        }))
+    }
+}
+
+impl HumanFeedbackSource for DemoHumanFeedbackSource {
+    type Error = DemoHumanFeedbackError;
+
+    fn provide_feedback(&self, _request: &CareRequest) -> Result<HumanFeedback, Self::Error> {
+        Ok(self.feedback.clone())
+    }
+}
+
+/// Parsing or boundary errors for the local synthetic Human Feedback fixture.
+#[derive(Clone, Debug, Eq, PartialEq)]
+pub struct DemoHumanFeedbackError(String);
+
+impl DemoHumanFeedbackError {
+    fn missing(field: &'static str) -> Self {
+        Self(format!("missing fixture field: {field}"))
+    }
+
+    fn empty(field: &'static str) -> Self {
+        Self(format!("fixture field is empty: {field}"))
+    }
+
+    fn invalid_line(line: &str) -> Self {
+        Self(format!("invalid fixture line: {line}"))
+    }
+}
+
+impl Display for DemoHumanFeedbackError {
+    fn fmt(&self, formatter: &mut Formatter<'_>) -> std::fmt::Result {
+        formatter.write_str(&self.0)
+    }
+}
+
+impl Error for DemoHumanFeedbackError {}

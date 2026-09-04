@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-04T23:33:47Z",
+  "files": {
+    "contractDigest": "sha256:4ab05a8fffff3ab26f5918a0d973a7128dd510f9722c43a26627b4c5bbe8a7e1",
+    "contractPath": ".ai/work-items/archive/phase-3-care.contract.json",
+    "eventsDigest": "sha256:813ec1257502d41b9941b4cf18fd279174b2e6e88ae81af004cf91b5c767913b",
+    "eventsPath": ".ai/work-items/archive/phase-3-care.events.jsonl",
+    "outcomeDigest": "sha256:7efe7b9cbd318885b775bc9f68dadad89a22b622df742e31e0df767920b864ef",
+    "outcomePath": ".ai/work-items/archive/phase-3-care.outcome.json",
+    "summaryDigest": "sha256:031886bf60df8a6f7621d2eb1b705d46e7f0264c50d0c7c4d7d9f01808bd36bd",
+    "summaryPath": ".ai/work-items/archive/phase-3-care.summary.json",
+    "taskReportDigest": "sha256:b3f6d196551d858a11e3d24a98030dc0207701a34292e7a701fdd7481536f344",
+    "taskReportMarkdownDigest": "sha256:888165a053c2de7af22e15b520ffcb0b386a4f412dfa49165887910cae341637",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-3-care.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-3-care.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-3-care"
+}

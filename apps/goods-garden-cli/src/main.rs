@@ -4,10 +4,12 @@ use std::error::Error;
 use std::process;
 
 use goods_domain::goods::{Goods, GoodsIdentity, GoodsProfile};
-use goods_infrastructure::simulator::DemoObservationSource;
+use goods_infrastructure::simulator::{DemoHumanFeedbackSource, DemoObservationSource};
 use goods_runtime::GoodsRuntime;
 
 const TUNA_MAYO_FIXTURE: &str = include_str!("../../../examples/tuna-mayo/observation.example.txt");
+const HUMAN_FEEDBACK_FIXTURE: &str =
+    include_str!("../../../examples/tuna-mayo/human_feedback.example.txt");
 
 fn main() {
     if let Err(error) = run() {
@@ -39,7 +41,9 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
         },
     );
     let source = DemoObservationSource::from_fixture(TUNA_MAYO_FIXTURE)?;
-    let (state, needs) = GoodsRuntime::new(source).observe_and_identify_needs(&item)?;
+    let feedback_source = DemoHumanFeedbackSource::from_fixture(HUMAN_FEEDBACK_FIXTURE)?;
+    let (state, needs, request, action) =
+        GoodsRuntime::new(source).request_care(&item, &feedback_source)?;
 
     println!("Goods Garden Phase 1 demo");
     println!("source: {}", state.observation.source);
@@ -67,6 +71,17 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     match &needs.conflict {
         Some(conflict) => println!("need conflict: {}", conflict.explanation),
         None => println!("need conflict: <none identified>"),
+    }
+
+    match &request {
+        Some(request) => {
+            println!("care request: ({}) {}", request.requested_role, request.explanation)
+        }
+        None => println!("care request: <none identified>"),
+    }
+    match &action {
+        Some(action) => println!("care action: {}", action.explanation),
+        None => println!("care action: <none identified>"),
     }
 
     Ok(())

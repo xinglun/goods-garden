@@ -1,0 +1,138 @@
+{
+  "acceptanceResults": [
+    "EN: CareRequest, Caregiver, HumanFeedback and CareAction are implemented in goods-domain without changing state::goods_state or the Phase 2 need module. JA: goods-domain に CareRequest、Caregiver、HumanFeedback、CareAction を実装し、state::goods_state と Phase 2 の need module は変更しない。ZH: 在 goods-domain 中实现 CareRequest、Caregiver、HumanFeedback 与 CareAction，且不修改 state::goods_state 或 Phase 2 的 need 模块。",
+    "EN: RequestCare/ReceiveCare are implemented in goods-application; a new HumanFeedbackSource port guarantees Human Feedback is always external input; GoodsRuntime exposes request_care without altering observe_and_assess or observe_and_identify_needs. JA: goods-application に RequestCare/ReceiveCare を実装し、新設の HumanFeedbackSource port が Human Feedback を常に外部入力にする。GoodsRuntime は既存メソッドを変更せず request_care を追加公開する。ZH: 在 goods-application 中实现 RequestCare/ReceiveCare；新增的 HumanFeedbackSource port 保证 Human Feedback 始终为外部输入；GoodsRuntime 在不改动现有方法的前提下新增公开 request_care。",
+    "EN: The CLI demo prints whether a Care Request was raised and any resulting Care Action, using bundled fixtures tuned so the default run shows no Need/Care Request. JA: CLI demo は Care Request の有無と結果の Care Action を表示する。同梱 fixture はデフォルト実行で Need/Care Request が発生しない値に調整する。ZH: CLI demo 显示是否产生 Care Request 及其结果 Care Action；内置 fixture 调整为默认运行不产生 Need/Care Request。",
+    "EN: A new phase_3_care.rs test file covers no-need, single-need, and need-conflict scenarios, without changing phase_1_demo.rs or phase_2_need.rs. JA: 新設の phase_3_care.rs が need無し・単一need・need-conflict の3シナリオを検証し、phase_1_demo.rs と phase_2_need.rs は変更しない。ZH: 新增的 phase_3_care.rs 覆盖无 need、单一 need 与 need 冲突三种场景，且不修改 phase_1_demo.rs 或 phase_2_need.rs。",
+    "EN: docs/phases/phase-3-care.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-3-care.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-3-care.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
+  ],
+  "createdAt": "2026-09-04T23:33:44Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:ca62c98317aefee559f39c5f7437d388597f9525bb5c7c5b36c84148b477f3c5",
+  "evidenceRefs": [
+    ".ai/evidence/phase-3-care.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-3-care.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-3-care.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:fd652f6aef3d1b2f9de474ef6c8c6dce5446d3ba8e557e764941f7c11477f84b",
+      "workItemId": "phase-3-care"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-3-care.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-3-care.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-3-care.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-3-care.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-3-care.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-3-care.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-3-care.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run the local CLI demo and see whether a Care Request was raised from an identified Need, and the resulting explainable Care Action recorded from synthetic Human Feedback, without any autonomous action or real external Caregiver system. JA: 人が local CLI demo を実行し、識別された Need から Care Request が発生したか、synthetic Human Feedback から記録された explainable な Care Action を確認できる。自律行動や real external Caregiver system は含まない。ZH: 用户可以运行本地 CLI demo，查看是否由已识别的 Need 引发 Care Request，以及由 synthetic Human Feedback 记录得出的可解释 Care Action；不包含自主行动或真实外部 Caregiver 系统。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-3-care.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-3-care"
+  },
+  "taskReportDigest": "sha256:b3f6d196551d858a11e3d24a98030dc0207701a34292e7a701fdd7481536f344",
+  "taskReportMarkdownDigest": "sha256:888165a053c2de7af22e15b520ffcb0b386a4f412dfa49165887910cae341637",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-3-care.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-3-care"
+}
