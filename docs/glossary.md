@@ -12,6 +12,9 @@
 | Expectation | A profile-derived boundary used to assess the current state. |
 | Health Assessment | An explainable healthy/unhealthy result derived from an observation and expectation. |
 | Need | An explainable condition that calls for care or investigation. |
+| Deviation | A quantified gap between an observation and its expectation on a given dimension. |
+| Urgency | An explainable, staged level of how soon a Need calls for attention. |
+| Need Conflict | An explainable contradiction between two simultaneous Needs that recommend opposing directions, surfaced without being resolved or acted on. |
 | Care | Human or system-supported response to a good's need, subject to authority. |
 | Caregiver | A human participant who can understand, decide and provide care. |
 | Observation | Sensory input from a source. |
@@ -34,6 +37,9 @@
 | Expectation | current state を assess するための profile 由来の boundary。 |
 | Health Assessment | observation と expectation から導く explainable な healthy/unhealthy result。 |
 | Need | care または investigation を必要とする explainable な condition。 |
+| Deviation | ある次元での observation と expectation の間の定量化された gap。 |
+| Urgency | Need がどれだけ早く注意を必要とするかを示す explainable な段階的 level。 |
+| Need Conflict | 相反する方向を示唆する2つの同時 Need の間の explainable な矛盾。解決も行動の推奨も行わず提示するだけ。 |
 | Care | authority に従って need に応答する human または system-supported response。 |
 | Caregiver | 理解し、判断し、care を提供できる human participant。 |
 | Observation | source からの sensory input。 |
@@ -56,6 +62,9 @@
 | Expectation | 从 profile 得到、用于评估当前状态的边界。 |
 | Health Assessment | 根据 observation 和 expectation 得出的可解释 healthy/unhealthy 结果。 |
 | Need | 需要照料或调查的可解释条件。 |
+| Deviation | 某个维度上 observation 与 expectation 之间可量化的差距。 |
+| Urgency | 说明 Need 需要多快获得关注的可解释分级。 |
+| Need Conflict | 两个同时存在、方向相反的 Need 之间可解释的矛盾；只呈现矛盾，不解决也不推荐行动。 |
 | Care | 受权限约束、对商品需求作出的人工或系统支持响应。 |
 | Caregiver | 能够理解、决定并提供照料的人类参与者。 |
 | Observation | 来自某个来源的感官输入。 |

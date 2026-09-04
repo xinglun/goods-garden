@@ -24,6 +24,7 @@ impl DemoObservationSource {
         let mut source = None;
         let mut observed_at = None;
         let mut age_hours = None;
+        let mut quantity_on_hand = None;
 
         for line in contents.lines() {
             let line = line.trim();
@@ -44,6 +45,14 @@ impl DemoObservationSource {
                             .map_err(|_| DemoObservationError::invalid_age(value.trim()))?,
                     )
                 }
+                "quantity_on_hand" => {
+                    quantity_on_hand = Some(
+                        value
+                            .trim()
+                            .parse()
+                            .map_err(|_| DemoObservationError::invalid_quantity(value.trim()))?,
+                    )
+                }
                 _ => {}
             }
         }
@@ -60,8 +69,10 @@ impl DemoObservationSource {
         }
 
         let age_hours = age_hours.ok_or_else(|| DemoObservationError::missing("age_hours"))?;
+        let quantity_on_hand =
+            quantity_on_hand.ok_or_else(|| DemoObservationError::missing("quantity_on_hand"))?;
 
-        Ok(Self::new(Observation { source, observed_at, age_hours }))
+        Ok(Self::new(Observation { source, observed_at, age_hours, quantity_on_hand }))
     }
 }
 
@@ -88,6 +99,10 @@ impl DemoObservationError {
 
     fn invalid_age(value: &str) -> Self {
         Self(format!("invalid age_hours value: {value}"))
+    }
+
+    fn invalid_quantity(value: &str) -> Self {
+        Self(format!("invalid quantity_on_hand value: {value}"))
     }
 
     fn invalid_line(line: &str) -> Self {

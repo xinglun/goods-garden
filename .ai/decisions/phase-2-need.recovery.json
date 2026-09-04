@@ -1,0 +1,27 @@
+{
+  "actor": "human:repository-owner",
+  "authoritySource": "repository-local-authorized-retry",
+  "decidedAt": "2026-09-04T22:26:00Z",
+  "decision": "retry",
+  "decisionId": "work-item-recovery",
+  "evidenceRefs": [
+    ".ai/evidence/phase-2-need.verification.json",
+    ".ai/work-items/active/phase-2-need.outcome.json",
+    ".ai/work-items/active/phase-2-need.events.jsonl"
+  ],
+  "policyRefs": [
+    "AGENTS.md:recovery-retry-boundary"
+  ],
+  "predecessorContractDigest": "sha256:4d98673848634189927d2f3edea7db9ea6d209208b4db5ae3884420b1034e2ca",
+  "predecessorEventsDigest": "sha256:fd1908c42e288b4354c3b0676216bab9f419033dc0a865826c95696dca7ad3b0",
+  "predecessorOutcomeDigest": "sha256:d1484e1c01829b4efd3a42039ccc2c931ab298c7aba7121be25c808bc0c004be",
+  "predecessorSummaryDigest": "sha256:5b88ad6e9da7b5b4c15e4ffa6d7c53c165fb0d8a2b2720d413bc7aa55157b7fa",
+  "predecessorWorkItemId": "phase-2-need",
+  "reason": "Refresh the current Runtime-bound verification after the finalization-plan Contract amendment exposed stale prior verification evidence.",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resumeCondition": "Run fresh preflight and verification against the bound Contract, then retry finish.",
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "workItemId": "phase-2-need"
+}

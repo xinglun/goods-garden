@@ -9,7 +9,11 @@ use goods_runtime::GoodsRuntime;
 fn goods(species: &str, individual_id: &str, expected_lifetime_hours: u32) -> Goods {
     Goods::new(
         GoodsIdentity { species: species.to_owned(), individual_id: individual_id.to_owned() },
-        GoodsProfile { display_name: species.to_owned(), expected_lifetime_hours },
+        GoodsProfile {
+            display_name: species.to_owned(),
+            expected_lifetime_hours,
+            minimum_stock_quantity: 2,
+        },
     )
 }
 
@@ -37,6 +41,7 @@ fn observation_beyond_expectation_is_unhealthy_and_explained() {
         source: "synthetic-example".to_owned(),
         observed_at: "2026-08-28T00:00:00Z".to_owned(),
         age_hours: 9,
+        quantity_on_hand: 10,
     });
     let item = goods("rice-ball", "tuna-mayo-demo-002", 8);
 
@@ -54,6 +59,7 @@ fn the_same_runtime_supports_a_different_goods_profile() {
         source: "synthetic-example".to_owned(),
         observed_at: "2026-08-28T00:00:00Z".to_owned(),
         age_hours: 2,
+        quantity_on_hand: 10,
     });
     let item = goods("coffee", "coffee-demo-001", 4);
 
