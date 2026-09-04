@@ -9,9 +9,11 @@ use goods_application::use_cases::assess_state::AssessState;
 use goods_application::use_cases::identify_need::IdentifyNeed;
 use goods_application::use_cases::observe_goods::ObserveGoods;
 use goods_application::use_cases::receive_care::ReceiveCare;
+use goods_application::use_cases::remember_care::RememberCare;
 use goods_application::use_cases::request_care::RequestCare;
 use goods_domain::care::{CareAction, CareRequest};
 use goods_domain::goods::Goods;
+use goods_domain::memory::GoodsMemory;
 use goods_domain::need::NeedAssessment;
 use goods_domain::state::GoodsState;
 
@@ -72,6 +74,29 @@ impl<S: ObservationSource> GoodsRuntime<S> {
             }
             None => None,
         };
+
+        Ok((state, needs, request, action))
+    }
+
+    /// Request Care as above, and — when a Care Action results — remember
+    /// the episode in `memory`. `memory` is owned by the caller so it can be
+    /// threaded across repeated observations; this method never evicts or
+    /// expires a prior record.
+    pub fn request_care_and_remember<F>(
+        &self,
+        goods: &Goods,
+        feedback_source: &F,
+        memory: &mut GoodsMemory,
+    ) -> Result<CareOutcome, Box<dyn StdError>>
+    where
+        F: HumanFeedbackSource,
+        F::Error: StdError + 'static,
+        S::Error: StdError + 'static,
+    {
+        let (state, needs, request, action) = self.request_care(goods, feedback_source)?;
+        if let Some(action) = &action {
+            RememberCare::execute(memory, state.clone(), action.clone());
+        }
 
         Ok((state, needs, request, action))
     }
