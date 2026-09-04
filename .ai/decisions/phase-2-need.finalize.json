@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "c5947bf8707946163d5ce5e861685bded032826f",
+    "name": "codex/phase-2-need",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:c4aa8d1deb93e75b9770a9d5604072aa6ed2bba1511b97d0faaa3a30e378ca2f",
+  "operationId": "phase-2-need-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "fd836981299ea77f13ca87b06ec0e7d7dd93894c",
+    "headRevision": "c5947bf8707946163d5ce5e861685bded032826f",
+    "mergeCommit": "3d62f63cc5bc39d53035bae96efec461a5bf5a26",
+    "number": 12,
+    "url": "https://github.com/xinglun/goods-garden/pull/12"
+  },
+  "reason": "PR #12 (feat: implement Phase 2 Need) and its governance-record follow-up PR #13 were reviewed and merged into main; the codex/phase-2-need branch and its worktree were then deleted.",
+  "receiptId": "phase-2-need-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-2-need",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/12",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-2-need"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-04T22:52:00Z",
+  "workItemId": "phase-2-need",
+  "worktree": {
+    "branch": "codex/phase-2-need",
+    "headRevision": "c5947bf8707946163d5ce5e861685bded032826f",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-2-need",
+    "worktreeId": "goods-garden-phase-2-need"
+  }
+}
