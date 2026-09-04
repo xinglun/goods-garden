@@ -4,7 +4,8 @@
 
 Phase 1 separates the minimal model needed by the local demo from future
 provisional concepts. Phase 2 adds a minimal Need model on top without
-changing Phase 1. Both are reviewable, deliberately small and do not claim to
+changing Phase 1; Phase 3 adds a minimal Care model on top without changing
+Phase 1 or Phase 2. All are reviewable, deliberately small and do not claim to
 settle the long-term domain schema.
 
 ### Phase 1 minimal model
@@ -46,6 +47,27 @@ Needs can genuinely coexist and conflict.
 Urgency thresholds are fixed example/hypothesis values, not derived from real
 POS or SEJ data; see `docs/phases/phase-2-need.md`.
 
+### Phase 3 minimal model
+
+Phase 3 adds an explainable Care model on top of the unchanged Phase 1/2
+State and Need model. A CareRequest is raised whenever a Need exists; Human
+Feedback is always external input, never computed by the domain; a CareAction
+only records what a Caregiver said.
+
+| Type | Minimal role in Phase 3 | Status |
+| --- | --- | --- |
+| CareRequest | Needs, any Need Conflict, a requested Caregiver role and an explanation | PHASE 3 MINIMAL |
+| Caregiver | A `role` and `display_name` identifying who may help | PHASE 3 MINIMAL |
+| HumanFeedback | A Caregiver's `decision` and `provided_at`, supplied as external input | PHASE 3 MINIMAL |
+| CareAction | Binds a CareRequest to the HumanFeedback that resolved it | PHASE 3 MINIMAL |
+
+The bounded rule is that every identified Need raises a CareRequest for a
+single, fixed `"store staff"` role; no role-routing or permission model is
+implemented. HumanFeedback is read from a `HumanFeedbackSource` port whose
+only implementation is a local synthetic fixture, matching Phase 1/2's
+`ObservationSource` pattern; a real interactive or provider-backed adapter is
+not implemented. See `docs/phases/phase-3-care.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -54,8 +76,6 @@ settled schemas.
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
 | Evidence | Traceability support candidate | PROVISIONAL |
-| CareRequest | Request-for-care candidate | PROVISIONAL |
-| CareAction | Care record candidate | PROVISIONAL |
 | Outcome | Result candidate | PROVISIONAL |
 | Memory | Relationship/history candidate | PROVISIONAL |
 | Learning | Learning-result candidate | PROVISIONAL |
@@ -64,7 +84,8 @@ settled schemas.
 ## 日本語
 
 Phase 1 では local demo に必要な最小 model と、将来の provisional concept を分ける。Phase 2 は Phase 1 を変更せず
-その上に最小の Need model を追加する。どちらも review 可能な小さい model であり、長期的な domain schema を確定したとは主張しない。
+その上に最小の Need model を追加し、Phase 3 は Phase 1/2 を変更せずその上に最小の Care model を追加する。いずれも review
+可能な小さい model であり、長期的な domain schema を確定したとは主張しない。
 
 ### Phase 1 minimal model
 
@@ -101,6 +122,24 @@ StockAvailability 次元のため、`Observation` に `quantity_on_hand`、`Good
 `minimum_stock_quantity` を追加した。Urgency の閾値は固定の example/hypothesis 値であり、real POS
 や SEJ data から導いたものではない。詳細は `docs/phases/phase-2-need.md` を参照。
 
+### Phase 3 minimal model
+
+Phase 3 は不変の Phase 1/2 State/Need model の上に、explainable な Care model を追加する。CareRequest は
+Need が存在する限り必ず発生し、Human Feedback は常に外部入力であり domain が計算することはなく、CareAction は
+Caregiver が実際に言ったことを記録するだけである。
+
+| Type | Phase 3 における最小の役割 | Status |
+| --- | --- | --- |
+| CareRequest | Need 群、Need Conflict の有無、要求する Caregiver role、explanation | PHASE 3 MINIMAL |
+| Caregiver | 誰が助けられるかを示す `role` と `display_name` | PHASE 3 MINIMAL |
+| HumanFeedback | Caregiver の `decision` と `provided_at`。外部入力として供給される | PHASE 3 MINIMAL |
+| CareAction | CareRequest とそれを解決した HumanFeedback を結びつける | PHASE 3 MINIMAL |
+
+bounded rule は、識別された全ての Need が単一の固定 role `"store staff"` への CareRequest を発生させるというもので、
+role-routing や permission model は実装しない。HumanFeedback は `HumanFeedbackSource` port から読み取り、唯一の実装は
+Phase 1/2 の `ObservationSource` と同じ local synthetic fixture である。real な対話式または provider-backed adapter は実装しない。
+詳細は `docs/phases/phase-3-care.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -108,8 +147,6 @@ StockAvailability 次元のため、`Observation` に `quantity_on_hand`、`Good
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
 | Evidence | traceability support の候補 | PROVISIONAL |
-| CareRequest | request-for-care の候補 | PROVISIONAL |
-| CareAction | care record の候補 | PROVISIONAL |
 | Outcome | result の候補 | PROVISIONAL |
 | Memory | relationship/history の候補 | PROVISIONAL |
 | Learning | learning-result の候補 | PROVISIONAL |
@@ -117,8 +154,8 @@ StockAvailability 次元のため、`Observation` に `quantity_on_hand`、`Good
 
 ## 中文
 
-Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 2 在不改动 Phase 1 的前提下，于其上新增最小 Need 模型。
-两者都是可 review 的小模型，并不意味着已经确定长期领域 schema。
+Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 2 在不改动 Phase 1 的前提下，于其上新增最小 Need 模型；
+Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型。三者都是可 review 的小模型，并不意味着已经确定长期领域 schema。
 
 ### Phase 1 minimal model
 
@@ -154,6 +191,22 @@ Phase 2 在不变的 Phase 1 State/Health Assessment 之上，增加了可解释
 `minimum_stock_quantity`。Urgency 阈值是固定的 example/hypothesis 数值，并非源自真实 POS 或 SEJ
 数据；详见 `docs/phases/phase-2-need.md`。
 
+### Phase 3 minimal model
+
+Phase 3 在不变的 Phase 1/2 State/Need 模型之上，增加了可解释的 Care 模型。只要存在 Need 就必定产生 CareRequest；
+Human Feedback 始终是外部输入，领域从不计算它；CareAction 只记录 Caregiver 实际说过的话。
+
+| 类型 | 在 Phase 3 中的最小作用 | Status |
+| --- | --- | --- |
+| CareRequest | Need 集合、是否存在 Need Conflict、请求的 Caregiver role 与 explanation | PHASE 3 MINIMAL |
+| Caregiver | 标明谁可以提供帮助的 `role` 与 `display_name` | PHASE 3 MINIMAL |
+| HumanFeedback | Caregiver 的 `decision` 与 `provided_at`，作为外部输入提供 | PHASE 3 MINIMAL |
+| CareAction | 将 CareRequest 与解决它的 HumanFeedback 绑定 | PHASE 3 MINIMAL |
+
+有边界规则是：每一个被识别的 Need 都会向单一固定角色 `"store staff"` 发出 CareRequest，不实现角色路由或权限模型。
+HumanFeedback 从 `HumanFeedbackSource` port 读取，唯一实现是与 Phase 1/2 的 `ObservationSource` 相同风格的本地
+synthetic fixture；不实现真实的交互式或 provider-backed adapter。详见 `docs/phases/phase-3-care.md`。
+
 ### Future provisional concepts
 
 以下仍只是讨论用 vocabulary，不是已实现行为，也不是已经确定的 schema。
@@ -161,8 +214,6 @@ Phase 2 在不变的 Phase 1 State/Health Assessment 之上，增加了可解释
 | 候选 | Provisional 作用 | Status |
 | --- | --- | --- |
 | Evidence | 可追溯性支持的候选 | PROVISIONAL |
-| CareRequest | 求助请求的候选 | PROVISIONAL |
-| CareAction | 照料记录的候选 | PROVISIONAL |
 | Outcome | 结果的候选 | PROVISIONAL |
 | Memory | 关系/历史的候选 | PROVISIONAL |
 | Learning | 学习结果的候选 | PROVISIONAL |

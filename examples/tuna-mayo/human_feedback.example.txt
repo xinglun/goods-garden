@@ -1,0 +1,5 @@
+# Synthetic fixture only; this is not a real human response record.
+caregiver_role=store staff
+caregiver_name=Demo Staff
+decision=Acknowledged the request and will review the item before end of shift.
+provided_at=2026-08-28T01:00:00Z

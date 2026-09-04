@@ -1,0 +1,69 @@
+{
+  "acceptanceCriteria": [
+    "EN: CareRequest, Caregiver, HumanFeedback and CareAction are implemented in goods-domain without changing state::goods_state or the Phase 2 need module. JA: goods-domain に CareRequest、Caregiver、HumanFeedback、CareAction を実装し、state::goods_state と Phase 2 の need module は変更しない。ZH: 在 goods-domain 中实现 CareRequest、Caregiver、HumanFeedback 与 CareAction，且不修改 state::goods_state 或 Phase 2 的 need 模块。",
+    "EN: RequestCare/ReceiveCare are implemented in goods-application; a new HumanFeedbackSource port guarantees Human Feedback is always external input; GoodsRuntime exposes request_care without altering observe_and_assess or observe_and_identify_needs. JA: goods-application に RequestCare/ReceiveCare を実装し、新設の HumanFeedbackSource port が Human Feedback を常に外部入力にする。GoodsRuntime は既存メソッドを変更せず request_care を追加公開する。ZH: 在 goods-application 中实现 RequestCare/ReceiveCare；新增的 HumanFeedbackSource port 保证 Human Feedback 始终为外部输入；GoodsRuntime 在不改动现有方法的前提下新增公开 request_care。",
+    "EN: The CLI demo prints whether a Care Request was raised and any resulting Care Action, using bundled fixtures tuned so the default run shows no Need/Care Request. JA: CLI demo は Care Request の有無と結果の Care Action を表示する。同梱 fixture はデフォルト実行で Need/Care Request が発生しない値に調整する。ZH: CLI demo 显示是否产生 Care Request 及其结果 Care Action；内置 fixture 调整为默认运行不产生 Need/Care Request。",
+    "EN: A new phase_3_care.rs test file covers no-need, single-need, and need-conflict scenarios, without changing phase_1_demo.rs or phase_2_need.rs. JA: 新設の phase_3_care.rs が need無し・単一need・need-conflict の3シナリオを検証し、phase_1_demo.rs と phase_2_need.rs は変更しない。ZH: 新增的 phase_3_care.rs 覆盖无 need、单一 need 与 need 冲突三种场景，且不修改 phase_1_demo.rs 或 phase_2_need.rs。",
+    "EN: docs/phases/phase-3-care.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-3-care.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-3-care.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "cea6af133021e773e2dd75c72d3060301646f5d7",
+  "createdAt": "2026-09-04T23:32:36Z",
+  "goal": "EN: A person can run the local CLI demo and see whether a Care Request was raised from an identified Need, and the resulting explainable Care Action recorded from synthetic Human Feedback, without any autonomous action or real external Caregiver system. JA: 人が local CLI demo を実行し、識別された Need から Care Request が発生したか、synthetic Human Feedback から記録された explainable な Care Action を確認できる。自律行動や real external Caregiver system は含まない。ZH: 用户可以运行本地 CLI demo，查看是否由已识别的 Need 引发 Care Request，以及由 synthetic Human Feedback 记录得出的可解释 Care Action；不包含自主行动或真实外部 Caregiver 系统。",
+  "intent": "EN: Implement Phase 3 CareRequest, Caregiver, Human Feedback and CareAction on top of the unchanged Phase 1/2 State/Need model, keeping Human Feedback strictly as external input never computed by the domain. JA: 不変の Phase 1/2 State/Need model の上に Phase 3 の CareRequest、Caregiver、Human Feedback、CareAction を実装し、Human Feedback を domain が計算しない外部入力に厳密に限定する。ZH: 在不改动 Phase 1/2 State/Need 模型的前提下实现 Phase 3 的 CareRequest、Caregiver、Human Feedback 与 CareAction，并使 Human Feedback 严格保持为领域从不计算的外部输入。",
+  "mode": "implementation",
+  "outOfScope": [
+    "Memory",
+    " Learning behavior",
+    " autonomous action",
+    "real interactive stdin prompt",
+    " provider-backed Caregiver channel",
+    " role-routing/permission model",
+    "apps/goods-garden-web/** (frontend)",
+    "crates/goods-domain/src/state/goods_state.rs and crates/goods-domain/src/need/** (Phase 1/2 frozen contracts)"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "unknown",
+    "baseRemote": "unknown",
+    "branch": "codex/phase-3-care",
+    "provider": "unknown",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-3-care"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/care/mod.rs",
+    "crates/goods-domain/src/care/care_request.rs",
+    "crates/goods-domain/src/care/care_action.rs",
+    "crates/goods-domain/src/care/caregiver.rs",
+    "crates/goods-domain/src/care/human_feedback.rs",
+    "crates/goods-domain/src/lib.rs",
+    "crates/goods-application/src/ports/mod.rs",
+    "crates/goods-application/src/ports/human_feedback_source.rs",
+    "crates/goods-application/src/use_cases/request_care.rs",
+    "crates/goods-application/src/use_cases/receive_care.rs",
+    "crates/goods-runtime/src/runtime.rs",
+    "crates/goods-infrastructure/src/simulator/mod.rs",
+    "examples/tuna-mayo/human_feedback.example.txt",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_3_care.rs",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-3-care-design.md",
+    "docs/phases/phase-3-care.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-3-care"
+}

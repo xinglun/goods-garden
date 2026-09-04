@@ -16,6 +16,9 @@
 | Urgency | An explainable, staged level of how soon a Need calls for attention. |
 | Need Conflict | An explainable contradiction between two simultaneous Needs that recommend opposing directions, surfaced without being resolved or acted on. |
 | Care | Human or system-supported response to a good's need, subject to authority. |
+| Care Request | An explainable request for Care, raised when a Need cannot be resolved by the good alone; it never decides or performs an action. |
+| Human Feedback | Human input received in response to a Care Request; the domain never invents, infers or synthesizes it. |
+| Care Action | A traceable record binding a Care Request to the Human Feedback that resolved it. |
 | Caregiver | A human participant who can understand, decide and provide care. |
 | Observation | Sensory input from a source. |
 | Evidence | Traceable support for an observation, inference or decision. |
@@ -41,6 +44,9 @@
 | Urgency | Need がどれだけ早く注意を必要とするかを示す explainable な段階的 level。 |
 | Need Conflict | 相反する方向を示唆する2つの同時 Need の間の explainable な矛盾。解決も行動の推奨も行わず提示するだけ。 |
 | Care | authority に従って need に応答する human または system-supported response。 |
+| Care Request | good 単独では need を解決できない時に発生する explainable な request。決定も行動も行わない。 |
+| Human Feedback | Care Request に応じて得られる human input。domain はこれを発明・推論・合成しない。 |
+| Care Action | Care Request とそれを解決した Human Feedback を結びつける traceable な記録。 |
 | Caregiver | 理解し、判断し、care を提供できる human participant。 |
 | Observation | source からの sensory input。 |
 | Evidence | observation、inference、decision を支える traceable support。 |
@@ -66,6 +72,9 @@
 | Urgency | 说明 Need 需要多快获得关注的可解释分级。 |
 | Need Conflict | 两个同时存在、方向相反的 Need 之间可解释的矛盾；只呈现矛盾，不解决也不推荐行动。 |
 | Care | 受权限约束、对商品需求作出的人工或系统支持响应。 |
+| Care Request | 当商品无法独自解决 Need 时提出的可解释请求；它本身不做决定也不执行行动。 |
+| Human Feedback | 针对 Care Request 收到的人类输入；领域从不臆造、推断或合成它。 |
+| Care Action | 将 Care Request 与解决它的 Human Feedback 绑定在一起的可追溯记录。 |
 | Caregiver | 能够理解、决定并提供照料的人类参与者。 |
 | Observation | 来自某个来源的感官输入。 |
 | Evidence | 支持观察、推断或决定的可追溯依据。 |
