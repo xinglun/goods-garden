@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "10145c58a67324b5568499c2853181efdaeda21f",
+    "name": "codex/phase-4-memory",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:b8f115dc319a490d21318198fc5b9adf6a3caa11a8100c1bcbeb1347d478f92f",
+  "operationId": "phase-4-memory-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "fecc09e6f5666b732ade815c9b7a819d43ab2eb4",
+    "headRevision": "10145c58a67324b5568499c2853181efdaeda21f",
+    "mergeCommit": "8b1754646e502799a285df32149c166df8f72bd1",
+    "number": 17,
+    "url": "https://github.com/xinglun/goods-garden/pull/17"
+  },
+  "reason": "PR #17 (feat: implement Phase 4 Memory) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-4-memory branch and its worktree were then deleted.",
+  "receiptId": "phase-4-memory-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-4-memory",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/17",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-4-memory"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-04T23:48:00Z",
+  "workItemId": "phase-4-memory",
+  "worktree": {
+    "branch": "codex/phase-4-memory",
+    "headRevision": "10145c58a67324b5568499c2853181efdaeda21f",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-4-memory",
+    "worktreeId": "goods-garden-phase-4-memory"
+  }
+}
