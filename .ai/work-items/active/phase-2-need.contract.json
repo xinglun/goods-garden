@@ -1,0 +1,70 @@
+{
+  "acceptanceCriteria": [
+    "EN: Deviation, Urgency, GoodsNeed and NeedConflict are implemented in goods-domain using a Freshness dimension (reusing the existing Expectation) and a new StockAvailability dimension (new quantity_on_hand/minimum_stock_quantity fields), without changing state::goods_state. JA: goods-domain に Deviation、Urgency、GoodsNeed、NeedConflict を実装する。次元は既存 Expectation を再利用する Freshness と、新設の quantity_on_hand/minimum_stock_quantity による StockAvailability の2つとし、state::goods_state は変更しない。ZH: 在 goods-domain 中实现 Deviation、Urgency、GoodsNeed 与 NeedConflict，维度为复用现有 Expectation 的 Freshness，以及新增 quantity_on_hand/minimum_stock_quantity 的 StockAvailability，且不修改 state::goods_state。",
+    "EN: IdentifyNeed::execute produces a NeedAssessment; GoodsRuntime exposes observe_and_identify_needs without altering the existing observe_and_assess method. JA: IdentifyNeed::execute が NeedAssessment を生成し、GoodsRuntime は既存の observe_and_assess を変更せず observe_and_identify_needs を追加公開する。ZH: IdentifyNeed::execute 生成 NeedAssessment；GoodsRuntime 在不改动现有 observe_and_assess 的前提下新增公开 observe_and_identify_needs。",
+    "EN: The CLI demo prints identified Needs, their Urgency, and any Need Conflict alongside the existing Phase 1 output, using the bundled fixture tuned so the default run shows no Need. JA: CLI demo は既存 Phase 1 出力に加え、識別された Need、その Urgency、Need Conflict の有無を表示する。同梱 fixture はデフォルト実行で Need が発生しない値に調整する。ZH: CLI demo 在保留现有 Phase 1 输出的同时，显示已识别的 Need、其 Urgency 以及是否存在 Need Conflict；内置 fixture 调整为默认运行不产生 Need。",
+    "EN: Phase 1 tests in phase_1_demo.rs keep their existing assertions unchanged (only new-field additions to struct literals), and a new phase_2_need.rs test file covers no-need, freshness-only, stock-only and conflict scenarios. JA: phase_1_demo.rs の既存 assertion は変更せず（struct literal への新フィールド追加のみ）、新設の phase_2_need.rs が need無し・freshness単独・stock単独・conflict の4シナリオを検証する。ZH: phase_1_demo.rs 的既有断言保持不变（仅在 struct literal 中新增字段），新增的 phase_2_need.rs 覆盖无 need、仅 freshness、仅 stock 与冲突四种场景。",
+    "EN: docs/phases/phase-2-need.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-2-need.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-2-need.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "fd836981299ea77f13ca87b06ec0e7d7dd93894c",
+  "createdAt": "2026-09-04T22:14:05Z",
+  "goal": "EN: A person can run the local CLI demo and see explainable Need(s), their Urgency, and any Need Conflict derived from a synthetic observation, without any Care, autonomous action or real external data. JA: 人が local CLI demo を実行し、synthetic observation から導かれる explainable な Need、その Urgency、Need Conflict の有無を確認できる。Care、自律行動、real external data は含まない。ZH: 用户可以运行本地 CLI demo，查看由 synthetic observation 得出的可解释 Need、其 Urgency，以及是否存在 Need Conflict；不包含 Care、自主行动或真实外部数据。",
+  "intent": "EN: Implement Phase 2 Deviation, Urgency, GoodsNeed and Need Conflict on top of the Phase 1 State/Health model, adding a second stock-availability dimension so a genuine Need Conflict can occur. JA: Phase 1 の State/Health model の上に Phase 2 の Deviation、Urgency、GoodsNeed、Need Conflict を実装し、実際に Need Conflict が発生するよう在庫充足度という第2の評価次元を追加する。ZH: 在 Phase 1 的 State/Health 模型之上实现 Phase 2 的 Deviation、Urgency、GoodsNeed 与 Need Conflict，并新增库存充足度这一第二评估维度，使 Need Conflict 能够真实发生。",
+  "mode": "implementation",
+  "outOfScope": [
+    "Care runtime",
+    " autonomous action",
+    " Memory",
+    " Learning behavior",
+    "real POS/SEJ data",
+    " external integrations",
+    " new external dependencies",
+    "apps/goods-garden-web/** (frontend)",
+    "crates/goods-domain/src/state/goods_state.rs (Phase 1 frozen contract)"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:a5a41b8c203a1916084e9380dadb26f6732425965f085c8317176627595487e3",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-2-need",
+    "provider": "github",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-2-need"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/need/mod.rs",
+    "crates/goods-domain/src/need/goods_need.rs",
+    "crates/goods-domain/src/need/deviation.rs",
+    "crates/goods-domain/src/need/urgency.rs",
+    "crates/goods-domain/src/need/need_conflict.rs",
+    "crates/goods-domain/src/need/need_assessment.rs",
+    "crates/goods-domain/src/observation/observation.rs",
+    "crates/goods-domain/src/goods/profile.rs",
+    "crates/goods-application/src/use_cases/identify_need.rs",
+    "crates/goods-runtime/src/runtime.rs",
+    "crates/goods-infrastructure/src/simulator/mod.rs",
+    "examples/tuna-mayo/observation.example.txt",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_1_demo.rs",
+    "apps/goods-garden-cli/tests/phase_2_need.rs",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-2-need-design.md",
+    "docs/phases/phase-2-need.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-2-need"
+}

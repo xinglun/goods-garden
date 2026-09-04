@@ -5,4 +5,5 @@
 pub struct GoodsProfile {
     pub display_name: String,
     pub expected_lifetime_hours: u32,
+    pub minimum_stock_quantity: u32,
 }

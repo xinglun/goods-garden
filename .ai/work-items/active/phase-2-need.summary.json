@@ -1,0 +1,67 @@
+{
+  "changedPaths": [],
+  "checkpointAt": "2026-09-04T22:21:14Z",
+  "checkpointContractDigest": "sha256:4d98673848634189927d2f3edea7db9ea6d209208b4db5ae3884420b1034e2ca",
+  "checkpointCount": 1,
+  "checkpointEvidence": [
+    {
+      "acceptanceCount": 6,
+      "contractHash": "sha256:b20ee5cc99b12ca00b739c5ae1f74f8a57c5f0a3992bc7132b3a2684ff4b38d0",
+      "recorded": true,
+      "recordedAt": "2026-09-04T22:21:14Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "schemaVersion": 1,
+      "stage": "before_edit",
+      "unknownCount": 0,
+      "workItemId": "phase-2-need"
+    },
+    {
+      "acceptanceCount": 6,
+      "contractHash": "sha256:4d98673848634189927d2f3edea7db9ea6d209208b4db5ae3884420b1034e2ca",
+      "invalidatedRequiredChecks": [],
+      "originalBeforeEditContractHash": "sha256:b20ee5cc99b12ca00b739c5ae1f74f8a57c5f0a3992bc7132b3a2684ff4b38d0",
+      "previousContractHash": "sha256:b20ee5cc99b12ca00b739c5ae1f74f8a57c5f0a3992bc7132b3a2684ff4b38d0",
+      "reason": "Bind branch/worktree/provider/PR resourceContext via finalize-plan after checkpoint; no scope, acceptance or implementation change.",
+      "recorded": true,
+      "recordedAt": "2026-09-04T22:25:05Z",
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
+      "requiredChecks": 0,
+      "requiredChecksPassed": 0,
+      "requiredChecksPassedAtAmendment": null,
+      "schemaVersion": 1,
+      "stage": "contract_amendment_revalidation",
+      "unknownCount": 0,
+      "verificationStarted": false,
+      "workItemId": "phase-2-need"
+    }
+  ],
+  "checkpointRepositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
+  "createdAt": "2026-09-04T22:14:05Z",
+  "failedGate": "finish.governance",
+  "mode": "implementation",
+  "outcomeState": "blocked",
+  "preflightAt": "2026-09-04T22:36:41Z",
+  "preflightContractDigest": "sha256:4d98673848634189927d2f3edea7db9ea6d209208b4db5ae3884420b1034e2ca",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:aac760e47841eb6d48120e9eb5cbc2ba157236ffe56389946af46f1ed9012eb2",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "recoveryCondition": "Repair the Contract or governance projection, rerun preflight, and retry finish.",
+  "recoveryRetryDecisionDigest": "sha256:79e73b1edb1575d2edb69e38a3ac2af3ff2a679243e78a1f7d3711230448a0c9",
+  "recoveryRetryDecisionPath": ".ai/decisions/phase-2-need.recovery.json",
+  "recoveryRetryPending": true,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "checkpointed",
+  "updatedAt": "2026-09-04T22:36:44Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "phase-2-need"
+}

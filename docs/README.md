@@ -15,7 +15,8 @@ All human-facing documents are maintained in English, Japanese and Chinese.
 - [Trust model](architecture/trust-model.md)
 - [Living goods model](architecture/living-goods-model.md)
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
-- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md) (current)
+- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
+- [Phase 2 — Need](phases/phase-2-need.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -33,7 +34,8 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Trust model](architecture/trust-model.md)
 - [Living goods model](architecture/living-goods-model.md)
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
-- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md) (current)
+- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
+- [Phase 2 — Need](phases/phase-2-need.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -50,6 +52,7 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Trust model](architecture/trust-model.md)
 - [Living goods model](architecture/living-goods-model.md)
 - [Phase 0 — Foundation](phases/phase-0-foundation.md)
-- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md) (current)
+- [Phase 1 — First Living Goods](phases/phase-1-first-living-goods.md)
+- [Phase 2 — Need](phases/phase-2-need.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)

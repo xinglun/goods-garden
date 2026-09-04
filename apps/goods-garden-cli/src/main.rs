@@ -32,10 +32,14 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
             species: "rice-ball".to_owned(),
             individual_id: "tuna-mayo-demo-001".to_owned(),
         },
-        GoodsProfile { display_name: "Tuna-mayo rice ball".to_owned(), expected_lifetime_hours: 8 },
+        GoodsProfile {
+            display_name: "Tuna-mayo rice ball".to_owned(),
+            expected_lifetime_hours: 8,
+            minimum_stock_quantity: 2,
+        },
     );
     let source = DemoObservationSource::from_fixture(TUNA_MAYO_FIXTURE)?;
-    let state = GoodsRuntime::new(source).observe_and_assess(&item)?;
+    let (state, needs) = GoodsRuntime::new(source).observe_and_identify_needs(&item)?;
 
     println!("Goods Garden Phase 1 demo");
     println!("source: {}", state.observation.source);
@@ -47,6 +51,23 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     println!("expectation: maximum age {} hours", state.expectation.max_age_hours);
     println!("health: {}", state.health.status.as_str());
     println!("explanation: {}", state.health.explanation);
+
+    if needs.needs.is_empty() {
+        println!("needs: <none identified>");
+    } else {
+        for need in &needs.needs {
+            println!(
+                "need: {:?} (urgency: {}) — {}",
+                need.kind,
+                need.urgency.as_str(),
+                need.explanation
+            );
+        }
+    }
+    match &needs.conflict {
+        Some(conflict) => println!("need conflict: {}", conflict.explanation),
+        None => println!("need conflict: <none identified>"),
+    }
 
     Ok(())
 }
