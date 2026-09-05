@@ -115,6 +115,15 @@ Goods individual, demonstrating normal days, two anomalies, their Care
 Requests and Human Feedback, their follow-up Verification/Learning, and a
 final Memory tally. See `docs/phases/phase-6-seven-day-life.md`.
 
+### Phase 7 — Multiple Individuals
+
+Phase 7 introduces no new domain type. It runs two Goods individuals of the
+same species through the unchanged Phase 1-6 model, sharing one cloned
+GoodsProfile (Species-level data) while each owns a distinct
+`GoodsIdentity.individual_id` and its own separate GoodsMemory, validating
+that Species-level data is shared while Individual Memory is not. See
+`docs/phases/phase-7-multiple-individuals.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -224,6 +233,14 @@ Phase 6 は新しい domain type を導入しない。不変の Phase 1-5 model 
 anomaly とその Care Request・Human Feedback、それらの follow-up Verification/Learning、最終的な
 Memory 集計を示す。詳細は `docs/phases/phase-6-seven-day-life.md` を参照。
 
+### Phase 7 — Multiple Individuals
+
+Phase 7 は新しい domain type を導入しない。不変の Phase 1-6 model を、同一 species の2つの Goods
+individual に対して実行し、1つの clone された GoodsProfile（Species レベルのデータ）を共有しつつ、
+それぞれ異なる `GoodsIdentity.individual_id` と独立した GoodsMemory を持たせることで、Species
+レベルのデータは共有され Individual Memory は共有されないことを検証する。詳細は
+`docs/phases/phase-7-multiple-individuals.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -326,6 +343,13 @@ Phase 6 不引入任何新的领域类型。它是一个 CLI 层面的里程碑�
 individual 编排为七天的 synthetic day 脚本，展示正常的日子、两次异常及其 Care Request 与 Human
 Feedback、各自的后续 Verification/Learning，以及最终的 Memory 汇总。详见
 `docs/phases/phase-6-seven-day-life.md`。
+
+### Phase 7 — Multiple Individuals
+
+Phase 7 不引入任何新的领域类型。它将不变的 Phase 1-6 模型运行于同一 species 的两个 Goods
+individual，二者共享同一个克隆的 GoodsProfile（Species 级数据），但各自拥有不同的
+`GoodsIdentity.individual_id` 与独立的 GoodsMemory，验证 Species 级数据被共享而 Individual
+Memory 不被共享。详见 `docs/phases/phase-7-multiple-individuals.md`。
 
 ### Future provisional concepts
 
