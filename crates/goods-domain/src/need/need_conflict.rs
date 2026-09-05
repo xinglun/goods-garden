@@ -1,6 +1,7 @@
 //! Need Conflict.
 
 use super::goods_need::{GoodsNeed, NeedKind};
+use crate::evidence::Evidence;
 
 /// An explainable contradiction between two simultaneous Needs that
 /// recommend opposing directions of attention. NeedConflict does not resolve
@@ -10,7 +11,7 @@ use super::goods_need::{GoodsNeed, NeedKind};
 pub struct NeedConflict {
     pub freshness_need: GoodsNeed,
     pub availability_need: GoodsNeed,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl NeedConflict {
@@ -31,6 +32,6 @@ impl NeedConflict {
             and does not recommend either action."
             .to_owned();
 
-        Some(Self { freshness_need, availability_need, explanation })
+        Some(Self { freshness_need, availability_need, evidence: Evidence::known(explanation) })
     }
 }

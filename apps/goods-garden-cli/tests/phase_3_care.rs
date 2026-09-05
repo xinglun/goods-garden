@@ -71,7 +71,7 @@ fn a_single_need_raises_a_care_request_and_records_a_care_action_from_feedback()
 
     let action = action.expect("a Care Action should be recorded from Human Feedback");
     assert_eq!(action.feedback.decision, "Reviewed and pulled the item from the shelf.");
-    assert!(action.explanation.contains("Reviewed and pulled the item from the shelf."));
+    assert!(action.evidence.statement.contains("Reviewed and pulled the item from the shelf."));
 }
 
 #[test]
@@ -87,7 +87,7 @@ fn a_need_conflict_is_carried_into_the_care_request_explanation() {
     assert!(needs.conflict.is_some());
     let request = request.expect("a Care Request should be raised");
     assert!(request.conflict.is_some());
-    assert!(request.explanation.contains("Need Conflict"));
+    assert!(request.evidence.statement.contains("Need Conflict"));
 
     let action = action.expect("a Care Action should be recorded from Human Feedback");
     assert_eq!(action.feedback.decision, "Escalated to the shift lead for a decision.");

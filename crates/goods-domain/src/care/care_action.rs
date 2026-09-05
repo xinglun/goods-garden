@@ -2,6 +2,7 @@
 
 use super::care_request::CareRequest;
 use super::human_feedback::HumanFeedback;
+use crate::evidence::Evidence;
 
 /// A traceable record binding a CareRequest to the Human Feedback that
 /// resolved it.
@@ -12,7 +13,7 @@ use super::human_feedback::HumanFeedback;
 pub struct CareAction {
     pub request: CareRequest,
     pub feedback: HumanFeedback,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl CareAction {
@@ -22,6 +23,6 @@ impl CareAction {
             feedback.caregiver.display_name, feedback.caregiver.role, feedback.decision
         );
 
-        Self { request, feedback, explanation }
+        Self { request, feedback, evidence: Evidence::known(explanation) }
     }
 }

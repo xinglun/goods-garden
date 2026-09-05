@@ -2,6 +2,7 @@
 
 use super::deviation::{Deviation, DeviationDimension};
 use super::urgency::Urgency;
+use crate::evidence::Evidence;
 
 /// The kind of concern a Need explains. Names describe the concerning
 /// condition, not a recommended Care response; Care remains out of scope.
@@ -18,7 +19,7 @@ pub struct GoodsNeed {
     pub kind: NeedKind,
     pub urgency: Urgency,
     pub deviation: Deviation,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl GoodsNeed {
@@ -40,8 +41,12 @@ impl GoodsNeed {
             ),
         };
 
-        let explanation = deviation.explanation.clone();
+        // Inferred, not Known: unlike the Deviation's own arithmetic fact,
+        // this Need's urgency classification depends on Urgency's fixed,
+        // example-only thresholds (see `Urgency::from_freshness_magnitude`),
+        // not on measured data.
+        let statement = deviation.evidence.statement.clone();
 
-        Some(Self { kind, urgency, deviation, explanation })
+        Some(Self { kind, urgency, deviation, evidence: Evidence::inferred(statement) })
     }
 }

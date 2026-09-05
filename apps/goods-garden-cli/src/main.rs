@@ -64,7 +64,7 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     );
     println!("expectation: maximum age {} hours", state.expectation.max_age_hours);
     println!("health: {}", state.health.status.as_str());
-    println!("explanation: {}", state.health.explanation);
+    println!("explanation: {}", state.health.evidence);
 
     if needs.needs.is_empty() {
         println!("needs: <none identified>");
@@ -74,23 +74,23 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
                 "need: {:?} (urgency: {}) — {}",
                 need.kind,
                 need.urgency.as_str(),
-                need.explanation
+                need.evidence
             );
         }
     }
     match &needs.conflict {
-        Some(conflict) => println!("need conflict: {}", conflict.explanation),
+        Some(conflict) => println!("need conflict: {}", conflict.evidence),
         None => println!("need conflict: <none identified>"),
     }
 
     match &request {
         Some(request) => {
-            println!("care request: ({}) {}", request.requested_role, request.explanation)
+            println!("care request: ({}) {}", request.requested_role, request.evidence)
         }
         None => println!("care request: <none identified>"),
     }
     match &action {
-        Some(action) => println!("care action: {}", action.explanation),
+        Some(action) => println!("care action: {}", action.evidence),
         None => println!("care action: <none identified>"),
     }
     println!("memory: {} care episode(s) remembered", memory.records().len());
@@ -98,7 +98,7 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     match action {
         Some(action) => {
             let learning = runtime.verify_and_learn(&item, action)?;
-            println!("outcome: {:?} — {}", learning.outcome.status, learning.outcome.explanation);
+            println!("outcome: {:?} — {}", learning.outcome.status, learning.outcome.evidence);
             println!("learning: {}", learning.statement);
         }
         None => println!("learning: <none pending>"),
@@ -209,7 +209,7 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
             let learning = runtime.verify_and_learn(&item, action)?;
             println!(
                 "outcome (follow-up on prior Care Action): {:?} — {}",
-                learning.outcome.status, learning.outcome.explanation
+                learning.outcome.status, learning.outcome.evidence
             );
             println!("learning: {}", learning.statement);
         }
@@ -217,22 +217,27 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
         let (state, needs, request, action) =
             runtime.request_care_and_remember(&item, &feedback_source, &mut memory)?;
 
-        println!("health: {} — {}", state.health.status.as_str(), state.health.explanation);
+        println!("health: {} — {}", state.health.status.as_str(), state.health.evidence);
         if needs.needs.is_empty() {
             println!("needs: <none identified>");
         } else {
             for need in &needs.needs {
-                println!("need: {:?} (urgency: {})", need.kind, need.urgency.as_str());
+                println!(
+                    "need: {:?} (urgency: {}) — {}",
+                    need.kind,
+                    need.urgency.as_str(),
+                    need.evidence
+                );
             }
         }
         match &request {
             Some(request) => {
-                println!("care request: ({}) {}", request.requested_role, request.explanation)
+                println!("care request: ({}) {}", request.requested_role, request.evidence)
             }
             None => println!("care request: <none identified>"),
         }
         match &action {
-            Some(action) => println!("care action: {}", action.explanation),
+            Some(action) => println!("care action: {}", action.evidence),
             None => println!("care action: <none identified>"),
         }
 
@@ -321,22 +326,27 @@ fn run_multiple_individuals() -> Result<(), Box<dyn Error>> {
         let (state, needs, request, action) =
             runtime.request_care_and_remember(&item, &feedback_source, &mut memory)?;
 
-        println!("health: {} — {}", state.health.status.as_str(), state.health.explanation);
+        println!("health: {} — {}", state.health.status.as_str(), state.health.evidence);
         if needs.needs.is_empty() {
             println!("needs: <none identified>");
         } else {
             for need in &needs.needs {
-                println!("need: {:?} (urgency: {})", need.kind, need.urgency.as_str());
+                println!(
+                    "need: {:?} (urgency: {}) — {}",
+                    need.kind,
+                    need.urgency.as_str(),
+                    need.evidence
+                );
             }
         }
         match &request {
             Some(request) => {
-                println!("care request: ({}) {}", request.requested_role, request.explanation)
+                println!("care request: ({}) {}", request.requested_role, request.evidence)
             }
             None => println!("care request: <none identified>"),
         }
         match &action {
-            Some(action) => println!("care action: {}", action.explanation),
+            Some(action) => println!("care action: {}", action.evidence),
             None => println!("care action: <none identified>"),
         }
         println!(
@@ -459,23 +469,28 @@ fn run_multiple_goods() -> Result<(), Box<dyn Error>> {
             "expectation: maximum age {} hours, minimum stock {}",
             state.expectation.max_age_hours, product.minimum_stock_quantity
         );
-        println!("health: {} — {}", state.health.status.as_str(), state.health.explanation);
+        println!("health: {} — {}", state.health.status.as_str(), state.health.evidence);
         if needs.needs.is_empty() {
             println!("needs: <none identified>");
         } else {
             any_need_identified = true;
             for need in &needs.needs {
-                println!("need: {:?} (urgency: {})", need.kind, need.urgency.as_str());
+                println!(
+                    "need: {:?} (urgency: {}) — {}",
+                    need.kind,
+                    need.urgency.as_str(),
+                    need.evidence
+                );
             }
         }
         match &request {
             Some(request) => {
-                println!("care request: ({}) {}", request.requested_role, request.explanation)
+                println!("care request: ({}) {}", request.requested_role, request.evidence)
             }
             None => println!("care request: <none identified>"),
         }
         match &action {
-            Some(action) => println!("care action: {}", action.explanation),
+            Some(action) => println!("care action: {}", action.evidence),
             None => println!("care action: <none identified>"),
         }
     }
