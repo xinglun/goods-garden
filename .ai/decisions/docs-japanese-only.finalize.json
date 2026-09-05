@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "2c619c72215ccf3615c673ac9204626eee285fb8",
+    "name": "codex/docs-japanese-only",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:688bdbbacd2a7c546bc568d12872d6b3f13795bf85e658b06b1e090cd6257dbe",
+  "operationId": "docs-japanese-only-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "39c47754dcc870d1cbf8356260fbde485750f19e",
+    "headRevision": "2c619c72215ccf3615c673ac9204626eee285fb8",
+    "mergeCommit": "3fc71ef96937e38de7ea27aae26e20a9ea674fa9",
+    "number": 27,
+    "url": "https://github.com/xinglun/goods-garden/pull/27"
+  },
+  "reason": "PR #27 (docs: make Phase 2-8 authored docs Japanese-only) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/docs-japanese-only branch and its worktree were then deleted.",
+  "receiptId": "docs-japanese-only-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/docs-japanese-only",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/27",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/docs-japanese-only"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T10:08:30Z",
+  "workItemId": "docs-japanese-only",
+  "worktree": {
+    "branch": "codex/docs-japanese-only",
+    "headRevision": "2c619c72215ccf3615c673ac9204626eee285fb8",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/docs-japanese-only",
+    "worktreeId": "goods-garden-docs-japanese-only"
+  }
+}
