@@ -26,8 +26,11 @@ fn run() -> Result<(), Box<dyn Error>> {
         Some("demo") => run_demo(),
         Some("seven-day-life") => run_seven_day_life(),
         Some("multiple-individuals") => run_multiple_individuals(),
+        Some("multiple-goods") => run_multiple_goods(),
         _ => {
-            println!("Usage: goods-garden-cli <demo|seven-day-life|multiple-individuals>");
+            println!(
+                "Usage: goods-garden-cli <demo|seven-day-life|multiple-individuals|multiple-goods>"
+            );
             Ok(())
         }
     }
@@ -356,6 +359,138 @@ fn run_multiple_individuals() -> Result<(), Box<dyn Error>> {
         "Each individual's Memory is a distinct value owned only by that individual; \
          neither individual's memory contains the other's records, even though both share the \
          same species profile."
+    );
+
+    Ok(())
+}
+
+/// One product species in the Phase 8 Multiple Goods demo. Goods
+/// Intelligence is a class of capability: every species below is processed
+/// by the identical `request_care_and_remember` call, differing only in the
+/// data carried by its `GoodsProfile` and `Observation`.
+struct ProductSpecies {
+    species: &'static str,
+    display_name: &'static str,
+    expected_lifetime_hours: u32,
+    minimum_stock_quantity: u32,
+    age_hours: u32,
+    quantity_on_hand: u32,
+}
+
+const MULTIPLE_GOODS_SCRIPT: [ProductSpecies; 4] = [
+    ProductSpecies {
+        species: "rice-ball-salmon",
+        display_name: "Salmon rice ball",
+        expected_lifetime_hours: 8,
+        minimum_stock_quantity: 2,
+        age_hours: 3,
+        quantity_on_hand: 5,
+    },
+    ProductSpecies {
+        species: "coffee",
+        display_name: "Iced coffee",
+        expected_lifetime_hours: 4,
+        minimum_stock_quantity: 3,
+        age_hours: 5,
+        quantity_on_hand: 4,
+    },
+    ProductSpecies {
+        species: "sandwich",
+        display_name: "Egg sandwich",
+        expected_lifetime_hours: 6,
+        minimum_stock_quantity: 2,
+        age_hours: 2,
+        quantity_on_hand: 4,
+    },
+    ProductSpecies {
+        species: "bento",
+        display_name: "Chicken bento",
+        expected_lifetime_hours: 10,
+        minimum_stock_quantity: 1,
+        age_hours: 4,
+        quantity_on_hand: 3,
+    },
+];
+
+fn run_multiple_goods() -> Result<(), Box<dyn Error>> {
+    println!("Goods Garden Multiple Goods demo (synthetic-example)");
+
+    let mut any_need_identified = false;
+
+    for product in &MULTIPLE_GOODS_SCRIPT {
+        println!();
+        println!("== {} ({}) ==", product.display_name, product.species);
+
+        let item = Goods::new(
+            GoodsIdentity {
+                species: product.species.to_owned(),
+                individual_id: format!("{}-demo-001", product.species),
+            },
+            GoodsProfile {
+                display_name: product.display_name.to_owned(),
+                expected_lifetime_hours: product.expected_lifetime_hours,
+                minimum_stock_quantity: product.minimum_stock_quantity,
+            },
+        );
+        let observation = Observation {
+            source: "synthetic-example".to_owned(),
+            observed_at: format!("{} (synthetic)", product.display_name),
+            age_hours: product.age_hours,
+            quantity_on_hand: product.quantity_on_hand,
+        };
+        let feedback = HumanFeedback {
+            caregiver: Caregiver {
+                role: "store staff".to_owned(),
+                display_name: "Demo Staff".to_owned(),
+            },
+            decision: "Reviewed and pulled the item from the shelf.".to_owned(),
+            provided_at: format!("{} (synthetic)", product.display_name),
+        };
+        let runtime = GoodsRuntime::new(DemoObservationSource::new(observation));
+        let feedback_source = DemoHumanFeedbackSource::new(feedback);
+        let mut memory = GoodsMemory::new();
+
+        // The same call, unmodified, for every species: no product-specific
+        // branch exists in goods-domain, goods-application or goods-runtime.
+        let (state, needs, request, action) =
+            runtime.request_care_and_remember(&item, &feedback_source, &mut memory)?;
+
+        println!(
+            "expectation: maximum age {} hours, minimum stock {}",
+            state.expectation.max_age_hours, product.minimum_stock_quantity
+        );
+        println!("health: {} — {}", state.health.status.as_str(), state.health.explanation);
+        if needs.needs.is_empty() {
+            println!("needs: <none identified>");
+        } else {
+            any_need_identified = true;
+            for need in &needs.needs {
+                println!("need: {:?} (urgency: {})", need.kind, need.urgency.as_str());
+            }
+        }
+        match &request {
+            Some(request) => {
+                println!("care request: ({}) {}", request.requested_role, request.explanation)
+            }
+            None => println!("care request: <none identified>"),
+        }
+        match &action {
+            Some(action) => println!("care action: {}", action.explanation),
+            None => println!("care action: <none identified>"),
+        }
+    }
+
+    println!();
+    println!("== Capability summary ==");
+    println!(
+        "{} distinct product species were processed by the identical GoodsRuntime call above; \
+         at least one Need was identified: {any_need_identified}.",
+        MULTIPLE_GOODS_SCRIPT.len()
+    );
+    println!(
+        "No product-specific code branch was needed in goods-domain, goods-application or \
+         goods-runtime: Goods Intelligence is a class of capability, and each product above is \
+         only data — an object/instance of that capability."
     );
 
     Ok(())
