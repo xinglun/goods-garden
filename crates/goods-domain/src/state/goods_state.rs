@@ -1,5 +1,6 @@
 //! Current Goods State and its Phase 1 health assessment.
 
+use crate::evidence::Evidence;
 use crate::goods::Goods;
 use crate::goods::GoodsIdentity;
 use crate::observation::Observation;
@@ -30,7 +31,7 @@ impl HealthStatus {
 #[derive(Clone, Debug, Eq, PartialEq)]
 pub struct HealthAssessment {
     pub status: HealthStatus,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 /// Domain representation of a good's current state.
@@ -65,7 +66,7 @@ impl GoodsState {
             identity: goods.identity.clone(),
             observation,
             expectation,
-            health: HealthAssessment { status, explanation },
+            health: HealthAssessment { status, evidence: Evidence::known(explanation) },
         }
     }
 }

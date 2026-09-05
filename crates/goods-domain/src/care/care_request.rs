@@ -1,5 +1,6 @@
 //! Care Request.
 
+use crate::evidence::Evidence;
 use crate::need::{GoodsNeed, NeedAssessment, NeedConflict};
 
 /// An explainable request for Care, raised when a Need Assessment identifies
@@ -10,7 +11,7 @@ pub struct CareRequest {
     pub needs: Vec<GoodsNeed>,
     pub conflict: Option<NeedConflict>,
     pub requested_role: String,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl CareRequest {
@@ -38,7 +39,7 @@ impl CareRequest {
             needs: assessment.needs.clone(),
             conflict: assessment.conflict.clone(),
             requested_role,
-            explanation,
+            evidence: Evidence::known(explanation),
         })
     }
 }

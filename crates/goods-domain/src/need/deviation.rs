@@ -1,5 +1,6 @@
 //! Deviation value object.
 
+use crate::evidence::Evidence;
 use crate::goods::GoodsProfile;
 use crate::observation::Observation;
 use crate::state::Expectation;
@@ -23,7 +24,7 @@ pub enum DeviationDimension {
 pub struct Deviation {
     pub dimension: DeviationDimension,
     pub magnitude: i64,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl Deviation {
@@ -48,7 +49,11 @@ impl Deviation {
             )
         };
 
-        Self { dimension: DeviationDimension::Freshness, magnitude, explanation }
+        Self {
+            dimension: DeviationDimension::Freshness,
+            magnitude,
+            evidence: Evidence::known(explanation),
+        }
     }
 
     /// Derive the StockAvailability Deviation from a quantity observation and
@@ -68,6 +73,10 @@ impl Deviation {
             )
         };
 
-        Self { dimension: DeviationDimension::StockAvailability, magnitude, explanation }
+        Self {
+            dimension: DeviationDimension::StockAvailability,
+            magnitude,
+            evidence: Evidence::known(explanation),
+        }
     }
 }

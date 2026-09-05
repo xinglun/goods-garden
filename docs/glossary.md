@@ -43,7 +43,8 @@
 | Care Action | Care Request とそれを解決した Human Feedback を結びつける traceable な記録。 |
 | Caregiver | 理解し、判断し、care を提供できる human participant。 |
 | Observation | source からの sensory input。 |
-| Evidence | observation、inference、decision を支える traceable support。 |
+| Evidence | Information State（`Known`/`Inferred`/`Unknown`/`Unavailable`/`Conflicting`）付きの traceable な statement。observation、inference、decision を支える。 |
+| Information State | Evidence が持つ信頼度区分：`Known`/`Inferred`/`Unknown`/`Unavailable`/`Conflicting`。 |
 | Memory | 過去の experience と relationship の relevant record。 |
 | Memory Record | 1つの記憶された Care episode。Need を促した State と、それに応答した Care Action。効果があったかは判断しない。 |
 | Outcome | Care Action が対象とした Need が follow-up observation でまだ存在するかを比較する、事実に基づく判定。 |

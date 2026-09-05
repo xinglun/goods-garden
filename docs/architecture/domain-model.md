@@ -45,7 +45,8 @@ Phase 1 では local demo に必要な最小 model と、将来の provisional c
 その上に最小の Need model を追加し、Phase 3 は Phase 1/2 を変更せずその上に最小の Care model を追加し、Phase 4 は
 Phase 1-3 を変更せずその上に最小の Memory model を追加し、Phase 5 は Phase 1-4 を変更せずその上に最小の
 Outcome/Learning model を追加する。いずれも review 可能な小さい model であり、長期的な domain schema を確定したとは
-主張しない。
+主張しない。Phase 9 はこの「変更せず」の原則の唯一の例外であり、Phase 1 の `HealthAssessment` を含む7箇所の
+`explanation: String` field を `Evidence` に置き換える（意図的な human decision による）。
 
 ### Phase 1 minimal model
 
@@ -57,7 +58,7 @@ Outcome/Learning model を追加する。いずれも review 可能な小さい 
 | Observation | `source`、`observed_at`、`age_hours` の sensory input | PHASE 1 MINIMAL |
 | Expectation | bounded assessment に使う最大 age | PHASE 1 MINIMAL |
 | GoodsState | identity、observation、expectation、health result | PHASE 1 MINIMAL |
-| HealthAssessment | plain-language explanation 付き healthy/unhealthy status | PHASE 1 MINIMAL |
+| HealthAssessment | Evidence（Phase 9 以降は Known）付き healthy/unhealthy status | PHASE 1 MINIMAL |
 
 assessment rule は意図的に狭い。observed age が profile expectation 以下なら healthy、超えれば unhealthy とする。
 同梱 input は local `synthetic-example` であり、real POS や SEJ record ではない。この rule と field は後続の Domain Design
@@ -155,13 +156,32 @@ GoodsProfile 値を持つ4つの product species（salmon rice ball、coffee、s
 その capability の object/instance——であることを証明する。詳細は
 `docs/phases/phase-8-multiple-goods.md` を参照。
 
+### Phase 9 minimal model
+
+Phase 9 は Phase 0 由来の `Evidence` placeholder を実装し、Phase 1-5 が
+追加した7つの struct の `explanation: String` field を `Evidence` に
+置き換える。`HealthAssessment`（Phase 1）を含むこの置き換えは、Phase 2-8
+が維持してきた「`state::goods_state` は変更しない」という原則の意図的な
+例外である。
+
+| Type | Phase 9 における最小の役割 | Status |
+| --- | --- | --- |
+| InformationState | `Known`/`Inferred`/`Unknown`/`Unavailable`/`Conflicting` の5値（trust-model.md） | PHASE 9 MINIMAL |
+| Evidence | Information State 付きの traceable な statement。7つの既存 explanation field を置き換える | PHASE 9 MINIMAL |
+
+7箇所のうち `GoodsNeed` だけが `Evidence::inferred(..)` を使う。`Urgency`
+の閾値が `example`/`hypothesis` 値であり実データ由来ではないことに基づく
+判断のため。他の6箇所（`HealthAssessment`、`Deviation`、`NeedConflict`、
+`CareRequest`、`CareAction`、`Outcome`）は決定的な計算・記録に基づくため
+`Evidence::known(..)` を使う。詳細は `docs/phases/phase-9-evidence.md` を
+参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
 
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
-| Evidence | traceability support の候補 | PROVISIONAL |
 | LifecycleState | lifecycle の候補 | PROVISIONAL |
 
 ## 中文

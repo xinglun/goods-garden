@@ -40,7 +40,8 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Phase 5 — Verification & Learning](phases/phase-5-learning.md)
 - [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md)
 - [Phase 7 — Multiple Individuals](phases/phase-7-multiple-individuals.md)
-- [Phase 8 — Multiple Goods](phases/phase-8-multiple-goods.md) (current)
+- [Phase 8 — Multiple Goods](phases/phase-8-multiple-goods.md)
+- [Phase 9 — Evidence](phases/phase-9-evidence.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 

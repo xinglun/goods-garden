@@ -1,6 +1,7 @@
 //! Outcome.
 
 use crate::care::CareAction;
+use crate::evidence::Evidence;
 use crate::need::NeedAssessment;
 use crate::state::GoodsState;
 
@@ -24,7 +25,7 @@ pub struct Outcome {
     pub new_state: GoodsState,
     pub new_needs: NeedAssessment,
     pub status: OutcomeStatus,
-    pub explanation: String,
+    pub evidence: Evidence,
 }
 
 impl Outcome {
@@ -48,6 +49,6 @@ impl Outcome {
             }
         };
 
-        Self { action, new_state, new_needs, status, explanation }
+        Self { action, new_state, new_needs, status, evidence: Evidence::known(explanation) }
     }
 }

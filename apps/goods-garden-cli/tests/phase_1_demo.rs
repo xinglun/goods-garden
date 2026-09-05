@@ -50,7 +50,7 @@ fn observation_beyond_expectation_is_unhealthy_and_explained() {
         .expect("the synthetic observation should be available");
 
     assert_eq!(state.health.status, HealthStatus::Unhealthy);
-    assert!(state.health.explanation.contains("exceeds"));
+    assert!(state.health.evidence.statement.contains("exceeds"));
 }
 
 #[test]
