@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "c4a646d28dca2e5bb79e6491c62bcc400cd43aef",
+    "name": "codex/phase-12-scheduler",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:86f9a1bff4378ba192051aa75a7cf06be70ec390ff9da76c6239bb7b485b5c94",
+  "operationId": "phase-12-scheduler-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "5e128c38af488b56bf35d7094373e669f2597471",
+    "headRevision": "c4a646d28dca2e5bb79e6491c62bcc400cd43aef",
+    "mergeCommit": "b032b6b435f08d647ca380130e3d0b40c7376a31",
+    "number": 37,
+    "url": "https://github.com/xinglun/goods-garden/pull/37"
+  },
+  "reason": "PR #37 (feat: implement Phase 12 Scheduler (goods_runtime::scheduler::run_scheduled)) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-12-scheduler branch and its worktree were then deleted.",
+  "receiptId": "phase-12-scheduler-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-12-scheduler",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/37",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-12-scheduler"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T12:59:16Z",
+  "workItemId": "phase-12-scheduler",
+  "worktree": {
+    "branch": "codex/phase-12-scheduler",
+    "headRevision": "c4a646d28dca2e5bb79e6491c62bcc400cd43aef",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-12-scheduler",
+    "worktreeId": "goods-garden-phase-12-scheduler"
+  }
+}
