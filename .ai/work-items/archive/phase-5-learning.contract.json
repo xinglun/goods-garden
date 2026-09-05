@@ -33,11 +33,11 @@
     "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
     "branch": "codex/phase-5-learning",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/19",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-5-learning"
   },
   "risk": "normal",
