@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "7fadec628231e8d9a7bc32af24de6033ec5ca716",
+    "name": "codex/phase-5-learning",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:35d347cd4a40c5340d43b686bb3bd463f6b91b5bc68261eb74269ed289f18e27",
+  "operationId": "phase-5-learning-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "9204d498f40163a12c330ffe248baf911f54734c",
+    "headRevision": "7fadec628231e8d9a7bc32af24de6033ec5ca716",
+    "mergeCommit": "eee68ddd9b1d7c2601328a3a810370f6c8863680",
+    "number": 19,
+    "url": "https://github.com/xinglun/goods-garden/pull/19"
+  },
+  "reason": "PR #19 (feat: implement Phase 5 Verification & Learning) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-5-learning branch and its worktree were then deleted.",
+  "receiptId": "phase-5-learning-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-5-learning",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/19",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-5-learning"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T08:42:00Z",
+  "workItemId": "phase-5-learning",
+  "worktree": {
+    "branch": "codex/phase-5-learning",
+    "headRevision": "7fadec628231e8d9a7bc32af24de6033ec5ca716",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-5-learning",
+    "worktreeId": "goods-garden-phase-5-learning"
+  }
+}
