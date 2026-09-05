@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "bd4eeaa743a9f571caa931295f8a3a1d9d317a8b",
+    "name": "codex/phase-7-multiple-individuals",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:f685f78effc6311c5578e7b8bc322961f32f140e43c49d54583c1320a6e00059",
+  "operationId": "phase-7-multiple-individuals-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "6aef7648ed5d44be883387e5e8ed58e43a703875",
+    "headRevision": "bd4eeaa743a9f571caa931295f8a3a1d9d317a8b",
+    "mergeCommit": "87ec0fa27073f7925b754a0670f586aac42d82dc",
+    "number": 23,
+    "url": "https://github.com/xinglun/goods-garden/pull/23"
+  },
+  "reason": "PR #23 (feat: implement Phase 7 Multiple Individuals milestone demo) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-7-multiple-individuals branch and its worktree were then deleted.",
+  "receiptId": "phase-7-multiple-individuals-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-7-multiple-individuals",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/23",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-7-multiple-individuals"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T09:02:00Z",
+  "workItemId": "phase-7-multiple-individuals",
+  "worktree": {
+    "branch": "codex/phase-7-multiple-individuals",
+    "headRevision": "bd4eeaa743a9f571caa931295f8a3a1d9d317a8b",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-7-multiple-individuals",
+    "worktreeId": "goods-garden-phase-7-multiple-individuals"
+  }
+}
