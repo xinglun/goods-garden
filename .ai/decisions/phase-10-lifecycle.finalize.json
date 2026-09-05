@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "d2cd4fef19ad967ffe8230e50e5a53d3f05067b3",
+    "name": "codex/phase-10-lifecycle",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:60fe5742162b6ade3bb74856889ed53ed7ab86a65c74cc555f90234cac408df0",
+  "operationId": "phase-10-lifecycle-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "1c8be7b887b1a670175425ee9a77e29e1c7f7e59",
+    "headRevision": "d2cd4fef19ad967ffe8230e50e5a53d3f05067b3",
+    "mergeCommit": "73fe8275aa4f2d8d45d77960f78e1ae9654091e3",
+    "number": 31,
+    "url": "https://github.com/xinglun/goods-garden/pull/31"
+  },
+  "reason": "PR #31 (feat: implement Phase 10 Lifecycle (LifecycleState)) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-10-lifecycle branch and its worktree were then deleted.",
+  "receiptId": "phase-10-lifecycle-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-10-lifecycle",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/31",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-10-lifecycle"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T11:38:18Z",
+  "workItemId": "phase-10-lifecycle",
+  "worktree": {
+    "branch": "codex/phase-10-lifecycle",
+    "headRevision": "d2cd4fef19ad967ffe8230e50e5a53d3f05067b3",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-10-lifecycle",
+    "worktreeId": "goods-garden-phase-10-lifecycle"
+  }
+}
