@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "616643f8b2a0667afee2ee5d2298763dd8d78ccb",
+    "name": "codex/phase-8-multiple-goods",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:d1b0c219d42fbc1fd9ca1fb02fc85710d9e47fce96e2c027c970013a278cd85b",
+  "operationId": "phase-8-multiple-goods-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "2ae36159183aab770ce8a0be201cadbecc5e06bc",
+    "headRevision": "616643f8b2a0667afee2ee5d2298763dd8d78ccb",
+    "mergeCommit": "c56c75e065472e141b7dbff2880a0dd29e1b8ce6",
+    "number": 25,
+    "url": "https://github.com/xinglun/goods-garden/pull/25"
+  },
+  "reason": "PR #25 (feat: implement Phase 8 Multiple Goods milestone demo) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-8-multiple-goods branch and its worktree were then deleted.",
+  "receiptId": "phase-8-multiple-goods-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-8-multiple-goods",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/25",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-8-multiple-goods"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T09:14:00Z",
+  "workItemId": "phase-8-multiple-goods",
+  "worktree": {
+    "branch": "codex/phase-8-multiple-goods",
+    "headRevision": "616643f8b2a0667afee2ee5d2298763dd8d78ccb",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-8-multiple-goods",
+    "worktreeId": "goods-garden-phase-8-multiple-goods"
+  }
+}

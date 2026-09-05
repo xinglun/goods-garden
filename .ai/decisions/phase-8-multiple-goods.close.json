@@ -1,0 +1,127 @@
+{
+  "decisionState": "confirmed",
+  "finalReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-8-multiple-goods.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:dfba3009f9c0416ea114c9a6b8741670ea2d595bd81bbfeba992aba5b1fcb215",
+      "workItemId": "phase-8-multiple-goods"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-8-multiple-goods.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [
+        {
+          "evidenceRefs": [
+            ".ai/decisions/phase-8-multiple-goods.finalize.json"
+          ],
+          "inference": false,
+          "text": "Human decision 'approved' by human:repository-owner via repository-local-authorized-merge at 2026-09-05T09:15:00Z."
+        }
+      ],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run a new CLI subcommand and see four different products, each with a distinct expected lifetime and minimum stock quantity, processed by the exact same GoodsRuntime call, with at least one (coffee, the shortest-lived) raising a Need/Care episode and the others staying healthy, plus a closing statement confirming no product-specific code branch was needed. The existing demo, seven-day-life and multiple-individuals subcommands are unchanged. No new domain type is introduced. JA: 人が新しい CLI subcommand を実行し、それぞれ異なる expected lifetime と minimum stock quantity を持つ4つの商品が、全く同じ GoodsRuntime call で処理され、少なくとも1つ（最も寿命の短い coffee）が Need/Care episode を発生させ、他は healthy のままであること、そして商品固有の code branch が不要だったことを確認する締めの statement を確認できる。既存の demo、seven-day-life、multiple-individuals subcommand は変更しない。新しい domain type は導入しない。ZH: 用户可以运行新的 CLI 子命令，看到四种不同的商品（各自具有不同的 expected lifetime 与 minimum stock quantity）由完全相同的 GoodsRuntime 调用处理，其中至少一个（寿命最短的 coffee）引发 Need/Care 事件，其余保持健康，并有结束陈述确认无需任何商品专属代码分支。既有的 demo、seven-day-life 与 multiple-individuals 子命令保持不变。不引入任何新的领域类型。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-8-multiple-goods"
+  },
+  "finalReportDigest": "sha256:145837e7a2859221a1b2e7e4c2019e175c442dc63495d74dd1467f9d8e947d7f",
+  "humanDecision": "approved",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceFinalizationHeadDigest": "sha256:ce36dbe8759574c1d4e6db45780291fee731d74dedd4d2d0a09641172f1ddbb1",
+  "resourceFinalizationHeadPath": ".ai/decisions/phase-8-multiple-goods.finalize.json",
+  "resourceFinalizationSequence": 0,
+  "state": "closed",
+  "structuredDecision": {
+    "actor": "human:repository-owner",
+    "authoritySource": "repository-local-authorized-merge",
+    "decidedAt": "2026-09-05T09:15:00Z",
+    "decision": "approved",
+    "evidenceRefs": [
+      ".ai/decisions/phase-8-multiple-goods.finalize.json"
+    ],
+    "policyRefs": [],
+    "reason": "PR #25 reviewed and merged (code + archive record in one PR); branch and worktree cleaned up; finalize-verify passed.",
+    "resumeCondition": null
+  },
+  "timestamp": "2026-09-05T09:10:56Z",
+  "workItemId": "phase-8-multiple-goods"
+}
