@@ -1,0 +1,25 @@
+{
+  "changedPaths": [],
+  "checkpointAt": "2026-09-05T11:49:29Z",
+  "checkpointContractDigest": "sha256:c465227ee346750bfd08b4bb1eaf1a2a8195c35bde134a2f9a096cd8940f9dff",
+  "checkpointCount": 1,
+  "checkpointRepositorySnapshotDigest": "sha256:ea29904f0a44bbeddc0090d9b3ec06cb15c6907f0950ab6f5ed68bf447d9cdea",
+  "createdAt": "2026-09-05T11:47:03Z",
+  "mode": "implementation",
+  "preflightAt": "2026-09-05T11:49:35Z",
+  "preflightContractDigest": "sha256:c465227ee346750bfd08b4bb1eaf1a2a8195c35bde134a2f9a096cd8940f9dff",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:ea29904f0a44bbeddc0090d9b3ec06cb15c6907f0950ab6f5ed68bf447d9cdea",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "finish_ready",
+  "updatedAt": "2026-09-05T11:49:37Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "agents-md-phase-status"
+}
