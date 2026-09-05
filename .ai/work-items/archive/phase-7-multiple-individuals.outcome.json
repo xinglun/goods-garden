@@ -1,0 +1,136 @@
+{
+  "acceptanceResults": [
+    "EN: apps/goods-garden-cli/src/main.rs gains a new multiple-individuals subcommand that constructs two Goods individuals sharing one cloned GoodsProfile but distinct GoodsIdentity.individual_id values and separate GoodsMemory instances, using only existing goods-domain/goods-application/goods-runtime types; the existing demo and seven-day-life subcommands are unchanged. JA: apps/goods-garden-cli/src/main.rs に新しい multiple-individuals subcommand を追加し、1つの clone された GoodsProfile を共有しつつ異なる GoodsIdentity.individual_id と独立した GoodsMemory を持つ2つの Goods individual を、既存の goods-domain/goods-application/goods-runtime の型だけを使って構築する。既存の demo と seven-day-life subcommand は変更しない。ZH: apps/goods-garden-cli/src/main.rs 新增 multiple-individuals 子命令，仅使用既有的 goods-domain/goods-application/goods-runtime 类型构造两个共享同一克隆 GoodsProfile、但拥有不同 GoodsIdentity.individual_id 与独立 GoodsMemory 实例的 Goods individual；既有的 demo 与 seven-day-life 子命令保持不变。",
+    "EN: The subcommand's output explicitly states each individual's memory record count and confirms neither individual's memory contains the other's records; a new phase_7_multiple_individuals.rs test runs the compiled CLI with this argument and asserts these markers, without changing any of the six existing test files. JA: subcommand の出力は各 individual の memory record 件数を明示し、どちらの individual の memory にも相手の記録が含まれないことを確認する。新設の phase_7_multiple_individuals.rs がコンパイル済み CLI をこの引数で実行しこれらを検証し、既存6つのテストファイルは変更しない。ZH: 子命令的输出明确说明每个 individual 的 memory 记录数，并确认任一方的 memory 都不包含对方的记录；新增的 phase_7_multiple_individuals.rs 以该参数运行编译后的 CLI 并验证这些标记，且不修改既有六个测试文件。",
+    "EN: docs/phases/phase-7-multiple-individuals.md, docs/architecture/domain-model.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-7-multiple-individuals.md、docs/architecture/domain-model.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-7-multiple-individuals.md、docs/architecture/domain-model.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo, cargo run -p goods-garden-cli -- seven-day-life, cargo run -p goods-garden-cli -- multiple-individuals and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、3つの local demo 実行、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、三个本地 demo 运行与 architecture boundary check 全部通过。"
+  ],
+  "createdAt": "2026-09-05T08:58:57Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:cc28c56a41a076bd3ee4019f71d6fb0f15711b8db1eeb7702fb449648a61ada0",
+  "evidenceRefs": [
+    ".ai/evidence/phase-7-multiple-individuals.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-7-multiple-individuals.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-7-multiple-individuals.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:01743fbdad8a07f68afe4622cca08149754f6e01e1f32d782e62282c9a9c74c2",
+      "workItemId": "phase-7-multiple-individuals"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-7-multiple-individuals.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-7-multiple-individuals.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-7-multiple-individuals.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-7-multiple-individuals.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-7-multiple-individuals.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-7-multiple-individuals.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-7-multiple-individuals.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run a new CLI subcommand and see two Goods individuals (e.g. TunaMayo@StoreA and TunaMayo@StoreB) sharing the same species profile but producing independent observations, Needs, Care episodes and Memory, with an explicit statement confirming neither individual's memory contains the other's records. The existing demo and seven-day-life subcommands are unchanged. No new domain type is introduced. JA: 人が新しい CLI subcommand を実行し、同じ species profile を共有しつつ独立した observation、Need、Care episode、Memory を生成する2つの Goods individual（例: TunaMayo@StoreA と TunaMayo@StoreB）を確認できる。どちらの individual の memory にも相手の記録が含まれないことを明示する。既存の demo と seven-day-life subcommand は変更しない。新しい domain type は導入しない。ZH: 用户可以运行新的 CLI 子命令，看到共享同一 species profile、但产生独立的 observation、Need、Care 事件与 Memory 的两个 Goods individual（例如 TunaMayo@StoreA 与 TunaMayo@StoreB），并明确说明任一方的 memory 都不包含对方的记录。既有的 demo 与 seven-day-life 子命令保持不变。不引入任何新的领域类型。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-7-multiple-individuals.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-7-multiple-individuals"
+  },
+  "taskReportDigest": "sha256:171803b1adecfb2896c4fb85f9358a7c8010c9637d8423cb6dc52cb381d33a37",
+  "taskReportMarkdownDigest": "sha256:cc30f5c97d4033c988c0cce5e3ee27e551249c88eaa98dd3e32cbccb12181f13",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-7-multiple-individuals.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-7-multiple-individuals"
+}
