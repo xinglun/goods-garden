@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T11:35:45Z",
+  "files": {
+    "contractDigest": "sha256:60fe5742162b6ade3bb74856889ed53ed7ab86a65c74cc555f90234cac408df0",
+    "contractPath": ".ai/work-items/archive/phase-10-lifecycle.contract.json",
+    "eventsDigest": "sha256:68aa30f8520c9542aebd19554012ad7ecebbb0092bfd21f9153bd40763bd8d55",
+    "eventsPath": ".ai/work-items/archive/phase-10-lifecycle.events.jsonl",
+    "outcomeDigest": "sha256:773233a37a9cc0ab6d2670a8ffe4c6fa7e57503c22983851113ddea8c6519c35",
+    "outcomePath": ".ai/work-items/archive/phase-10-lifecycle.outcome.json",
+    "summaryDigest": "sha256:1a095e1ec89f3df0f2f346ff9f504ab3b2b45354debb8c91475199a18d29aecb",
+    "summaryPath": ".ai/work-items/archive/phase-10-lifecycle.summary.json",
+    "taskReportDigest": "sha256:c1a32c3dac8c05627312fb4a673eda157f8ee29c37c7830b918a8e8d1efaf9ea",
+    "taskReportMarkdownDigest": "sha256:7b25da3947fdae524e15a3847a8c685161a4a39015d5067724d4c73a0164b113",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-10-lifecycle.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-10-lifecycle.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-10-lifecycle"
+}
