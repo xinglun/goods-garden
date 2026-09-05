@@ -204,17 +204,30 @@ North Star の Intelligence Loop の「1周分のサイクル」に初めて具�
 
 `GoodsRuntime::run_cycle` は既存の `verify_and_learn`/
 `request_care_and_remember` の組み合わせに過ぎず、新しい business rule は
-追加しない。`crates/goods-runtime/src/scheduler/mod.rs`（Intelligence
-Loop を自動的に駆動する自律実行の話）は未実装のままである——これは
-autonomous action authority についての別途の human decision が必要な
-領域である。詳細は `docs/phases/phase-11-intelligence-loop.md` を参照。
+追加しない。詳細は `docs/phases/phase-11-intelligence-loop.md` を参照。
+
+### Phase 12 minimal model
+
+Phase 12 は Phase 0 由来の `scheduler` placeholder を実装する。
+`intelligence_loop`（1周分のサイクル）を、repository owner との合意
+形成を経た4つのガードレール（型レベルで synthetic のみに限定、回数
+上限、永続的なログ、フォアグラウンドのみ）のもとで、人間の介在なしに
+自動で進める。
+
+| Type | Phase 12 における最小の役割 | Status |
+| --- | --- | --- |
+| ScheduledCycle / StopReason | 1件の scripted cycle と、scheduler が停止した理由（ScriptExhausted/MaxCyclesReached） | PHASE 12 MINIMAL |
+
+`goods_runtime::scheduler::run_scheduled` は `ObservationSource`/
+`HumanFeedbackSource` に対して汎用化せず、`DemoObservationSource`/
+`DemoHumanFeedbackSource` のみを直接構築する。これが repository 内で
+唯一「人間が都度起動しない」cycle 実行である。詳細は
+`docs/phases/phase-12-scheduler.md` を参照。
 
 ### Future provisional concepts
 
 Phase 0 から続いた provisional concept はすべて実装済みとなり、現時点で
-残っている候補はない。`goods-runtime` の `scheduler` placeholder は
-autonomous action authority についての human decision を待つ、意図的な
-未実装のままである。
+残っている候補はない。
 
 ## 中文
 

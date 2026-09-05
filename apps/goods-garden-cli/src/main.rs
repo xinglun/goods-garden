@@ -1,7 +1,10 @@
 //! Goods Garden local Phase 1 demo.
 
 use std::error::Error;
+use std::fs::File;
+use std::io::Write;
 use std::process;
+use std::time::Duration;
 
 use goods_domain::care::{Caregiver, HumanFeedback};
 use goods_domain::goods::{Goods, GoodsIdentity, GoodsProfile};
@@ -9,6 +12,7 @@ use goods_domain::memory::GoodsMemory;
 use goods_domain::observation::Observation;
 use goods_infrastructure::simulator::{DemoHumanFeedbackSource, DemoObservationSource};
 use goods_runtime::GoodsRuntime;
+use goods_runtime::scheduler::{self, ScheduledCycle, StopReason};
 
 const TUNA_MAYO_FIXTURE: &str = include_str!("../../../examples/tuna-mayo/observation.example.txt");
 const HUMAN_FEEDBACK_FIXTURE: &str =
@@ -27,9 +31,10 @@ fn run() -> Result<(), Box<dyn Error>> {
         Some("seven-day-life") => run_seven_day_life(),
         Some("multiple-individuals") => run_multiple_individuals(),
         Some("multiple-goods") => run_multiple_goods(),
+        Some("scheduled-seven-day-life") => run_scheduled_seven_day_life(),
         _ => {
             println!(
-                "Usage: goods-garden-cli <demo|seven-day-life|multiple-individuals|multiple-goods>"
+                "Usage: goods-garden-cli <demo|seven-day-life|multiple-individuals|multiple-goods|scheduled-seven-day-life>"
             );
             Ok(())
         }
@@ -514,6 +519,131 @@ fn run_multiple_goods() -> Result<(), Box<dyn Error>> {
          goods-runtime: Goods Intelligence is a class of capability, and each product above is \
          only data — an object/instance of that capability."
     );
+
+    Ok(())
+}
+
+/// Deliberately less than `SEVEN_DAY_SCRIPT.len()` (7): this is a safety
+/// cap, not a coincidence with the script length, and this demo run proves
+/// it stops on its own before Day 6/7.
+const SCHEDULER_MAX_CYCLES: u32 = 5;
+const SCHEDULER_INTERVAL: Duration = Duration::from_millis(200);
+
+fn run_scheduled_seven_day_life() -> Result<(), Box<dyn Error>> {
+    let item = Goods::new(
+        GoodsIdentity {
+            species: "rice-ball".to_owned(),
+            individual_id: "tuna-mayo-demo-001".to_owned(),
+        },
+        GoodsProfile {
+            display_name: "Tuna-mayo rice ball".to_owned(),
+            expected_lifetime_hours: 8,
+            minimum_stock_quantity: 2,
+        },
+    );
+
+    let script: Vec<ScheduledCycle> = SEVEN_DAY_SCRIPT
+        .iter()
+        .map(|day| ScheduledCycle {
+            label: day.label,
+            observation: Observation {
+                source: "synthetic-example".to_owned(),
+                observed_at: format!("{} (synthetic)", day.label),
+                age_hours: day.age_hours,
+                quantity_on_hand: day.quantity_on_hand,
+            },
+            feedback: HumanFeedback {
+                caregiver: Caregiver {
+                    role: "store staff".to_owned(),
+                    display_name: "Demo Staff".to_owned(),
+                },
+                decision: day.feedback_decision.unwrap_or("N/A (no Care Request today)").to_owned(),
+                provided_at: format!("{} (synthetic)", day.label),
+            },
+        })
+        .collect();
+
+    println!("Goods Garden Scheduled Seven Day Life demo (synthetic-example)");
+    println!("lifecycle: {}", item.lifecycle.as_str());
+    println!(
+        "This runs unattended: up to {} cycle(s), {} ms apart, no human invocation per cycle.",
+        SCHEDULER_MAX_CYCLES,
+        SCHEDULER_INTERVAL.as_millis()
+    );
+
+    let log_path = std::env::temp_dir().join("goods-garden-scheduler.log");
+    let mut log_file = File::create(&log_path)?;
+    let mut memory = GoodsMemory::new();
+
+    let stop_reason = scheduler::run_scheduled(
+        &item,
+        &script,
+        SCHEDULER_MAX_CYCLES,
+        SCHEDULER_INTERVAL,
+        &mut memory,
+        |_, entry, cycle| {
+            let mut lines = vec![String::new(), format!("== {} ==", entry.label)];
+            if let Some(learning) = &cycle.verification {
+                lines.push(format!(
+                    "outcome (follow-up on prior Care Action): {:?} — {}",
+                    learning.outcome.status, learning.outcome.evidence
+                ));
+                lines.push(format!("learning: {}", learning.statement));
+            }
+            lines.push(format!(
+                "health: {} — {}",
+                cycle.state.health.status.as_str(),
+                cycle.state.health.evidence
+            ));
+            if cycle.needs.needs.is_empty() {
+                lines.push("needs: <none identified>".to_owned());
+            } else {
+                for need in &cycle.needs.needs {
+                    lines.push(format!(
+                        "need: {:?} (urgency: {}) — {}",
+                        need.kind,
+                        need.urgency.as_str(),
+                        need.evidence
+                    ));
+                }
+            }
+            match &cycle.request {
+                Some(request) => lines.push(format!(
+                    "care request: ({}) {}",
+                    request.requested_role, request.evidence
+                )),
+                None => lines.push("care request: <none identified>".to_owned()),
+            }
+            match &cycle.action {
+                Some(action) => lines.push(format!("care action: {}", action.evidence)),
+                None => lines.push("care action: <none identified>".to_owned()),
+            }
+
+            for line in &lines {
+                println!("{line}");
+                let _ = writeln!(log_file, "{line}");
+            }
+        },
+    )?;
+
+    println!();
+    match stop_reason {
+        StopReason::MaxCyclesReached => {
+            println!("== Stopped: safety cap reached ({SCHEDULER_MAX_CYCLES} cycle(s)) ==");
+            println!(
+                "No progress is persisted between runs; re-invoking this command starts a \
+                 fresh Seven Day Life script from Day 1."
+            );
+        }
+        StopReason::ScriptExhausted => {
+            println!("== Week summary ==");
+            println!(
+                "{} care episode(s) remembered across the scheduled run.",
+                memory.records().len()
+            );
+        }
+    }
+    println!("log written to: {}", log_path.display());
 
     Ok(())
 }
