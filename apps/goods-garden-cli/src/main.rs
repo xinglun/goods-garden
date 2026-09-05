@@ -58,6 +58,7 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     println!("Goods Garden Phase 1 demo");
     println!("source: {}", state.observation.source);
     println!("identity: {} / {}", state.identity.species, state.identity.individual_id);
+    println!("lifecycle: {}", item.lifecycle.as_str());
     println!(
         "observation: {} (age {} hours)",
         state.observation.observed_at, state.observation.age_hours
@@ -181,6 +182,7 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
     );
 
     println!("Goods Garden Seven Day Life demo (synthetic-example)");
+    println!("lifecycle: {}", item.lifecycle.as_str());
     let mut memory = GoodsMemory::new();
     let mut pending_action = None;
 
@@ -305,6 +307,7 @@ fn run_multiple_individuals() -> Result<(), Box<dyn Error>> {
             },
             species_profile.clone(),
         );
+        println!("lifecycle: {}", item.lifecycle.as_str());
         let observation = Observation {
             source: "synthetic-example".to_owned(),
             observed_at: format!("{} (synthetic)", individual.label),
@@ -442,6 +445,7 @@ fn run_multiple_goods() -> Result<(), Box<dyn Error>> {
                 minimum_stock_quantity: product.minimum_stock_quantity,
             },
         );
+        println!("lifecycle: {}", item.lifecycle.as_str());
         let observation = Observation {
             source: "synthetic-example".to_owned(),
             observed_at: format!("{} (synthetic)", product.display_name),
