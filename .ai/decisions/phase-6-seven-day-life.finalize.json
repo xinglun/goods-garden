@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "252d0932e9fbbd490648a4d5bf2f342be64757a2",
+    "name": "codex/phase-6-seven-day-life",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:64456e096db1d8377288076f1a9a101917830892779ac5491b8795b3d2cab423",
+  "operationId": "phase-6-seven-day-life-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "baseRevision": "d87cb9bba3714b8b34125e5f84f65d8d340c0a9e",
+    "headRevision": "252d0932e9fbbd490648a4d5bf2f342be64757a2",
+    "mergeCommit": "8913ec4ed587182d68185592cfbaebfd5ae29baf",
+    "number": 21,
+    "url": "https://github.com/xinglun/goods-garden/pull/21"
+  },
+  "reason": "PR #21 (feat: implement Phase 6 Seven Day Life milestone demo) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-6-seven-day-life branch and its worktree were then deleted.",
+  "receiptId": "phase-6-seven-day-life-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-6-seven-day-life",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/21",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-6-seven-day-life"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:4026e381313d2d8875b7b52b942571ebd6b24bdfa1716883acdb631454f7b3ed",
+  "runtimeVersion": "0.2.74",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T08:53:00Z",
+  "workItemId": "phase-6-seven-day-life",
+  "worktree": {
+    "branch": "codex/phase-6-seven-day-life",
+    "headRevision": "252d0932e9fbbd490648a4d5bf2f342be64757a2",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-6-seven-day-life",
+    "worktreeId": "goods-garden-phase-6-seven-day-life"
+  }
+}
