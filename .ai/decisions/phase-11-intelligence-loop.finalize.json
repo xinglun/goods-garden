@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "df95f2f6aaf94f406525b4ebf3e9f37b87002153",
+    "name": "codex/phase-11-intelligence-loop",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:f3a2e7afb01fb0dfc0a118be4f0835505bd753bdc0f16fc8942999c06f15c9f4",
+  "operationId": "phase-11-intelligence-loop-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "9e936c14ee48029c3917cfd8bae9ef752f475716",
+    "headRevision": "df95f2f6aaf94f406525b4ebf3e9f37b87002153",
+    "mergeCommit": "d276316d8dc255c84efcaff6a06f5af85895da4d",
+    "number": 35,
+    "url": "https://github.com/xinglun/goods-garden/pull/35"
+  },
+  "reason": "PR #35 (feat: implement Phase 11 Intelligence Loop (GoodsRuntime::run_cycle)) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-11-intelligence-loop branch and its worktree were then deleted.",
+  "receiptId": "phase-11-intelligence-loop-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-11-intelligence-loop",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/35",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-11-intelligence-loop"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T12:03:04Z",
+  "workItemId": "phase-11-intelligence-loop",
+  "worktree": {
+    "branch": "codex/phase-11-intelligence-loop",
+    "headRevision": "df95f2f6aaf94f406525b4ebf3e9f37b87002153",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-11-intelligence-loop",
+    "worktreeId": "goods-garden-phase-11-intelligence-loop"
+  }
+}
