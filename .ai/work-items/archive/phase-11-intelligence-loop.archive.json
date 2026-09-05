@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T12:01:39Z",
+  "files": {
+    "contractDigest": "sha256:f3a2e7afb01fb0dfc0a118be4f0835505bd753bdc0f16fc8942999c06f15c9f4",
+    "contractPath": ".ai/work-items/archive/phase-11-intelligence-loop.contract.json",
+    "eventsDigest": "sha256:ea03ed755fee9a8e854c5de938391d292fa87b6544fa2e2a704b6ae0c09a71b1",
+    "eventsPath": ".ai/work-items/archive/phase-11-intelligence-loop.events.jsonl",
+    "outcomeDigest": "sha256:2737b833b4aec254dfe3d6449b99b2ff60adda8e4679d355d2527ace4529f852",
+    "outcomePath": ".ai/work-items/archive/phase-11-intelligence-loop.outcome.json",
+    "summaryDigest": "sha256:915e4995e1224c8bd568b387d98569331d3bab3d0a419ef1829197a0e6c71f0d",
+    "summaryPath": ".ai/work-items/archive/phase-11-intelligence-loop.summary.json",
+    "taskReportDigest": "sha256:df7cbfb8036ea4566438e6f87e3009d4ee37fab612322dae374390d6213c61da",
+    "taskReportMarkdownDigest": "sha256:740f0806e62758f54856e2321b27bf07b68f1368f634ec1cb441d4f79ce65d99",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-11-intelligence-loop.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-11-intelligence-loop.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-11-intelligence-loop"
+}
