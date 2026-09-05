@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "b3f5032ea3cdee9e6b80785e927f1f9772a35fcc",
+    "name": "codex/phase-9-evidence",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:d6e2d838d31b547eccc2233c2824537cbb26198a37f9ce2a20907e7b10071049",
+  "operationId": "phase-9-evidence-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "6a88a3e7bb8c301e1ed362807d5b1d5542b27770",
+    "headRevision": "b3f5032ea3cdee9e6b80785e927f1f9772a35fcc",
+    "mergeCommit": "fe216fc62088c4f8bdf04362a1a26fd429f3662a",
+    "number": 29,
+    "url": "https://github.com/xinglun/goods-garden/pull/29"
+  },
+  "reason": "PR #29 (feat: implement Phase 9 Evidence (Evidence/InformationState)) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/phase-9-evidence branch and its worktree were then deleted.",
+  "receiptId": "phase-9-evidence-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-9-evidence",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/29",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-9-evidence"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T11:18:07Z",
+  "workItemId": "phase-9-evidence",
+  "worktree": {
+    "branch": "codex/phase-9-evidence",
+    "headRevision": "b3f5032ea3cdee9e6b80785e927f1f9772a35fcc",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-9-evidence",
+    "worktreeId": "goods-garden-phase-9-evidence"
+  }
+}
