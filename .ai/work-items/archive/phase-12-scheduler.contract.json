@@ -1,0 +1,50 @@
+{
+  "acceptanceCriteria": [
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace all pass; scheduled-seven-day-life's stdout contains Day 1 through Day 5 but not Day 6 or Day 7, plus a message noting the safety cap stopped it and that no progress persists between runs; the log file under std::env::temp_dir() contains matching content; phase_12_scheduler.rs directly asserts both StopReason::MaxCyclesReached and StopReason::ScriptExhausted; bash tests/architecture/check-boundaries.sh passes; existing seven-day-life/multiple-individuals/multiple-goods subcommands and tests remain unchanged"
+  ],
+  "authority": "authorized",
+  "baseRevision": "5e128c38af488b56bf35d7094373e669f2597471",
+  "createdAt": "2026-09-05T12:36:37Z",
+  "goal": "goods_runtime::scheduler::{ScheduledCycle, StopReason, run_scheduled} are implemented, not generic over ObservationSource/HumanFeedbackSource (concrete DemoObservationSource/DemoHumanFeedbackSource only); a new apps/goods-garden-cli scheduled-seven-day-life subcommand reuses the existing SEVEN_DAY_SCRIPT data, runs with max_cycles=5 (deliberately less than the 7-day script) to demonstrate the safety cap independently stopping mid-script, writes the same output to both stdout and a log file under std::env::temp_dir(), and prints the log file path; a new phase_12_scheduler.rs test verifies both StopReason cases directly and verifies the CLI's stdout/log-file behavior; existing run_seven_day_life/multiple-individuals/multiple-goods subcommands and their tests are unchanged; Japanese-only phase doc and design spec are added recording the four guardrails as confirmed Human Decisions; domain-model.md/glossary.md/README.md's Japanese sections are updated (English/Chinese sections stay untouched at Phase 1).",
+  "intent": "Implement the Phase 0 scheduler placeholder in goods-runtime as a bounded, foreground-only, type-level-synthetic-only autonomous driver (goods_runtime::scheduler::run_scheduled) for the Intelligence Loop, per four Human Decision guardrails confirmed with the repository owner: synthetic-only enforced at the type level, a hard max-cycles safety cap, durable audit logging to a file in addition to stdout, and foreground-only (no daemonization).",
+  "mode": "implementation",
+  "outOfScope": [
+    "real ObservationSource/HumanFeedbackSource adapters or any generic parameterization of the scheduler over them",
+    " background daemon/detach/PID-file/signal-handling behavior",
+    " persistence of domain state (goods-domain's MemoryStore remains an empty placeholder)",
+    " any change to run_seven_day_life/run_multiple_individuals/run_multiple_goods",
+    " goods-domain",
+    " goods-application",
+    " goods-infrastructure",
+    " frontend (apps/goods-garden-web)",
+    " English and Chinese sections of domain-model.md/glossary.md/README.md"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:054e65ac967a189ed17c13724cf5e4b8eebf01cdd51a47fbb4205d7dd134030b",
+  "requiredEvidenceClasses": [],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-12-scheduler",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/37",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-12-scheduler"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-runtime/src/scheduler/mod.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_12_scheduler.rs",
+    "docs/phases/phase-12-scheduler.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-12-scheduler-design.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-12-scheduler"
+}

@@ -1,0 +1,133 @@
+{
+  "acceptanceResults": [
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace all pass; scheduled-seven-day-life's stdout contains Day 1 through Day 5 but not Day 6 or Day 7, plus a message noting the safety cap stopped it and that no progress persists between runs; the log file under std::env::temp_dir() contains matching content; phase_12_scheduler.rs directly asserts both StopReason::MaxCyclesReached and StopReason::ScriptExhausted; bash tests/architecture/check-boundaries.sh passes; existing seven-day-life/multiple-individuals/multiple-goods subcommands and tests remain unchanged"
+  ],
+  "createdAt": "2026-09-05T12:57:50Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:36ae1f19fb6caa2301d39c9804c2b5e60e7a889f192fa45963f9074e923c527b",
+  "evidenceRefs": [
+    ".ai/evidence/phase-12-scheduler.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-12-scheduler.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-12-scheduler.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:e1681aa7625d8f957bace4e0ec7c05a8afb17c53698a50d0d319a9aef1cf1070",
+      "workItemId": "phase-12-scheduler"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-12-scheduler.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-12-scheduler.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-12-scheduler.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-12-scheduler.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-12-scheduler.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-12-scheduler.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-12-scheduler.contract.json"
+          ],
+          "inference": false,
+          "text": "goods_runtime::scheduler::{ScheduledCycle, StopReason, run_scheduled} are implemented, not generic over ObservationSource/HumanFeedbackSource (concrete DemoObservationSource/DemoHumanFeedbackSource only); a new apps/goods-garden-cli scheduled-seven-day-life subcommand reuses the existing SEVEN_DAY_SCRIPT data, runs with max_cycles=5 (deliberately less than the 7-day script) to demonstrate the safety cap independently stopping mid-script, writes the same output to both stdout and a log file under std::env::temp_dir(), and prints the log file path; a new phase_12_scheduler.rs test verifies both StopReason cases directly and verifies the CLI's stdout/log-file behavior; existing run_seven_day_life/multiple-individuals/multiple-goods subcommands and their tests are unchanged; Japanese-only phase doc and design spec are added recording the four guardrails as confirmed Human Decisions; domain-model.md/glossary.md/README.md's Japanese sections are updated (English/Chinese sections stay untouched at Phase 1)."
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-12-scheduler.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-12-scheduler"
+  },
+  "taskReportDigest": "sha256:07a35773155fa6c717e4693e05231170279085ab655c7f306a5b64cb08f069ee",
+  "taskReportMarkdownDigest": "sha256:322174bd7bef179baf86c051344020cb1770f1cac196813331684ae05f26f4a3",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-12-scheduler.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-12-scheduler"
+}

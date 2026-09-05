@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T12:57:53Z",
+  "files": {
+    "contractDigest": "sha256:86f9a1bff4378ba192051aa75a7cf06be70ec390ff9da76c6239bb7b485b5c94",
+    "contractPath": ".ai/work-items/archive/phase-12-scheduler.contract.json",
+    "eventsDigest": "sha256:ca8c0e9f1e22f8ba7842c4386dbe2d7c93da991b9fb270e4fd1927cc04cdbf4c",
+    "eventsPath": ".ai/work-items/archive/phase-12-scheduler.events.jsonl",
+    "outcomeDigest": "sha256:279ef27eb9c83f63aa0051a4a090136594cd2add3afd4ab8d463d3b8a89f8fb4",
+    "outcomePath": ".ai/work-items/archive/phase-12-scheduler.outcome.json",
+    "summaryDigest": "sha256:87312ffad7e52c42db043b041e9ee119ce8afbeee55f597ecfe001fbcbdef0b6",
+    "summaryPath": ".ai/work-items/archive/phase-12-scheduler.summary.json",
+    "taskReportDigest": "sha256:07a35773155fa6c717e4693e05231170279085ab655c7f306a5b64cb08f069ee",
+    "taskReportMarkdownDigest": "sha256:322174bd7bef179baf86c051344020cb1770f1cac196813331684ae05f26f4a3",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-12-scheduler.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-12-scheduler.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-12-scheduler"
+}
