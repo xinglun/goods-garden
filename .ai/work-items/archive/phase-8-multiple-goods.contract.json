@@ -34,11 +34,11 @@
     "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
     "branch": "codex/phase-8-multiple-goods",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/25",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-8-multiple-goods"
   },
   "risk": "normal",

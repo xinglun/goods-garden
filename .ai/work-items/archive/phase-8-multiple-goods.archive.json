@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T09:09:46Z",
+  "files": {
+    "contractDigest": "sha256:d1b0c219d42fbc1fd9ca1fb02fc85710d9e47fce96e2c027c970013a278cd85b",
+    "contractPath": ".ai/work-items/archive/phase-8-multiple-goods.contract.json",
+    "eventsDigest": "sha256:b3ee8e659ebc71e23b5b4db3ab12d47dea33ae5ad698fa36095b1e45cbdfc904",
+    "eventsPath": ".ai/work-items/archive/phase-8-multiple-goods.events.jsonl",
+    "outcomeDigest": "sha256:a20ac6db5f3175b28b66b4ce14ccef0864b39d5af0bd3f66f2ab49f65ad5535c",
+    "outcomePath": ".ai/work-items/archive/phase-8-multiple-goods.outcome.json",
+    "summaryDigest": "sha256:33b1179cd5a6be3717bcda77bbb998a4cf1a9e85ed5667f86c28f6fd24e1d560",
+    "summaryPath": ".ai/work-items/archive/phase-8-multiple-goods.summary.json",
+    "taskReportDigest": "sha256:092283a7db1492918d17009cf005c38cc626cb581ee279dd1c09c623eae8fa42",
+    "taskReportMarkdownDigest": "sha256:692089f5ca2007ef4d6f26e350329d99cd12f78dcb07b7800b30bde57a3eaa69",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-8-multiple-goods.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-8-multiple-goods.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-8-multiple-goods"
+}

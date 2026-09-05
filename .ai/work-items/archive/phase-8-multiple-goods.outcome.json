@@ -1,0 +1,136 @@
+{
+  "acceptanceResults": [
+    "EN: apps/goods-garden-cli/src/main.rs gains a new multiple-goods subcommand that runs four species (salmon rice ball, coffee, sandwich, bento) with distinct GoodsProfile values through the identical request_care_and_remember call, using only existing goods-domain/goods-application/goods-runtime types with no new product-specific branch; the existing demo, seven-day-life and multiple-individuals subcommands are unchanged. JA: apps/goods-garden-cli/src/main.rs に新しい multiple-goods subcommand を追加し、異なる GoodsProfile 値を持つ4つの species（salmon rice ball、coffee、sandwich、bento）を、既存の goods-domain/goods-application/goods-runtime の型だけを使い、商品固有の分岐を追加せず、同一の request_care_and_remember call で処理する。既存3つの subcommand は変更しない。ZH: apps/goods-garden-cli/src/main.rs 新增 multiple-goods 子命令，仅使用既有的 goods-domain/goods-application/goods-runtime 类型、不新增任何商品专属分支，通过相同的 request_care_and_remember 调用处理四个具有不同 GoodsProfile 数值的 species（salmon rice ball、coffee、sandwich、bento）；既有三个子命令保持不变。",
+    "EN: At least one product (coffee) raises a Need/Care episode while the others stay healthy; the subcommand's output explicitly states that no product-specific code branch was needed; a new phase_8_multiple_goods.rs test runs the compiled CLI with this argument and asserts these markers, without changing any of the seven existing test files. JA: 少なくとも1つの商品（coffee）が Need/Care episode を発生させ、他は healthy のままであること。subcommand の出力は商品固有の code branch が不要だったことを明示する。新設の phase_8_multiple_goods.rs がコンパイル済み CLI をこの引数で実行しこれらを検証し、既存7つのテストファイルは変更しない。ZH: 至少一个商品（coffee）引发 Need/Care 事件，其余保持健康；子命令的输出明确说明无需任何商品专属代码分支。新增的 phase_8_multiple_goods.rs 以该参数运行编译后的 CLI 并验证这些标记，且不修改既有七个测试文件。",
+    "EN: docs/phases/phase-8-multiple-goods.md, docs/architecture/domain-model.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-8-multiple-goods.md、docs/architecture/domain-model.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-8-multiple-goods.md、docs/architecture/domain-model.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, all four existing/new cargo run demo subcommands and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、4つの local demo 実行、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、四个本地 demo 运行与 architecture boundary check 全部通过。"
+  ],
+  "createdAt": "2026-09-05T09:09:43Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:bbe21eb2fc2f3260cc60702592f4204e07f9e97a636eb6f22a08862f78a11e83",
+  "evidenceRefs": [
+    ".ai/evidence/phase-8-multiple-goods.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-8-multiple-goods.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-8-multiple-goods.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:dfba3009f9c0416ea114c9a6b8741670ea2d595bd81bbfeba992aba5b1fcb215",
+      "workItemId": "phase-8-multiple-goods"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-8-multiple-goods.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-8-multiple-goods.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run a new CLI subcommand and see four different products, each with a distinct expected lifetime and minimum stock quantity, processed by the exact same GoodsRuntime call, with at least one (coffee, the shortest-lived) raising a Need/Care episode and the others staying healthy, plus a closing statement confirming no product-specific code branch was needed. The existing demo, seven-day-life and multiple-individuals subcommands are unchanged. No new domain type is introduced. JA: 人が新しい CLI subcommand を実行し、それぞれ異なる expected lifetime と minimum stock quantity を持つ4つの商品が、全く同じ GoodsRuntime call で処理され、少なくとも1つ（最も寿命の短い coffee）が Need/Care episode を発生させ、他は healthy のままであること、そして商品固有の code branch が不要だったことを確認する締めの statement を確認できる。既存の demo、seven-day-life、multiple-individuals subcommand は変更しない。新しい domain type は導入しない。ZH: 用户可以运行新的 CLI 子命令，看到四种不同的商品（各自具有不同的 expected lifetime 与 minimum stock quantity）由完全相同的 GoodsRuntime 调用处理，其中至少一个（寿命最短的 coffee）引发 Need/Care 事件，其余保持健康，并有结束陈述确认无需任何商品专属代码分支。既有的 demo、seven-day-life 与 multiple-individuals 子命令保持不变。不引入任何新的领域类型。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-8-multiple-goods.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-8-multiple-goods"
+  },
+  "taskReportDigest": "sha256:092283a7db1492918d17009cf005c38cc626cb581ee279dd1c09c623eae8fa42",
+  "taskReportMarkdownDigest": "sha256:692089f5ca2007ef4d6f26e350329d99cd12f78dcb07b7800b30bde57a3eaa69",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-8-multiple-goods.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-8-multiple-goods"
+}
