@@ -24,7 +24,8 @@
 | Evidence | Traceable support for an observation, inference or decision. |
 | Memory | A record of relevant past experience and relationships. |
 | Memory Record | One remembered Care episode: the State that prompted a Need and the Care Action that responded to it, without judging whether it worked. |
-| Learning | A reviewable change derived from verified outcomes. |
+| Outcome | A factual comparison of whether the Need(s) a Care Action addressed are still present in a follow-up observation. |
+| Learning | A reviewable statement derived from a verified Outcome; it never adjusts a threshold, profile field or other rule by itself. |
 | Habitat | The store or operating context in which a good exists. |
 | Species | A reusable class of goods profiles or capabilities. |
 | Individual | One good instance with its own identity and memory. |
@@ -53,7 +54,8 @@
 | Evidence | observation、inference、decision を支える traceable support。 |
 | Memory | 過去の experience と relationship の relevant record。 |
 | Memory Record | 1つの記憶された Care episode。Need を促した State と、それに応答した Care Action。効果があったかは判断しない。 |
-| Learning | verified outcome から導く reviewable change。 |
+| Outcome | Care Action が対象とした Need が follow-up observation でまだ存在するかを比較する、事実に基づく判定。 |
+| Learning | verified Outcome から導く reviewable な statement。閾値や profile field などのルールを自ら調整することはない。 |
 | Habitat | 商品が存在する store または operating context。 |
 | Species | goods profile または capability の再利用可能な class。 |
 | Individual | 固有の identity と memory を持つ一つの商品 instance。 |
@@ -82,7 +84,8 @@
 | Evidence | 支持观察、推断或决定的可追溯依据。 |
 | Memory | 相关过去经验和关系的记录。 |
 | Memory Record | 一条被记住的 Care 事件：促成 Need 的 State 与响应它的 Care Action，不判断其是否奏效。 |
-| Learning | 从已验证结果中得到的、可 review 的变化。 |
+| Outcome | 基于事实的判定：比较 Care Action 所针对的 Need 是否仍存在于后续观测中。 |
+| Learning | 从已验证的 Outcome 得出的可 review 陈述；从不自行调整阈值、profile 字段或其他规则。 |
 | Habitat | 商品存在的门店或运营环境。 |
 | Species | 可复用的商品 profile 或能力类别。 |
 | Individual | 拥有自身身份和记忆的一个商品实例。 |

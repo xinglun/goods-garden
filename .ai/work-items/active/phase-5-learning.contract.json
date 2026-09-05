@@ -1,0 +1,66 @@
+{
+  "acceptanceCriteria": [
+    "EN: Outcome and Learning are implemented in goods-domain (a new outcome module plus the existing learning placeholder) without changing state::goods_state, the need module, the care module or the memory module. Outcome only compares NeedKind presence before/after; Learning is a plain reviewable statement with no rule/threshold mutation. JA: goods-domain に Outcome（新設 outcome module）と Learning（既存 learning placeholder）を実装し、state::goods_state、need、care、memory の各 module は変更しない。Outcome は NeedKind の有無を比較するだけで、Learning はルール変更を伴わない読めるだけの statement とする。ZH: 在 goods-domain 中实现 Outcome（新增 outcome 模块）与 Learning（既有 learning 占位符），且不修改 state::goods_state、need、care 或 memory 模块。Outcome 仅比较 NeedKind 前后是否存在；Learning 是不含规则/阈值变更的纯可阅读陈述。",
+    "EN: VerifyOutcome and LearnFromOutcome are implemented in goods-application; GoodsRuntime exposes a new verify_and_learn method that takes a prior CareAction and a follow-up observation from the same ObservationSource port, without altering observe_and_assess, observe_and_identify_needs, request_care or request_care_and_remember. JA: goods-application に VerifyOutcome と LearnFromOutcome を実装し、GoodsRuntime は既存メソッドを変更せず、以前の CareAction と同じ ObservationSource port からの follow-up observation を受け取る verify_and_learn を追加公開する。ZH: 在 goods-application 中实现 VerifyOutcome 与 LearnFromOutcome；GoodsRuntime 新增 verify_and_learn 方法，接收此前的 CareAction 与来自同一 ObservationSource port 的后续观测，且不改动现有四个方法。",
+    "EN: The CLI demo prints whether a Care episode is pending verification and, if verified, the Learning statement, using bundled fixtures tuned so the default run has nothing pending. JA: CLI demo は verify 待ちの Care episode の有無と、verify 済みなら Learning statement を表示する。同梱 fixture はデフォルト実行で pending が無いよう調整する。ZH: CLI demo 显示是否有待验证的 Care 事件，若已验证则显示 Learning 陈述；内置 fixture 调整为默认运行无待处理事件。",
+    "EN: A new phase_5_learning.rs test file covers the resolved (NeedKind no longer present) and unresolved (NeedKind still present) scenarios, without changing phase_1_demo.rs, phase_2_need.rs, phase_3_care.rs or phase_4_memory.rs. JA: 新設の phase_5_learning.rs が resolved（NeedKind消滅）と unresolved（NeedKind継続）の2シナリオを検証し、既存4ファイルは変更しない。ZH: 新增的 phase_5_learning.rs 覆盖已解决（NeedKind 不再存在）与未解决（NeedKind 仍存在）两种场景，且不修改既有四个测试文件。",
+    "EN: docs/phases/phase-5-learning.md, docs/architecture/domain-model.md, docs/glossary.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-5-learning.md、docs/architecture/domain-model.md、docs/glossary.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-5-learning.md、docs/architecture/domain-model.md、docs/glossary.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、local demo、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、本地 demo 与 architecture boundary check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "9204d498f40163a12c330ffe248baf911f54734c",
+  "createdAt": "2026-09-05T08:28:42Z",
+  "goal": "EN: A person can run the local CLI demo and see whether a pending Care episode has been verified and what, if anything, was learned from it, without any autonomous rule or threshold adjustment. JA: 人が local CLI demo を実行し、保留中の Care episode が verify されたか、そこから何が learn されたかを確認できる。自律的なルールや閾値の調整は含まない。ZH: 用户可以运行本地 CLI demo，查看待处理的 Care 事件是否已被验证，以及从中学到了什么；不包含任何自主的规则或阈值调整。",
+  "intent": "EN: Implement Phase 5 Verification and Learning (Outcome, VerifyOutcome, Learning, LearnFromOutcome) on top of the unchanged Phase 1-4 State/Need/Care/Memory model. Outcome compares whether the NeedKind(s) a CareAction addressed are still present in a follow-up observation; Learning is only a reviewable statement and never automatically adjusts any threshold or profile parameter. JA: 不変の Phase 1-4 State/Need/Care/Memory model の上に Phase 5 の Verification と Learning（Outcome、VerifyOutcome、Learning、LearnFromOutcome）を実装する。Outcome は CareAction が対象とした NeedKind が follow-up observation でまだ存在するかを比較するだけで、Learning は読めるだけの statement であり、閾値や profile parameter を自動調整しない。ZH: 在不改动 Phase 1-4 State/Need/Care/Memory 模型的前提下实现 Phase 5 的 Verification 与 Learning（Outcome、VerifyOutcome、Learning、LearnFromOutcome）。Outcome 只比较 CareAction 所针对的 NeedKind 是否仍存在于后续观测中；Learning 只是可阅读的陈述，从不自动调整任何阈值或 profile 参数。",
+  "mode": "implementation",
+  "outOfScope": [
+    "any automatic threshold",
+    " profile or rule adjustment; autonomous action",
+    "Evidence type implementation",
+    " persistence",
+    " Seven-day-life multi-day looping (Phase 6)",
+    "apps/goods-garden-web/** (frontend)",
+    "crates/goods-domain/src/state/goods_state.rs",
+    " crates/goods-domain/src/need/**",
+    " crates/goods-domain/src/care/**",
+    " crates/goods-domain/src/memory/** (Phase 1-4 frozen contracts)"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:e31ae754d14b159bbda34958bf4d8274b7ccb4893110b4f4067d52a5ea97adb4",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "unknown",
+    "baseRemote": "unknown",
+    "branch": "codex/phase-5-learning",
+    "provider": "unknown",
+    "pullRequest": "unknown",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-5-learning"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/outcome/mod.rs",
+    "crates/goods-domain/src/outcome/outcome.rs",
+    "crates/goods-domain/src/learning/mod.rs",
+    "crates/goods-domain/src/learning/learning.rs",
+    "crates/goods-domain/src/lib.rs",
+    "crates/goods-application/src/use_cases/verify_outcome.rs",
+    "crates/goods-application/src/use_cases/learn_from_outcome.rs",
+    "crates/goods-runtime/src/runtime.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_5_learning.rs",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-5-learning-design.md",
+    "docs/phases/phase-5-learning.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-5-learning"
+}
