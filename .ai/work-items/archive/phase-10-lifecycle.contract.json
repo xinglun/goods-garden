@@ -1,0 +1,51 @@
+{
+  "acceptanceCriteria": [
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace all pass; all 4 CLI subcommands print lifecycle: active; phase_10_lifecycle.rs passes and directly asserts Goods::new defaults to Active and Goods::retire() is a non-mutating transition to Retired; bash tests/architecture/check-boundaries.sh passes"
+  ],
+  "authority": "authorized",
+  "baseRevision": "1c8be7b887b1a670175425ee9a77e29e1c7f7e59",
+  "createdAt": "2026-09-05T11:26:33Z",
+  "goal": "LifecycleState (Active/Retired) is implemented in crates/goods-domain/src/lifecycle/lifecycle_state.rs; Goods gains a lifecycle field defaulting to Active via Goods::new, plus a non-mutating Goods::retire() constructor; all 4 CLI subcommands print a lifecycle: active/retired line; a new phase_10_lifecycle.rs integration test asserts the Active default, the non-mutating retire() transition, and the CLI-visible tag; Japanese-only phase doc and design spec are added; domain-model.md/glossary.md/README.md's Japanese sections are updated (English/Chinese sections stay untouched at Phase 1).",
+  "intent": "Implement the Phase 0 LifecycleState placeholder as a minimal Active/Retired distinction for a Goods individual, transitioned only via an explicit Goods::retire() call, never inferred from CareAction/HumanFeedback free text.",
+  "mode": "implementation",
+  "outOfScope": [
+    "goods-runtime's intelligence_loop and scheduler placeholders (autonomous orchestration",
+    " out of scope per AGENTS.md)",
+    " any behavior change to GoodsRuntime methods for Retired goods",
+    " goods-application",
+    " goods-infrastructure",
+    " persistence",
+    " frontend (apps/goods-garden-web)",
+    " English and Chinese sections of domain-model.md/glossary.md/README.md"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:a3bfb404e0a52baea4098759d2287096c6846e272f975b2a275a67faa4a1e661",
+  "requiredEvidenceClasses": [],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-10-lifecycle",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/31",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-10-lifecycle"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/lifecycle/mod.rs",
+    "crates/goods-domain/src/lifecycle/lifecycle_state.rs",
+    "crates/goods-domain/src/goods/entity.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_10_lifecycle.rs",
+    "docs/phases/phase-10-lifecycle.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-10-lifecycle-design.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-10-lifecycle"
+}

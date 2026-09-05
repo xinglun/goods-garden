@@ -176,13 +176,26 @@ Phase 9 は Phase 0 由来の `Evidence` placeholder を実装し、Phase 1-5 �
 `Evidence::known(..)` を使う。詳細は `docs/phases/phase-9-evidence.md` を
 参照。
 
+### Phase 10 minimal model
+
+Phase 10 は Phase 0 由来の `LifecycleState` placeholder を実装する。
+`Goods` は新たに `lifecycle: LifecycleState` field を持ち、`Goods::new` は
+`Active` を既定値とする。
+
+| Type | Phase 10 における最小の役割 | Status |
+| --- | --- | --- |
+| LifecycleState | Goods individual が Active（監視中）か Retired（監視対象外）かを示す2値 | PHASE 10 MINIMAL |
+
+遷移は `Goods::retire()` という明示的な呼び出しでのみ行い、
+`CareAction`/`HumanFeedback` の自由テキストから domain が推論することは
+ない。`GoodsRuntime` の既存メソッドは Retired な Goods に対しても現状どおり
+動作し、本 phase では追加の制約を課さない。詳細は
+`docs/phases/phase-10-lifecycle.md` を参照。
+
 ### Future provisional concepts
 
-以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
-
-| Candidate | Provisional role | Status |
-| --- | --- | --- |
-| LifecycleState | lifecycle の候補 | PROVISIONAL |
+Phase 0 から続いた provisional concept はすべて実装済みとなり、現時点で
+残っている候補はない。
 
 ## 中文
 

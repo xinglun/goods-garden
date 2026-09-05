@@ -52,6 +52,7 @@
 | Habitat | 商品が存在する store または operating context。 |
 | Species | goods profile または capability の再利用可能な class。 |
 | Individual | 固有の identity と memory を持つ一つの商品 instance。 |
+| Lifecycle State | Goods individual が Active（監視中）か Retired（監視対象外）かを示す2値。`Goods::retire()` によってのみ遷移する。 |
 
 ## 中文
 
