@@ -1,0 +1,136 @@
+{
+  "acceptanceResults": [
+    "EN: apps/goods-garden-cli/src/main.rs gains a new seven-day-life subcommand that scripts seven synthetic days (at least two of which raise a Need/Care Request answered by synthetic Human Feedback, each followed by a verification day) using only existing goods-domain/goods-application/goods-runtime types; the existing demo subcommand's behavior and output are unchanged. JA: apps/goods-garden-cli/src/main.rs に新しい seven-day-life subcommand を追加し、既存の goods-domain/goods-application/goods-runtime の型だけを使って7日分の synthetic day（うち少なくとも2日は synthetic Human Feedback で応答される Need/Care Request を発生させ、それぞれ verification day が続く）をスクリプト化する。既存の demo subcommand の挙動と出力は変更しない。ZH: apps/goods-garden-cli/src/main.rs 新增 seven-day-life 子命令，仅使用既有的 goods-domain/goods-application/goods-runtime 类型编排七个 synthetic day（其中至少两天引发由 synthetic Human Feedback 回应的 Need/Care Request，且各自后跟一个验证日）；既有 demo 子命令的行为与输出保持不变。",
+    "EN: A new phase_6_seven_day_life.rs test runs the compiled CLI with the seven-day-life argument and asserts the output contains markers for at least one anomaly day, its Care Request/Care Action, a follow-up Outcome/Learning line, and a final memory tally, without changing phase_1_demo.rs, phase_2_need.rs, phase_3_care.rs, phase_4_memory.rs or phase_5_learning.rs. JA: 新設の phase_6_seven_day_life.rs がコンパイル済み CLI を seven-day-life 引数で実行し、少なくとも1つの anomaly day とその Care Request/Care Action、follow-up の Outcome/Learning 行、最終的な memory 集計を含むことを検証する。既存5つのテストファイルは変更しない。ZH: 新增的 phase_6_seven_day_life.rs 以 seven-day-life 参数运行编译后的 CLI，并断言输出包含至少一个异常日及其 Care Request/Care Action、后续 Outcome/Learning 行以及最终 memory 汇总；不修改既有五个测试文件。",
+    "EN: docs/phases/phase-6-seven-day-life.md, docs/architecture/domain-model.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-6-seven-day-life.md、docs/architecture/domain-model.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-6-seven-day-life.md、docs/architecture/domain-model.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo, cargo run -p goods-garden-cli -- seven-day-life and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、両方の local demo 実行、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、两个本地 demo 运行与 architecture boundary check 全部通过。"
+  ],
+  "createdAt": "2026-09-05T08:50:12Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:49f5ed45211add1717f18f83e8fb523ba5f7d361a2ace73323d5d24073f0767a",
+  "evidenceRefs": [
+    ".ai/evidence/phase-6-seven-day-life.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/phase-6-seven-day-life.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/phase-6-seven-day-life.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:81950e9609a71984e61312ece358f052469e86aa0cd1328e3d35cd34908f18b5",
+      "workItemId": "phase-6-seven-day-life"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-6-seven-day-life.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/phase-6-seven-day-life.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-6-seven-day-life.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-6-seven-day-life.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-6-seven-day-life.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/phase-6-seven-day-life.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-6-seven-day-life.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person can run a new CLI subcommand and see a coherent seven-day narrative for one synthetic rice ball: calm days, at least two anomalies each raising a Care Request answered by synthetic Human Feedback, and follow-up verification showing whether each Care Action resolved the Need, ending with a memory tally. The existing demo subcommand's output is unchanged. JA: 人が新しい CLI subcommand を実行し、1つの synthetic rice ball の一貫した7日間の narrative（平穏な日、synthetic Human Feedback で応答される Care Request を伴う少なくとも2つの anomaly、各 Care Action が Need を解決したかを示す follow-up verification、最後に memory の集計）を確認できる。既存の demo subcommand の出力は変更しない。ZH: 用户可以运行新的 CLI 子命令，看到一个 synthetic 饭团连贯的七天叙事：平静的日子、至少两次由 synthetic Human Feedback 回应 Care Request 的异常、显示每个 Care Action 是否解决了 Need 的后续验证，并以 memory 汇总结束。既有 demo 子命令的输出保持不变。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/phase-6-seven-day-life.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "phase-6-seven-day-life"
+  },
+  "taskReportDigest": "sha256:2315a6f0e411c4306d8739064b41ec74f628b3e814fcde4ee7b794afe5613eea",
+  "taskReportMarkdownDigest": "sha256:4f4c517a694257c7920f14da3fa9f7b20c7a93b74e6a0d499416e1b2dfbb15ae",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/phase-6-seven-day-life.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "phase-6-seven-day-life"
+}

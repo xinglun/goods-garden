@@ -32,11 +32,11 @@
     "verification"
   ],
   "resourceContext": {
-    "baseBranch": "unknown",
-    "baseRemote": "unknown",
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
     "branch": "codex/phase-6-seven-day-life",
-    "provider": "unknown",
-    "pullRequest": "unknown",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/21",
     "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-6-seven-day-life"
   },
   "risk": "normal",

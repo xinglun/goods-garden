@@ -1,0 +1,95 @@
+{
+  "bindings": {
+    "evidenceRefs": [
+      ".ai/evidence/phase-6-seven-day-life.verification.json"
+    ],
+    "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+    "repositorySnapshotDigest": "sha256:81950e9609a71984e61312ece358f052469e86aa0cd1328e3d35cd34908f18b5",
+    "workItemId": "phase-6-seven-day-life"
+  },
+  "format": "ai-cockpit.task-outcome",
+  "humanStatusColor": "green",
+  "schemaVersion": 1,
+  "sections": {
+    "avoidedImpact": [],
+    "deliveredChanges": [],
+    "evidence": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-6-seven-day-life.verification.json"
+        ],
+        "inference": false,
+        "text": ".ai/evidence/phase-6-seven-day-life.verification.json"
+      }
+    ],
+    "findings": [],
+    "forbiddenClaims": [
+      "merge_authorized_without_human_decision",
+      "release_published_without_release_evidence",
+      "provider_or_enterprise_approval_inferred_from_local_records",
+      "user_visible_benefit_invented_from_implementation_facts"
+    ],
+    "forcedStops": [],
+    "humanDecisions": [],
+    "interventions": [],
+    "limitations": [],
+    "nonRiskExplanations": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-6-seven-day-life.summary.json"
+        ],
+        "inference": false,
+        "text": "No repository paths were observed as changed by the current Summary."
+      }
+    ],
+    "outcomeSummary": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-6-seven-day-life.verification.json"
+        ],
+        "inference": false,
+        "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+      }
+    ],
+    "recurrencePrevention": [],
+    "residualRisks": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-6-seven-day-life.verification.json"
+        ],
+        "inference": false,
+        "text": "Remaining unknown: user_visible_benefit_not_declared"
+      }
+    ],
+    "resolutions": [
+      {
+        "evidenceRefs": [
+          ".ai/evidence/phase-6-seven-day-life.verification.json"
+        ],
+        "inference": false,
+        "text": "The current verification evidence is valid for this repository and Work Item."
+      }
+    ],
+    "risks": [],
+    "taskOverview": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-6-seven-day-life.contract.json"
+        ],
+        "inference": false,
+        "text": "EN: A person can run a new CLI subcommand and see a coherent seven-day narrative for one synthetic rice ball: calm days, at least two anomalies each raising a Care Request answered by synthetic Human Feedback, and follow-up verification showing whether each Care Action resolved the Need, ending with a memory tally. The existing demo subcommand's output is unchanged. JA: 人が新しい CLI subcommand を実行し、1つの synthetic rice ball の一貫した7日間の narrative（平穏な日、synthetic Human Feedback で応答される Care Request を伴う少なくとも2つの anomaly、各 Care Action が Need を解決したかを示す follow-up verification、最後に memory の集計）を確認できる。既存の demo subcommand の出力は変更しない。ZH: 用户可以运行新的 CLI 子命令，看到一个 synthetic 饭团连贯的七天叙事：平静的日子、至少两次由 synthetic Human Feedback 回应 Care Request 的异常、显示每个 Care Action 是否解决了 Need 的后续验证，并以 memory 汇总结束。既有 demo 子命令的输出保持不变。"
+      }
+    ],
+    "warnings": [
+      {
+        "evidenceRefs": [
+          ".ai/work-items/archive/phase-6-seven-day-life.contract.json"
+        ],
+        "inference": false,
+        "text": "User-visible benefit is not declared by the Work Item owner."
+      }
+    ]
+  },
+  "status": "verified",
+  "workItemId": "phase-6-seven-day-life"
+}
