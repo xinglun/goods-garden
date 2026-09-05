@@ -1,0 +1,50 @@
+{
+  "acceptanceCriteria": [
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace all pass; phase_6_seven_day_life.rs passes unchanged (byte-identical CLI stdout after the run_cycle refactor); new phase_11_intelligence_loop.rs passes and directly asserts the no-verification and with-verification cases; bash tests/architecture/check-boundaries.sh passes"
+  ],
+  "authority": "authorized",
+  "baseRevision": "9e936c14ee48029c3917cfd8bae9ef752f475716",
+  "createdAt": "2026-09-05T11:57:38Z",
+  "goal": "IntelligenceCycleOutcome and GoodsRuntime::run_cycle are implemented in crates/goods-runtime/src/intelligence_loop/mod.rs; run_seven_day_life in apps/goods-garden-cli/src/main.rs is refactored to call run_cycle instead of manually sequencing verify_and_learn + request_care_and_remember, with byte-identical CLI stdout (phase_6_seven_day_life.rs stays unchanged and passing); run_multiple_individuals/run_multiple_goods are NOT changed; a new phase_11_intelligence_loop.rs test directly asserts both the no-verification and with-verification cases; Japanese-only phase doc and design spec are added; domain-model.md/glossary.md/README.md's Japanese sections are updated (English/Chinese sections stay untouched at Phase 1).",
+  "intent": "Formalize the Phase 0 intelligence_loop placeholder in goods-runtime as GoodsRuntime::run_cycle, bundling the existing verify_and_learn + request_care_and_remember sequence that apps/goods-garden-cli's Seven Day Life milestone already orchestrates by hand into one named Intelligence Loop cycle.",
+  "mode": "implementation",
+  "outOfScope": [
+    "crates/goods-runtime/src/scheduler (autonomous triggering/timing",
+    " requires a separate human decision on autonomous action authority)",
+    " any change to run_multiple_individuals/run_multiple_goods's orchestration logic",
+    " goods-domain",
+    " goods-application",
+    " goods-infrastructure",
+    " persistence",
+    " frontend (apps/goods-garden-web)",
+    " English and Chinese sections of domain-model.md/glossary.md/README.md"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:ea29904f0a44bbeddc0090d9b3ec06cb15c6907f0950ab6f5ed68bf447d9cdea",
+  "requiredEvidenceClasses": [],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-11-intelligence-loop",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/35",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-11-intelligence-loop"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-runtime/src/intelligence_loop/mod.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_11_intelligence_loop.rs",
+    "docs/phases/phase-11-intelligence-loop.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-11-intelligence-loop-design.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-11-intelligence-loop"
+}
