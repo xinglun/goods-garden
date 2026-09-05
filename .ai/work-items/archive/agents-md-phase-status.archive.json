@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T11:49:40Z",
+  "files": {
+    "contractDigest": "sha256:94a0cd506509968b6b2175f222d8b419e822491d01fe76a536c4c573653d60d1",
+    "contractPath": ".ai/work-items/archive/agents-md-phase-status.contract.json",
+    "eventsDigest": "sha256:fe057e29ad35b748e67f2c8133014b8ed8e8f0fa57352ec1f0de6641fac0bf0b",
+    "eventsPath": ".ai/work-items/archive/agents-md-phase-status.events.jsonl",
+    "outcomeDigest": "sha256:7da63dddbb47f7ffeebf3e225b69f4b186a820550c722825e74b06252f12d9ff",
+    "outcomePath": ".ai/work-items/archive/agents-md-phase-status.outcome.json",
+    "summaryDigest": "sha256:b3b7897f500285112c50c1ab7f00205cf7d2038f84f93b83102196115f2a7bd8",
+    "summaryPath": ".ai/work-items/archive/agents-md-phase-status.summary.json",
+    "taskReportDigest": "sha256:977dfaec737c9c4e21988154770db1cdff8f12a56a39f0e7a351116307806a26",
+    "taskReportMarkdownDigest": "sha256:29a5b1cbb19c17e6cf5cfb6f59cd1f8da75692e543cb1850da254ba347cbc4e0",
+    "taskReportMarkdownPath": ".ai/work-items/archive/agents-md-phase-status.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/agents-md-phase-status.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "agents-md-phase-status"
+}
