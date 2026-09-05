@@ -44,11 +44,9 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
     let source = DemoObservationSource::from_fixture(TUNA_MAYO_FIXTURE)?;
     let feedback_source = DemoHumanFeedbackSource::from_fixture(HUMAN_FEEDBACK_FIXTURE)?;
     let mut memory = GoodsMemory::new();
-    let (state, needs, request, action) = GoodsRuntime::new(source).request_care_and_remember(
-        &item,
-        &feedback_source,
-        &mut memory,
-    )?;
+    let runtime = GoodsRuntime::new(source);
+    let (state, needs, request, action) =
+        runtime.request_care_and_remember(&item, &feedback_source, &mut memory)?;
 
     println!("Goods Garden Phase 1 demo");
     println!("source: {}", state.observation.source);
@@ -89,6 +87,15 @@ fn run_demo() -> Result<(), Box<dyn Error>> {
         None => println!("care action: <none identified>"),
     }
     println!("memory: {} care episode(s) remembered", memory.records().len());
+
+    match action {
+        Some(action) => {
+            let learning = runtime.verify_and_learn(&item, action)?;
+            println!("outcome: {:?} — {}", learning.outcome.status, learning.outcome.explanation);
+            println!("learning: {}", learning.statement);
+        }
+        None => println!("learning: <none pending>"),
+    }
 
     Ok(())
 }

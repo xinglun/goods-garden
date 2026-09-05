@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T08:37:09Z",
+  "files": {
+    "contractDigest": "sha256:35d347cd4a40c5340d43b686bb3bd463f6b91b5bc68261eb74269ed289f18e27",
+    "contractPath": ".ai/work-items/archive/phase-5-learning.contract.json",
+    "eventsDigest": "sha256:7963b6ce43bb2632f30b8736230a1c45328c0b02d9352c19408c9a6ee1c9bafc",
+    "eventsPath": ".ai/work-items/archive/phase-5-learning.events.jsonl",
+    "outcomeDigest": "sha256:5694ed680dcc8943d817b3ce5c5b30fd54f77828d2a85ad21e3fd0e42dc13e71",
+    "outcomePath": ".ai/work-items/archive/phase-5-learning.outcome.json",
+    "summaryDigest": "sha256:387fbbb235d876be29b1b4fed40c8df0041be096b772c555e89bb684b59d13d9",
+    "summaryPath": ".ai/work-items/archive/phase-5-learning.summary.json",
+    "taskReportDigest": "sha256:0eb2b4de942989d27fcefbd7c6339a805aa003761f88cc1e75bf0a365c881f4a",
+    "taskReportMarkdownDigest": "sha256:9d0765206111ae6e6c8aced2de10506f7c8852af910b1945ae77a351837958d3",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-5-learning.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-5-learning.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-5-learning"
+}

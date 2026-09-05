@@ -6,8 +6,9 @@ Phase 1 separates the minimal model needed by the local demo from future
 provisional concepts. Phase 2 adds a minimal Need model on top without
 changing Phase 1; Phase 3 adds a minimal Care model on top without changing
 Phase 1 or Phase 2; Phase 4 adds a minimal Memory model on top without
-changing Phase 1-3. All are reviewable, deliberately small and do not claim to
-settle the long-term domain schema.
+changing Phase 1-3; Phase 5 adds a minimal Outcome/Learning model on top
+without changing Phase 1-4. All are reviewable, deliberately small and do not
+claim to settle the long-term domain schema.
 
 ### Phase 1 minimal model
 
@@ -86,6 +87,26 @@ Nothing is ever evicted or expired; the `MemoryStore` port remains an empty
 placeholder, and no database or file-backed adapter is implemented. See
 `docs/phases/phase-4-memory.md`.
 
+### Phase 5 minimal model
+
+Phase 5 adds Outcome and Learning on top of the unchanged Phase 1-4
+State/Need/Care/Memory model, comparing a CareAction against a follow-up
+observation.
+
+| Type | Minimal role in Phase 5 | Status |
+| --- | --- | --- |
+| OutcomeStatus | `Resolved` or `Unresolved`, a factual comparison of NeedKind presence, not a judgment of the Caregiver's decision | PHASE 5 MINIMAL |
+| Outcome | The CareAction, the follow-up State/Need Assessment, the OutcomeStatus and an explanation | PHASE 5 MINIMAL |
+| Learning | A reviewable statement derived from an Outcome | PHASE 5 MINIMAL |
+
+Learning never adjusts a threshold, profile field or any other rule by
+itself; it only records a plain-language, human-reviewable observation.
+Whether to act on it remains a separate human decision, out of scope here.
+The generic `Evidence` type remains a provisional placeholder — Outcome's own
+fields (the CareAction, the follow-up State and Need Assessment) already
+provide the traceability this phase needs. See
+`docs/phases/phase-5-learning.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -94,16 +115,15 @@ settled schemas.
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
 | Evidence | Traceability support candidate | PROVISIONAL |
-| Outcome | Result candidate | PROVISIONAL |
-| Learning | Learning-result candidate | PROVISIONAL |
 | LifecycleState | Lifecycle candidate | PROVISIONAL |
 
 ## 日本語
 
 Phase 1 では local demo に必要な最小 model と、将来の provisional concept を分ける。Phase 2 は Phase 1 を変更せず
 その上に最小の Need model を追加し、Phase 3 は Phase 1/2 を変更せずその上に最小の Care model を追加し、Phase 4 は
-Phase 1-3 を変更せずその上に最小の Memory model を追加する。いずれも review 可能な小さい model であり、長期的な
-domain schema を確定したとは主張しない。
+Phase 1-3 を変更せずその上に最小の Memory model を追加し、Phase 5 は Phase 1-4 を変更せずその上に最小の
+Outcome/Learning model を追加する。いずれも review 可能な小さい model であり、長期的な domain schema を確定したとは
+主張しない。
 
 ### Phase 1 minimal model
 
@@ -172,6 +192,23 @@ append-only な Relationship Memory を追加する。
 observation をまたいで受け渡される。何も eviction・expire されず、`MemoryStore` port は空プレースホルダーの
 ままで、database や file-backed adapter は実装しない。詳細は `docs/phases/phase-4-memory.md` を参照。
 
+### Phase 5 minimal model
+
+Phase 5 は不変の Phase 1-4 State/Need/Care/Memory model の上に、CareAction を follow-up observation
+と比較する Outcome と Learning を追加する。
+
+| Type | Phase 5 における最小の役割 | Status |
+| --- | --- | --- |
+| OutcomeStatus | `Resolved` または `Unresolved`。NeedKind の有無を比較する事実判定であり、Caregiver の決定を評価しない | PHASE 5 MINIMAL |
+| Outcome | CareAction、follow-up の State/Need Assessment、OutcomeStatus、explanation | PHASE 5 MINIMAL |
+| Learning | Outcome から導かれる reviewable な statement | PHASE 5 MINIMAL |
+
+Learning は閾値、profile field、その他のルールを自ら調整することは決してなく、plain-language で
+human-reviewable な観測を記録するだけである。それに基づいて行動するかどうかは別の human decision であり、
+本 phase の対象外である。汎用の `Evidence` type は引き続き provisional placeholder のままとする——Outcome
+自身の field（CareAction、follow-up の State と Need Assessment）が本 phase に必要な traceability を
+既に提供している。詳細は `docs/phases/phase-5-learning.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -179,15 +216,14 @@ observation をまたいで受け渡される。何も eviction・expire され�
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
 | Evidence | traceability support の候補 | PROVISIONAL |
-| Outcome | result の候補 | PROVISIONAL |
-| Learning | learning-result の候補 | PROVISIONAL |
 | LifecycleState | lifecycle の候補 | PROVISIONAL |
 
 ## 中文
 
 Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 2 在不改动 Phase 1 的前提下，于其上新增最小 Need 模型；
-Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型；Phase 4 在不改动 Phase 1-3 的前提下，于其上新增最小 Memory 模型。
-四者都是可 review 的小模型，并不意味着已经确定长期领域 schema。
+Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型；Phase 4 在不改动 Phase 1-3 的前提下，于其上新增最小 Memory 模型；
+Phase 5 在不改动 Phase 1-4 的前提下，于其上新增最小 Outcome/Learning 模型。五者都是可 review 的小模型，并不意味着已经确定长期
+领域 schema。
 
 ### Phase 1 minimal model
 
@@ -253,6 +289,22 @@ Relationship Memory。
 过期任何内容；`MemoryStore` port 仍为空占位符，不实现数据库或文件支持的 adapter。详见
 `docs/phases/phase-4-memory.md`。
 
+### Phase 5 minimal model
+
+Phase 5 在不变的 Phase 1-4 State/Need/Care/Memory 模型之上，新增将 CareAction 与后续观测进行比较的
+Outcome 与 Learning。
+
+| 类型 | 在 Phase 5 中的最小作用 | Status |
+| --- | --- | --- |
+| OutcomeStatus | `Resolved` 或 `Unresolved`；比较 NeedKind 是否存在的事实判定，不评判 Caregiver 的决定 | PHASE 5 MINIMAL |
+| Outcome | CareAction、后续的 State/Need Assessment、OutcomeStatus 与 explanation | PHASE 5 MINIMAL |
+| Learning | 从 Outcome 得出的可 review 陈述 | PHASE 5 MINIMAL |
+
+Learning 从不自行调整阈值、profile 字段或其他规则，只记录一段人类可 review 的自然语言观察。是否据此采取
+行动是另一项人类决策，不在本阶段范围内。通用的 `Evidence` 类型仍保持为 provisional 占位符——Outcome 自身
+的字段（CareAction、后续的 State 与 Need Assessment）已经提供了本阶段所需的可追溯性。详见
+`docs/phases/phase-5-learning.md`。
+
 ### Future provisional concepts
 
 以下仍只是讨论用 vocabulary，不是已实现行为，也不是已经确定的 schema。
@@ -260,6 +312,4 @@ Relationship Memory。
 | 候选 | Provisional 作用 | Status |
 | --- | --- | --- |
 | Evidence | 可追溯性支持的候选 | PROVISIONAL |
-| Outcome | 结果的候选 | PROVISIONAL |
-| Learning | 学习结果的候选 | PROVISIONAL |
 | LifecycleState | 生命周期的候选 | PROVISIONAL |

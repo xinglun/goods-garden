@@ -7,12 +7,15 @@ use goods_application::ports::human_feedback_source::HumanFeedbackSource;
 use goods_application::ports::observation_source::ObservationSource;
 use goods_application::use_cases::assess_state::AssessState;
 use goods_application::use_cases::identify_need::IdentifyNeed;
+use goods_application::use_cases::learn_from_outcome::LearnFromOutcome;
 use goods_application::use_cases::observe_goods::ObserveGoods;
 use goods_application::use_cases::receive_care::ReceiveCare;
 use goods_application::use_cases::remember_care::RememberCare;
 use goods_application::use_cases::request_care::RequestCare;
+use goods_application::use_cases::verify_outcome::VerifyOutcome;
 use goods_domain::care::{CareAction, CareRequest};
 use goods_domain::goods::Goods;
+use goods_domain::learning::Learning;
 use goods_domain::memory::GoodsMemory;
 use goods_domain::need::NeedAssessment;
 use goods_domain::state::GoodsState;
@@ -99,5 +102,19 @@ impl<S: ObservationSource> GoodsRuntime<S> {
         }
 
         Ok((state, needs, request, action))
+    }
+
+    /// Verify a prior CareAction against a follow-up observation from this
+    /// runtime's ObservationSource, and derive a reviewable Learning
+    /// statement. This never adjusts a threshold, profile field or other
+    /// rule; it only records what was observed.
+    pub fn verify_and_learn(
+        &self,
+        goods: &Goods,
+        action: CareAction,
+    ) -> Result<Learning, S::Error> {
+        let (new_state, new_needs) = self.observe_and_identify_needs(goods)?;
+        let outcome = VerifyOutcome::execute(action, new_state, new_needs);
+        Ok(LearnFromOutcome::execute(outcome))
     }
 }
