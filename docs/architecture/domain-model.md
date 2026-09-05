@@ -107,6 +107,14 @@ fields (the CareAction, the follow-up State and Need Assessment) already
 provide the traceability this phase needs. See
 `docs/phases/phase-5-learning.md`.
 
+### Phase 6 — Seven Day Life
+
+Phase 6 introduces no new domain type. It is a CLI-level milestone that
+scripts the unchanged Phase 1-5 model across seven synthetic days for one
+Goods individual, demonstrating normal days, two anomalies, their Care
+Requests and Human Feedback, their follow-up Verification/Learning, and a
+final Memory tally. See `docs/phases/phase-6-seven-day-life.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -209,6 +217,13 @@ human-reviewable な観測を記録するだけである。それに基づいて
 自身の field（CareAction、follow-up の State と Need Assessment）が本 phase に必要な traceability を
 既に提供している。詳細は `docs/phases/phase-5-learning.md` を参照。
 
+### Phase 6 — Seven Day Life
+
+Phase 6 は新しい domain type を導入しない。不変の Phase 1-5 model を、1つの Goods individual に対して
+7日分の synthetic day としてスクリプト化する CLI level のマイルストーンであり、normal な日、2つの
+anomaly とその Care Request・Human Feedback、それらの follow-up Verification/Learning、最終的な
+Memory 集計を示す。詳細は `docs/phases/phase-6-seven-day-life.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -304,6 +319,13 @@ Learning 从不自行调整阈值、profile 字段或其他规则，只记录一
 行动是另一项人类决策，不在本阶段范围内。通用的 `Evidence` 类型仍保持为 provisional 占位符——Outcome 自身
 的字段（CareAction、后续的 State 与 Need Assessment）已经提供了本阶段所需的可追溯性。详见
 `docs/phases/phase-5-learning.md`。
+
+### Phase 6 — Seven Day Life
+
+Phase 6 不引入任何新的领域类型。它是一个 CLI 层面的里程碑，将不变的 Phase 1-5 模型为一个 Goods
+individual 编排为七天的 synthetic day 脚本，展示正常的日子、两次异常及其 Care Request 与 Human
+Feedback、各自的后续 Verification/Learning，以及最终的 Memory 汇总。详见
+`docs/phases/phase-6-seven-day-life.md`。
 
 ### Future provisional concepts
 

@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T08:50:16Z",
+  "files": {
+    "contractDigest": "sha256:64456e096db1d8377288076f1a9a101917830892779ac5491b8795b3d2cab423",
+    "contractPath": ".ai/work-items/archive/phase-6-seven-day-life.contract.json",
+    "eventsDigest": "sha256:665b1815915e6ed8e76f5a251cfb5a0ab352d8c3685ce71dc39312f8d1a55088",
+    "eventsPath": ".ai/work-items/archive/phase-6-seven-day-life.events.jsonl",
+    "outcomeDigest": "sha256:6950aa2e9325375bc724e61214d96c644806c63851f1c6bcba2b264ce9ab0919",
+    "outcomePath": ".ai/work-items/archive/phase-6-seven-day-life.outcome.json",
+    "summaryDigest": "sha256:c3094aefbcb8201fbe81f095410eb3bb13e4e06a7c72186be1d3c3a2d56f7aef",
+    "summaryPath": ".ai/work-items/archive/phase-6-seven-day-life.summary.json",
+    "taskReportDigest": "sha256:2315a6f0e411c4306d8739064b41ec74f628b3e814fcde4ee7b794afe5613eea",
+    "taskReportMarkdownDigest": "sha256:4f4c517a694257c7920f14da3fa9f7b20c7a93b74e6a0d499416e1b2dfbb15ae",
+    "taskReportMarkdownPath": ".ai/work-items/archive/phase-6-seven-day-life.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/phase-6-seven-day-life.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "phase-6-seven-day-life"
+}
