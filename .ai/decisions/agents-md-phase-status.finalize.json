@@ -1,0 +1,58 @@
+{
+  "actor": "human:repository-owner",
+  "after": {
+    "branch": "deleted",
+    "pullRequest": "merged",
+    "worktree": "removed"
+  },
+  "authoritySource": "repository-local-authorized-merge",
+  "before": {
+    "branch": "present",
+    "pullRequest": "merged",
+    "worktree": "clean"
+  },
+  "branch": {
+    "headRevision": "139c2c4e4e227cd3a11b0a53af226973bd13df14",
+    "name": "codex/agents-md-phase-status",
+    "remote": "origin"
+  },
+  "contractDigest": "sha256:94a0cd506509968b6b2175f222d8b419e822491d01fe76a536c4c573653d60d1",
+  "operationId": "agents-md-phase-status-finalize-1",
+  "provider": "github",
+  "pullRequest": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "baseRevision": "5cf31bd021912d8c84c467298fa8427a538e5709",
+    "headRevision": "139c2c4e4e227cd3a11b0a53af226973bd13df14",
+    "mergeCommit": "21b856cf1dfff40d6d3c5c395e165e0567cc2d73",
+    "number": 33,
+    "url": "https://github.com/xinglun/goods-garden/pull/33"
+  },
+  "reason": "PR #33 (docs: update AGENTS.md's Current phase to reflect Phase 10) was reviewed and merged into main (including the archive-record follow-up commit pushed to the same branch before merge); the codex/agents-md-phase-status branch and its worktree were then deleted.",
+  "receiptId": "agents-md-phase-status-finalize-receipt-1",
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/agents-md-phase-status",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/33",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/agents-md-phase-status"
+  },
+  "result": {
+    "disposition": "deleted",
+    "failureCodes": [],
+    "unknownCodes": []
+  },
+  "runtimeDigest": "sha256:3442326523162b255bad5b317b87cb9ad162420bf9f9c88e23ab24f07b16e36d",
+  "runtimeVersion": "0.2.76",
+  "schemaVersion": 1,
+  "timestamp": "2026-09-05T11:50:58Z",
+  "workItemId": "agents-md-phase-status",
+  "worktree": {
+    "branch": "codex/agents-md-phase-status",
+    "headRevision": "139c2c4e4e227cd3a11b0a53af226973bd13df14",
+    "path": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/agents-md-phase-status",
+    "worktreeId": "goods-garden-agents-md-phase-status"
+  }
+}
