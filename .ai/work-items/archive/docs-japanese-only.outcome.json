@@ -1,0 +1,135 @@
+{
+  "acceptanceResults": [
+    "EN: All seven Phase 2-8 phase documents and all seven Phase 2-8 PROPOSED design specs contain Japanese-only content (English and Chinese sections removed). JA: 7つの Phase 2-8 phase document と7つの Phase 2-8 PROPOSED design spec が日本語のみの内容になる（英語・中文 section を削除）。ZH: 全部七个 Phase 2-8 阶段文档与七个 Phase 2-8 PROPOSED 设计规格均只包含日语内容（移除英文与中文 section）。",
+    "EN: docs/glossary.md and docs/architecture/domain-model.md keep their pre-existing Phase 0/1 English/Japanese/Chinese content unchanged, with only the Phase 2-8 entries removed from the English and Chinese sections; docs/README.md's English and Chinese phase lists revert to ending at Phase 1 while the Japanese list keeps Phase 1-8. JA: docs/glossary.md と docs/architecture/domain-model.md の既存 Phase 0/1 の英語/日本語/中文 content は無変更のまま、Phase 2-8 の項目だけを英語・中文 section から削除する。docs/README.md の英語・中文 phase list は Phase 1 で終わるよう戻し、日本語 list は Phase 1-8 を保つ。ZH: docs/glossary.md 与 docs/architecture/domain-model.md 保持既有 Phase 0/1 的英文/日语/中文内容不变，仅将 Phase 2-8 条目从英文与中文 section 中移除；docs/README.md 的英文与中文阶段列表恢复到仅到 Phase 1，日语列表保留 Phase 1-8。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace and bash tests/architecture/check-boundaries.sh all still pass, confirming this is a documentation-only change. JA: 指定された Cargo quality command と architecture boundary check が全て通り、これが documentation-only の変更であることを確認する。ZH: 指定的 Cargo quality command 与 architecture boundary check 全部通过，确认这是仅涉及文档的更改。"
+  ],
+  "createdAt": "2026-09-05T10:01:01Z",
+  "decisionState": "green",
+  "evidenceDigest": "sha256:80b0c802934b794a19d6fb6544aa27391f775c44563a7e611eb446ccf786ca27",
+  "evidenceRefs": [
+    ".ai/evidence/docs-japanese-only.verification.json"
+  ],
+  "humanBenefitReport": {
+    "affectedUsers": [],
+    "evidenceRefs": [
+      ".ai/evidence/docs-japanese-only.verification.json"
+    ],
+    "state": "unknown",
+    "unknowns": [
+      "user_visible_benefit_not_declared"
+    ],
+    "userVisibleChanges": []
+  },
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "schemaVersion": 2,
+  "state": "finish_ready",
+  "summary": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner.",
+  "taskOutcomeReport": {
+    "bindings": {
+      "evidenceRefs": [
+        ".ai/evidence/docs-japanese-only.verification.json"
+      ],
+      "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+      "repositorySnapshotDigest": "sha256:8707589b9d635f85414ac1a559258065efffef7e18fa6fc22a0c7a8bd4c49e12",
+      "workItemId": "docs-japanese-only"
+    },
+    "format": "ai-cockpit.task-outcome",
+    "humanStatusColor": "green",
+    "schemaVersion": 1,
+    "sections": {
+      "avoidedImpact": [],
+      "deliveredChanges": [],
+      "evidence": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/docs-japanese-only.verification.json"
+          ],
+          "inference": false,
+          "text": ".ai/evidence/docs-japanese-only.verification.json"
+        }
+      ],
+      "findings": [],
+      "forbiddenClaims": [
+        "merge_authorized_without_human_decision",
+        "release_published_without_release_evidence",
+        "provider_or_enterprise_approval_inferred_from_local_records",
+        "user_visible_benefit_invented_from_implementation_facts"
+      ],
+      "forcedStops": [],
+      "humanDecisions": [],
+      "interventions": [],
+      "limitations": [],
+      "nonRiskExplanations": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/docs-japanese-only.summary.json"
+          ],
+          "inference": false,
+          "text": "No repository paths were observed as changed by the current Summary."
+        }
+      ],
+      "outcomeSummary": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/docs-japanese-only.verification.json"
+          ],
+          "inference": false,
+          "text": "Verification evidence passed; human-visible benefit remains explicitly unknown unless declared by the Work Item owner."
+        }
+      ],
+      "recurrencePrevention": [],
+      "residualRisks": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/docs-japanese-only.verification.json"
+          ],
+          "inference": false,
+          "text": "Remaining unknown: user_visible_benefit_not_declared"
+        }
+      ],
+      "resolutions": [
+        {
+          "evidenceRefs": [
+            ".ai/evidence/docs-japanese-only.verification.json"
+          ],
+          "inference": false,
+          "text": "The current verification evidence is valid for this repository and Work Item."
+        }
+      ],
+      "risks": [],
+      "taskOverview": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/docs-japanese-only.contract.json"
+          ],
+          "inference": false,
+          "text": "EN: A person reading any Phase 2-8 phase document or design spec sees Japanese-only content; docs/glossary.md and docs/architecture/domain-model.md keep their pre-existing Phase 0/1 English/Japanese/Chinese sections intact, with only the Phase 2-8 rows/sections removed from the English and Chinese sections (kept only in Japanese); docs/README.md's English and Chinese phase lists end at Phase 1 again, while the Japanese list keeps Phase 1-8. AGENTS.md's documentation rule is untouched, and no source code changes. JA: Phase 2-8 の phase document や design spec を読むと日本語のみの内容が表示される。docs/glossary.md と docs/architecture/domain-model.md は既存の Phase 0/1 の英語/日本語/中文 section をそのまま保ち、Phase 2-8 の行/section だけを英語・中文 section から削除し日本語にのみ残す。docs/README.md の英語・中文の phase list は Phase 1 で終わるように戻し、日本語 list だけが Phase 1-8 を保つ。AGENTS.md の documentation rule は変更せず、ソースコードの変更も行わない。ZH: 阅读任何 Phase 2-8 阶段文档或设计规格时看到的都是仅日语内容；docs/glossary.md 与 docs/architecture/domain-model.md 保留既有 Phase 0/1 的英文/日语/中文 section 不变，仅将 Phase 2-8 的行/section 从英文与中文 section 中移除（只保留在日语中）；docs/README.md 的英文与中文阶段列表恢复到仅到 Phase 1，日语列表保留 Phase 1-8。AGENTS.md 的文档规则不变，且不涉及任何源代码改动。"
+        }
+      ],
+      "warnings": [
+        {
+          "evidenceRefs": [
+            ".ai/work-items/archive/docs-japanese-only.contract.json"
+          ],
+          "inference": false,
+          "text": "User-visible benefit is not declared by the Work Item owner."
+        }
+      ]
+    },
+    "status": "verified",
+    "workItemId": "docs-japanese-only"
+  },
+  "taskReportDigest": "sha256:d7edfb5ccc07bb2c67a9e0f82542af25db52d70107adc53a6d91b3fac8a0842b",
+  "taskReportMarkdownDigest": "sha256:e52b062ad21a4a720534cf681157eb40cc156533633eaa3bcc1b2c24442c1d91",
+  "unknowns": [
+    "user_visible_benefit_not_declared"
+  ],
+  "verification": {
+    "evidencePath": ".ai/evidence/docs-japanese-only.verification.json",
+    "required": true,
+    "status": "verified"
+  },
+  "workItemId": "docs-japanese-only"
+}
