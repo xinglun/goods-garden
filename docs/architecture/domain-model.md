@@ -124,6 +124,17 @@ GoodsProfile (Species-level data) while each owns a distinct
 that Species-level data is shared while Individual Memory is not. See
 `docs/phases/phase-7-multiple-individuals.md`.
 
+### Phase 8 — Multiple Goods
+
+Phase 8 introduces no new domain type. It runs four distinct product
+species (salmon rice ball, coffee, sandwich, bento) with meaningfully
+different GoodsProfile values through the unchanged Phase 1-7 model via the
+identical code path, proving Goods Intelligence is a class of capability
+while each concrete good is only data — an object/instance of that
+capability, with no product-specific branch anywhere in goods-domain,
+goods-application or goods-runtime. See
+`docs/phases/phase-8-multiple-goods.md`.
+
 ### Future provisional concepts
 
 The following remain vocabulary for discussion, not implemented behavior or
@@ -241,6 +252,15 @@ individual に対して実行し、1つの clone された GoodsProfile（Specie
 レベルのデータは共有され Individual Memory は共有されないことを検証する。詳細は
 `docs/phases/phase-7-multiple-individuals.md` を参照。
 
+### Phase 8 — Multiple Goods
+
+Phase 8 は新しい domain type を導入しない。不変の Phase 1-7 model を、意味のある異なる
+GoodsProfile 値を持つ4つの product species（salmon rice ball、coffee、sandwich、bento）に対して
+同一の code path で実行し、goods-domain、goods-application、goods-runtime のどこにも商品固有の
+分岐が無いまま、Goods Intelligence が capability class であり、具体的な good は単なる data——
+その capability の object/instance——であることを証明する。詳細は
+`docs/phases/phase-8-multiple-goods.md` を参照。
+
 ### Future provisional concepts
 
 以下は議論用 vocabulary であり、実装挙動でも確定 schema でもない。
@@ -350,6 +370,14 @@ Phase 7 不引入任何新的领域类型。它将不变的 Phase 1-6 模型运�
 individual，二者共享同一个克隆的 GoodsProfile（Species 级数据），但各自拥有不同的
 `GoodsIdentity.individual_id` 与独立的 GoodsMemory，验证 Species 级数据被共享而 Individual
 Memory 不被共享。详见 `docs/phases/phase-7-multiple-individuals.md`。
+
+### Phase 8 — Multiple Goods
+
+Phase 8 不引入任何新的领域类型。它将不变的 Phase 1-7 模型运行于四种具有明显不同 GoodsProfile
+数值的产品 species（salmon rice ball、coffee、sandwich、bento），通过相同的代码路径处理，在
+goods-domain、goods-application 与 goods-runtime 中不存在任何商品专属分支的前提下，证明
+Goods Intelligence 是能力类，而具体商品只是数据——该能力的对象/实例。详见
+`docs/phases/phase-8-multiple-goods.md`。
 
 ### Future provisional concepts
 
