@@ -1,0 +1,60 @@
+{
+  "acceptanceCriteria": [
+    "cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace all pass; all 4 CLI subcommands (demo, seven-day-life, multiple-individuals, multiple-goods) print [KNOWN] and/or [INFERRED] tags after each evidence-bearing line; phase_1_demo.rs and phase_3_care.rs pass using .evidence.statement; new phase_9_evidence.rs passes and directly asserts GoodsNeed is Inferred while Deviation/HealthAssessment are Known; bash tests/architecture/check-boundaries.sh passes"
+  ],
+  "authority": "authorized",
+  "baseRevision": "6a88a3e7bb8c301e1ed362807d5b1d5542b27770",
+  "createdAt": "2026-09-05T11:06:52Z",
+  "goal": "Evidence and InformationState are implemented in crates/goods-domain/src/evidence/evidence.rs; all 7 explanation fields are replaced with evidence: Evidence (GoodsNeed is the sole Inferred site, the other 6 are Known); the CLI's 4 subcommands (demo, seven-day-life, multiple-individuals, multiple-goods) print [KNOWN]/[INFERRED] tags via Evidence's Display impl; phase_1_demo.rs and phase_3_care.rs assertions are updated to use .evidence.statement; a new phase_9_evidence.rs integration test directly asserts the Known-vs-Inferred distinction and the CLI-visible tags; new Japanese-only phase doc and design spec are added; domain-model.md/glossary.md/README.md's Japanese sections are updated (English/Chinese sections stay untouched at Phase 1, per the docs-japanese-only precedent).",
+  "intent": "Implement the trust-model Evidence/InformationState type (docs/architecture/trust-model.md's KNOWN|INFERRED|UNKNOWN|UNAVAILABLE|CONFLICTING vocabulary) by replacing the existing pub struct Evidence; placeholder, and replace the 7 existing explanation: String fields (HealthAssessment, Deviation, NeedConflict, GoodsNeed, CareRequest, CareAction, Outcome) with a typed evidence: Evidence field, tagging each with the appropriate InformationState.",
+  "mode": "implementation",
+  "outOfScope": [
+    "learning::Learning.statement (stays untouched)",
+    " Evidence::unknown()/unavailable()/conflicting() convenience constructors",
+    " goods-application",
+    " goods-runtime",
+    " goods-infrastructure",
+    " persistence",
+    " autonomous rule adjustment",
+    " frontend (apps/goods-garden-web)",
+    " English and Chinese sections of domain-model.md/glossary.md/README.md"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:8707589b9d635f85414ac1a559258065efffef7e18fa6fc22a0c7a8bd4c49e12",
+  "requiredEvidenceClasses": [],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/phase-9-evidence",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/29",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-9-evidence"
+  },
+  "risk": "normal",
+  "scope": [
+    "crates/goods-domain/src/evidence/mod.rs",
+    "crates/goods-domain/src/evidence/evidence.rs",
+    "crates/goods-domain/src/state/goods_state.rs",
+    "crates/goods-domain/src/need/deviation.rs",
+    "crates/goods-domain/src/need/need_conflict.rs",
+    "crates/goods-domain/src/need/goods_need.rs",
+    "crates/goods-domain/src/care/care_request.rs",
+    "crates/goods-domain/src/care/care_action.rs",
+    "crates/goods-domain/src/outcome/outcome.rs",
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_1_demo.rs",
+    "apps/goods-garden-cli/tests/phase_3_care.rs",
+    "apps/goods-garden-cli/tests/phase_9_evidence.rs",
+    "docs/phases/phase-9-evidence.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-9-evidence-design.md",
+    "docs/architecture/domain-model.md",
+    "docs/glossary.md",
+    "docs/README.md"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-9-evidence"
+}
