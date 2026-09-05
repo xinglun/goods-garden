@@ -14,13 +14,21 @@ understand state, ask for help and learn from outcomes.
 
 ### Current phase
 
-Phase 1 — First Living Goods. The agent may implement only the bounded State
-demo: minimal Goods Identity, Goods Profile, Observation, Expectation, Goods
-State and Health Assessment, plus a local synthetic observation source, CLI
-composition and the approved read-only browser presentation at
-`apps/goods-garden-web/`. The browser package consumes a synthetic
-`GoodsStateView` projection and owns no domain behavior. Need, Care, Memory,
-Learning and autonomous behavior remain prohibited.
+Phase 10 — Lifecycle. Phases 1-10 are implemented: the bounded State demo
+(Goods Identity, Goods Profile, Observation, Expectation, Goods State, Health
+Assessment); Need (Deviation, Urgency, GoodsNeed, Need Conflict); Care
+(CareRequest, Caregiver, Human Feedback, CareAction); Memory (GoodsMemory,
+MemoryRecord); Verification & Learning (Outcome, Learning); the Seven Day
+Life, Multiple Individuals and Multiple Goods CLI milestones; Evidence
+(Evidence, InformationState); and Lifecycle (LifecycleState). All of this is
+demonstrated only through `goods-garden-cli`'s synthetic-example fixtures.
+The approved read-only browser presentation at `apps/goods-garden-web/`
+still only consumes the Phase 1 synthetic `GoodsStateView` projection and
+owns no domain behavior; it does not reflect Need, Care, Memory, Evidence or
+Lifecycle. Autonomous orchestration of the Intelligence Loop
+(`goods-runtime`'s `intelligence_loop` and `scheduler` placeholders) remains
+prohibited without a dedicated human decision on autonomous action
+authority.
 
 ### Architecture rules
 
@@ -29,11 +37,14 @@ The dependency direction is `goods-domain` → `goods-application` →
 means the downstream layer may depend on the upstream layer. Domain owns
 domain language and has no HTTP, SQL, cloud SDK, LLM provider, Tokio-specific
 runtime, JSON transport or CLI dependency. Application owns use cases and
-ports. Infrastructure owns future adapters and currently contains only the
-local synthetic `DemoObservationSource`. Runtime owns the bounded Observe →
-Assess composition and future orchestration. The frontend is a sibling
-application outside the Cargo member list; it renders a read-only projection
-and must not import Rust crates or external-system code.
+ports. Infrastructure owns adapters and currently contains the local
+synthetic `DemoObservationSource` and `DemoHumanFeedbackSource`. Runtime owns
+the Observe → Assess → Identify Needs → Request Care → Remember →
+Verify/Learn composition (`GoodsRuntime`); its `intelligence_loop` and
+`scheduler` modules remain unimplemented placeholders for future
+orchestration. The frontend is a sibling application outside the Cargo
+member list; it renders a read-only projection and must not import Rust
+crates or external-system code.
 
 ### Human decision boundaries
 
@@ -85,14 +96,23 @@ data から、状態を理解し、助けを求め、結果から学ぶ entity �
 
 ### Current phase と Architecture
 
-現在は Phase 1 — First Living Goods。最小の Goods Identity、Goods Profile、Observation、Expectation、
-Goods State、Health Assessment、local synthetic observation source、CLI composition と、承認済みの
-`apps/goods-garden-web/` read-only browser presentation だけを実装できる。browser package は synthetic
-`GoodsStateView` projection を表示し、domain behavior を所有しない。Need、Care、Memory、Learning、自律挙動は引き続き禁止する。
+現在は Phase 10 — Lifecycle まで実装済みである。State（Goods Identity、Goods Profile、Observation、
+Expectation、Goods State、Health Assessment）、Need（Deviation、Urgency、GoodsNeed、Need Conflict）、
+Care（CareRequest、Caregiver、Human Feedback、CareAction）、Memory（GoodsMemory、MemoryRecord）、
+Verification & Learning（Outcome、Learning）、Seven Day Life／Multiple Individuals／Multiple Goods の
+CLI milestone、Evidence（Evidence、InformationState）、Lifecycle（LifecycleState）を実装済みで、いずれも
+`goods-garden-cli` の synthetic-example fixture でのみ実演する。承認済みの `apps/goods-garden-web/`
+read-only browser presentation は依然として Phase 1 の synthetic `GoodsStateView` projection だけを
+消費し、domain behavior を所有しない——Need、Care、Memory、Evidence、Lifecycle は反映しない。
+Intelligence Loop の自動駆動（`goods-runtime` の `intelligence_loop`／`scheduler` placeholder）は、
+autonomous action authority についての別途の human decision なしには禁止のままとする。
 依存は `goods-domain` → `goods-application` → `goods-infrastructure` → `goods-runtime` →
 `goods-garden-cli`。Domain は HTTP、SQL、cloud SDK、LLM provider、Tokio 固有 runtime、JSON transport、
-CLI を知らない。Infrastructure は現在 local synthetic `DemoObservationSource` だけを持つ。frontend は
-Cargo member list の外にある sibling application で、Rust crate や external-system code を import しない。
+CLI を知らない。Infrastructure は local synthetic `DemoObservationSource` と `DemoHumanFeedbackSource`
+を持つ。Runtime は Observe → Assess → Identify Needs → Request Care → Remember → Verify/Learn の
+composition（`GoodsRuntime`）を持ち、`intelligence_loop`／`scheduler` module は未実装の placeholder の
+ままである。frontend は Cargo member list の外にある sibling application で、Rust crate や
+external-system code を import しない。
 
 ### Human decision / AI Cockpit
 
@@ -119,12 +139,21 @@ Goods Garden 是产品世界。North Star 是把商品从被管理的数据变�
 
 ### Current phase 与 Architecture
 
-当前是 Phase 1 — First Living Goods。只允许实现有边界的 State demo：最小的 Goods Identity、Goods Profile、
-Observation、Expectation、Goods State、Health Assessment、本地 synthetic observation source、CLI 编排和获批的
-`apps/goods-garden-web/` 只读浏览器展示。浏览器 package 只消费 synthetic `GoodsStateView` projection，不拥有领域行为。
-Need、Care、Memory、Learning 与自主行为继续禁止。依赖方向为 `goods-domain` → `goods-application` →
+当前已实现至 Phase 10 — Lifecycle。已实现 State（Goods Identity、Goods Profile、Observation、
+Expectation、Goods State、Health Assessment）、Need（Deviation、Urgency、GoodsNeed、Need Conflict）、
+Care（CareRequest、Caregiver、Human Feedback、CareAction）、Memory（GoodsMemory、MemoryRecord）、
+Verification & Learning（Outcome、Learning）、Seven Day Life／Multiple Individuals／Multiple Goods
+CLI 里程碑、Evidence（Evidence、InformationState）与 Lifecycle（LifecycleState），均只通过
+`goods-garden-cli` 的 synthetic-example fixture 演示。获批的 `apps/goods-garden-web/` 只读浏览器展示
+仍然只消费 Phase 1 的 synthetic `GoodsStateView` projection，不拥有领域行为——不反映 Need、Care、
+Memory、Evidence、Lifecycle。在没有针对 autonomous action authority 的单独 human decision 之前，
+自动驱动 Intelligence Loop（`goods-runtime` 的 `intelligence_loop`／`scheduler` 占位符）仍然禁止。
+依赖方向为 `goods-domain` → `goods-application` →
 `goods-infrastructure` → `goods-runtime` → `goods-garden-cli`。Domain 不得依赖 HTTP、SQL、云 SDK、LLM provider、
-Tokio-specific runtime、JSON transport 或 CLI；Infrastructure 当前只有本地 synthetic `DemoObservationSource`。frontend 是
+Tokio-specific runtime、JSON transport 或 CLI；Infrastructure 现在拥有本地 synthetic
+`DemoObservationSource` 与 `DemoHumanFeedbackSource`。Runtime 拥有 Observe → Assess → Identify
+Needs → Request Care → Remember → Verify/Learn 的编排（`GoodsRuntime`）；`intelligence_loop`／
+`scheduler` 模块仍是未实现的占位符。frontend 是
 Cargo member list 之外的 sibling application，不得 import Rust crate 或 external-system code。
 
 ### Human decision / AI Cockpit
