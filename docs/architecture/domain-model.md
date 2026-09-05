@@ -192,10 +192,29 @@ Phase 10 は Phase 0 由来の `LifecycleState` placeholder を実装する。
 動作し、本 phase では追加の制約を課さない。詳細は
 `docs/phases/phase-10-lifecycle.md` を参照。
 
+### Phase 11 minimal model
+
+Phase 11 は Phase 0 由来の `intelligence_loop` placeholder を実装する。
+North Star の Intelligence Loop の「1周分のサイクル」に初めて具体的な
+型とメソッドを与える。
+
+| Type | Phase 11 における最小の役割 | Status |
+| --- | --- | --- |
+| IntelligenceCycleOutcome | 1周分の Intelligence Loop cycle の結果（state/needs/request/action/verification） | PHASE 11 MINIMAL |
+
+`GoodsRuntime::run_cycle` は既存の `verify_and_learn`/
+`request_care_and_remember` の組み合わせに過ぎず、新しい business rule は
+追加しない。`crates/goods-runtime/src/scheduler/mod.rs`（Intelligence
+Loop を自動的に駆動する自律実行の話）は未実装のままである——これは
+autonomous action authority についての別途の human decision が必要な
+領域である。詳細は `docs/phases/phase-11-intelligence-loop.md` を参照。
+
 ### Future provisional concepts
 
 Phase 0 から続いた provisional concept はすべて実装済みとなり、現時点で
-残っている候補はない。
+残っている候補はない。`goods-runtime` の `scheduler` placeholder は
+autonomous action authority についての human decision を待つ、意図的な
+未実装のままである。
 
 ## 中文
 

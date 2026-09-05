@@ -53,6 +53,7 @@
 | Species | goods profile または capability の再利用可能な class。 |
 | Individual | 固有の identity と memory を持つ一つの商品 instance。 |
 | Lifecycle State | Goods individual が Active（監視中）か Retired（監視対象外）かを示す2値。`Goods::retire()` によってのみ遷移する。 |
+| Intelligence Loop | State → Need → Care → Action → New State → Memory/Learning の1周分のサイクル。`GoodsRuntime::run_cycle` として実装される。 |
 
 ## 中文
 

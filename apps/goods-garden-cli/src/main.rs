@@ -207,8 +207,10 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
         let runtime = GoodsRuntime::new(DemoObservationSource::new(observation));
         let feedback_source = DemoHumanFeedbackSource::new(feedback);
 
-        if let Some(action) = pending_action.take() {
-            let learning = runtime.verify_and_learn(&item, action)?;
+        let cycle =
+            runtime.run_cycle(&item, &feedback_source, &mut memory, pending_action.take())?;
+
+        if let Some(learning) = &cycle.verification {
             println!(
                 "outcome (follow-up on prior Care Action): {:?} — {}",
                 learning.outcome.status, learning.outcome.evidence
@@ -216,14 +218,15 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
             println!("learning: {}", learning.statement);
         }
 
-        let (state, needs, request, action) =
-            runtime.request_care_and_remember(&item, &feedback_source, &mut memory)?;
-
-        println!("health: {} — {}", state.health.status.as_str(), state.health.evidence);
-        if needs.needs.is_empty() {
+        println!(
+            "health: {} — {}",
+            cycle.state.health.status.as_str(),
+            cycle.state.health.evidence
+        );
+        if cycle.needs.needs.is_empty() {
             println!("needs: <none identified>");
         } else {
-            for need in &needs.needs {
+            for need in &cycle.needs.needs {
                 println!(
                     "need: {:?} (urgency: {}) — {}",
                     need.kind,
@@ -232,18 +235,18 @@ fn run_seven_day_life() -> Result<(), Box<dyn Error>> {
                 );
             }
         }
-        match &request {
+        match &cycle.request {
             Some(request) => {
                 println!("care request: ({}) {}", request.requested_role, request.evidence)
             }
             None => println!("care request: <none identified>"),
         }
-        match &action {
+        match &cycle.action {
             Some(action) => println!("care action: {}", action.evidence),
             None => println!("care action: <none identified>"),
         }
 
-        pending_action = action;
+        pending_action = cycle.action;
     }
 
     println!();
