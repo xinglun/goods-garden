@@ -20,7 +20,8 @@ All human-facing documents are maintained in English, Japanese and Chinese.
 - [Phase 3 — Care](phases/phase-3-care.md)
 - [Phase 4 — Memory](phases/phase-4-memory.md)
 - [Phase 5 — Verification & Learning](phases/phase-5-learning.md)
-- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md) (current)
+- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md)
+- [Phase 7 — Multiple Individuals](phases/phase-7-multiple-individuals.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -43,7 +44,8 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Phase 3 — Care](phases/phase-3-care.md)
 - [Phase 4 — Memory](phases/phase-4-memory.md)
 - [Phase 5 — Verification & Learning](phases/phase-5-learning.md)
-- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md) (current)
+- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md)
+- [Phase 7 — Multiple Individuals](phases/phase-7-multiple-individuals.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)
 
@@ -65,6 +67,7 @@ phase roadmap を読む。全ての human-facing document は English、日本�
 - [Phase 3 — Care](phases/phase-3-care.md)
 - [Phase 4 — Memory](phases/phase-4-memory.md)
 - [Phase 5 — Verification & Learning](phases/phase-5-learning.md)
-- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md) (current)
+- [Phase 6 — Seven Day Life](phases/phase-6-seven-day-life.md)
+- [Phase 7 — Multiple Individuals](phases/phase-7-multiple-individuals.md) (current)
 - [Glossary](glossary.md)
 - [ADRs](adr/0001-rust-workspace.md)

@@ -1,0 +1,57 @@
+{
+  "acceptanceCriteria": [
+    "EN: apps/goods-garden-cli/src/main.rs gains a new multiple-individuals subcommand that constructs two Goods individuals sharing one cloned GoodsProfile but distinct GoodsIdentity.individual_id values and separate GoodsMemory instances, using only existing goods-domain/goods-application/goods-runtime types; the existing demo and seven-day-life subcommands are unchanged. JA: apps/goods-garden-cli/src/main.rs に新しい multiple-individuals subcommand を追加し、1つの clone された GoodsProfile を共有しつつ異なる GoodsIdentity.individual_id と独立した GoodsMemory を持つ2つの Goods individual を、既存の goods-domain/goods-application/goods-runtime の型だけを使って構築する。既存の demo と seven-day-life subcommand は変更しない。ZH: apps/goods-garden-cli/src/main.rs 新增 multiple-individuals 子命令，仅使用既有的 goods-domain/goods-application/goods-runtime 类型构造两个共享同一克隆 GoodsProfile、但拥有不同 GoodsIdentity.individual_id 与独立 GoodsMemory 实例的 Goods individual；既有的 demo 与 seven-day-life 子命令保持不变。",
+    "EN: The subcommand's output explicitly states each individual's memory record count and confirms neither individual's memory contains the other's records; a new phase_7_multiple_individuals.rs test runs the compiled CLI with this argument and asserts these markers, without changing any of the six existing test files. JA: subcommand の出力は各 individual の memory record 件数を明示し、どちらの individual の memory にも相手の記録が含まれないことを確認する。新設の phase_7_multiple_individuals.rs がコンパイル済み CLI をこの引数で実行しこれらを検証し、既存6つのテストファイルは変更しない。ZH: 子命令的输出明确说明每个 individual 的 memory 记录数，并确认任一方的 memory 都不包含对方的记录；新增的 phase_7_multiple_individuals.rs 以该参数运行编译后的 CLI 并验证这些标记，且不修改既有六个测试文件。",
+    "EN: docs/phases/phase-7-multiple-individuals.md, docs/architecture/domain-model.md and docs/README.md are updated in English, Japanese and Chinese, and a PROPOSED design spec is recorded under docs/superpowers/specs/. JA: docs/phases/phase-7-multiple-individuals.md、docs/architecture/domain-model.md、docs/README.md を英語・日本語・中文で更新し、docs/superpowers/specs/ に PROPOSED の設計 spec を記録する。ZH: 以英文、日语、中文更新 docs/phases/phase-7-multiple-individuals.md、docs/architecture/domain-model.md 与 docs/README.md，并在 docs/superpowers/specs/ 下记录 PROPOSED 设计 spec。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace, cargo run -p goods-garden-cli -- demo, cargo run -p goods-garden-cli -- seven-day-life, cargo run -p goods-garden-cli -- multiple-individuals and bash tests/architecture/check-boundaries.sh all pass. JA: 指定された Cargo quality command、3つの local demo 実行、architecture boundary check が全て通る。ZH: 指定的 Cargo quality command、三个本地 demo 运行与 architecture boundary check 全部通过。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "6aef7648ed5d44be883387e5e8ed58e43a703875",
+  "createdAt": "2026-09-05T08:55:12Z",
+  "goal": "EN: A person can run a new CLI subcommand and see two Goods individuals (e.g. TunaMayo@StoreA and TunaMayo@StoreB) sharing the same species profile but producing independent observations, Needs, Care episodes and Memory, with an explicit statement confirming neither individual's memory contains the other's records. The existing demo and seven-day-life subcommands are unchanged. No new domain type is introduced. JA: 人が新しい CLI subcommand を実行し、同じ species profile を共有しつつ独立した observation、Need、Care episode、Memory を生成する2つの Goods individual（例: TunaMayo@StoreA と TunaMayo@StoreB）を確認できる。どちらの individual の memory にも相手の記録が含まれないことを明示する。既存の demo と seven-day-life subcommand は変更しない。新しい domain type は導入しない。ZH: 用户可以运行新的 CLI 子命令，看到共享同一 species profile、但产生独立的 observation、Need、Care 事件与 Memory 的两个 Goods individual（例如 TunaMayo@StoreA 与 TunaMayo@StoreB），并明确说明任一方的 memory 都不包含对方的记录。既有的 demo 与 seven-day-life 子命令保持不变。不引入任何新的领域类型。",
+  "intent": "EN: Demonstrate the Phase 7 Multiple Individuals milestone by running two Goods individuals of the same species through the unchanged Phase 1-6 model, sharing the same GoodsProfile but each owning a separate GoodsMemory, validating that Species-level data is shared while Individual Memory is not. JA: 不変の Phase 1-6 model を、同一 species の2つの Goods individual に対して実行し、同じ GoodsProfile を共有しつつそれぞれ独立した GoodsMemory を持たせることで、Species レベルのデータは共有され Individual Memory は共有されないことを検証する Phase 7 Multiple Individuals マイルストーンを実現する。ZH: 通过不改动的 Phase 1-6 模型运行两个同一 species 的 Goods individual，二者共享同一 GoodsProfile 但各自拥有独立的 GoodsMemory，验证 Species 级数据被共享而 Individual Memory 不被共享，从而实现 Phase 7 Multiple Individuals 里程碑。",
+  "mode": "implementation",
+  "outOfScope": [
+    "any new domain type in goods-domain/goods-application/goods-runtime",
+    "Multiple Goods (Phase 8)",
+    " any persistence/MemoryStore implementation",
+    " any automatic rule/threshold adjustment",
+    "apps/goods-garden-web/** (frontend)",
+    "phase_1_demo.rs",
+    " phase_2_need.rs",
+    " phase_3_care.rs",
+    " phase_4_memory.rs",
+    " phase_5_learning.rs",
+    " phase_6_seven_day_life.rs",
+    " crates/** domain contracts (Phase 1-6 frozen)"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:81950e9609a71984e61312ece358f052469e86aa0cd1328e3d35cd34908f18b5",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin/main",
+    "branch": "codex/phase-7-multiple-individuals",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/23",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/phase-7-multiple-individuals"
+  },
+  "risk": "normal",
+  "scope": [
+    "apps/goods-garden-cli/src/main.rs",
+    "apps/goods-garden-cli/tests/phase_7_multiple_individuals.rs",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-7-multiple-individuals-design.md",
+    "docs/phases/phase-7-multiple-individuals.md",
+    "docs/architecture/domain-model.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "phase-7-multiple-individuals"
+}
