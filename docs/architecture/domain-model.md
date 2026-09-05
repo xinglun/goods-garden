@@ -3,12 +3,8 @@
 ## English
 
 Phase 1 separates the minimal model needed by the local demo from future
-provisional concepts. Phase 2 adds a minimal Need model on top without
-changing Phase 1; Phase 3 adds a minimal Care model on top without changing
-Phase 1 or Phase 2; Phase 4 adds a minimal Memory model on top without
-changing Phase 1-3; Phase 5 adds a minimal Outcome/Learning model on top
-without changing Phase 1-4. All are reviewable, deliberately small and do not
-claim to settle the long-term domain schema.
+provisional concepts. The Phase 1 model is reviewable, deliberately small and
+does not claim to settle the long-term domain schema.
 
 ### Phase 1 minimal model
 
@@ -27,122 +23,20 @@ profile expectation is healthy; an age above it is unhealthy. The bundled input
 is a local `synthetic-example`, not a real POS or SEJ record. This rule and
 these fields may be refined by a later Domain Design Work Item.
 
-### Phase 2 minimal model
-
-Phase 2 adds an explainable Need model on top of the unchanged Phase 1
-State/Health Assessment. It introduces one additional evaluation dimension,
-StockAvailability, alongside the existing Freshness dimension, so that two
-Needs can genuinely coexist and conflict.
-
-| Type | Minimal role in Phase 2 | Status |
-| --- | --- | --- |
-| DeviationDimension | `Freshness` or `StockAvailability`, the axis a Deviation was derived from | PHASE 2 MINIMAL |
-| Deviation | Signed gap between an observation and its expectation on one dimension | PHASE 2 MINIMAL |
-| Urgency | `Low`/`Medium`/`High`, derived from a Deviation's magnitude by fixed, dimension-specific thresholds | PHASE 2 MINIMAL |
-| NeedKind | `FreshnessConcern` or `StockAvailabilityConcern`; names the concern, not a Care response | PHASE 2 MINIMAL |
-| GoodsNeed | Kind, Urgency, Deviation and explanation for one concerning Deviation | PHASE 2 MINIMAL |
-| NeedConflict | Explainable contradiction when a FreshnessConcern and a StockAvailabilityConcern Need coexist | PHASE 2 MINIMAL |
-| NeedAssessment | The Needs and any Need Conflict identified from one observation | PHASE 2 MINIMAL |
-
-`Observation` gained `quantity_on_hand` and `GoodsProfile` gained
-`minimum_stock_quantity` to support the StockAvailability dimension. The
-Urgency thresholds are fixed example/hypothesis values, not derived from real
-POS or SEJ data; see `docs/phases/phase-2-need.md`.
-
-### Phase 3 minimal model
-
-Phase 3 adds an explainable Care model on top of the unchanged Phase 1/2
-State and Need model. A CareRequest is raised whenever a Need exists; Human
-Feedback is always external input, never computed by the domain; a CareAction
-only records what a Caregiver said.
-
-| Type | Minimal role in Phase 3 | Status |
-| --- | --- | --- |
-| CareRequest | Needs, any Need Conflict, a requested Caregiver role and an explanation | PHASE 3 MINIMAL |
-| Caregiver | A `role` and `display_name` identifying who may help | PHASE 3 MINIMAL |
-| HumanFeedback | A Caregiver's `decision` and `provided_at`, supplied as external input | PHASE 3 MINIMAL |
-| CareAction | Binds a CareRequest to the HumanFeedback that resolved it | PHASE 3 MINIMAL |
-
-The bounded rule is that every identified Need raises a CareRequest for a
-single, fixed `"store staff"` role; no role-routing or permission model is
-implemented. HumanFeedback is read from a `HumanFeedbackSource` port whose
-only implementation is a local synthetic fixture, matching Phase 1/2's
-`ObservationSource` pattern; a real interactive or provider-backed adapter is
-not implemented. See `docs/phases/phase-3-care.md`.
-
-### Phase 4 minimal model
-
-Phase 4 adds an append-only Relationship Memory on top of the unchanged
-Phase 1-3 State/Need/Care model, without inventing a retention or eviction
-policy.
-
-| Type | Minimal role in Phase 4 | Status |
-| --- | --- | --- |
-| MemoryRecord | The State that prompted a Need and the Care Action that responded to it | PHASE 4 MINIMAL |
-| GoodsMemory | An append-only, in-process collection of Memory Records for one good | PHASE 4 MINIMAL |
-
-`GoodsMemory` has no persistence of its own: it is a value owned by its
-caller (the CLI in this phase) and threaded across repeated observations.
-Nothing is ever evicted or expired; the `MemoryStore` port remains an empty
-placeholder, and no database or file-backed adapter is implemented. See
-`docs/phases/phase-4-memory.md`.
-
-### Phase 5 minimal model
-
-Phase 5 adds Outcome and Learning on top of the unchanged Phase 1-4
-State/Need/Care/Memory model, comparing a CareAction against a follow-up
-observation.
-
-| Type | Minimal role in Phase 5 | Status |
-| --- | --- | --- |
-| OutcomeStatus | `Resolved` or `Unresolved`, a factual comparison of NeedKind presence, not a judgment of the Caregiver's decision | PHASE 5 MINIMAL |
-| Outcome | The CareAction, the follow-up State/Need Assessment, the OutcomeStatus and an explanation | PHASE 5 MINIMAL |
-| Learning | A reviewable statement derived from an Outcome | PHASE 5 MINIMAL |
-
-Learning never adjusts a threshold, profile field or any other rule by
-itself; it only records a plain-language, human-reviewable observation.
-Whether to act on it remains a separate human decision, out of scope here.
-The generic `Evidence` type remains a provisional placeholder — Outcome's own
-fields (the CareAction, the follow-up State and Need Assessment) already
-provide the traceability this phase needs. See
-`docs/phases/phase-5-learning.md`.
-
-### Phase 6 — Seven Day Life
-
-Phase 6 introduces no new domain type. It is a CLI-level milestone that
-scripts the unchanged Phase 1-5 model across seven synthetic days for one
-Goods individual, demonstrating normal days, two anomalies, their Care
-Requests and Human Feedback, their follow-up Verification/Learning, and a
-final Memory tally. See `docs/phases/phase-6-seven-day-life.md`.
-
-### Phase 7 — Multiple Individuals
-
-Phase 7 introduces no new domain type. It runs two Goods individuals of the
-same species through the unchanged Phase 1-6 model, sharing one cloned
-GoodsProfile (Species-level data) while each owns a distinct
-`GoodsIdentity.individual_id` and its own separate GoodsMemory, validating
-that Species-level data is shared while Individual Memory is not. See
-`docs/phases/phase-7-multiple-individuals.md`.
-
-### Phase 8 — Multiple Goods
-
-Phase 8 introduces no new domain type. It runs four distinct product
-species (salmon rice ball, coffee, sandwich, bento) with meaningfully
-different GoodsProfile values through the unchanged Phase 1-7 model via the
-identical code path, proving Goods Intelligence is a class of capability
-while each concrete good is only data — an object/instance of that
-capability, with no product-specific branch anywhere in goods-domain,
-goods-application or goods-runtime. See
-`docs/phases/phase-8-multiple-goods.md`.
-
 ### Future provisional concepts
 
-The following remain vocabulary for discussion, not implemented behavior or
-settled schemas.
+The following remain vocabulary for discussion, not implemented Phase 1
+behavior or settled schemas.
 
 | Candidate | Provisional role | Status |
 | --- | --- | --- |
+| GoodsNeed | Need representation candidate | PROVISIONAL |
 | Evidence | Traceability support candidate | PROVISIONAL |
+| CareRequest | Request-for-care candidate | PROVISIONAL |
+| CareAction | Care record candidate | PROVISIONAL |
+| Outcome | Result candidate | PROVISIONAL |
+| Memory | Relationship/history candidate | PROVISIONAL |
+| Learning | Learning-result candidate | PROVISIONAL |
 | LifecycleState | Lifecycle candidate | PROVISIONAL |
 
 ## 日本語
@@ -272,10 +166,7 @@ GoodsProfile 値を持つ4つの product species（salmon rice ball、coffee、s
 
 ## 中文
 
-Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 2 在不改动 Phase 1 的前提下，于其上新增最小 Need 模型；
-Phase 3 在不改动 Phase 1/2 的前提下，于其上新增最小 Care 模型；Phase 4 在不改动 Phase 1-3 的前提下，于其上新增最小 Memory 模型；
-Phase 5 在不改动 Phase 1-4 的前提下，于其上新增最小 Outcome/Learning 模型。五者都是可 review 的小模型，并不意味着已经确定长期
-领域 schema。
+Phase 1 将本地 demo 所需的最小模型与未来 provisional 概念分开。Phase 1 模型是可 review 的小模型，并不意味着已经确定长期领域 schema。
 
 ### Phase 1 minimal model
 
@@ -292,98 +183,17 @@ Phase 5 在不改动 Phase 1-4 的前提下，于其上新增最小 Outcome/Lear
 评估规则刻意保持狭窄：observed age 小于等于 profile expectation 时为 healthy，超过时为 unhealthy。仓库内置输入是本地
 `synthetic-example`，不是 POS 或 SEJ 实际记录。这些字段和规则可以由后续 Domain Design Work Item 调整。
 
-### Phase 2 minimal model
-
-Phase 2 在不变的 Phase 1 State/Health Assessment 之上，增加了可解释的 Need 模型。除已有的 Freshness
-维度外，新增 StockAvailability 评估维度，使两个 Need 能够真实共存并发生冲突。
-
-| 类型 | 在 Phase 2 中的最小作用 | Status |
-| --- | --- | --- |
-| DeviationDimension | 标明 Deviation 来源的 `Freshness` 或 `StockAvailability` | PHASE 2 MINIMAL |
-| Deviation | 某维度上 observation 与 expectation 之间带符号的 gap | PHASE 2 MINIMAL |
-| Urgency | 根据 Deviation 的 magnitude、按维度专属固定阈值得出的 `Low`/`Medium`/`High` | PHASE 2 MINIMAL |
-| NeedKind | `FreshnessConcern` 或 `StockAvailabilityConcern`；命名的是关注点而非 Care 响应 | PHASE 2 MINIMAL |
-| GoodsNeed | 针对一个令人担忧的 Deviation 的 kind、Urgency、Deviation 与 explanation | PHASE 2 MINIMAL |
-| NeedConflict | FreshnessConcern 与 StockAvailabilityConcern 的 Need 共存时的可解释矛盾 | PHASE 2 MINIMAL |
-| NeedAssessment | 从一次 observation 中识别出的 Need 集合与是否存在 Need Conflict | PHASE 2 MINIMAL |
-
-为支持 StockAvailability 维度，`Observation` 新增 `quantity_on_hand`，`GoodsProfile` 新增
-`minimum_stock_quantity`。Urgency 阈值是固定的 example/hypothesis 数值，并非源自真实 POS 或 SEJ
-数据；详见 `docs/phases/phase-2-need.md`。
-
-### Phase 3 minimal model
-
-Phase 3 在不变的 Phase 1/2 State/Need 模型之上，增加了可解释的 Care 模型。只要存在 Need 就必定产生 CareRequest；
-Human Feedback 始终是外部输入，领域从不计算它；CareAction 只记录 Caregiver 实际说过的话。
-
-| 类型 | 在 Phase 3 中的最小作用 | Status |
-| --- | --- | --- |
-| CareRequest | Need 集合、是否存在 Need Conflict、请求的 Caregiver role 与 explanation | PHASE 3 MINIMAL |
-| Caregiver | 标明谁可以提供帮助的 `role` 与 `display_name` | PHASE 3 MINIMAL |
-| HumanFeedback | Caregiver 的 `decision` 与 `provided_at`，作为外部输入提供 | PHASE 3 MINIMAL |
-| CareAction | 将 CareRequest 与解决它的 HumanFeedback 绑定 | PHASE 3 MINIMAL |
-
-有边界规则是：每一个被识别的 Need 都会向单一固定角色 `"store staff"` 发出 CareRequest，不实现角色路由或权限模型。
-HumanFeedback 从 `HumanFeedbackSource` port 读取，唯一实现是与 Phase 1/2 的 `ObservationSource` 相同风格的本地
-synthetic fixture；不实现真实的交互式或 provider-backed adapter。详见 `docs/phases/phase-3-care.md`。
-
-### Phase 4 minimal model
-
-Phase 4 在不变的 Phase 1-3 State/Need/Care 模型之上，在不发明保留或淘汰策略的前提下，增加仅追加的
-Relationship Memory。
-
-| 类型 | 在 Phase 4 中的最小作用 | Status |
-| --- | --- | --- |
-| MemoryRecord | 促成 Need 的 State 与响应它的 Care Action | PHASE 4 MINIMAL |
-| GoodsMemory | 针对一个商品的 Memory Record 仅追加进程内集合 | PHASE 4 MINIMAL |
-
-`GoodsMemory` 自身没有持久化：它是由调用方（本阶段为 CLI）拥有、跨多次 observation 传递的值。不会淘汰或
-过期任何内容；`MemoryStore` port 仍为空占位符，不实现数据库或文件支持的 adapter。详见
-`docs/phases/phase-4-memory.md`。
-
-### Phase 5 minimal model
-
-Phase 5 在不变的 Phase 1-4 State/Need/Care/Memory 模型之上，新增将 CareAction 与后续观测进行比较的
-Outcome 与 Learning。
-
-| 类型 | 在 Phase 5 中的最小作用 | Status |
-| --- | --- | --- |
-| OutcomeStatus | `Resolved` 或 `Unresolved`；比较 NeedKind 是否存在的事实判定，不评判 Caregiver 的决定 | PHASE 5 MINIMAL |
-| Outcome | CareAction、后续的 State/Need Assessment、OutcomeStatus 与 explanation | PHASE 5 MINIMAL |
-| Learning | 从 Outcome 得出的可 review 陈述 | PHASE 5 MINIMAL |
-
-Learning 从不自行调整阈值、profile 字段或其他规则，只记录一段人类可 review 的自然语言观察。是否据此采取
-行动是另一项人类决策，不在本阶段范围内。通用的 `Evidence` 类型仍保持为 provisional 占位符——Outcome 自身
-的字段（CareAction、后续的 State 与 Need Assessment）已经提供了本阶段所需的可追溯性。详见
-`docs/phases/phase-5-learning.md`。
-
-### Phase 6 — Seven Day Life
-
-Phase 6 不引入任何新的领域类型。它是一个 CLI 层面的里程碑，将不变的 Phase 1-5 模型为一个 Goods
-individual 编排为七天的 synthetic day 脚本，展示正常的日子、两次异常及其 Care Request 与 Human
-Feedback、各自的后续 Verification/Learning，以及最终的 Memory 汇总。详见
-`docs/phases/phase-6-seven-day-life.md`。
-
-### Phase 7 — Multiple Individuals
-
-Phase 7 不引入任何新的领域类型。它将不变的 Phase 1-6 模型运行于同一 species 的两个 Goods
-individual，二者共享同一个克隆的 GoodsProfile（Species 级数据），但各自拥有不同的
-`GoodsIdentity.individual_id` 与独立的 GoodsMemory，验证 Species 级数据被共享而 Individual
-Memory 不被共享。详见 `docs/phases/phase-7-multiple-individuals.md`。
-
-### Phase 8 — Multiple Goods
-
-Phase 8 不引入任何新的领域类型。它将不变的 Phase 1-7 模型运行于四种具有明显不同 GoodsProfile
-数值的产品 species（salmon rice ball、coffee、sandwich、bento），通过相同的代码路径处理，在
-goods-domain、goods-application 与 goods-runtime 中不存在任何商品专属分支的前提下，证明
-Goods Intelligence 是能力类，而具体商品只是数据——该能力的对象/实例。详见
-`docs/phases/phase-8-multiple-goods.md`。
-
 ### Future provisional concepts
 
-以下仍只是讨论用 vocabulary，不是已实现行为，也不是已经确定的 schema。
+以下仍只是讨论用 vocabulary，不是 Phase 1 的实现行为，也不是已经确定的 schema。
 
 | 候选 | Provisional 作用 | Status |
 | --- | --- | --- |
+| GoodsNeed | Need 表示的候选 | PROVISIONAL |
 | Evidence | 可追溯性支持的候选 | PROVISIONAL |
+| CareRequest | 求助请求的候选 | PROVISIONAL |
+| CareAction | 照料记录的候选 | PROVISIONAL |
+| Outcome | 结果的候选 | PROVISIONAL |
+| Memory | 关系/历史的候选 | PROVISIONAL |
+| Learning | 学习结果的候选 | PROVISIONAL |
 | LifecycleState | 生命周期的候选 | PROVISIONAL |

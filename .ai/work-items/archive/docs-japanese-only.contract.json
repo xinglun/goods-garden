@@ -1,0 +1,61 @@
+{
+  "acceptanceCriteria": [
+    "EN: All seven Phase 2-8 phase documents and all seven Phase 2-8 PROPOSED design specs contain Japanese-only content (English and Chinese sections removed). JA: 7つの Phase 2-8 phase document と7つの Phase 2-8 PROPOSED design spec が日本語のみの内容になる（英語・中文 section を削除）。ZH: 全部七个 Phase 2-8 阶段文档与七个 Phase 2-8 PROPOSED 设计规格均只包含日语内容（移除英文与中文 section）。",
+    "EN: docs/glossary.md and docs/architecture/domain-model.md keep their pre-existing Phase 0/1 English/Japanese/Chinese content unchanged, with only the Phase 2-8 entries removed from the English and Chinese sections; docs/README.md's English and Chinese phase lists revert to ending at Phase 1 while the Japanese list keeps Phase 1-8. JA: docs/glossary.md と docs/architecture/domain-model.md の既存 Phase 0/1 の英語/日本語/中文 content は無変更のまま、Phase 2-8 の項目だけを英語・中文 section から削除する。docs/README.md の英語・中文 phase list は Phase 1 で終わるよう戻し、日本語 list は Phase 1-8 を保つ。ZH: docs/glossary.md 与 docs/architecture/domain-model.md 保持既有 Phase 0/1 的英文/日语/中文内容不变，仅将 Phase 2-8 条目从英文与中文 section 中移除；docs/README.md 的英文与中文阶段列表恢复到仅到 Phase 1，日语列表保留 Phase 1-8。",
+    "EN: cargo fmt --check, cargo check --workspace, cargo clippy --workspace --all-targets --all-features -- -D warnings, cargo test --workspace and bash tests/architecture/check-boundaries.sh all still pass, confirming this is a documentation-only change. JA: 指定された Cargo quality command と architecture boundary check が全て通り、これが documentation-only の変更であることを確認する。ZH: 指定的 Cargo quality command 与 architecture boundary check 全部通过，确认这是仅涉及文档的更改。"
+  ],
+  "authority": "authorized",
+  "baseRevision": "39c47754dcc870d1cbf8356260fbde485750f19e",
+  "createdAt": "2026-09-05T09:15:03Z",
+  "goal": "EN: A person reading any Phase 2-8 phase document or design spec sees Japanese-only content; docs/glossary.md and docs/architecture/domain-model.md keep their pre-existing Phase 0/1 English/Japanese/Chinese sections intact, with only the Phase 2-8 rows/sections removed from the English and Chinese sections (kept only in Japanese); docs/README.md's English and Chinese phase lists end at Phase 1 again, while the Japanese list keeps Phase 1-8. AGENTS.md's documentation rule is untouched, and no source code changes. JA: Phase 2-8 の phase document や design spec を読むと日本語のみの内容が表示される。docs/glossary.md と docs/architecture/domain-model.md は既存の Phase 0/1 の英語/日本語/中文 section をそのまま保ち、Phase 2-8 の行/section だけを英語・中文 section から削除し日本語にのみ残す。docs/README.md の英語・中文の phase list は Phase 1 で終わるように戻し、日本語 list だけが Phase 1-8 を保つ。AGENTS.md の documentation rule は変更せず、ソースコードの変更も行わない。ZH: 阅读任何 Phase 2-8 阶段文档或设计规格时看到的都是仅日语内容；docs/glossary.md 与 docs/architecture/domain-model.md 保留既有 Phase 0/1 的英文/日语/中文 section 不变，仅将 Phase 2-8 的行/section 从英文与中文 section 中移除（只保留在日语中）；docs/README.md 的英文与中文阶段列表恢复到仅到 Phase 1，日语列表保留 Phase 1-8。AGENTS.md 的文档规则不变，且不涉及任何源代码改动。",
+  "intent": "EN: Convert only the documentation added by Claude for Phase 2-8 (phase docs, PROPOSED design specs, and the Phase 2-8-specific additions inside glossary.md, domain-model.md and README.md) from trilingual English/Japanese/Chinese to Japanese-only, without touching the pre-existing Phase 0/1 content or the trilingual documentation rule stated in AGENTS.md/README.md. JA: Claude が Phase 2-8 で追加したドキュメント（phase doc、PROPOSED design spec、glossary.md/domain-model.md/README.md 内の Phase 2-8 追加分）を、既存の Phase 0/1 の内容や AGENTS.md/README.md に明記された三言語ルールには手を付けず、英語/日本語/中文の三言語併記から日本語のみに変換する。ZH: 仅将 Claude 在 Phase 2-8 中新增的文档（阶段文档、PROPOSED 设计规格、glossary.md/domain-model.md/README.md 中 Phase 2-8 的新增部分）从英文/日语/中文三语并列转换为仅日语，不改动既有的 Phase 0/1 内容，也不改动 AGENTS.md/README.md 中明确的三语文档规则。",
+  "mode": "implementation",
+  "outOfScope": [
+    "any source code (crates/**",
+    " apps/**)",
+    "pre-existing Phase 0/1 content in docs/glossary.md",
+    " docs/architecture/domain-model.md",
+    " docs/README.md",
+    "AGENTS.md and its trilingual documentation rule"
+  ],
+  "projectProfileDigest": "sha256:f6557d1693e8d44441048919d863b5b68f6782d3864b512096decc4e34cbd81e",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "repositorySnapshotDigest": "sha256:dfba3009f9c0416ea114c9a6b8741670ea2d595bd81bbfeba992aba5b1fcb215",
+  "requiredEvidenceClasses": [
+    "verification"
+  ],
+  "resourceContext": {
+    "baseBranch": "main",
+    "baseRemote": "origin",
+    "branch": "codex/docs-japanese-only",
+    "provider": "github",
+    "pullRequest": "https://github.com/xinglun/goods-garden/pull/27",
+    "worktree": "/Users/sei-rinn/dev/workspace_rust/goods-garden-worktrees/docs-japanese-only"
+  },
+  "risk": "normal",
+  "scope": [
+    "docs/phases/phase-2-need.md",
+    "docs/phases/phase-3-care.md",
+    "docs/phases/phase-4-memory.md",
+    "docs/phases/phase-5-learning.md",
+    "docs/phases/phase-6-seven-day-life.md",
+    "docs/phases/phase-7-multiple-individuals.md",
+    "docs/phases/phase-8-multiple-goods.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-2-need-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-3-care-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-4-memory-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-5-learning-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-6-seven-day-life-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-7-multiple-individuals-design.md",
+    "docs/superpowers/specs/2026-09-05-goods-garden-phase-8-multiple-goods-design.md",
+    "docs/glossary.md",
+    "docs/architecture/domain-model.md",
+    "docs/README.md",
+    ".ai/**"
+  ],
+  "sources": [],
+  "state": "implementation_active",
+  "verification": [],
+  "workItemId": "docs-japanese-only"
+}

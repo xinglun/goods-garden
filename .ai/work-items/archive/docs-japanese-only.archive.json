@@ -1,0 +1,22 @@
+{
+  "closeRequired": true,
+  "createdAt": "2026-09-05T10:01:03Z",
+  "files": {
+    "contractDigest": "sha256:688bdbbacd2a7c546bc568d12872d6b3f13795bf85e658b06b1e090cd6257dbe",
+    "contractPath": ".ai/work-items/archive/docs-japanese-only.contract.json",
+    "eventsDigest": "sha256:846f252baba5a85de12d9c96be9771d1fd89d44e5171934ad1af7cb5ccd5c780",
+    "eventsPath": ".ai/work-items/archive/docs-japanese-only.events.jsonl",
+    "outcomeDigest": "sha256:ca5a64bb722e7e6e3733134a672e3b51bdd98f773c942bde7b010a630ce54001",
+    "outcomePath": ".ai/work-items/archive/docs-japanese-only.outcome.json",
+    "summaryDigest": "sha256:13dde0d8d10525e13e03995c499174b6601b51c2f49cb36aa3f83ebd45af90bd",
+    "summaryPath": ".ai/work-items/archive/docs-japanese-only.summary.json",
+    "taskReportDigest": "sha256:d7edfb5ccc07bb2c67a9e0f82542af25db52d70107adc53a6d91b3fac8a0842b",
+    "taskReportMarkdownDigest": "sha256:e52b062ad21a4a720534cf681157eb40cc156533633eaa3bcc1b2c24442c1d91",
+    "taskReportMarkdownPath": ".ai/work-items/archive/docs-japanese-only.task-report.md",
+    "taskReportPath": ".ai/work-items/archive/docs-japanese-only.task-report.json"
+  },
+  "historicalArtifacts": [],
+  "protocolVersion": 1,
+  "state": "archived",
+  "workItemId": "docs-japanese-only"
+}

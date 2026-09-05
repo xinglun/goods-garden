@@ -12,20 +12,12 @@
 | Expectation | A profile-derived boundary used to assess the current state. |
 | Health Assessment | An explainable healthy/unhealthy result derived from an observation and expectation. |
 | Need | An explainable condition that calls for care or investigation. |
-| Deviation | A quantified gap between an observation and its expectation on a given dimension. |
-| Urgency | An explainable, staged level of how soon a Need calls for attention. |
-| Need Conflict | An explainable contradiction between two simultaneous Needs that recommend opposing directions, surfaced without being resolved or acted on. |
 | Care | Human or system-supported response to a good's need, subject to authority. |
-| Care Request | An explainable request for Care, raised when a Need cannot be resolved by the good alone; it never decides or performs an action. |
-| Human Feedback | Human input received in response to a Care Request; the domain never invents, infers or synthesizes it. |
-| Care Action | A traceable record binding a Care Request to the Human Feedback that resolved it. |
 | Caregiver | A human participant who can understand, decide and provide care. |
 | Observation | Sensory input from a source. |
 | Evidence | Traceable support for an observation, inference or decision. |
 | Memory | A record of relevant past experience and relationships. |
-| Memory Record | One remembered Care episode: the State that prompted a Need and the Care Action that responded to it, without judging whether it worked. |
-| Outcome | A factual comparison of whether the Need(s) a Care Action addressed are still present in a follow-up observation. |
-| Learning | A reviewable statement derived from a verified Outcome; it never adjusts a threshold, profile field or other rule by itself. |
+| Learning | A reviewable change derived from verified outcomes. |
 | Habitat | The store or operating context in which a good exists. |
 | Species | A reusable class of goods profiles or capabilities. |
 | Individual | One good instance with its own identity and memory. |
@@ -72,20 +64,12 @@
 | Expectation | 从 profile 得到、用于评估当前状态的边界。 |
 | Health Assessment | 根据 observation 和 expectation 得出的可解释 healthy/unhealthy 结果。 |
 | Need | 需要照料或调查的可解释条件。 |
-| Deviation | 某个维度上 observation 与 expectation 之间可量化的差距。 |
-| Urgency | 说明 Need 需要多快获得关注的可解释分级。 |
-| Need Conflict | 两个同时存在、方向相反的 Need 之间可解释的矛盾；只呈现矛盾，不解决也不推荐行动。 |
 | Care | 受权限约束、对商品需求作出的人工或系统支持响应。 |
-| Care Request | 当商品无法独自解决 Need 时提出的可解释请求；它本身不做决定也不执行行动。 |
-| Human Feedback | 针对 Care Request 收到的人类输入；领域从不臆造、推断或合成它。 |
-| Care Action | 将 Care Request 与解决它的 Human Feedback 绑定在一起的可追溯记录。 |
 | Caregiver | 能够理解、决定并提供照料的人类参与者。 |
 | Observation | 来自某个来源的感官输入。 |
 | Evidence | 支持观察、推断或决定的可追溯依据。 |
 | Memory | 相关过去经验和关系的记录。 |
-| Memory Record | 一条被记住的 Care 事件：促成 Need 的 State 与响应它的 Care Action，不判断其是否奏效。 |
-| Outcome | 基于事实的判定：比较 Care Action 所针对的 Need 是否仍存在于后续观测中。 |
-| Learning | 从已验证的 Outcome 得出的可 review 陈述；从不自行调整阈值、profile 字段或其他规则。 |
+| Learning | 从已验证结果中得到的、可 review 的变化。 |
 | Habitat | 商品存在的门店或运营环境。 |
 | Species | 可复用的商品 profile 或能力类别。 |
 | Individual | 拥有自身身份和记忆的一个商品实例。 |

@@ -1,0 +1,25 @@
+{
+  "changedPaths": [],
+  "checkpointAt": "2026-09-05T10:00:36Z",
+  "checkpointContractDigest": "sha256:4a9339a37703126a9e1bab6b0d55e2724a8861af9667357f3ecfd62ff0d2d0b0",
+  "checkpointCount": 1,
+  "checkpointRepositorySnapshotDigest": "sha256:8707589b9d635f85414ac1a559258065efffef7e18fa6fc22a0c7a8bd4c49e12",
+  "createdAt": "2026-09-05T09:15:03Z",
+  "mode": "implementation",
+  "preflightAt": "2026-09-05T10:00:58Z",
+  "preflightContractDigest": "sha256:4a9339a37703126a9e1bab6b0d55e2724a8861af9667357f3ecfd62ff0d2d0b0",
+  "preflightDecisionDigest": "sha256:87984c0a1a26d0916db4f2c1b13f031eb89189e9b24d41497391ad35de9cf55e",
+  "preflightRepositorySnapshotDigest": "sha256:8707589b9d635f85414ac1a559258065efffef7e18fa6fc22a0c7a8bd4c49e12",
+  "preflightState": "green",
+  "protocolVersion": 1,
+  "repositoryId": "sha256:0aec331bc68e94391249429b76176094d170caa7875fa92dab27316c7927213f",
+  "state": "finish_ready",
+  "updatedAt": "2026-09-05T10:01:01Z",
+  "verification": [
+    {
+      "check": "project-command-0",
+      "result": "passed"
+    }
+  ],
+  "workItemId": "docs-japanese-only"
+}
